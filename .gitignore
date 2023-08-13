@@ -1,5 +1,5 @@
 # dependencies
-*/node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -23,12 +23,6 @@ yarn-error.log*
 
 # hidden files and folders in the DS folder:
 
-app/pythonapi/.* 
-ds/.* 
-ds/data/DWCA/.* 
-ds/data/WCVP/.* 
-ds/notebooks/.* 
-ds/src/.* 
 
 # python venv:
 
