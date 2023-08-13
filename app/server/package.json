@@ -1,0 +1,23 @@
+{
+	"name": "talk-a-palooza",
+	"version": "0.0.1",
+	"description": "An AI-powered app to boost children’s language acquisition",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Rose Jeantet",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.3.1",
+		"express": "^4.18.2",
+		"mongoose": "^7.4.3"
+	},
+	"devDependencies": {
+		"eslint": "^8.47.0",
+		"nodemon": "^3.0.1"
+	}
+}
