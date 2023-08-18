@@ -14,13 +14,13 @@ mongoose.set('strictQuery', false);
 logger.info('connecting to', config.MONGODB_URI);
 
 mongoose
-	.connect(config.MONGODB_URI)
-	.then(() => {
-		logger.info('connected to MongoDB');
-	})
-	.catch((error) => {
-		logger.error('error connecting to MongoDB:', error.message);
-	});
+  .connect(config.MONGODB_URI)
+  .then(() => {
+    logger.info('connected to MongoDB');
+  })
+  .catch((error) => {
+    logger.error('error connecting to MongoDB:', error.message);
+  });
 
 app.use(cors());
 app.use(express.static('build'));
@@ -28,9 +28,9 @@ app.use(express.json());
 app.use(middleware.requestLogger);
 
 app.get('/', (req, res) => {
-	res.send(
-		'<h1>Talk-a-Palooza</h1><h2> On a mission to boost children’s language acquisition &#128525; <p>Coming soon...</p></h2>'
-	);
+  res.send(
+    '<h1>Talk-a-Palooza</h1><h2> On a mission to boost children’s language acquisition &#128525; <p>Coming soon...</p></h2>'
+  );
 });
 
 app.use('/api/samples', samplesRouter);
