@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/samples
+content-type: application/json
+
+{
+    "content": "news content",
+    "important": true
+}
+
+###
