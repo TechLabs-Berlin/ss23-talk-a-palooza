@@ -2,8 +2,9 @@ POST http://localhost:3001/api/samples
 content-type: application/json
 
 {
-    "content": "news content",
-    "important": true
+    "content": "final content",
+    "important": true,
+    "childId": "64f08cd8f36625e6fd31ac20"
 }
 
 ###

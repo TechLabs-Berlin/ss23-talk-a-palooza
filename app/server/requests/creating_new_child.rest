@@ -2,7 +2,10 @@ POST http://localhost:3001/api/children
 Content-Type: application/json
 
 {
-"firstname": "Eliseo", "birthdate": "10/10/2020", "gender": "boy", "userId": "64f050b1c4ce4abd617d906a"
+"firstname": "Nicole", 
+"birthdate": "05/24/2020", 
+"gender": "girl", 
+"userId": "64f087de665687562613cb6a"
 }
 
 ###
