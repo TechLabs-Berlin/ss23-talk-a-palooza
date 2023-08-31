@@ -1,52 +1,51 @@
 const childrenRouter = require('express').Router();
 const Child = require('../models/child');
+const User = require('../models/user');
 
-childrenRouter.get('/', (req, res) => {
-  Child.find({}).then((children) => {
-    res.json(children);
+// [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
+
+childrenRouter.get('/', async (req, res) => {
+  const children = await Child.find({}).populate('samples', {
+    content: 1,
+    important: 1,
   });
+  res.json(children);
 });
 
-childrenRouter.get('/:id', (req, res, next) => {
-  Child.findById(req.params.id)
-    .then((child) => {
-      if (child) {
-        res.json(child);
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch((error) => next(error));
+childrenRouter.get('/:id', async (req, res) => {
+  const child = await Child.findById(req.params.id);
+  if (child) {
+    res.json(child);
+  } else {
+    res.status(404).end();
+  }
 });
 
-childrenRouter.post('/', (req, res, next) => {
+childrenRouter.post('/', async (req, res) => {
   const body = req.body;
+
+  const user = await User.findById(body.userId);
 
   const child = new Child({
     firstname: body.firstname,
     birthdate: body.birthdate,
     gender: body.gender,
-    userId: body.userId,
+    user: user.id,
   });
 
-  child
-    .save()
-    .then((savedChild) => {
-      res.json(savedChild);
-    })
-    .catch((error) => next(error));
+  const savedChild = await child.save();
+  user.children = user.children.concat(savedChild._id);
+  await user.save();
+
+  res.json(savedChild);
 });
 
-childrenRouter.delete('/:id', (req, res, next) => {
-  child
-    .findByIdAndRemove(req.params.id)
-    .then(() => {
-      res.status(204).end();
-    })
-    .catch((error) => next(error));
+childrenRouter.delete('/:id', async (req, res) => {
+  const child = await child.findByIdAndRemove(req.params.id);
+  res.status(204).end();
 });
 
-childrenRouter.put('/:id', (req, res, next) => {
+childrenRouter.put('/:id', async (req, res) => {
   const body = req.body;
 
   const child = {

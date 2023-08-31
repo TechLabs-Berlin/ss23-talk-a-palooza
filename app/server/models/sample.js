@@ -7,9 +7,9 @@ const sampleSchema = new mongoose.Schema({
     minlength: 5,
   },
   important: Boolean,
-  user: {
+  child: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'Child',
   },
 });
 

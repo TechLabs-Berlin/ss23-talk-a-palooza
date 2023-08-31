@@ -2,26 +2,29 @@ const bcrypt = require('bcrypt');
 const usersRouter = require('express').Router();
 const User = require('../models/user');
 
-usersRouter.get('/', (req, res) => {
-  User.find({}).then((users) => {
-    res.json(users);
+// [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
+
+usersRouter.get('/', async (req, res) => {
+  const users = await User.find({}).populate('children', {
+    firstname: 1,
+    birthdate: 1,
+    gender: 1,
+    samples: 1,
   });
+  res.json(users);
 });
 
-usersRouter.get('/:id', (req, res, next) => {
-  User.findById(req.params.id)
-    .then((user) => {
-      if (user) {
-        res.json(user);
-      } else {
-        res.status(404).end();
-      }
-    })
-    .catch((error) => next(error));
+usersRouter.get('/:id', async (req, res) => {
+  const user = await User.findById(req.params.id);
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).end();
+  }
 });
 
-usersRouter.post('/', async (request, response) => {
-  const { email, password } = request.body;
+usersRouter.post('/', async (req, res) => {
+  const { email, password } = req.body;
 
   const saltRounds = 10;
   const passwordHash = await bcrypt.hash(password, saltRounds);
@@ -33,7 +36,7 @@ usersRouter.post('/', async (request, response) => {
 
   const savedUser = await user.save();
 
-  response.status(201).json(savedUser);
+  res.status(201).json(savedUser);
 });
 
 module.exports = usersRouter;

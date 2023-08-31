@@ -18,12 +18,12 @@ const childSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
-    // wordsLog: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'WordsLog',
-    //   },
-    // ],
+    samples: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Sample',
+      },
+    ],
   },
   { timestamps: true }
   // {
