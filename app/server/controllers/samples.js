@@ -5,7 +5,10 @@ const Child = require('../models/child');
 // [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
 
 samplesRouter.get('/', async (req, res) => {
-  const sample = await Sample.find({});
+  const samples = await Sample.find({}).populate('child', {
+    firstname: 1,
+    birthdate: 1,
+  });
   res.json(samples);
 });
 
@@ -38,7 +41,7 @@ samplesRouter.post('/', async (req, res) => {
 });
 
 samplesRouter.delete('/:id', async (req, res) => {
-  const sample = await sample.findByIdAndRemove(req.params.id);
+  await sample.findByIdAndRemove(req.params.id);
   res.status(204).end();
 });
 
