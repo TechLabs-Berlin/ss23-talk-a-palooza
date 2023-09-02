@@ -1,18 +1,22 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
-function App() {
+import StartScreen from './pages/StartScreen';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import Main from './pages/Main';
+
+const App = () => {
   return (
-    <div>
-      <h1>Talk aPalooza</h1>
-      <ul>
-        <h2>Shortcuts</h2>
-        <li>Start screen</li>
-        <li>Login</li>
-        <li>Main (private)</li>
-        <li>Dashboard (private)</li>
-      </ul>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<StartScreen />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/main' element={<Main />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
