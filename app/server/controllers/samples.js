@@ -1,62 +1,62 @@
 const samplesRouter = require('express').Router();
 const Sample = require('../models/sample');
+const Child = require('../models/child');
 
-samplesRouter.get('/', (req, res) => {
-	Sample.find({}).then((samples) => {
-		res.json(samples);
-	});
+// [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
+
+samplesRouter.get('/', async (req, res) => {
+  const samples = await Sample.find({}).populate('child', {
+    firstname: 1,
+    birthdate: 1,
+  });
+  res.json(samples);
 });
 
-samplesRouter.get('/:id', (req, res, next) => {
-	Sample.findById(req.params.id)
-		.then((sample) => {
-			if (sample) {
-				res.json(sample);
-			} else {
-				res.status(404).end();
-			}
-		})
-		.catch((error) => next(error));
+samplesRouter.get('/:id', async (req, res) => {
+  const sample = await Sample.findById(req.params.id);
+  if (sample) {
+    res.json(sample);
+  } else {
+    res.status(404).end();
+  }
 });
 
-samplesRouter.post('/', (req, res, next) => {
-	const body = req.body;
+samplesRouter.post('/', async (req, res) => {
+  const body = req.body;
 
-	const sample = new Sample({
-		content: body.content,
-		important: body.important || false,
-	});
+  const child = await Child.findById(body.childId);
 
-	sample
-		.save()
-		.then((savedSample) => {
-			res.json(savedSample);
-		})
-		.catch((error) => next(error));
+  const sample = new Sample({
+    content: body.content,
+    important: body.important || false,
+    child: child.id,
+  });
+
+  const savedSample = await sample.save();
+  child.samples = child.samples.concat(savedSample._id);
+  await child.save();
+
+  res.json(savedSample);
+  console.log(req.params, res.status);
 });
 
-samplesRouter.delete('/:id', (req, res, next) => {
-	sample
-		.findByIdAndRemove(req.params.id)
-		.then(() => {
-			res.status(204).end();
-		})
-		.catch((error) => next(error));
+samplesRouter.delete('/:id', async (req, res) => {
+  await sample.findByIdAndRemove(req.params.id);
+  res.status(204).end();
 });
 
-samplesRouter.put('/:id', (req, res, next) => {
-	const body = req.body;
+samplesRouter.put('/:id', async (req, res) => {
+  const body = req.body;
 
-	const sample = {
-		content: body.content,
-		important: body.important,
-	};
+  const sample = {
+    content: body.content,
+    important: body.important,
+  };
 
-	Sample.findByIdAndUpdate(req.params.id, sample, { new: true })
-		.then((updatedSample) => {
-			res.json(updatedSample);
-		})
-		.catch((error) => next(error));
+  const updatedSample = await Sample.findByIdAndUpdate(req.params.id, sample, {
+    new: true,
+  });
+  res.json(updatedSample);
 });
 
 module.exports = samplesRouter;

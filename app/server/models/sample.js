@@ -7,6 +7,10 @@ const sampleSchema = new mongoose.Schema({
     minlength: 5,
   },
   important: Boolean,
+  child: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Child',
+  },
 });
 
 sampleSchema.set('toJSON', {
