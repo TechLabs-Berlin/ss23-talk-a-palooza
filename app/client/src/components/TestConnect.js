@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import sampleService from './services/samplesServices';
+import sampleService from '../services/samplesServices';
 
 const Sample = ({ sample, toggleImportance }) => {
   const label = sample.important ? 'make not important' : 'make important';
