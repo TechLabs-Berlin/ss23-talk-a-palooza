@@ -1,10 +1,6 @@
 const authRouter = require('express').Router();
 const passport = require('passport');
 
-// const isLoggedIn = (req, res, next) => {
-//   req.user ? next() : res.sendStatus(401);
-// };
-
 authRouter.get('/login/success', (req, res) => {
   if (req.user) {
     res.status(200).json({

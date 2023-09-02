@@ -4,6 +4,7 @@ import loginService from '../services/loginService';
 const LoginForm = ({ onFormSwitch }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // eslint-disable-next-line
   const [user, setUser] = useState(null);
 
   const handleLogin = async (e) => {
