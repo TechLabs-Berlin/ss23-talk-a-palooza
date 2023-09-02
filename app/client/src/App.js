@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
-import Login from './components/Login';
-import Register from './components/Register';
-
-import TestConnect from './TestConnect';
+import React from 'react';
 
 function App() {
-  const [currentFormEl, setCurrentFormEl] = useState('login');
-
-  const switchFormEl = (formNameEl) => {
-    setCurrentFormEl(formNameEl);
-  };
   return (
     <div>
-      {currentFormEl === 'login' ? (
-        <Login onFormSwitch={switchFormEl} />
-      ) : (
-        <Register onFormSwitch={switchFormEl} />
-      )}
-      {/* Test connection DB */}
-      <TestConnect />
+      <h1>Talk aPalooza</h1>
+      <ul>
+        <h2>Shortcuts</h2>
+        <li>Start screen</li>
+        <li>Login</li>
+        <li>Main (private)</li>
+        <li>Dashboard (private)</li>
+      </ul>
     </div>
   );
 }
