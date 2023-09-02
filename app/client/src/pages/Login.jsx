@@ -8,10 +8,15 @@ const Login = () => {
   const switchFormEl = (formNameEl) => {
     setCurrentFormEl(formNameEl);
   };
+
+  const googleAuth = () => {
+    window.open('http://localhost:3001/api/auth/google', '_self');
+  };
+
   return (
     <>
       <h2>Sign In with Google</h2>
-      <button>Sign in with Google</button>
+      <button onClick={googleAuth}>Sign in with Google</button>
       {currentFormEl === 'login' ? (
         <LoginForm onFormSwitch={switchFormEl} />
       ) : (

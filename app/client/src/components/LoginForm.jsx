@@ -1,15 +1,31 @@
 import { useState } from 'react';
+import loginService from '../services/loginService';
+
 const LoginForm = ({ onFormSwitch }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // eslint-disable-next-line
+  const [user, setUser] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+
+    try {
+      const user = await loginService.login({
+        email,
+        password,
+      });
+      setUser(user);
+      setEmail('');
+      setPassword('');
+    } catch (exception) {
+      console.log('Error: ' + exception);
+    }
   };
   return (
     <>
       <h2>Sign in with Email</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <label htmlFor='email'>email</label>
         <input
           type='email'

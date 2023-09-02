@@ -2,12 +2,24 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const userSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    default: null,
+  },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    required: [true, 'email required'],
+    unique: [true, 'email already registered'],
+    lowercase: true,
+    match: [/\S+@\S+\.\S+/, 'is invalid'],
+    index: true,
   },
-  passwordHash: String,
+  firstName: String,
+  lastName: String,
+  profilePhoto: String,
+  password: String,
+  source: { type: String, required: [true, 'source not specified'] },
+  lastVisited: { type: Date, default: new Date() },
   children: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -21,6 +33,7 @@ userSchema.plugin(uniqueValidator);
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
+    // returnedObject.email = returnedObject.email.toString();
     delete returnedObject._id;
     delete returnedObject.__v;
     // the passwordHash should not be revealed
