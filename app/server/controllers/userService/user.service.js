@@ -14,20 +14,6 @@ const addGoogleUser =
     return user.save();
   };
 
-const addLocalUser =
-  (User) =>
-  ({ id, email, firstName, lastName, password }) => {
-    const user = new User({
-      id,
-      email,
-      firstName,
-      lastName,
-      password,
-      source: 'local',
-    });
-    return user.save();
-  };
-
 const getUsers = (User) => () => {
   return User.find({});
 };

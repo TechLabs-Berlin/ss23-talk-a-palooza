@@ -10,10 +10,10 @@ const config = require('./utils/config');
 const middleware = require('./utils/middleware');
 const logger = require('./utils/logger');
 
-const passportSetup = require('./config/passport');
-const googleLogin = require('./config/google');
+const passportSetup = require('./passport/passport');
+const googleLogin = require('./passport/google');
 
-const authRouter = require('./controllers/auth');
+const authRouter = require('./routes/auth');
 const usersRouter = require('./controllers/users');
 const childrenRouter = require('./controllers/children');
 const samplesRouter = require('./controllers/samples');
@@ -38,25 +38,27 @@ app.use(
   })
 );
 
+app.use(
+  session({
+    secret: 'secr3t',
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(
   cors({
     origin: 'http://localhost:3000',
-    methods: 'GET, POST, PUT, DELETE',
+    methods: 'GET,POST,PUT,DELETE',
     credentials: true,
   })
 );
 app.use(express.static('build'));
 app.use(express.json());
 app.use(middleware.requestLogger);
-// app.use(googleLogin);
-// app.get('/', (req, res) => {
-//   res.send(
-//     '<h1>Talk-a-Palooza</h1><h2> On a mission to boost children’s language acquisition &#128525; <p>Coming soon...</p></h2>'
-//   );
-// });
 
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);

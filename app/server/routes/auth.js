@@ -1,9 +1,9 @@
 const authRouter = require('express').Router();
 const passport = require('passport');
 
-const isLoggedIn = (req, res, next) => {
-  req.user ? next() : res.sendStatus(401);
-};
+// const isLoggedIn = (req, res, next) => {
+//   req.user ? next() : res.sendStatus(401);
+// };
 
 authRouter.get('/login/success', (req, res) => {
   if (req.user) {
@@ -36,7 +36,7 @@ authRouter.get(
 authRouter.get(
   '/google/callback',
   passport.authenticate('google', {
-    successRedirect: process.env.CLIENT_URL_DEV,
+    successRedirect: `${process.env.CLIENT_URL_DEV}/main`,
     failureRedirect: '/login/failed',
   })
 );
