@@ -1,6 +1,10 @@
 import TestConnect from '../components/TestConnect';
 
 const Dashboard = () => {
+  const logout = () => {
+    window.open('http://localhost:3001/api/auth/logout', '_self');
+  };
+
   return (
     <>
       <h1>Dashboard</h1>
@@ -16,7 +20,7 @@ const Dashboard = () => {
           />
         </li>
         <li>John doe</li>
-        <li>log out</li>
+        <button onClick={logout}>Logout</button>
       </ul>
       <TestConnect />
     </>
