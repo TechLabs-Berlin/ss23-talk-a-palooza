@@ -1,18 +1,20 @@
+import { Link } from 'react-router-dom';
+
 const StartScreen = () => {
   return (
     <>
       <h1>Talk aPalooza</h1>
       <h2>StartScreen</h2>
-      <button>Get Started</button>
-      <button>I have an account</button>
+      <Link to='/register'>Get Started</Link>
+      <Link to='/login'>I have an account</Link>
 
       <hr></hr>
       <div>
         (shortcuts):
-        <button>StartScreen</button>
-        <button>Login</button>
-        <button>Main (private)</button>
-        <button>Dashboard (private)</button>
+        <Link to='/'>StartScreen</Link>
+        <Link to='/login'>Login</Link>
+        <Link to='/main'>Main (private)</Link>
+        <Link to='/dashboard'>Dashboard (private)</Link>
       </div>
     </>
   );

@@ -1,5 +1,3 @@
-import TestConnect from '../components/TestConnect';
-
 const Main = () => {
   return (
     <div>
@@ -8,7 +6,6 @@ const Main = () => {
         <li>My own path</li>
         <li>Catalog</li>
       </ul>
-      <TestConnect />
     </div>
   );
 };
