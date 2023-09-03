@@ -14,6 +14,7 @@ const googleLogin = new GoogleStrategy(
     console.log(profile);
     const id = profile.id;
     const email = profile.emails[0].value;
+    const displayName = profile.displayName;
     const firstName = profile.name.givenName;
     const lastName = profile.name.familyName;
     const profilePhoto = profile.photos[0].value;
@@ -29,6 +30,7 @@ const googleLogin = new GoogleStrategy(
         email,
         firstName,
         lastName,
+        displayName,
         profilePhoto,
         source,
       });
@@ -43,7 +45,6 @@ const googleLogin = new GoogleStrategy(
       });
     }
 
-    currentUser.lastVisited = new Date();
     return done(null, currentUser);
   }
 );
@@ -53,7 +54,6 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
-  const currentUser = await User.findOne({ id });
   done(null, currentUser);
 });
 
