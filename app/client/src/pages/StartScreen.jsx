@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
+import { AuthData } from '../components/auth/AuthWrapper';
 
 const StartScreen = () => {
+  const { user } = AuthData();
   return (
     <>
       <h1>Talk aPalooza</h1>
-      <h2>StartScreen</h2>
-      <Link to='/register'>Get Started</Link>
+      <h2>StartScreen ({user.email ? 'logged In' : 'Not logged In'})</h2>
+      <Link to='/assessment'>Get Started</Link>
       <Link to='/login'>I have an account</Link>
 
       <hr></hr>
