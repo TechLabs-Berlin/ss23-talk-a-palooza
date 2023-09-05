@@ -7,13 +7,16 @@ const AuthContext = createContext();
 export const AuthData = () => useContext(AuthContext);
 
 export const AuthWrapper = () => {
-  const [user, setUser] = useState({ displayName: '', isAuthenticated: false });
+  const [authUser, setAuthUser] = useState({
+    displayName: '',
+    isAuthenticated: false,
+  });
 
   const getUser = async () => {
     try {
       const url = `http://localhost:3001/api/auth/login/success`;
       const { data } = await axios.get(url, { withCredentials: true });
-      setUser({ ...data.user, isAuthenticated: true });
+      setAuthUser({ ...data.user, isAuthenticated: true });
       console.log(data.user);
       console.log(data.user.children);
     } catch (err) {
@@ -25,10 +28,10 @@ export const AuthWrapper = () => {
   }, []);
 
   const logout = () => {
-    setUser({ ...user, isAuthenticated: false });
+    setAuthUser({ ...authUser, isAuthenticated: false });
   };
   return (
-    <AuthContext.Provider value={{ user, getUser, logout }}>
+    <AuthContext.Provider value={{ authUser, getUser, logout }}>
       <>
         <RenderRoutes />
       </>

@@ -32,7 +32,7 @@ authRouter.get(
 authRouter.get(
   '/google/callback',
   passport.authenticate('google', {
-    successRedirect: `${process.env.CLIENT_URL_DEV}/main`,
+    successRedirect: `${process.env.CLIENT_URL_DEV}`,
     failureRedirect: '/login/failed',
   })
 );

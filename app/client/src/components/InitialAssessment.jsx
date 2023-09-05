@@ -1,8 +1,13 @@
-const InitialAssessment = () => {
+const InitialAssessment = ({ authUser }) => {
+  console.log({ authUser });
+
   return (
     <>
       <h2>InitialAssessment</h2>
-      {/* <p>({user ? 'Child registered' : 'No child assessed yet'})</p> */}
+      <p>
+        Hi {authUser.displayName}! (
+        {authUser.children[0] ? 'Child registered' : 'No child assessed yet'})
+      </p>
     </>
   );
 };

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { AuthData } from '../components/auth/AuthWrapper';
+// import usersService from '../services/usersService';
 
 import Login from '../components/Login';
 import InitialAssessment from '../components/InitialAssessment';
@@ -11,27 +11,22 @@ import Main from '../components/Main';
 // else main
 
 const StartScreen = () => {
-  const { user } = AuthData();
+  const { authUser } = AuthData();
+  console.log(authUser);
 
-  return (
-    <>
-      <h1>Talk aPalooza</h1>
-      <h2>StartScreen ({user.email ? 'logged In' : 'Not logged In'})</h2>
-
-      <Login user={user} />
-      <InitialAssessment />
-      <Main />
-
-      <hr></hr>
+  if (!authUser.email) {
+    return (
       <div>
-        (shortcuts):
-        <Link to='/'>StartScreen</Link>
-        <Link to='/assessment'>Initial Assessment</Link>
-        <Link to='/main'>Main (private)</Link>
-        <Link to='/dashboard'>Dashboard (private)</Link>
+        <h1>Talk aPalooza</h1>
+        <h2>StartScreen ({authUser.email ? 'logged In' : 'Not logged In'})</h2>
+        <Login authUser={authUser} />
       </div>
-    </>
-  );
+    );
+  } else if (authUser.children.length[0]) {
+    return <Main authUser={authUser} />;
+  } else if (authUser) {
+    return <InitialAssessment authUser={authUser} />;
+  }
 };
 
 export default StartScreen;
