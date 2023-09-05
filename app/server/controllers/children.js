@@ -30,7 +30,7 @@ childrenRouter.post('/', async (req, res) => {
     firstname: body.firstname,
     birthdate: body.birthdate,
     gender: body.gender,
-    user: user.id,
+    user: user._id,
   });
 
   const savedChild = await child.save();
