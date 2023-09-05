@@ -12,7 +12,7 @@ import Main from '../components/Main';
 
 const StartScreen = () => {
   const { authUser } = AuthData();
-  console.log(authUser);
+  console.log('user child Id:', authUser.children);
 
   if (!authUser.email) {
     return (
@@ -22,10 +22,10 @@ const StartScreen = () => {
         <Login authUser={authUser} />
       </div>
     );
-  } else if (authUser.children.length[0]) {
-    return <Main authUser={authUser} />;
-  } else if (authUser) {
+  } else if (authUser.children.length === 0) {
     return <InitialAssessment authUser={authUser} />;
+  } else if (authUser) {
+    return <Main authUser={authUser} />;
   }
 };
 
