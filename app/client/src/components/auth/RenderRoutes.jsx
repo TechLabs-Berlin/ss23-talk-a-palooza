@@ -2,9 +2,6 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { AuthData } from './AuthWrapper';
 
 import StartScreen from '../../pages/StartScreen';
-import Login from '../Login';
-import InitialAssessment from '../InitialAssessment';
-import Main from '../Main';
 import Dashboard from '../../pages/Dashboard';
 
 const userPath = [
@@ -15,47 +12,29 @@ const userPath = [
     isRestricted: false,
   },
   {
-    path: '/login',
-    component: 'Login',
-    element: <Login />,
-    isRestricted: false,
-  },
-  {
-    path: '/assessment',
-    component: 'InitialAssessment',
-    element: <InitialAssessment />,
-    isRestricted: false,
-  },
-  { path: '/main', component: 'Main', element: <Main />, isRestricted: true },
-  {
     path: '/dashboard',
     component: 'Dashboard',
     element: <Dashboard />,
     isRestricted: true,
-    navigate: <Navigate replace to='/assessment' />,
+    navigate: <Navigate replace to='/' />,
   },
-  // OK! no child ? assessment
-  // not user ? startscreen
 ];
 
-// On all routes (- startscreen): not user ? startscreen
-
 const RenderRoutes = () => {
-  const { user } = AuthData();
+  const { authUser } = AuthData();
 
   return (
     <Routes>
       {userPath.map((route, i) => {
-        if (route.isRestricted && user.isAuthenticated) {
+        if (route.isRestricted && authUser.isAuthenticated) {
           // <Route path="/users" element={user ? <Users /> : <Navigate replace to="/login" />
-          return <Route key={i} path={route.path} element={route.element} />;
-        } else if (!route.isRestricted && user.isAuthenticated) {
           return (
             <Route
               key={i}
               path={route.path}
-              element={route.element}
-              // element={user.children.length ? route.navigate : route.element}
+              element={
+                authUser.children.length === 0 ? route.navigate : route.element
+              }
             />
           );
         } else if (!route.isRestricted) {
