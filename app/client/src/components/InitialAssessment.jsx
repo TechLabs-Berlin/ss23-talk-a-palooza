@@ -1,6 +1,4 @@
 const InitialAssessment = ({ authUser }) => {
-  console.log({ authUser });
-
   return (
     <>
       <h2>InitialAssessment</h2>
