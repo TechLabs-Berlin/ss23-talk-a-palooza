@@ -2,21 +2,30 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { AuthData } from './AuthWrapper';
 
 import StartScreen from '../../pages/StartScreen';
+import Main from '../../pages/Main';
 import Dashboard from '../../pages/Dashboard';
 
 const userPath = [
   {
     path: '/',
+    component: 'Main',
+    element: <Main />,
+    isRestricted: true,
+    navigate: <Navigate replace to='/start' />,
+  },
+  {
+    path: '/start',
     component: 'StartScreen',
     element: <StartScreen />,
     isRestricted: false,
+    navigate: <Navigate replace to='/' />,
   },
   {
     path: '/dashboard',
     component: 'Dashboard',
     element: <Dashboard />,
     isRestricted: true,
-    navigate: <Navigate replace to='/' />,
+    navigate: <Navigate replace to='/start' />,
   },
 ];
 
@@ -26,19 +35,26 @@ const RenderRoutes = () => {
   return (
     <Routes>
       {userPath.map((route, i) => {
-        if (route.isRestricted && authUser.isAuthenticated) {
-          // <Route path="/users" element={user ? <Users /> : <Navigate replace to="/login" />
+        if (route.isRestricted) {
           return (
             <Route
               key={i}
               path={route.path}
               element={
-                authUser.children.length === 0 ? route.navigate : route.element
+                authUser.isAuthenticated ? route.element : route.navigate
               }
             />
           );
         } else if (!route.isRestricted) {
-          return <Route key={i} path={route.path} element={route.element} />;
+          return (
+            <Route
+              key={i}
+              path={route.path}
+              element={
+                authUser.isAuthenticated ? route.navigate : route.element
+              }
+            />
+          );
         } else return false;
       })}
     </Routes>
