@@ -2,31 +2,24 @@ import { AuthData } from '../components/auth/AuthWrapper';
 // import usersService from '../services/usersService';
 
 import Login from '../components/Login';
-import InitialAssessment from '../components/InitialAssessment';
-import Main from '../components/Main';
 
 //  Startscreen:
-// If user not logged, login Component,
-// else if user no children : InitialAssessment,
-// else main
+// Shows only if user not logged:
+// - as start page when entering the App
+// - as redirection page when entering from another page
+//  login Component.
 
 const StartScreen = () => {
   const { authUser } = AuthData();
-  console.log('user child Id:', authUser.children);
+  console.log('Is user logged in?', authUser.isAuthenticated);
 
-  if (!authUser.email) {
-    return (
-      <div>
-        <h1>Talk aPalooza</h1>
-        <h2>StartScreen ({authUser.email ? 'logged In' : 'Not logged In'})</h2>
-        <Login authUser={authUser} />
-      </div>
-    );
-  } else if (authUser.children.length === 0) {
-    return <InitialAssessment authUser={authUser} />;
-  } else if (authUser) {
-    return <Main authUser={authUser} />;
-  }
+  return (
+    <div>
+      <h1>Talk aPalooza</h1>
+      <h2>StartScreen</h2>
+      <Login />
+    </div>
+  );
 };
 
 export default StartScreen;
