@@ -18,7 +18,6 @@ export const AuthWrapper = () => {
       const { data } = await axios.get(url, { withCredentials: true });
       setAuthUser({ ...data.user, isAuthenticated: true });
       console.log(data.user);
-      console.log(data.user.children);
     } catch (err) {
       console.log(err);
     }

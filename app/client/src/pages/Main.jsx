@@ -4,7 +4,12 @@ import { AuthData } from '../components/auth/AuthWrapper';
 
 const Main = () => {
   const { authUser } = AuthData();
-  console.log({ authUser });
+  console.log(
+    'Is user loggedin?',
+    authUser.isAuthenticated,
+    '/ Is there children?',
+    authUser.children.length
+  );
 
   if (authUser.children.length === 0) {
     return <InitialAssessment authUser={authUser} />;
