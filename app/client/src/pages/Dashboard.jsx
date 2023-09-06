@@ -14,7 +14,7 @@ const Dashboard = () => {
       <ul>
         <li>
           <img
-            src=''
+            src={authUser.profilePhoto}
             alt=''
             className='avatar'
             width='32px'
