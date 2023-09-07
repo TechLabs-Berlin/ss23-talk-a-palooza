@@ -1,4 +1,4 @@
-import { AuthData } from '../components/auth/AuthWrapper';
+import { AuthData } from '../services/AuthWrapper';
 import TestConnect from '../components/TestConnect';
 
 const Dashboard = () => {

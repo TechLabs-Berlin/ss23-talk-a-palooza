@@ -1,5 +1,4 @@
-import { AuthData } from '../components/auth/AuthWrapper';
-// import usersService from '../services/usersService';
+import { AuthData } from '../services/AuthWrapper';
 
 import Login from '../components/Login';
 

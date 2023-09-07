@@ -1,9 +1,10 @@
 import InitialAssessment from '../components/InitialAssessment';
 import MainMenu from '../components/MainMenu';
-import { AuthData } from '../components/auth/AuthWrapper';
+import { AuthData } from '../services/AuthWrapper';
 
 const Main = () => {
   const { authUser } = AuthData();
+
   console.log(
     'Is user loggedin?',
     authUser.isAuthenticated,

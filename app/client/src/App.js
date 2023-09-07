@@ -1,4 +1,4 @@
-import { AuthWrapper } from './components/auth/AuthWrapper';
+import { AuthWrapper } from './services/AuthWrapper';
 
 const App = () => {
   return <AuthWrapper />;

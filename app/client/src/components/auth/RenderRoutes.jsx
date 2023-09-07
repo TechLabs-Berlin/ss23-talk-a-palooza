@@ -1,5 +1,5 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { AuthData } from './AuthWrapper';
+import { AuthData } from '../../services/AuthWrapper';
 
 import StartScreen from '../../pages/StartScreen';
 import Main from '../../pages/Main';
@@ -34,11 +34,11 @@ const RenderRoutes = () => {
 
   return (
     <Routes>
-      {userPath.map((route, i) => {
+      {userPath.map((route) => {
         if (route.isRestricted) {
           return (
             <Route
-              key={i}
+              key={route.component}
               path={route.path}
               element={
                 authUser.isAuthenticated ? route.element : route.navigate
@@ -48,14 +48,14 @@ const RenderRoutes = () => {
         } else if (!route.isRestricted) {
           return (
             <Route
-              key={i}
+              key={route.component}
               path={route.path}
               element={
                 authUser.isAuthenticated ? route.navigate : route.element
               }
             />
           );
-        } else return false;
+        } else return null;
       })}
     </Routes>
   );
