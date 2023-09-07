@@ -23,20 +23,4 @@ usersRouter.get('/:id', async (req, res) => {
   }
 });
 
-usersRouter.post('/', async (req, res) => {
-  const { email, password } = req.body;
-
-  const saltRounds = 10;
-  const passwordHash = await bcrypt.hash(password, saltRounds);
-
-  const user = new User({
-    email,
-    passwordHash,
-  });
-
-  const savedUser = await user.save();
-
-  res.status(201).json(savedUser);
-});
-
 module.exports = usersRouter;

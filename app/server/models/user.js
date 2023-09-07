@@ -19,7 +19,6 @@ const userSchema = new mongoose.Schema(
     displayName: String,
     lastName: String,
     profilePhoto: String,
-    password: String,
     source: { type: String, required: [true, 'source not specified'] },
     children: [
       {
@@ -36,11 +35,9 @@ userSchema.plugin(uniqueValidator);
 userSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
-    // returnedObject.email = returnedObject.email.toString();
+    returnedObject.email = returnedObject.email.toString();
     delete returnedObject._id;
     delete returnedObject.__v;
-    // the passwordHash should not be revealed
-    delete returnedObject.passwordHash;
   },
 });
 
