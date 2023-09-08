@@ -13,7 +13,9 @@ const Dashboard = () => {
 
   return (
     <View style={styles.container}>
-      <h1>Dashboard</h1>
+      <View style={styles.title}>
+        <Text>Dashboard</Text>
+      </View>
       <ul>
         <li>
           <img

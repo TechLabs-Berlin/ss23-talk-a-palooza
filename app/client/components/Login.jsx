@@ -1,25 +1,14 @@
-// import { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Login = () => {
-  // const [currentFormEl, setCurrentFormEl] = useState('login');
-
-  // const switchFormEl = (formNameEl) => {
-  //   setCurrentFormEl(formNameEl);
-  // };
-
   const googleAuth = () => {
     window.open('http://localhost:3001/api/auth/google', '_self');
   };
 
   return (
-    <>
+    <View>
       <button onClick={googleAuth}>Get Started</button>
-      {/* {currentFormEl === 'login' ? (
-        <LoginForm onFormSwitch={switchFormEl} />
-      ) : (
-        <RegisterForm onFormSwitch={switchFormEl} />
-      )} */}
-    </>
+    </View>
   );
 };
 
