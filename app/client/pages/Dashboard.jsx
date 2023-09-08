@@ -1,5 +1,6 @@
 import { AuthData } from '../services/AuthWrapper';
 import TestConnect from '../components/TestConnect';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Dashboard = () => {
   const { authUser } = AuthData();
@@ -9,7 +10,7 @@ const Dashboard = () => {
   };
 
   return (
-    <>
+    <View style={styles.container}>
       <h1>Dashboard</h1>
       <ul>
         <li>
@@ -26,8 +27,17 @@ const Dashboard = () => {
         <button onClick={logout}>Logout</button>
       </ul>
       <TestConnect />
-    </>
+    </View>
   );
 };
 
 export default Dashboard;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
