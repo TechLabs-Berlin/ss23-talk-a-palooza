@@ -4,7 +4,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const Dashboard = () => {
   const { authUser } = AuthData();
-  console.log(authUser);
+  // Get the ID of the first child of the current user
+  const child = authUser.children[0];
+  console.log(child);
   const logout = () => {
     window.open('http://localhost:3001/api/auth/logout', '_self');
   };
@@ -26,7 +28,7 @@ const Dashboard = () => {
         <li>Username: {authUser.displayName}</li>
         <button onClick={logout}>Logout</button>
       </ul>
-      <TestConnect />
+      <TestConnect child={child} />
     </View>
   );
 };

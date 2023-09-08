@@ -12,7 +12,7 @@ const Sample = ({ sample, toggleImportance }) => {
   );
 };
 
-const TestConnect = () => {
+const TestConnect = ({ child }) => {
   const [samples, setSamples] = useState([]);
   const [newSample, setNewSample] = useState('');
   const [showAll, setShowAll] = useState(true);
@@ -39,6 +39,7 @@ const TestConnect = () => {
     const sampleObject = {
       content: newSample,
       important: Math.random() < 0.5,
+      child: child,
     };
     sampleService.create(sampleObject).then((returnedSample) => {
       setSamples(samples.concat(returnedSample));

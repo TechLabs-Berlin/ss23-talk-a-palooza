@@ -4,6 +4,8 @@ import { AuthData } from '../services/AuthWrapper';
 
 const Main = () => {
   const { authUser } = AuthData();
+  // Get the ID of the first child of the current user
+  const child = authUser.children[0];
 
   console.log(
     'Is user loggedin?',
@@ -12,9 +14,9 @@ const Main = () => {
     authUser.children.length
   );
 
-  if (authUser.children.length === 0) {
+  if (!child) {
     return <InitialAssessment authUser={authUser} />;
-  } else return <MainMenu authUser={authUser} />;
+  } else return <MainMenu child={child} />;
 };
 
 export default Main;

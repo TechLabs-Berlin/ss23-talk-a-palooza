@@ -24,12 +24,12 @@ samplesRouter.get('/:id', async (req, res) => {
 samplesRouter.post('/', async (req, res) => {
   const body = req.body;
 
-  const child = await Child.findById(body.childId);
+  const child = await Child.findById(body.child);
 
   const sample = new Sample({
     content: body.content,
     important: body.important || false,
-    child: child.id,
+    child: child,
   });
 
   const savedSample = await sample.save();
