@@ -4,7 +4,7 @@ content-type: application/json
 {
     "content": "final content",
     "important": true,
-    "childId": "64f08cd8f36625e6fd31ac20"
+    "child": "64f08cd8f36625e6fd31ac20"
 }
 
 ###

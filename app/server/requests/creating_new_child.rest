@@ -5,7 +5,7 @@ Content-Type: application/json
 "firstname": "Nicole", 
 "birthdate": "05/24/2020", 
 "gender": "girl", 
-"userId": "64f44165b31eb4cd5a0a1008"
+"user": "64f44165b31eb4cd5a0a1008"
 }
 
 ###
