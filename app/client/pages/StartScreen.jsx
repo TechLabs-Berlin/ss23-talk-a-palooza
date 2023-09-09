@@ -14,7 +14,7 @@ const StartScreen = () => {
 
   return (
     <View style={styles.app}>
-      <Text style={styles.title}>Talk aPalooza</Text>
+      <Text style={styles.title}>Talk a Palooza</Text>
       <Text style={styles.subtitle}>StartScreen</Text>
       <Login />
     </View>
