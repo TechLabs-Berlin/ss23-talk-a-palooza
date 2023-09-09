@@ -13,6 +13,7 @@
     "axios": "^1.5.0",
     "expo": "~49.0.8",
     "expo-status-bar": "~1.6.0",
+    "formik": "^2.4.4",
     "react": "18.2.0",
     "react-art": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,7 +21,8 @@
     "react-native-web": "^0.19.8",
     "react-router-dom": "^6.15.0",
     "react-router-native": "^6.15.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
