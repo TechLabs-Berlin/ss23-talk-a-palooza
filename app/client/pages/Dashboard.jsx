@@ -1,16 +1,21 @@
 import { AuthData } from '../services/AuthWrapper';
 import TestConnect from '../components/TestConnect';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Dashboard = () => {
   const { authUser } = AuthData();
-  console.log(authUser);
+  // Get the ID of the first child of the current user
+  const child = authUser.children[0];
+  console.log(child);
   const logout = () => {
     window.open('http://localhost:3001/api/auth/logout', '_self');
   };
 
   return (
-    <>
-      <h1>Dashboard</h1>
+    <View style={styles.container}>
+      <View style={styles.title}>
+        <Text>Dashboard</Text>
+      </View>
       <ul>
         <li>
           <img
@@ -25,9 +30,18 @@ const Dashboard = () => {
         <li>Username: {authUser.displayName}</li>
         <button onClick={logout}>Logout</button>
       </ul>
-      <TestConnect />
-    </>
+      <TestConnect child={child} />
+    </View>
   );
 };
 
 export default Dashboard;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
