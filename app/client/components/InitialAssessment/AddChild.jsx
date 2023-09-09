@@ -1,23 +1,35 @@
 import { StyleSheet, Text, View } from 'react-native';
+import ChildForm from './ChildForm';
+import ChildrenService from '../../services/childrenService';
 
-const InitialAssessment = ({ authUser }) => {
+const AddChild = ({ authUser }) => {
+  const child = authUser.children[0];
+
+  const handleSubmit = async (values, { resetForm }) => {
+    const newChild = await ChildrenService.createChild(values, authUser);
+    resetForm();
+    console.log('Child added:', newChild);
+  };
+
   return (
     <View style={styles.app}>
       <Text style={styles.title}>InitialAssessment</Text>
       <Text>
         Hi {authUser.displayName}! (
-        {authUser.children[0] ? 'Child registered' : 'No child assessed yet'})
+        {child ? 'Child registered' : 'No child assessed yet'})
       </Text>
+
+      <ChildForm onSubmit={handleSubmit} />
     </View>
   );
 };
 
-export default InitialAssessment;
+export default AddChild;
 
 const styles = StyleSheet.create({
   app: {
     marginHorizontal: 'auto',
-    maxWidth: 1028,
+    maxWidth: 600,
     maxHeight: 768,
     padding: 20,
   },

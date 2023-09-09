@@ -1,4 +1,4 @@
-import InitialAssessment from '../components/InitialAssessment';
+import AddChild from '../components/InitialAssessment/AddChild';
 import MainMenu from '../components/MainMenu';
 import { AuthData } from '../services/AuthWrapper';
 
@@ -15,7 +15,7 @@ const Main = () => {
   );
 
   if (!child) {
-    return <InitialAssessment authUser={authUser} />;
+    return <AddChild authUser={authUser} />;
   } else return <MainMenu child={child} />;
 };
 

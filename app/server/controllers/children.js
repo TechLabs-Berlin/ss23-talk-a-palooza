@@ -1,4 +1,5 @@
 const childrenRouter = require('express').Router();
+const { validationResult } = require('express-validator');
 const Child = require('../models/child');
 const User = require('../models/user');
 
@@ -22,26 +23,37 @@ childrenRouter.get('/:id', async (req, res) => {
 });
 
 childrenRouter.post('/', async (req, res) => {
-  const body = req.body;
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
-  const user = await User.findById(body.userId);
+    const { firstname, birthdate, gender, user } = req.body;
 
-  const child = new Child({
-    firstname: body.firstname,
-    birthdate: body.birthdate,
-    gender: body.gender,
-    user: user._id,
-  });
+    const child = new Child({
+      firstname,
+      birthdate,
+      gender,
+    });
 
-  const savedChild = await child.save();
-  user.children = user.children.concat(savedChild._id);
-  await user.save();
+    const updatedUser = await User.findOneAndUpdate(
+      { _id: user },
+      { $push: { children: child } },
+      { new: true }
+    );
 
-  res.json(savedChild);
+    await child.save();
+
+    res.json(updatedUser);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
 });
 
 childrenRouter.delete('/:id', async (req, res) => {
-  const child = await child.findByIdAndRemove(req.params.id);
+  await child.findByIdAndRemove(req.params.id);
   res.status(204).end();
 });
 
