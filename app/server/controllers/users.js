@@ -6,8 +6,8 @@ const User = require('../models/user');
 
 usersRouter.get('/', async (req, res) => {
   const users = await User.find({}).populate('children', {
-    firstname: 1,
-    birthdate: 1,
+    firstName: 1,
+    birthDate: 1,
     gender: 1,
     samples: 1,
   });

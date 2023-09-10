@@ -3,14 +3,14 @@ import * as Yup from 'yup';
 
 const ChildForm = ({ onSubmit }) => {
   const initialValues = {
-    firstname: '',
-    birthdate: '',
+    firstName: '',
+    birthDate: '',
     gender: '',
   };
 
   const validationSchema = Yup.object({
-    firstname: Yup.string().required('Required'),
-    birthdate: Yup.string().required('Required'),
+    firstName: Yup.string().required('Required'),
+    birthDate: Yup.string().required('Required'),
     gender: Yup.string().required('Required'),
   });
 
@@ -22,15 +22,15 @@ const ChildForm = ({ onSubmit }) => {
     >
       <Form>
         <div>
-          <label htmlFor='firstname'>First Name</label>
-          <Field type='text' id='firstname' name='firstname' />
-          <ErrorMessage name='firstname' component='div' />
+          <label htmlFor='firstName'>Firstname</label>
+          <Field type='text' id='firstName' name='firstName' />
+          <ErrorMessage name='firstName' component='div' />
         </div>
 
         <div>
-          <label htmlFor='birthdate'>Birthdate</label>
-          <Field type='text' id='birthdate' name='birthdate' />
-          <ErrorMessage name='birthdate' component='div' />
+          <label htmlFor='birthDate'>Birthdate</label>
+          <Field type='text' id='birthDate' name='birthDate' />
+          <ErrorMessage name='birthDate' component='div' />
         </div>
 
         <div>
