@@ -1,11 +1,13 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/children';
 
+// Get all children from backend
 const getAll = () => {
   const request = axios.get(baseUrl);
   return request.then((response) => response.data);
 };
 
+// Create a new child for the given user (Initial assessment)
 const createChild = async (values, authUser) => {
   try {
     const response = await axios.post(baseUrl, {
@@ -24,6 +26,7 @@ const createChild = async (values, authUser) => {
   }
 };
 
+// Update vocab Spoken Words for a given child
 const update = (id, newObject) => {
   const request = axios.put(`${baseUrl}/${id}`, newObject);
   return request.then((response) => response.data);

@@ -18,6 +18,8 @@ const usersRouter = require('./controllers/users');
 const childrenRouter = require('./controllers/children');
 const samplesRouter = require('./controllers/samples');
 
+mongoose.set('debug', true);
+
 // ********* Connect to MongoDB Atlas ****************
 mongoose.set('strictQuery', false);
 logger.info('connecting to', config.MONGODB_URI);

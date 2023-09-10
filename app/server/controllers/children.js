@@ -3,8 +3,7 @@ const { validationResult } = require('express-validator');
 const Child = require('../models/child');
 const User = require('../models/user');
 
-// [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
-
+// Get all children
 childrenRouter.get('/', async (req, res) => {
   const children = await Child.find({}).populate('samples', {
     content: 1,
@@ -13,8 +12,12 @@ childrenRouter.get('/', async (req, res) => {
   res.json(children);
 });
 
+// [DS] Get a child by id and populate samples
 childrenRouter.get('/:id', async (req, res) => {
-  const child = await Child.findById(req.params.id);
+  const child = await Child.findById(req.params.id).populate('samples', {
+    content: 1,
+    important: 1,
+  });
   if (child) {
     res.json(child);
   } else {
@@ -22,6 +25,7 @@ childrenRouter.get('/:id', async (req, res) => {
   }
 });
 
+// Create a new child, add initial assessment results, and add child to user
 childrenRouter.post('/', async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -29,23 +33,35 @@ childrenRouter.post('/', async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { firstname, birthdate, gender, user } = req.body;
+    const {
+      firstName,
+      birthDate,
+      gender,
+      user,
+      languageLevel,
+      initialAssessment,
+      ageInMonths,
+    } = req.body;
 
     const child = new Child({
-      firstname,
-      birthdate,
+      firstName,
+      birthDate,
       gender,
+      user,
+      languageLevel,
+      initialAssessment,
+      ageInMonths,
     });
 
-    const updatedUser = await User.findOneAndUpdate(
+    await child.save();
+
+    await User.findOneAndUpdate(
       { _id: user },
       { $push: { children: child } },
       { new: true }
     );
 
-    await child.save();
-
-    res.json(updatedUser);
+    res.json(child);
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server Error');

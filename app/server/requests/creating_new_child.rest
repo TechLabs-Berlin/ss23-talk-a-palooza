@@ -1,11 +1,19 @@
+
+# Create new child
 POST http://localhost:3001/api/children
 Content-Type: application/json
 
 {
-"firstname": "Nicole", 
-"birthdate": "05/24/2020", 
-"gender": "girl", 
-"user": "64f44165b31eb4cd5a0a1008"
+"firstName": "Nicolaa", 
+"birthDate": "05/24/2020", 
+"gender": "F", 
+"user": "64f44165b31eb4cd5a0a1008",
+"languageLevel": 2
 }
 
 ###
+
+# Get Child by ID
+GET http://localhost:3001/api/children/64fe15572f2b5f5d7e75ca7d
+Content-Type: application/json
+
