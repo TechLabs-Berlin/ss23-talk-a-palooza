@@ -12,7 +12,7 @@ childrenRouter.get('/', async (req, res) => {
   res.json(children);
 });
 
-// [DS] Get a child by id and populate samples
+// Get a child by id and populate samples
 childrenRouter.get('/:id', async (req, res) => {
   const child = await Child.findById(req.params.id).populate('samples', {
     content: 1,
@@ -33,24 +33,16 @@ childrenRouter.post('/', async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      firstName,
-      birthDate,
-      gender,
-      user,
-      languageLevel,
-      initialAssessment,
-      ageInMonths,
-    } = req.body;
+    const { firstName, birthDate, gender, user, ageInMonths, vocabLogs } =
+      req.body;
 
     const child = new Child({
       firstName,
       birthDate,
       gender,
       user,
-      languageLevel,
-      initialAssessment,
       ageInMonths,
+      vocabLogs,
     });
 
     await child.save();

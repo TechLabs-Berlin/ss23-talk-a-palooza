@@ -7,7 +7,7 @@ const getAll = () => {
   return request.then((response) => response.data);
 };
 
-// Create a new child for the given user (Initial assessment)
+// Create a new child for the given user
 const createChild = async (values, authUser) => {
   try {
     const response = await axios.post(baseUrl, {

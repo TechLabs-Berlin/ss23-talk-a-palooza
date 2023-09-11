@@ -21,11 +21,16 @@ const childSchema = new mongoose.Schema(
       type: Number,
       enum: [1, 2, 3, 4, 5],
     },
-    initialAssessment: {},
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
+    vocabLogs: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'VocabLog',
+      },
+    ],
     samples: [
       {
         type: mongoose.Schema.Types.ObjectId,
