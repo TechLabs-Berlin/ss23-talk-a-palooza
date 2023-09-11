@@ -1,35 +1,26 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
-import ChildForm from './ChildForm';
 import AssessForm from './AssessForm';
-import ChildrenService from '../../services/childrenService';
+// import wordsService from '../../services/wordsService';
 
-const AddChild = ({ authUser }) => {
+const AddWords = ({ authUser }) => {
   const child = authUser.children[0];
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({});
 
   const handleSubmit = async (values, { resetForm }) => {
-    const newChild = await ChildrenService.createChild(values, authUser);
-    // resetForm();
-    setIsSubmitted(true);
-    setFormData(formData);
-    console.log('Child added:', newChild);
+    const newWord = await wordsService.createWord(values, child);
+    resetForm();
+    console.log('Word added:', newWord);
   };
 
   return (
     <View style={styles.app}>
-      <Text style={styles.title}>InitialAssessment</Text>
-      <Text>
-        Hi {authUser.displayName}! (
-        {child ? 'Child registered' : 'No child assessed yet'})
-      </Text>
-      {isSubmitted ? <AssessForm /> : <ChildForm onSubmit={handleSubmit} />}
+      <Text style={styles.title}>{child.firstName} can say...</Text>
+
+      <AssessForm onSubmit={handleSubmit} />
     </View>
   );
 };
 
-export default AddChild;
+export default AddWords;
 
 const styles = StyleSheet.create({
   app: {

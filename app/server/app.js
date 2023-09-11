@@ -17,6 +17,9 @@ const authRouter = require('./routes/auth');
 const usersRouter = require('./controllers/users');
 const childrenRouter = require('./controllers/children');
 const samplesRouter = require('./controllers/samples');
+const vocabLogsRouter = require('./controllers/vocabLogs');
+
+mongoose.set('debug', true);
 
 // ********* Connect to MongoDB Atlas ****************
 mongoose.set('strictQuery', false);
@@ -64,6 +67,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/children', childrenRouter);
 app.use('/api/samples', samplesRouter);
+app.use('/api/vocabLogs', vocabLogsRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
