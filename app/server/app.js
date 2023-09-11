@@ -21,6 +21,8 @@ const vocabLogsRouter = require('./controllers/vocabLogs');
 
 mongoose.set('debug', true);
 
+mongoose.set('debug', true);
+
 // ********* Connect to MongoDB Atlas ****************
 mongoose.set('strictQuery', false);
 logger.info('connecting to', config.MONGODB_URI);
