@@ -6,8 +6,8 @@ const Child = require('../models/child');
 
 samplesRouter.get('/', async (req, res) => {
   const samples = await Sample.find({}).populate('child', {
-    firstname: 1,
-    birthdate: 1,
+    firstName: 1,
+    birthDate: 1,
   });
   res.json(samples);
 });
