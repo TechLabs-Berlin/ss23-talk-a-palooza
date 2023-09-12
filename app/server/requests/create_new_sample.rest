@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/samples
+content-type: application/json
+
+{
+    "content": "final content",
+    "important": true,
+    "child": "64f08cd8f36625e6fd31ac20"
+}
+
+###
