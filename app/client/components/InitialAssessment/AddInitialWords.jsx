@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import AssessForm from './AssessForm';
 // import wordsService from '../../services/wordsService';
 
-const AddWords = ({ authUser }) => {
-  const child = authUser.children[0];
+const AddWords = ({ child }) => {
+  // const child = authUser.children[0];
 
   const handleSubmit = async (values, { resetForm }) => {
     const newWord = await wordsService.createWord(values, child);

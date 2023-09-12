@@ -2,10 +2,8 @@ const mongoose = require('mongoose');
 
 const vocabLogSchema = new mongoose.Schema(
   {
-    spokenWord: {
-      type: 'string',
-      required: true,
-    },
+    spokenWords: [String],
+    // required?: true, [TO BE DISCUSSED WITH DS]: Case where the child is totally non-verbal?
     intelligibilityScore: {
       type: Boolean,
     },

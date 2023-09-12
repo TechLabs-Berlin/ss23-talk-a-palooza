@@ -1,5 +1,6 @@
 const vocabLogsRouter = require('express').Router();
 const VocabLog = require('../models/vocabLog');
+const { validationResult } = require('express-validator');
 const Child = require('../models/child');
 
 // [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
@@ -23,7 +24,8 @@ vocabLogsRouter.get('/:id', async (req, res) => {
   }
 });
 
-vocabLogsRouter.post('/submit', async (req, res) => {
+// Create the initial assessment words results, and add vocabLogs to child
+vocabLogsRouter.post('/', async (req, res) => {
   try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -32,21 +34,24 @@ vocabLogsRouter.post('/submit', async (req, res) => {
 
     const { child, spokenWord, intelligibilityScore, peerComparisonScore } =
       req.body;
+    console.log(req.body);
 
     const vocabLog = new VocabLog({
       spokenWord,
       intelligibilityScore,
       peerComparisonScore,
-      child,
+      child: child,
     });
 
     await vocabLog.save();
+    console.log(vocabLog);
 
     await Child.findOneAndUpdate(
       { _id: child },
       { $push: { vocabLogs: vocabLog } },
       { new: true }
     );
+    console.log(Child);
 
     res.json(vocabLog);
   } catch (error) {

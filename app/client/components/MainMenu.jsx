@@ -1,25 +1,39 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View } from 'react-native';
+import { getChild } from '../services/childrenService';
 
-const Main = ({ child }) => {
+const MainMenu = ({ hasChild }) => {
+  const [child, setChild] = useState('');
+
+  useEffect(() => {
+    getChild(hasChild).then((response) => {
+      setChild(response);
+    });
+  }, []);
+  console.log('useEffect', child);
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Main</Text>
-      <Text style={styles.subtitle}>Hello {child}</Text>
-      <View>
-        <Text>My own path</Text>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.title}>Main</Text>
+        <Text style={styles.subtitle}>Hello {child.firstName}</Text>
+
+        <View>
+          <Link to='/dashboard'>Dashboard</Link>
+        </View>
+        <View>
+          <Link to='/exercises'>Exercises</Link>
+        </View>
+        <View>
+          <Link to='/mypath'>My own path</Link>
+        </View>
       </View>
-      <View>
-        <Text>Catalog</Text>
-      </View>
-      <View>
-        <Link to='/dashboard'>Dashboard</Link>
-      </View>
-    </View>
+    </>
   );
 };
 
-export default Main;
+export default MainMenu;
 
 const styles = StyleSheet.create({
   container: {
@@ -27,6 +41,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   title: {
     fontWeight: 'bold',
     fontSize: '2.5rem',

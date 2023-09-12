@@ -17,3 +17,6 @@ Content-Type: application/json
 GET http://localhost:3001/api/children/64fe15572f2b5f5d7e75ca7d
 Content-Type: application/json
 
+###
+
+DELETE http://localhost:3001/api/children/64ffda1f3c333e1c0d239dbc

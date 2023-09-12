@@ -1,20 +1,39 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ChildForm from './ChildForm';
 import AssessForm from './AssessForm';
 import ChildrenService from '../../services/childrenService';
+import getChild from '../../services/childrenService';
+import vocabLogsService from '../../services/vocabLogsService';
 
 const AddChild = ({ authUser }) => {
-  const child = authUser.children[0];
+  // const child = authUser.children[0];
+  const [child, setChild] = useState({});
+  const [wordsData, setWordsData] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({});
 
-  const handleSubmit = async (values, { resetForm }) => {
-    const newChild = await ChildrenService.createChild(values, authUser);
-    // resetForm();
+  const handleSubmitChildForm = async (values) => {
+    const child = await ChildrenService.createChild(values, authUser);
+    setChild(child);
     setIsSubmitted(true);
-    setFormData(formData);
-    console.log('Child added:', newChild);
+    console.log('Child added:', child);
+  };
+
+  const handleSubmitAssessForm = async (values) => {
+    // Submit child data and vocab to your API here
+    // You can access childData and values.words to send to your server
+
+    // useEffect(() => {
+    //   getChild(child).then((response) => {
+    //     setChild(response);
+    //   });
+    // }, []);
+    // console.log('useEffect', child);
+
+    const newVocab = await vocabLogsService.createVocab(values, child);
+    setWordsData(wordsData);
+    console.log('Child Data:', child);
+    console.log('Words from initial Assessment:', newVocab);
   };
 
   return (
@@ -24,7 +43,11 @@ const AddChild = ({ authUser }) => {
         Hi {authUser.displayName}! (
         {child ? 'Child registered' : 'No child assessed yet'})
       </Text>
-      {isSubmitted ? <AssessForm /> : <ChildForm onSubmit={handleSubmit} />}
+      {isSubmitted ? (
+        <AssessForm child={child} onSubmit={handleSubmitAssessForm} />
+      ) : (
+        <ChildForm onSubmit={handleSubmitChildForm} />
+      )}
     </View>
   );
 };

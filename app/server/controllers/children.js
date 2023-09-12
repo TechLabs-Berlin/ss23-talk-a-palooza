@@ -61,7 +61,7 @@ childrenRouter.post('/', async (req, res) => {
 });
 
 childrenRouter.delete('/:id', async (req, res) => {
-  await child.findByIdAndRemove(req.params.id);
+  await Child.findByIdAndRemove(req.params.id);
   res.status(204).end();
 });
 
