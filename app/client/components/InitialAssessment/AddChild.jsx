@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import ChildForm from './ChildForm';
-import AssessForm from './AssessForm';
+import AddWords from './AddWords';
 import ChildrenService from '../../services/childrenService';
 import getChild from '../../services/childrenService';
-import vocabLogsService from '../../services/vocabLogsService';
+import { createVocab } from '../../services/vocabLogsService';
 
 const AddChild = ({ authUser }) => {
-  // const child = authUser.children[0];
-  const [child, setChild] = useState({});
+  const [child, setChild] = useState(child);
   const [wordsData, setWordsData] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -20,20 +19,11 @@ const AddChild = ({ authUser }) => {
   };
 
   const handleSubmitAssessForm = async (values) => {
-    // Submit child data and vocab to your API here
-    // You can access childData and values.words to send to your server
-
-    // useEffect(() => {
-    //   getChild(child).then((response) => {
-    //     setChild(response);
-    //   });
-    // }, []);
-    // console.log('useEffect', child);
-
-    const newVocab = await vocabLogsService.createVocab(values, child);
+    console.log('AssessForm submitted with values:', values);
+    await createVocab(spokenWords.values, child);
     setWordsData(wordsData);
     console.log('Child Data:', child);
-    console.log('Words from initial Assessment:', newVocab);
+    console.log('Words from initial Assessment:', words);
   };
 
   return (
@@ -44,7 +34,7 @@ const AddChild = ({ authUser }) => {
         {child ? 'Child registered' : 'No child assessed yet'})
       </Text>
       {isSubmitted ? (
-        <AssessForm child={child} onSubmit={handleSubmitAssessForm} />
+        <AddWords child={child} />
       ) : (
         <ChildForm onSubmit={handleSubmitChildForm} />
       )}

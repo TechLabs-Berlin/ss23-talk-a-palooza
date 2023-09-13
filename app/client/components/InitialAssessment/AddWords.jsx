@@ -1,21 +1,24 @@
 import { StyleSheet, Text, View } from 'react-native';
 import AssessForm from './AssessForm';
-// import wordsService from '../../services/wordsService';
+import { createVocab } from '../../services/vocabLogsService';
+import { useState, useEffect } from 'react';
+import { getChild } from '../../services/childrenService';
 
 const AddWords = ({ child }) => {
   // const child = authUser.children[0];
+  const [words, setWords] = useState([]);
 
-  const handleSubmit = async (values, { resetForm }) => {
-    const newWord = await wordsService.createWord(values, child);
-    resetForm();
-    console.log('Word added:', newWord);
+  const handleSubmit = async (spokenWords) => {
+    await createVocab(spokenWords.values, child);
+    setWords(words);
+    console.log('Word added:', words);
   };
 
   return (
     <View style={styles.app}>
       <Text style={styles.title}>{child.firstName} can say...</Text>
 
-      <AssessForm onSubmit={handleSubmit} />
+      <AssessForm onSubmit={handleSubmit} child={child} />
     </View>
   );
 };

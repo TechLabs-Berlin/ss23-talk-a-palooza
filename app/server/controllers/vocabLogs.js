@@ -32,26 +32,24 @@ vocabLogsRouter.post('/', async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { child, spokenWord, intelligibilityScore, peerComparisonScore } =
-      req.body;
-    console.log(req.body);
+    const { child, spokenWords } = req.body;
+    console.log('from controller', req.body);
 
+    // Create a new entry in the vocabLogs collection
+    // Refer to models/vocabLog.js for the schema
     const vocabLog = new VocabLog({
-      spokenWord,
-      intelligibilityScore,
-      peerComparisonScore,
-      child: child,
+      spokenWords,
+      child,
     });
 
     await vocabLog.save();
-    console.log(vocabLog);
 
     await Child.findOneAndUpdate(
       { _id: child },
       { $push: { vocabLogs: vocabLog } },
       { new: true }
     );
-    console.log(Child);
+    console.log(vocabLog);
 
     res.json(vocabLog);
   } catch (error) {
@@ -60,27 +58,27 @@ vocabLogsRouter.post('/', async (req, res) => {
   }
 });
 
-vocabLogsRouter.delete('/:id', async (req, res) => {
-  await vocabLog.findByIdAndRemove(req.params.id);
-  res.status(204).end();
-});
+// vocabLogsRouter.delete('/:id', async (req, res) => {
+//   await vocabLog.findByIdAndRemove(req.params.id);
+//   res.status(204).end();
+// });
 
-vocabLogsRouter.put('/:id', async (req, res) => {
-  const body = req.body;
+// vocabLogsRouter.put('/:id', async (req, res) => {
+//   const body = req.body;
 
-  const vocabLog = {
-    content: body.content,
-    important: body.important,
-  };
+//   const vocabLog = {
+//     content: body.content,
+//     important: body.important,
+//   };
 
-  const updatedVocabLog = await VocabLog.findByIdAndUpdate(
-    req.params.id,
-    vocabLog,
-    {
-      new: true,
-    }
-  );
-  res.json(updatedVocabLog);
-});
+//   const updatedVocabLog = await VocabLog.findByIdAndUpdate(
+//     req.params.id,
+//     vocabLog,
+//     {
+//       new: true,
+//     }
+//   );
+//   res.json(updatedVocabLog);
+// });
 
 module.exports = vocabLogsRouter;

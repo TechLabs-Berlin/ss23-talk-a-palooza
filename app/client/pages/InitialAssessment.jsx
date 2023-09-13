@@ -1,9 +1,9 @@
-import InitialAssessment from '../pages/InitialAssessment';
-import MainMenu from '../components/MainMenu';
+import AddChild from '../components/InitialAssessment/AddChild';
+import AddWords from '../components/InitialAssessment/AddWords';
 import { AuthData } from '../services/AuthWrapper';
 import { getChild } from '../services/childrenService';
 
-const Main = () => {
+const InitialAssessment = () => {
   const { authUser } = AuthData();
   // Get the ID of the first child of the current user
   const hasChild = authUser.children[0];
@@ -16,8 +16,8 @@ const Main = () => {
   );
 
   if (!hasChild) {
-    return <InitialAssessment authUser={authUser} />;
-  } else return <MainMenu hasChild={hasChild} />;
+    return <AddChild authUser={authUser} />;
+  } else return <AddWords hasChild={hasChild} />;
 };
 
-export default Main;
+export default InitialAssessment;

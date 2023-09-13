@@ -33,6 +33,6 @@ vocabLogSchema.set('toJSON', {
   },
 });
 
-const VocabLogs = mongoose.model('VocabLog', vocabLogSchema);
+const VocabLog = mongoose.model('VocabLog', vocabLogSchema);
 
-module.exports = VocabLogs;
+module.exports = VocabLog;

@@ -2,16 +2,17 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View } from 'react-native';
 import { getChild } from '../services/childrenService';
+import AssessForm from './InitialAssessment/AssessForm';
 
 const MainMenu = ({ hasChild }) => {
-  const [child, setChild] = useState('');
+  const [child, setChild] = useState({ hasChild });
 
   useEffect(() => {
     getChild(hasChild).then((response) => {
       setChild(response);
     });
   }, []);
-  console.log('useEffect', child);
+  console.log('Fetching now from the child collection', child);
 
   return (
     <>

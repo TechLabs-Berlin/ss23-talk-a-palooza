@@ -1,7 +1,5 @@
-import { useState, useEffect } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
 
 const wordBank = [
   // Dummy until we have the right list of words
@@ -19,28 +17,16 @@ const wordBank = [
 
 const AssessForm = ({ child, onSubmit }) => {
   const initialValues = {
-    child: child.id,
-    spokenWords: [],
+    childId: child.id,
+    words: [],
   };
-  console.log(child);
+  console.log('initialValues', initialValues);
+
+  console.log('Fetching now from the child collection', child);
 
   const validationSchema = Yup.object({
-    spokenWords: Yup.array().min(1, 'Select at least one word'),
+    // words: Yup.array().min(1, 'Select at least one word'),
   });
-
-  const handleSubmit = async (values, { resetForm }) => {
-    try {
-      const { child, ...payload } = values;
-
-      // Send a POST request to your Express backend to update vocabLogs
-      await axios.post('/', payload);
-
-      // Reset the form after successful submission
-      resetForm();
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
 
   return (
     <Formik
@@ -51,11 +37,11 @@ const AssessForm = ({ child, onSubmit }) => {
       <Form>
         <div>Your child is: {child.firstName}</div>
         {/* Map over wordBank list from MongoDB and create checkboxes */}
-        {wordBank.map((spokenWord) => (
-          <div key={spokenWord}>
+        {wordBank.map((word) => (
+          <div key={word}>
             <label>
-              <Field type='checkbox' name='spokenWords' value={spokenWord} />
-              {spokenWord}
+              <Field type='checkbox' name='words' value={word} />
+              {word}
             </label>
           </div>
         ))}
