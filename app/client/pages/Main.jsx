@@ -1,6 +1,7 @@
 import InitialAssessment from '../pages/InitialAssessment';
 import MainMenu from '../components/MainMenu';
 import { AuthData } from '../services/AuthWrapper';
+import { AssessWrapper } from '../services/AssessWrapper';
 
 const Main = () => {
   const { authUser } = AuthData();
@@ -13,9 +14,11 @@ const Main = () => {
     authUser.children.length
   );
 
-  if (!hasChild) {
-    return <InitialAssessment authUser={authUser} hasChild={hasChild} />;
-  } else return <MainMenu hasChild={hasChild} />;
+  return !hasChild ? (
+    <InitialAssessment authUser={authUser} hasChild={hasChild} />
+  ) : (
+    <MainMenu hasChild={hasChild} />
+  );
 };
 
 export default Main;
