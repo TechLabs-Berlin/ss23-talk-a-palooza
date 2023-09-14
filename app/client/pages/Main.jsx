@@ -4,7 +4,7 @@ import { AuthData } from '../services/AuthWrapper';
 
 const Main = () => {
   const { authUser } = AuthData();
-  const hasChild = AuthData().children[0];
+  const hasChild = authUser.children[0];
 
   console.log(
     'Is user loggedin?',

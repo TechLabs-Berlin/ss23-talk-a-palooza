@@ -40,4 +40,4 @@ export const createVocab = async (dataToSend) => {
 //   return request.then((response) => response.data);
 // };
 // eslint-disable-next-line
-export default { getAll, createVocab, update };
+export default { getAll, createVocab };
