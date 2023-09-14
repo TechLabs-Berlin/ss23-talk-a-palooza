@@ -23,7 +23,7 @@ const MainMenu = ({ hasChild }) => {
           <Link to='/dashboard'>Dashboard</Link>
         </View>
         <View>
-          <Link to='/exercises'>Exercises</Link>
+          <Link to='/practice'>Exercises</Link>
         </View>
         <View>
           <Link to='/mypath'>My own path</Link>
