@@ -19,6 +19,14 @@ export const AuthWrapper = () => {
     user: {},
     isAuthenticated: false,
   });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate an asynchronous operation (e.g., fetching data), to allow time for oAuth to complete
+    setTimeout(() => {
+      setLoading(false); // Set loading to false when the operation is complete
+    }, 100);
+  }, []);
 
   const getUser = async () => {
     try {
@@ -45,7 +53,9 @@ export const AuthWrapper = () => {
     [authUser, logout]
   );
 
-  return (
+  return loading ? (
+    <div>Loading...</div>
+  ) : (
     <AuthContext.Provider value={authContextValue}>
       <>
         <RenderRoutes />
