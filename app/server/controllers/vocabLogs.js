@@ -5,26 +5,23 @@ const Child = require('../models/child');
 
 // [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
 
+// (OK)
 vocabLogsRouter.get('/', async (req, res) => {
-  const vocabLogs = await VocabLog.find({}).populate('child', {
-    firstName: 1,
-    birthDate: 1,
-    gender: 1,
-    ageInMonths: 1,
-  });
+  const vocabLogs = await VocabLog.find({});
   res.json(vocabLogs);
 });
 
-vocabLogsRouter.get('/:id', async (req, res) => {
-  const vocabLog = await VocabLog.findById(req.params.id);
-  if (vocabLog) {
-    res.json(vocabLog);
-  } else {
-    res.status(404).end();
-  }
-});
+// (BUGS)
+// vocabLogsRouter.get('/:id', async (req, res) => {
+//   const vocabLog = await VocabLog.findById(req.params.id);
+//   if (vocabLog) {
+//     res.json(vocabLog);
+//   } else {
+//     res.status(404).end();
+//   }
+// });
 
-// Create the initial assessment words results, and add vocabLogs to child
+// (OK) Create the initial assessment words results, and add vocabLogs to child
 vocabLogsRouter.post('/', async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -36,7 +33,6 @@ vocabLogsRouter.post('/', async (req, res) => {
     console.log('from controller', req.body);
 
     // Create a new entry in the vocabLogs collection
-    // Refer to models/vocabLog.js for the schema
     const vocabLog = new VocabLog({
       spokenWords,
       child,
@@ -44,6 +40,7 @@ vocabLogsRouter.post('/', async (req, res) => {
 
     await vocabLog.save();
 
+    // Update entry in the children collection
     await Child.findOneAndUpdate(
       { _id: child },
       { $push: { vocabLogs: vocabLog } },

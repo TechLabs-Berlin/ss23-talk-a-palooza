@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View } from 'react-native';
 import { getChild } from '../services/childrenService';
-import AssessForm from './InitialAssessment/AssessForm';
 
 const MainMenu = ({ hasChild }) => {
   const [child, setChild] = useState({ hasChild });
@@ -47,12 +46,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: '2.5rem',
     marginTop: '1em',
-    // textAlign: 'center',
   },
   subtitle: {
     fontWeight: 'bold',
     fontSize: '1.5rem',
     marginTop: '.5em',
-    // textAlign: 'center',
   },
 });

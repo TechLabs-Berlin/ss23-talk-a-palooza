@@ -1,52 +1,43 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/vocablogs';
 
-// Get all vocabs logs from backend
+// (OK) Get all vocabs logs from backend
 export const getAll = () => {
   const request = axios.get(baseUrl);
   return request.then((response) => response.data);
 };
 
-// Get all vocab logs for a given child
-export const getChildWords = (child) => {
-  const request = axios.get(`${baseUrl}/${child.id}`);
-  return request.then((response) => response.data);
-};
+// (BUGS) Get all vocab logs for a given child
+// export const getChildWords = async (child) => {
+//   const request = await axios.get(`${baseUrl}/${child.id}`);
+//   return request.then((response) => response.data);
+// };
 
-// Create vocabulary for the given child (inital assessment)
-export const createVocab = async (values, child) => {
+// (OK) Create vocabulary for the given child (inital assessment)
+export const createVocab = async (dataToSend) => {
   try {
     const response = await axios.post(baseUrl, {
-      vocabLogs: values.map((word) => ({ spokenWords: [{ word }] })),
-      child: child.id,
+      spokenWords: dataToSend.spokenWords,
+      child: dataToSend.child,
     });
 
-    console.log(response.data);
+    console.log('createVocab response:', response);
 
-    // Assuming the response is an array of objects with 'id' and 'word' properties
-    const vocabArray = response.data.map((item) => ({
-      id: item.id,
-      word: item.word,
-    }));
+    console.log('Sending data to server:', dataToSend);
 
-    // Now vocabArray will contain an array of objects with words and their IDs
-    console.log(vocabArray);
+    console.log('createVocab Response from server:', response);
 
-    console.log('Sending data to server:', { values, child });
-
-    console.log('Response from server:', response.data);
-
-    return response.data;
+    return response;
   } catch (error) {
     console.error('Error:', error);
     throw error;
   }
 };
 
-// Update vocab Spoken Words for a given child
-export const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject);
-  return request.then((response) => response.data);
-};
+// (BUGS) Update vocab Spoken Words for a given child
+// export const update = (id, newObject) => {
+//   const request = axios.put(`${baseUrl}/${id}`, newObject);
+//   return request.then((response) => response.data);
+// };
 // eslint-disable-next-line
 export default { getAll, createVocab, update };

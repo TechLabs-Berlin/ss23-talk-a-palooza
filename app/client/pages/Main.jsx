@@ -1,12 +1,10 @@
 import InitialAssessment from '../pages/InitialAssessment';
 import MainMenu from '../components/MainMenu';
 import { AuthData } from '../services/AuthWrapper';
-import { getChild } from '../services/childrenService';
 
 const Main = () => {
   const { authUser } = AuthData();
-  // Get the ID of the first child of the current user
-  const hasChild = authUser.children[0];
+  const hasChild = AuthData().children[0];
 
   console.log(
     'Is user loggedin?',
@@ -16,7 +14,7 @@ const Main = () => {
   );
 
   if (!hasChild) {
-    return <InitialAssessment authUser={authUser} />;
+    return <InitialAssessment authUser={authUser} hasChild={hasChild} />;
   } else return <MainMenu hasChild={hasChild} />;
 };
 

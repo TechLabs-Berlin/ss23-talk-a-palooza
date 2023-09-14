@@ -1,5 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useState } from 'react';
+import { createVocab } from '../../services/vocabLogsService';
 
 const wordBank = [
   // Dummy until we have the right list of words
@@ -15,14 +17,34 @@ const wordBank = [
   'jacket',
 ];
 
-const AssessForm = ({ child, onSubmit }) => {
-  const initialValues = {
-    childId: child.id,
-    words: [],
-  };
-  console.log('initialValues', initialValues);
+const AssessForm = ({ child }) => {
+  const [words, setWords] = useState({
+    child: child.id,
+    spokenWords: [],
+  });
 
-  console.log('Fetching now from the child collection', child);
+  const handleSubmit = (values) => {
+    if (Array.isArray(values.words)) {
+      // Format the spokenWords array correctly
+      const formattedSpokenWords = values.words.map((word) => ({
+        word: word,
+      }));
+
+      const dataToSend = {
+        spokenWords: formattedSpokenWords,
+        child: child.id,
+      };
+
+      setWords({ ...words, spokenWords: dataToSend.spokenWords });
+      const result = createVocab(dataToSend);
+      console.log('result', result);
+      console.log('values:' + JSON.stringify(dataToSend));
+      console.log('Words added:', dataToSend.spokenWords);
+    } else {
+      // Handle the case where values.words is not an array
+      console.error('values.words is not an array:', values.words);
+    }
+  };
 
   const validationSchema = Yup.object({
     // words: Yup.array().min(1, 'Select at least one word'),
@@ -30,9 +52,9 @@ const AssessForm = ({ child, onSubmit }) => {
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={{ words: [] }}
       validationSchema={validationSchema}
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit}
     >
       <Form>
         <div>Your child is: {child.firstName}</div>
