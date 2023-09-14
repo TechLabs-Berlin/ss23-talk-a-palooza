@@ -1,19 +1,46 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { useState, useEffect } from 'react';
 import AssessForm from './AssessForm';
+import AssessSuccess from './AssessSuccess';
 import { createVocab } from '../../services/vocabLogsService';
 
 const AddWords = ({ child }) => {
-  // const handleSubmit = async (words) => {
-  //   await createVocab(words, child);
+  const [words, setWords] = useState([]);
+  const [isAssessed, setIsAssessed] = useState(false);
 
-  //   console.log('Word added:', words);
-  // };
+  const handleWordsSubmit = (values) => {
+    if (Array.isArray(values.words)) {
+      // Format the spokenWords array correctly
+      const formattedSpokenWords = values.words.map((word) => ({
+        word: word,
+      }));
+
+      const dataToSend = {
+        spokenWords: formattedSpokenWords,
+        child: child.id,
+      };
+
+      setWords({ ...words, spokenWords: dataToSend.spokenWords });
+      const result = createVocab(dataToSend);
+      console.log('result', result);
+      console.log('values:' + JSON.stringify(dataToSend));
+      console.log('Words added:', dataToSend.spokenWords);
+      setIsAssessed(true);
+      console.log('is assessed?', isAssessed);
+    } else {
+      // Handle the case where values.words is not an array
+      console.error('values.words is not an array:', values.words);
+    }
+  };
 
   return (
     <View style={styles.app}>
       <Text style={styles.title}>{child.firstName} can say...</Text>
-
-      <AssessForm child={child} />
+      {isAssessed ? (
+        <AssessSuccess child={child} />
+      ) : (
+        <AssessForm child={child} onSubmit={handleWordsSubmit} />
+      )}
     </View>
   );
 };

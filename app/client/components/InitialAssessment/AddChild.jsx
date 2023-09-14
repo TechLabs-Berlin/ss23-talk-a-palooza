@@ -1,14 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ChildForm from './ChildForm';
 import AddWords from './AddWords';
 import ChildrenService from '../../services/childrenService';
-import getChild from '../../services/childrenService';
-import { createVocab } from '../../services/vocabLogsService';
 
 const AddChild = ({ authUser }) => {
   const [child, setChild] = useState(child);
-  const [wordsData, setWordsData] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmitChildForm = async (values) => {
@@ -16,14 +13,6 @@ const AddChild = ({ authUser }) => {
     setChild(child);
     setIsSubmitted(true);
     console.log('Child added:', child);
-  };
-
-  const handleSubmitAssessForm = async (values) => {
-    console.log('AssessForm submitted with values:', values);
-    await createVocab(spokenWords.values, child);
-    setWordsData(wordsData);
-    console.log('Child Data:', child);
-    console.log('Words from initial Assessment:', words);
   };
 
   return (
