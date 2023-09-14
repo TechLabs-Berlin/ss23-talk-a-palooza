@@ -1,14 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
 import ChildForm from './ChildForm';
+import AddWords from './AddWords';
 import ChildrenService from '../../services/childrenService';
 
 const AddChild = ({ authUser }) => {
-  const child = authUser.children[0];
+  const [child, setChild] = useState(child);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (values, { resetForm }) => {
-    const newChild = await ChildrenService.createChild(values, authUser);
-    resetForm();
-    console.log('Child added:', newChild);
+  const handleSubmitChildForm = async (values) => {
+    const child = await ChildrenService.createChild(values, authUser);
+    setChild(child);
+    setIsSubmitted(true);
+    console.log('Child added:', child);
   };
 
   return (
@@ -18,8 +22,11 @@ const AddChild = ({ authUser }) => {
         Hi {authUser.displayName}! (
         {child ? 'Child registered' : 'No child assessed yet'})
       </Text>
-
-      <ChildForm onSubmit={handleSubmit} />
+      {isSubmitted ? (
+        <AddWords child={child} />
+      ) : (
+        <ChildForm onSubmit={handleSubmitChildForm} />
+      )}
     </View>
   );
 };
