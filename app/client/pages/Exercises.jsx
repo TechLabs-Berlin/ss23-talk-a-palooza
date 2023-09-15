@@ -8,10 +8,6 @@ const Exercises = () => {
   const hasChild = authUser.children[0];
   const [child, setChild] = useState({ hasChild });
 
-  console.log(child);
-  console.log(authUser);
-  console.log(child);
-
   useEffect(() => {
     getChild(hasChild).then((child) => {
       setChild(child);
@@ -24,10 +20,12 @@ const Exercises = () => {
       <View style={styles.title}>
         <Text>Let's start</Text>
       </View>
-      <Text style={styles.helper}>Childname: {child.firstName}</Text>
+      <Text>Child: {child.firstName}</Text>
+      {/* future component for audio exercise  */}
       <View style={styles.exerciseBloc}>
         <View>
-          <Text>Exercise Image</Text>
+          <Text>Banana Image</Text>
+          <Text>Banana Text</Text>
         </View>
       </View>
     </View>
