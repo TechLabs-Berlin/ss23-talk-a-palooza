@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AuthData } from '../services/AuthWrapper';
 import { getChild } from '../services/childrenService';
+import RecordPlayAudio from '../components/Exercises/recordPlayAudio';
 
 const Exercises = () => {
   const { authUser } = AuthData();
@@ -25,6 +26,7 @@ const Exercises = () => {
       <View style={styles.exerciseBloc}>
         <View>
           <Text>Banana Image</Text>
+          <RecordPlayAudio />
           <Text>Banana Text</Text>
         </View>
       </View>
