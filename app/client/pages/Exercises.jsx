@@ -1,21 +1,35 @@
-import { AuthData } from '../services/AuthWrapper';
+import { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { AuthData } from '../services/AuthWrapper';
+import { getChild } from '../services/childrenService';
 
 const Exercises = () => {
   const { authUser } = AuthData();
-  // Get the ID of the first child of the current user
-  const child = authUser.children[0];
+  const hasChild = authUser.children[0];
+  const [child, setChild] = useState({ hasChild });
+
   console.log(child);
-  const logout = () => {
-    window.open('http://localhost:3001/api/auth/logout', '_self');
-  };
+  console.log(authUser);
+  console.log(child);
+
+  useEffect(() => {
+    getChild(hasChild).then((child) => {
+      setChild(child);
+    });
+  }, []);
+  console.log('Fetching now from the child collection', child);
 
   return (
     <View style={styles.container}>
       <View style={styles.title}>
-        <Text>Exercises</Text>
+        <Text>Let's start</Text>
       </View>
-      <Text>Username: {authUser.displayName}</Text>
+      <Text style={styles.helper}>Childname: {child.firstName}</Text>
+      <View style={styles.exerciseBloc}>
+        <View>
+          <Text>Exercise Image</Text>
+        </View>
+      </View>
     </View>
   );
 };
