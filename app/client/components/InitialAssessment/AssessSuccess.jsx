@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
-const AssessSuccess = (handleWordsSubmit) => {
+const AssessSuccess = (child) => {
   const [formData, setFormData] = useState({
-    // Initialize your form data
+    // Initialize form data
     // ...
   });
+
+  console.log(child);
 
   console.log(
     'Check if we are capturing the initial Assessment data to be sent to DS',
@@ -37,9 +39,9 @@ const AssessSuccess = (handleWordsSubmit) => {
 
   return (
     <View>
-      <Text>AssessSuccess</Text>
+      <Text>Thank you! We are looking forward to know {child.firstName}</Text>
       <Link to='/dashboard'>
-        <Button title='Submit' onClick={handleSubmit} />
+        <Button title='Start' onClick={handleSubmit} />
       </Link>
     </View>
   );

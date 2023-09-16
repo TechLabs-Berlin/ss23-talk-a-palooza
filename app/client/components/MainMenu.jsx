@@ -2,34 +2,38 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View } from 'react-native';
 import { getChild } from '../services/childrenService';
+import AddWords from './InitialAssessment/AddWords';
 
 const MainMenu = ({ hasChild }) => {
-  const [child, setChild] = useState({ hasChild });
+  const [child, setChild] = useState({});
 
   useEffect(() => {
-    getChild(hasChild).then((response) => {
-      setChild(response);
+    getChild(hasChild).then((child) => {
+      setChild(child);
     });
   }, []);
   console.log('Fetching now from the child collection', child);
 
-  return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.title}>Main</Text>
-        <Text style={styles.subtitle}>Hello {child.firstName}</Text>
+  const isAssessed = child.vocabLogs && child.vocabLogs.length > 0;
+  console.log('isAssessed?', isAssessed);
 
-        <View>
-          <Link to='/dashboard'>Dashboard</Link>
-        </View>
-        <View>
-          <Link to='/practice'>Exercises</Link>
-        </View>
-        <View>
-          <Link to='/mypath'>My own path</Link>
-        </View>
+  return isAssessed ? (
+    <View style={styles.container}>
+      <Text style={styles.title}>Main</Text>
+      <Text style={styles.subtitle}>Hello {child.firstName}</Text>
+
+      <View>
+        <Link to='/dashboard'>Dashboard</Link>
       </View>
-    </>
+      <View>
+        <Link to='/practice'>Exercises</Link>
+      </View>
+      <View>
+        <Link to='/mypath'>My own path</Link>
+      </View>
+    </View>
+  ) : (
+    <AddWords child={child} />
   );
 };
 
