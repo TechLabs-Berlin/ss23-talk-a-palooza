@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { AuthData } from '../services/AuthWrapper';
 import { getChild } from '../services/childrenService';
-import RecordPlayAudio from '../components/Exercises/recordPlayAudio';
+import RecordPlayAudio from '../components/AudioExercise/RecordPlayAudio';
 
 const Exercises = () => {
   const { authUser } = AuthData();
@@ -16,31 +15,11 @@ const Exercises = () => {
   }, []);
   console.log('Fetching now from the child collection', child);
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.title}>
-        <Text>Let's start</Text>
-      </View>
-      <Text>Child: {child.firstName}</Text>
-      {/* future component for audio exercise  */}
-      <View style={styles.exerciseBloc}>
-        <View>
-          <Text>Banana Image</Text>
-          <RecordPlayAudio />
-          <Text>Banana Text</Text>
-        </View>
-      </View>
-    </View>
-  );
+  // Todo: when audio created and saved, show button next
+  // Todo: multiple images
+  // Todo: set of exercises? Waiting for specifications
+
+  return <RecordPlayAudio child={child} />;
 };
 
 export default Exercises;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
