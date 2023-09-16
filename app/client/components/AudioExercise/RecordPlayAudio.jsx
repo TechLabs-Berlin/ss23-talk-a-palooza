@@ -32,12 +32,12 @@ const RecordPlayAudio = (child) => {
   }
 
   // Stops the recording and saves it to database directly in URI
-  // Todo: button changes states after at least one recording is made, to "Try again ?"
+  // Todo: button appears  after at least one recording is made, to "save and continue"
   // Todo: handle error and text status: "Uhoh, something went wrong. Try again?"
   async function stopRecording() {
     console.log('Stopping recording..');
     setRecording(undefined);
-    setStatus('Excellent!');
+    setStatus('Playing...');
     await recording.stopAndUnloadAsync();
     await Audio.setAudioModeAsync({
       allowsRecordingIOS: false,
