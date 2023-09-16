@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
+import BackButton from '../navigation/BackButton';
 
 const RecordPlayAudio = (child) => {
   const [recording, setRecording] = useState();
@@ -53,34 +54,37 @@ const RecordPlayAudio = (child) => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.statusText}>{`${status}`}</Text>
-      <View style={styles.exerciseBloc}>
-        <Image
-          source={require('../../assets/images/banana.jpg')}
-          style={styles.banana}
-        />
-        <Pressable
-          style={styles.button}
-          title={recording ? 'Stop Recording' : 'Start Recording'}
-          onPress={recording ? stopRecording : startRecording}
-        >
-          {recording ? (
-            <Image
-              source={require('../../assets/images/voiceLoading.gif')}
-              style={styles.image}
-            />
-          ) : (
-            <Image
-              source={require('../../assets/images/recordingIcon.png')}
-              style={styles.image}
-            />
-          )}
-        </Pressable>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.statusText}>{`${status}`}</Text>
+        <View style={styles.exerciseBloc}>
+          <Image
+            source={require('../../assets/images/banana.jpg')}
+            style={styles.banana}
+          />
+          <Pressable
+            style={styles.button}
+            title={recording ? 'Stop Recording' : 'Start Recording'}
+            onPress={recording ? stopRecording : startRecording}
+          >
+            {recording ? (
+              <Image
+                source={require('../../assets/images/voiceLoading.gif')}
+                style={styles.image}
+              />
+            ) : (
+              <Image
+                source={require('../../assets/images/recordingIcon.png')}
+                style={styles.image}
+              />
+            )}
+          </Pressable>
 
-        <Text>BANANA</Text>
+          <Text>BANANA</Text>
+        </View>
+        <BackButton />
       </View>
-    </View>
+    </>
   );
 };
 
