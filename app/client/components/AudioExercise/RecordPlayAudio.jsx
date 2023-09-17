@@ -1,16 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
 import BackButton from '../navigation/BackButton';
+import { uriToBase64 } from '../../services/audioService';
+import ExerciseBloc from './exerciseBloc';
+
+const STATUSES = {
+  START: "Let's start",
+  RECORDING: 'Recording...',
+  PLAYING: 'Playing...',
+  FINISHED: 'Playback finished',
+};
 
 const RecordPlayAudio = (child) => {
   const [recording, setRecording] = useState();
   const [status, setStatus] = useState(`Let's start`);
+  const [base64Recording, setBase64Recording] = useState('');
+  const [isPlaybackFinished, setIsPlaybackFinished] = useState(false);
 
-  // Starts the recording.
-  // Request permission from user to use microphone.
-  // Todo: Handle Errors.
+  // Checks if the playback has finished, and updates the status accordingly.
+  useEffect(() => {
+    if (isPlaybackFinished) {
+      setStatus(STATUSES.FINISHED);
+    }
+  }, [isPlaybackFinished]);
+
+  // Request permission from user to use microphone and then starts recording.
   async function startRecording() {
     try {
       console.log('Requesting permissions..');
@@ -25,46 +41,70 @@ const RecordPlayAudio = (child) => {
         Audio.RecordingOptionsPresets.HIGH_QUALITY
       );
       setRecording(recording);
-      setStatus('recording');
+      setStatus(STATUSES.RECORDING);
       console.log('Recording started');
     } catch (err) {
       console.error('Failed to start recording', err);
     }
   }
 
-  // Stops the recording and saves it to database directly in URI
-  // Todo: button appears  after at least one recording is made, to "save and continue"
-  // Todo: handle error and text status: "Uhoh, something went wrong. Try again?"
+  // Stops the recording, convert uri to base64, and plays the recording back.
   async function stopRecording() {
     console.log('Stopping recording..');
     setRecording(undefined);
-    setStatus('Playing...');
+    setStatus(STATUSES.PLAYING);
     await recording.stopAndUnloadAsync();
     await Audio.setAudioModeAsync({
       allowsRecordingIOS: false,
     });
     const uri = recording.getURI();
-    // Todo: Save the recording in the database here.
-    console.log('Recording stopped and stored at', uri);
+    console.log('Recording stopped and available at', uri);
 
-    // Playing the recording automatically after it is saved
+    try {
+      const base64String = await uriToBase64(uri);
+      console.log('Base64 String:', base64String);
+      setBase64Recording(base64String);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
+    // Playing the recording automatically, and detect when it's finished playing
     const playbackObject = new Audio.Sound();
     await playbackObject.loadAsync(uri);
+    playbackObject.setOnPlaybackStatusUpdate((status) => {
+      if (status.didJustFinish) {
+        setIsPlaybackFinished(true);
+      }
+    });
+
     await playbackObject.playAsync();
   }
 
+  // After playing back, offers to save and continue.
+  async function saveAndContinue() {
+    try {
+      // TODO: Create API endpoint saveRecording to save the base64Recording to the database
+      const response = await saveRecording(base64Recording);
+
+      if (response.success) {
+        // TODO: Implement navigation logic to continue to the next exercise
+      } else {
+        console.error('Failed to save recording in the database');
+      }
+    } catch (error) {
+      console.error('Error saving recording:', error);
+    }
+  }
+
+  // TODO: Refactor view controls in AudioControls component
   return (
     <>
       <View style={styles.container}>
-        <Text style={styles.statusText}>{`${status}`}</Text>
-        <View style={styles.exerciseBloc}>
-          <Image
-            source={require('../../assets/images/banana.jpg')}
-            style={styles.banana}
-          />
+        <BackButton />
+        <ExerciseBloc />
+        <View style={styles.controls}>
           <Pressable
             style={styles.button}
-            title={recording ? 'Stop Recording' : 'Start Recording'}
             onPress={recording ? stopRecording : startRecording}
           >
             {recording ? (
@@ -79,10 +119,14 @@ const RecordPlayAudio = (child) => {
               />
             )}
           </Pressable>
-
-          <Text>BANANA</Text>
+          {isPlaybackFinished && base64Recording ? (
+            <Pressable style={styles.save} onPress={saveAndContinue}>
+              <Text>Save and Continue</Text>
+            </Pressable>
+          ) : (
+            <Text>{`${status}`}</Text>
+          )}
         </View>
-        <BackButton />
       </View>
     </>
   );
@@ -96,7 +140,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 10,
   },
-  exerciseBloc: {
+  controls: {
     alignItems: 'center',
   },
   button: {
@@ -104,18 +148,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 400,
   },
+  save: {
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+    margin: 10,
+  },
   image: {
     width: 100,
     height: 100,
-  },
-  banana: {
-    width: 400,
-    height: 317,
-  },
-  statusText: {
-    fontSize: '1.5rem',
-    marginTop: '1em',
-    marginBottom: '2em',
-    textAlign: 'center',
   },
 });
