@@ -18,6 +18,7 @@ const usersRouter = require('./controllers/users');
 const childrenRouter = require('./controllers/children');
 const samplesRouter = require('./controllers/samples');
 const vocabLogsRouter = require('./controllers/vocabLogs');
+const recordingsRouter = require('./controllers/recordings');
 
 mongoose.set('debug', true);
 
@@ -70,6 +71,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/children', childrenRouter);
 app.use('/api/samples', samplesRouter);
 app.use('/api/vocabLogs', vocabLogsRouter);
+app.use('/api', recordingsRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

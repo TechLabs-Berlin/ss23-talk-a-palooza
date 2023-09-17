@@ -1,17 +1,15 @@
 const vocabLogsRouter = require('express').Router();
-const VocabLog = require('../models/vocabLog');
+const { VocabLog } = require('../models/vocabLog');
 const { validationResult } = require('express-validator');
 const Child = require('../models/child');
 
-// [To TEST]: Api endponts with REST. Also reduce to minimum needed API endpoints
-
-// (OK)
+// [x] GET ALL
 vocabLogsRouter.get('/', async (req, res) => {
   const vocabLogs = await VocabLog.find({});
   res.json(vocabLogs);
 });
 
-// (BUGS)
+// BUG: GET by Id
 // vocabLogsRouter.get('/:id', async (req, res) => {
 //   const vocabLog = await VocabLog.findById(req.params.id);
 //   if (vocabLog) {
@@ -21,7 +19,7 @@ vocabLogsRouter.get('/', async (req, res) => {
 //   }
 // });
 
-// (OK) Create the initial assessment words results, and add vocabLogs to child
+// [x] 5 - POST by Child Id (Create the initial assessment words results, and add vocabLogs to child)
 vocabLogsRouter.post('/', async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -55,11 +53,7 @@ vocabLogsRouter.post('/', async (req, res) => {
   }
 });
 
-// vocabLogsRouter.delete('/:id', async (req, res) => {
-//   await vocabLog.findByIdAndRemove(req.params.id);
-//   res.status(204).end();
-// });
-
+// TODO: PUT by Child Id
 // vocabLogsRouter.put('/:id', async (req, res) => {
 //   const body = req.body;
 
@@ -76,6 +70,11 @@ vocabLogsRouter.post('/', async (req, res) => {
 //     }
 //   );
 //   res.json(updatedVocabLog);
+// });
+
+// vocabLogsRouter.delete('/:id', async (req, res) => {
+//   await vocabLog.findByIdAndRemove(req.params.id);
+//   res.status(204).end();
 // });
 
 module.exports = vocabLogsRouter;

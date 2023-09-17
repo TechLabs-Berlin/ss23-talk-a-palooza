@@ -1,11 +1,24 @@
 const mongoose = require('mongoose');
 
+const recordingSchema = new mongoose.Schema(
+  {
+    binaryAudioData: {
+      type: Buffer, // Store recording data as a Buffer
+      required: true,
+    },
+    intelligibilityScore: Boolean,
+    // TODO: download mongoose-float npm package to use Float type
+    is_recognized: Number,
+  },
+  { timestamps: true }
+);
+
 const vocabLogSchema = new mongoose.Schema(
   {
     spokenWords: [
       {
         word: String,
-        intelligibilityScore: Boolean,
+        recordings: [recordingSchema],
         peerComparisonScore: {
           type: Number,
           enum: [1, 2, 3, 4, 5],
@@ -33,5 +46,6 @@ vocabLogSchema.set('toJSON', {
 });
 
 const VocabLog = mongoose.model('VocabLog', vocabLogSchema);
+const Recording = mongoose.model('Recording', recordingSchema);
 
-module.exports = VocabLog;
+module.exports = { VocabLog, Recording };

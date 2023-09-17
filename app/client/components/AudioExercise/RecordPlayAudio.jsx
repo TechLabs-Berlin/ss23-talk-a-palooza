@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
 import BackButton from '../navigation/BackButton';
-import { uriToBase64 } from '../../services/audioService';
+import { uriToBase64, saveRecording } from '../../services/recordingService';
 import ExerciseBloc from './exerciseBloc';
 
 const STATUSES = {
@@ -83,7 +83,6 @@ const RecordPlayAudio = (child) => {
   // After playing back, offers to save and continue.
   async function saveAndContinue() {
     try {
-      // TODO: Create API endpoint saveRecording to save the base64Recording to the database
       const response = await saveRecording(base64Recording);
 
       if (response.success) {
