@@ -1,0 +1,31 @@
+POST http://localhost:3001/api/vocabLogs
+content-type: application/json
+
+{
+"spokenWords":[
+    {
+    "word":"apple"
+    },
+{
+"word":"banana"
+}
+],
+"child":"65013686cdee43b25a88d802"
+}
+
+###
+
+vocabService:
+body: 
+ {
+  data: {
+    spokenWords: [ [Object], [Object], [Object] ],
+    child: '6502d341f929a64c7757c804'
+  }
+}
+
+REST tesr:
+Body:   {
+  spokenWords: [ { word: 'apple' }, { word: 'banana' } ],
+  child: '65013686cdee43b25a88d802'
+}

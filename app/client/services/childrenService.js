@@ -2,13 +2,24 @@ import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/children';
 
 // Get all children from backend
-const getAll = () => {
-  const request = axios.get(baseUrl);
+export const getAll = async () => {
+  const request = await axios.get(baseUrl);
   return request.then((response) => response.data);
 };
 
+// Get a specific child by ID
+export const getChild = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/${id}`);
+    console.log('get child by id:', response.data);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // Create a new child for the given user
-const createChild = async (values, authUser) => {
+export const createChild = async (values, authUser) => {
   try {
     const response = await axios.post(baseUrl, {
       ...values,
@@ -27,9 +38,9 @@ const createChild = async (values, authUser) => {
 };
 
 // Update vocab Spoken Words for a given child
-const update = (id, newObject) => {
+export const update = (id, newObject) => {
   const request = axios.put(`${baseUrl}/${id}`, newObject);
   return request.then((response) => response.data);
 };
 // eslint-disable-next-line
-export default { getAll, createChild, update };
+export default { getAll, createChild, getChild, update };

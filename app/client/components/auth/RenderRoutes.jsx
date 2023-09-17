@@ -4,6 +4,7 @@ import { AuthData } from '../../services/AuthWrapper';
 import StartScreen from '../../pages/StartScreen';
 import Main from '../../pages/Main';
 import Dashboard from '../../pages/Dashboard';
+import Exercises from '../../pages/Exercises';
 
 const userPath = [
   {
@@ -19,6 +20,13 @@ const userPath = [
     element: <StartScreen />,
     isRestricted: false,
     navigate: <Navigate replace to='/' />,
+  },
+  {
+    path: '/practice',
+    component: 'Exercises',
+    element: <Exercises />,
+    isRestricted: true,
+    navigate: <Navigate replace to='/start' />,
   },
   {
     path: '/dashboard',

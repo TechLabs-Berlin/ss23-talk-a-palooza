@@ -1,25 +1,43 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View } from 'react-native';
+import { getChild } from '../services/childrenService';
+import AddWords from './InitialAssessment/AddWords';
 
-const Main = ({ child }) => {
-  return (
+const MainMenu = ({ hasChild }) => {
+  const [child, setChild] = useState({});
+
+  useEffect(() => {
+    getChild(hasChild).then((child) => {
+      setChild(child);
+    });
+  }, []);
+  console.log('Fetching now from the child collection', child);
+
+  const isAssessed = child.vocabLogs && child.vocabLogs.length > 0;
+  console.log('isAssessed?', isAssessed);
+
+  return isAssessed ? (
     <View style={styles.container}>
       <Text style={styles.title}>Main</Text>
-      <Text style={styles.subtitle}>Hello {child}</Text>
-      <View>
-        <Text>My own path</Text>
-      </View>
-      <View>
-        <Text>Catalog</Text>
-      </View>
+      <Text style={styles.subtitle}>Hello {child.firstName}</Text>
+
       <View>
         <Link to='/dashboard'>Dashboard</Link>
       </View>
+      <View>
+        <Link to='/practice'>Exercises</Link>
+      </View>
+      <View>
+        <Link to='/mypath'>My own path</Link>
+      </View>
     </View>
+  ) : (
+    <AddWords child={child} />
   );
 };
 
-export default Main;
+export default MainMenu;
 
 const styles = StyleSheet.create({
   container: {
@@ -27,16 +45,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   title: {
     fontWeight: 'bold',
     fontSize: '2.5rem',
     marginTop: '1em',
-    // textAlign: 'center',
   },
   subtitle: {
     fontWeight: 'bold',
     fontSize: '1.5rem',
     marginTop: '.5em',
-    // textAlign: 'center',
   },
 });

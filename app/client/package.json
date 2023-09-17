@@ -9,9 +9,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^19.0.0",
     "axios": "^1.5.0",
     "expo": "~49.0.8",
+    "expo-av": "^13.6.0",
+    "expo-image": "^1.5.1",
     "expo-status-bar": "~1.6.0",
     "formik": "^2.4.4",
     "react": "18.2.0",
@@ -25,7 +28,8 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "babel-plugin-react-native-web": "^0.19.8"
   },
   "private": true
 }

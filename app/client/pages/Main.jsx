@@ -1,11 +1,11 @@
-import AddChild from '../components/InitialAssessment/AddChild';
+import InitialAssessment from '../pages/InitialAssessment';
 import MainMenu from '../components/MainMenu';
 import { AuthData } from '../services/AuthWrapper';
+import { AssessWrapper } from '../services/AssessWrapper';
 
 const Main = () => {
   const { authUser } = AuthData();
-  // Get the ID of the first child of the current user
-  const child = authUser.children[0];
+  const hasChild = authUser.children[0];
 
   console.log(
     'Is user loggedin?',
@@ -14,9 +14,11 @@ const Main = () => {
     authUser.children.length
   );
 
-  if (!child) {
-    return <AddChild authUser={authUser} />;
-  } else return <MainMenu child={child} />;
+  return !hasChild ? (
+    <InitialAssessment authUser={authUser} hasChild={hasChild} />
+  ) : (
+    <MainMenu hasChild={hasChild} />
+  );
 };
 
 export default Main;
