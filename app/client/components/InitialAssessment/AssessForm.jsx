@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+// TODO: Replace this with the list of words provided by DS
 const wordBank = [
-  // Dummy until we have the right list of words
   'apple',
   'banana',
   'cat',
