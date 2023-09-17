@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/vocabLogs
+POST http://localhost:3001/api/vocablogs
 content-type: application/json
 
 {

@@ -70,7 +70,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/children', childrenRouter);
 app.use('/api/samples', samplesRouter);
-app.use('/api/vocabLogs', vocabLogsRouter);
+app.use('/api/vocablogs', vocabLogsRouter);
 app.use('/api', recordingsRouter);
 
 app.use(middleware.unknownEndpoint);

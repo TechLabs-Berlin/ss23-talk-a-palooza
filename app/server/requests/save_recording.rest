@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/vocablog/650475c6586ec6e930373425/spokenWords/0/recordings
+POST http://localhost:3001/api/vocablogs/650475c6586ec6e930373425/spokenWords/0/recordings
 content-type: application/json
 
 {
