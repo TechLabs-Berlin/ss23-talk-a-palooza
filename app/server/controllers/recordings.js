@@ -5,10 +5,10 @@ const { VocabLog, Recording } = require('../models/vocabLog');
 
 // Route to handle saving base64 recording data
 recordingsRouter.post(
-  '/vocablog/:id/spokenWords/:spokenWordsIndex/recordings',
+  '/vocablogs/:id/spokenWords/:spokenWordsIndex/recordings',
   async (req, res) => {
     try {
-      const { vocabLogId, spokenWordsIndex } = req.params;
+      const { id, spokenWordsIndex } = req.params;
       const { binaryAudioData } = req.body;
 
       const audioBuffer = Buffer.from(binaryAudioData, 'base64'); // Decode the base64 data to binary
@@ -18,7 +18,7 @@ recordingsRouter.post(
       binaryAudioData.subtype = 0x02; // 0x02 corresponds to subtype "audio" in MongoDB
 
       // Find the vocabLog document by ID
-      const vocabLog = await VocabLog.findById(vocabLogId);
+      const vocabLog = await VocabLog.findById(id);
 
       if (!vocabLog) {
         return res.status(404).json({ error: 'VocabLog not found' });
