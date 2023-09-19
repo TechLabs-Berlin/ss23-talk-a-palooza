@@ -1,5 +1,5 @@
 const vocabLogsRouter = require('express').Router();
-const { VocabLog } = require('../models/vocabLog');
+const VocabLog = require('../models/vocabLog');
 const { validationResult } = require('express-validator');
 const Child = require('../models/child');
 

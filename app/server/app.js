@@ -71,7 +71,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/children', childrenRouter);
 app.use('/api/samples', samplesRouter);
 app.use('/api/vocablogs', vocabLogsRouter);
-app.use('/api', recordingsRouter);
+app.use('/api/recordings', recordingsRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
