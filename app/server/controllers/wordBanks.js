@@ -1,12 +1,12 @@
-const wordBankRouter = require('express').Router();
+const wordBanksRouter = require('express').Router();
 const Word = require('../models/wordBank');
 
-wordBankRouter.get('/', async (req, res) => {
+wordBanksRouter.get('/', async (req, res) => {
   const words = await Word.find({});
   res.json(words);
 });
 
-wordBankRouter.get('/:id', async (req, res) => {
+wordBanksRouter.get('/:id', async (req, res) => {
   const word = await Word.findById(req.params.id);
   if (word) {
     res.json(word);
@@ -15,13 +15,13 @@ wordBankRouter.get('/:id', async (req, res) => {
   }
 });
 
-wordBankRouter.put('/:id', async (req, res) => {
+wordBanksRouter.put('/:id', async (req, res) => {
   const body = req.body;
 
   const word = {
     name: body.name,
     category: body.category,
-    exerciseType: body.exerciseType,
+    is_audio: body.is_audio,
     wordLevel: body.wordLevel,
     image: body.image,
   };
@@ -32,4 +32,4 @@ wordBankRouter.put('/:id', async (req, res) => {
   res.json(updatedWord);
 });
 
-module.exports = wordBankRouter;
+module.exports = wordBanksRouter;
