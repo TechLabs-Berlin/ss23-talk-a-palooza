@@ -4,11 +4,10 @@ content-type: application/json
 {
 "spokenWords":[
     {
-    "word":"apple"
-    },
-{
-"word":"banana"
-}
+    "wordBankId":"4",
+    "name":"banana",
+    "peerComparisonScore":"2"
+    }
 ],
 "child":"65013686cdee43b25a88d802"
 }

@@ -10,12 +10,10 @@ const wordBankSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: true,
+    // required: true,
   },
-  exerciseType: {
-    type: Number,
-    enum: [1, 2],
-    required: true,
+  is_audio: {
+    type: Boolean,
   },
   wordLevel: {
     type: Number,

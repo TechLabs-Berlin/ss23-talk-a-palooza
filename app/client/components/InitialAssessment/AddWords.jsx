@@ -2,21 +2,24 @@ import { useState } from 'react';
 import AssessForm from './AssessForm';
 import AssessSuccess from './AssessSuccess';
 import { createVocab } from '../../services/vocabLogsService';
+import wordBank from '../../db/wordBank';
 
 const AddWords = ({ child }) => {
   const [words, setWords] = useState([]);
+  const [spokenWords, setSpokenWords] = useState([]);
   const [isAssessed, setIsAssessed] = useState(false);
 
   const handleWordsSubmit = (values) => {
     if (Array.isArray(values.words)) {
       // Format the spokenWords array correctly
-      const formattedSpokenWords = values.words.map((word) => ({
-        word: word,
+      const spokenWords = values.words.map((name) => ({
+        name: wordBank.find((item) => item.name === name).name,
+        id: wordBank.find((item) => item.name === name).id,
       }));
 
       const dataToSend = {
-        spokenWords: formattedSpokenWords,
-        child: child.id,
+        spokenWords,
+        child,
       };
 
       setWords({ ...words, spokenWords: dataToSend.spokenWords });
@@ -25,14 +28,16 @@ const AddWords = ({ child }) => {
       console.log('values:' + JSON.stringify(dataToSend));
       console.log('Words added:', dataToSend.spokenWords);
       setIsAssessed(true);
+      setSpokenWords(dataToSend.spokenWords);
+      console.log('spokenWords', spokenWords);
       console.log('is assessed?', isAssessed);
     } else {
-      console.error('values.words is not an array:', values.words);
+      console.error('not an array:', spokenWords);
     }
   };
 
   return isAssessed ? (
-    <AssessSuccess child={child} />
+    <AssessSuccess child={child} spokenWords={spokenWords} />
   ) : (
     <AssessForm child={child} onSubmit={handleWordsSubmit} />
   );

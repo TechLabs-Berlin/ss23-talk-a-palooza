@@ -1,5 +1,5 @@
 import axios from 'axios';
-const baseUrl = 'http://localhost:3001/api/save-recording';
+const baseUrl = 'http://localhost:3001/api/recordings';
 
 export const uriToBase64 = async (uri) => {
   try {
@@ -18,21 +18,26 @@ export const uriToBase64 = async (uri) => {
     const textEncoder = new TextEncoder();
     const base64String = btoa(String.fromCharCode.apply(null, uint8Array));
 
-    return base64String;
     console.log('base64String', base64String);
+    return base64String;
   } catch (error) {
     console.error('Error fetching or converting blob:', error);
     throw error;
   }
 };
 
-export const saveRecording = async (base64Data, child, wordId, vocabLogId) => {
+export const saveRecording = async (
+  Base64Recording,
+  child,
+  wordId,
+  vocabLog
+) => {
   try {
-    const response = await axios.post('/', {
-      base64Data: base64Data,
-      child,
-      wordId,
-      vocabLogId,
+    const response = await axios.post(baseUrl, {
+      binaryAudioData: Base64Recording,
+      // child,
+      // wordId,
+      vocabLog,
     });
     console.log('from service', response);
 

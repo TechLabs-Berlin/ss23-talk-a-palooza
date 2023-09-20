@@ -1,20 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
+import wordBank from '../../db/wordBank';
 import * as Yup from 'yup';
-
-// TODO: Replace this with the list of words provided by DS
-const wordBank = [
-  'apple',
-  'banana',
-  'cat',
-  'dog',
-  'elephant',
-  'fish',
-  'grape',
-  'hamburger',
-  'iguana',
-  'jacket',
-];
 
 const AssessForm = ({ child, onSubmit }) => {
   const validationSchema = Yup.object({
@@ -30,13 +17,13 @@ const AssessForm = ({ child, onSubmit }) => {
       >
         <Form>
           <Text style={styles.title}>{child.firstName} can say...</Text>
-          <View style={(styles.flex, styles.bloc)}>
+          <View style={[styles.flex, styles.bloc]}>
             {/* Map over wordBank list */}
             {wordBank.map((word) => (
-              <View key={word} style={{ padding: 5 }}>
+              <View key={word._id} style={{ padding: 5 }}>
                 <Text>
-                  <Field type='checkbox' name='words' value={word} />
-                  {word}
+                  <Field type='checkbox' name='words' value={word.name} />
+                  {word.name}
                 </Text>
               </View>
             ))}
