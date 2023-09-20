@@ -13,9 +13,7 @@ const Exercises = () => {
       setChild(child);
     });
   }, []);
-  console.log('Fetching now from the child collection', child);
 
-  // TODO: when recording created and saved, show button next
   // TODO: multiple images
   // TODO: set of exercises? Waiting for specifications
 

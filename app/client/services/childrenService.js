@@ -11,7 +11,7 @@ export const getAll = async () => {
 export const getChild = async (id) => {
   try {
     const response = await axios.get(`${baseUrl}/${id}`);
-    console.log('get child by id:', response.data);
+    console.log('Child details:', response.data);
     return response.data;
   } catch (error) {
     console.log(error);

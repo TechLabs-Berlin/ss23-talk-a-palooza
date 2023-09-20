@@ -5,17 +5,16 @@ import { getChild } from '../services/childrenService';
 import AddWords from './InitialAssessment/AddWords';
 
 const MainMenu = ({ hasChild }) => {
-  const [child, setChild] = useState({});
+  const [child, setChild] = useState(hasChild);
 
   useEffect(() => {
     getChild(hasChild).then((child) => {
       setChild(child);
     });
   }, []);
-  console.log('Fetching now from the child collection', child);
 
   const isAssessed = child.vocabLogs && child.vocabLogs.length > 0;
-  console.log('isAssessed?', isAssessed);
+  console.log('Child been assessed?', isAssessed);
 
   return isAssessed ? (
     <View style={styles.container}>

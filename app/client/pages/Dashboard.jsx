@@ -1,12 +1,20 @@
 import { AuthData } from '../services/AuthWrapper';
 import TestConnect from '../components/TestConnect';
 import { StyleSheet, Text, View } from 'react-native';
+import { useState, useEffect } from 'react';
+import { getChild } from '../services/childrenService';
 
 const Dashboard = () => {
   const { authUser } = AuthData();
-  // Get the ID of the first child of the current user
-  const child = authUser.children[0];
-  console.log(child);
+  const hasChild = authUser.children[0];
+  const [child, setChild] = useState({});
+
+  useEffect(() => {
+    getChild(hasChild).then((child) => {
+      setChild(child);
+    });
+  }, []);
+
   const logout = () => {
     window.open('http://localhost:3001/api/auth/logout', '_self');
   };

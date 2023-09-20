@@ -34,9 +34,9 @@ export const AuthWrapper = () => {
       const { data } = await axios.get(url, { withCredentials: true });
       const user = data.user;
       setAuthUser({ ...user, isAuthenticated: true });
-      console.log(user);
+      console.log('User is authenticated:', user);
     } catch (err) {
-      console.log(err);
+      console.log('Eror when authenticating user', err);
     }
   };
   useEffect(() => {
