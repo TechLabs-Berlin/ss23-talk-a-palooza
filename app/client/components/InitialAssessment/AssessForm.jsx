@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Formik, Field, Form } from 'formik';
-import wordBank from '../../db/wordBank';
+import testWords from '../../db/assessmentWordList';
 import * as Yup from 'yup';
 
 const AssessForm = ({ child, onSubmit }) => {
@@ -18,9 +18,9 @@ const AssessForm = ({ child, onSubmit }) => {
         <Form>
           <Text style={styles.title}>{child.firstName} can say...</Text>
           <View style={[styles.flex, styles.bloc]}>
-            {/* Map over wordBank list */}
-            {wordBank.map((word) => (
-              <View key={word._id} style={{ padding: 5 }}>
+            {/* Map over testWords list */}
+            {testWords.map((word) => (
+              <View key={word.wordBankId} style={{ padding: 5 }}>
                 <Text>
                   <Field type='checkbox' name='words' value={word.name} />
                   {word.name}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import AssessForm from './AssessForm';
 import AssessSuccess from './AssessSuccess';
 import { createVocab } from '../../services/vocabLogsService';
-import wordBank from '../../db/wordBank';
+import testWords from '../../db/assessmentWordList';
 
 const AddWords = ({ child }) => {
   const [words, setWords] = useState([]);
@@ -13,8 +13,8 @@ const AddWords = ({ child }) => {
     if (Array.isArray(values.words)) {
       // Format the spokenWords array correctly
       const spokenWords = values.words.map((name) => ({
-        name: wordBank.find((item) => item.name === name).name,
-        id: wordBank.find((item) => item.name === name).id,
+        name: testWords.find((item) => item.name === name).name,
+        id: testWords.find((item) => item.name === name).id,
       }));
 
       const dataToSend = {

@@ -1,6 +1,6 @@
-const wordBank = [
+const testWords = [
   {
-    _id: '65098b15cf10e572d3b53eed',
+    wordBankId: '65098b15cf10e572d3b53eed',
     category: 'food',
     image:
       'https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_960_720.jpg',
@@ -10,7 +10,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eef',
+    wordBankId: '65098b99cf10e572d3b53eef',
     category: 'food',
     name: 'banana',
     image:
@@ -20,7 +20,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eeg',
+    wordBankId: '65098b99cf10e572d3b53eeg',
     category: 'food',
     name: 'apple',
     image:
@@ -30,7 +30,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eeh',
+    wordBankId: '65098b99cf10e572d3b53eeh',
     category: 'food',
     name: 'grape',
     image:
@@ -40,7 +40,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eei',
+    wordBankId: '65098b99cf10e572d3b53eei',
     category: 'food',
     name: 'fish',
     image:
@@ -50,7 +50,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eej',
+    wordBankId: '65098b99cf10e572d3b53eej',
     category: 'animals',
     name: 'cat',
     image:
@@ -60,7 +60,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eek',
+    wordBankId: '65098b99cf10e572d3b53eek',
     category: 'animals',
     name: 'dog',
     image:
@@ -70,7 +70,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eel',
+    wordBankId: '65098b99cf10e572d3b53eel',
     category: 'animals',
     name: 'elephant',
     image:
@@ -80,7 +80,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53eem',
+    wordBankId: '65098b99cf10e572d3b53eem',
     category: 'animals',
     name: 'iguana',
     image:
@@ -90,7 +90,7 @@ const wordBank = [
     __v: 0,
   },
   {
-    _id: '65098b99cf10e572d3b53een',
+    wordBankId: '65098b99cf10e572d3b53een',
     category: 'clothing',
     name: 'jacket',
     image:
@@ -101,4 +101,4 @@ const wordBank = [
   },
 ];
 
-export default wordBank;
+export default testWords;
