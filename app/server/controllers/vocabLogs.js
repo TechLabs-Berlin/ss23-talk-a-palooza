@@ -30,12 +30,6 @@ vocabLogsRouter.post('/', async (req, res) => {
     const { child, spokenWords } = req.body;
     console.log('from controller', req.body);
 
-    // const spokenWords = new SpokenWords({
-    //   recordings: [], // Initialize the recordings array
-    //   peerComparisonScore: 1, // Example value
-    //   wordBank: someWordBankId, // Associate with a specific WordBank document
-    // });
-
     // Create a new entry in the vocabLogs collection
     const vocabLog = new VocabLog({
       spokenWords,
