@@ -45,7 +45,7 @@ export const saveRecording = async (
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    return response.data;
+    return { success: true };
   } catch (error) {
     console.error('Error saving recording:', error);
     throw error;
