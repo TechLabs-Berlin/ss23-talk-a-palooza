@@ -31,9 +31,36 @@ recordingsRouter.post('/', async (req, res) => {
     return res
       .status(201)
       .json({ message: 'Recording added successfully', recording });
+
+    //TODO: UPDATE the Python server URL
+    // // Send the recording data to the Speech Analysis server
+    // const SpeechAnalysisUrl = 'http://python-server-url';
+    // try {
+    //   const DLResponse = await axios.post(SpeechAnalysisUrl, {
+    //     recordingData: binaryAudioData,
+    //   });
+
+    //   console.log('Speech Analysis Server Response:', DLResponse.data);
+    //  TOTEST Update the recording document with the intelligibility score and isRecognized
+    //   recording.is_recognized = DLResponse.data.is_recognized;
+    //   recording.intelligibilityScore = DLResponse.data.intelligibilityScore;
+
+    //   // Save the updated Recording document
+    // await recording.save();
+
+    //   return res.status(201).json({
+    //     message: 'Recording added successfully',
+    //     recording,
+    //   });
+    // } catch (error) {
+    //   console.error('Error', error);
+    //   return res.status(500).json({
+    //     error: 'Error sending recording to Speech Analysis server',
+    //   });
+    // }
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error(error.message);
+    res.status(500).send('Server Error');
   }
 });
 
