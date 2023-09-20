@@ -1,5 +1,4 @@
 import { AuthData } from '../services/AuthWrapper';
-import TestConnect from '../components/TestConnect';
 import { StyleSheet, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import { getChild } from '../services/childrenService';
@@ -38,7 +37,6 @@ const Dashboard = () => {
         <li>Username: {authUser.displayName}</li>
         <button onClick={logout}>Logout</button>
       </ul>
-      <TestConnect child={child} />
     </View>
   );
 };
