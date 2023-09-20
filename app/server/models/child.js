@@ -31,12 +31,6 @@ const childSchema = new mongoose.Schema(
         ref: 'VocabLog',
       },
     ],
-    samples: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Sample',
-      },
-    ],
   },
   { timestamps: true },
   opts

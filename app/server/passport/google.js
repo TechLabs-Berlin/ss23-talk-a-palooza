@@ -12,7 +12,7 @@ const googleLogin = new GoogleStrategy(
   },
   async (accessToken, refreshToken, profile, done) => {
     console.log(profile);
-    const id = profile.id;
+    const googleId = profile.id;
     const email = profile.emails[0].value;
     const displayName = profile.displayName;
     const firstName = profile.name.givenName;
@@ -26,7 +26,7 @@ const googleLogin = new GoogleStrategy(
 
     if (!currentUser) {
       const newUser = await UserService.addGoogleUser({
-        id,
+        googleId,
         email,
         firstName,
         lastName,
@@ -48,13 +48,5 @@ const googleLogin = new GoogleStrategy(
     return done(null, currentUser);
   }
 );
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  done(null, currentUser);
-});
 
 passport.use(googleLogin);

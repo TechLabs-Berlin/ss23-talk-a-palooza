@@ -1,10 +1,17 @@
 const addGoogleUser =
   (User) =>
-  ({ id, email, firstName, displayName, lastName, profilePhoto }) => {
-    console.log(id, email, displayName, firstName, lastName, profilePhoto);
+  ({ googleId, email, firstName, displayName, lastName, profilePhoto }) => {
+    console.log(
+      googleId,
+      email,
+      displayName,
+      firstName,
+      lastName,
+      profilePhoto
+    );
 
     const user = new User({
-      id,
+      googleId,
       email,
       firstName,
       displayName,

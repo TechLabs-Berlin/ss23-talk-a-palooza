@@ -5,18 +5,14 @@ const User = require('../models/user');
 
 // Get all children
 childrenRouter.get('/', async (req, res) => {
-  const children = await Child.find({}).populate('samples', {
-    content: 1,
-    important: 1,
-  });
+  const children = await Child.find({});
   res.json(children);
 });
 
-// Get a child by id and populate samples
+// Get a child by id and populate spokenWords
 childrenRouter.get('/:id', async (req, res) => {
-  const child = await Child.findById(req.params.id).populate('samples', {
-    content: 1,
-    important: 1,
+  const child = await Child.findById(req.params.id).populate('vocabLogs', {
+    spokenWords: 1,
   });
   if (child) {
     res.json(child);
@@ -69,8 +65,7 @@ childrenRouter.put('/:id', async (req, res) => {
   const body = req.body;
 
   const child = {
-    content: body.content,
-    important: body.important,
+    firstName: body.firstName,
   };
 
   Child.findByIdAndUpdate(req.params.id, child, { new: true })
