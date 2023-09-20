@@ -19,6 +19,7 @@ const childrenRouter = require('./controllers/children');
 const samplesRouter = require('./controllers/samples');
 const vocabLogsRouter = require('./controllers/vocabLogs');
 const recordingsRouter = require('./controllers/recordings');
+const wordBanksRouter = require('./controllers/wordBanks');
 
 mongoose.set('debug', true);
 
@@ -72,6 +73,7 @@ app.use('/api/children', childrenRouter);
 app.use('/api/samples', samplesRouter);
 app.use('/api/vocablogs', vocabLogsRouter);
 app.use('/api/recordings', recordingsRouter);
+app.use('/api/wordbank', wordBanksRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
