@@ -9,8 +9,12 @@ const AssessSuccess = ({ child, spokenWords }) => {
   return (
     <View>
       <Text>Thank you! We are looking forward to know {child.firstName}</Text>
-      <Link to='/dashboard'>
-        <Button title='Start' onClick={handleSubmit} words={spokenWords} />
+      <Link to='/practice'>
+        <Button
+          title='Start Exercises'
+          onClick={handleSubmit}
+          words={spokenWords}
+        />
       </Link>
     </View>
   );
