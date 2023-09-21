@@ -32,8 +32,8 @@ vocabLogsRouter.post('/', async (req, res) => {
 
     // Create a new entry in the vocabLogs collection
     const vocabLog = new VocabLog({
-      spokenWords,
-      child,
+      spokenWords: spokenWords,
+      child: child,
     });
 
     console.log('vocabLog', vocabLog);

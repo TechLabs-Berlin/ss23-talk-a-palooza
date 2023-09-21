@@ -3,7 +3,11 @@ import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
 import BackButton from '../navigation/BackButton';
-import { uriToBase64, saveRecording } from '../../services/recordingService';
+import {
+  uriToBase64,
+  saveRecording,
+  sendAudioToDL,
+} from '../../services/recordingService';
 import ExerciseBloc from './exerciseBloc';
 
 const STATUSES = {
@@ -13,7 +17,7 @@ const STATUSES = {
   FINISHED: 'Playback finished',
 };
 
-const RecordPlayAudio = (child) => {
+const RecordPlayAudio = ({ child, word }) => {
   const [recording, setRecording] = useState();
   const [status, setStatus] = useState(`Let's start`);
   const [base64Recording, setBase64Recording] = useState('');
@@ -83,7 +87,16 @@ const RecordPlayAudio = (child) => {
   // After playing back, offers to save and continue.
   async function saveAndContinue() {
     try {
-      const response = await saveRecording(base64Recording);
+      // if saving to BE
+      const dataToSend = {
+        base64Recording,
+        child,
+        wordBank: '65098b15cf10e572d3b53eed',
+      };
+
+      const response = await saveRecording(dataToSend);
+      // if sending to DL server
+      // const response = await sendAudioToDL(dataToSend);
 
       if (response.success) {
         // TODO: Implement navigation logic to continue to the next exercise
@@ -100,7 +113,7 @@ const RecordPlayAudio = (child) => {
     <>
       <View style={styles.container}>
         <BackButton />
-        <ExerciseBloc />
+        <ExerciseBloc word={word} />
         <View style={styles.controls}>
           <Pressable
             style={styles.button}

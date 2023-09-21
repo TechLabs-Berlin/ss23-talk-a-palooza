@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, Image } from 'react-native';
 
-const ExerciseBloc = () => {
+const ExerciseBloc = ({ word }) => {
   return (
     <View style={styles.exerciseBloc}>
       <Text style={styles.title}>BANANA</Text>

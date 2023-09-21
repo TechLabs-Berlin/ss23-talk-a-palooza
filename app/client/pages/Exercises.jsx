@@ -16,8 +16,11 @@ const Exercises = () => {
 
   // TODO: multiple images
   // TODO: set of exercises? Waiting for specifications
+  // TODO: recommended words
+  // TODO: spoken words where word = word
+  const word = 'banana';
 
-  return <RecordPlayAudio child={child} />;
+  return <RecordPlayAudio child={child} word={word} />;
 };
 
 export default Exercises;
