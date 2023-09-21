@@ -8,12 +8,20 @@ const recordingSchema = new mongoose.Schema(
       subtype: 0x02, // Set the subtype to "audio"
     },
     intelligibilityScore: Boolean,
-    // TODO: download mongoose-float npm package to use Float type
-    is_recognized: Number,
-    spokenWords: { type: mongoose.Schema.Types.ObjectId, ref: 'SpokenWords' },
+    is_recognized: Number, // TODO: download mongoose-float npm package to use Float type
+    wordBank: { type: mongoose.Schema.Types.ObjectId, ref: 'WordBank' },
+    vocabLog: { type: mongoose.Schema.Types.ObjectId, ref: 'Vocablog' },
   },
   { timestamps: true }
 );
+
+recordingSchema.set('toJSON', {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
+  },
+});
 
 const Recording = mongoose.model('Recording', recordingSchema);
 
