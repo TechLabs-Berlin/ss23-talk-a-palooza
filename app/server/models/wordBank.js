@@ -15,6 +15,9 @@ const wordBankSchema = new mongoose.Schema({
   is_audio: {
     type: Boolean,
   },
+  is_initial_assessment: {
+    type: Boolean,
+  },
   wordLevel: {
     type: Number,
     enum: [1, 2, 3, 4, 5],

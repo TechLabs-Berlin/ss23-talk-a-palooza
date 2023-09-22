@@ -4,7 +4,7 @@ content-type: application/json
 {
 "spokenWords":[
     {
-    "wordBankId":"4",
+    "wordBank":"65098b15cf10e572d3b53eed",
     "name":"banana",
     "peerComparisonScore":"2"
     }
@@ -14,17 +14,3 @@ content-type: application/json
 
 ###
 
-vocabService:
-body: 
- {
-  data: {
-    spokenWords: [ [Object], [Object], [Object] ],
-    child: '6502d341f929a64c7757c804'
-  }
-}
-
-REST tesr:
-Body:   {
-  spokenWords: [ { word: 'apple' }, { word: 'banana' } ],
-  child: '65013686cdee43b25a88d802'
-}
