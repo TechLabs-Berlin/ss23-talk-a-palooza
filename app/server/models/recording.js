@@ -9,7 +9,7 @@ const recordingSchema = new mongoose.Schema(
     },
     intelligibilityScore: Boolean,
     is_recognized: Number, // TODO: download mongoose-float npm package to use Float type
-    wordBank: { type: mongoose.Schema.Types.ObjectId, ref: 'WordBank' },
+    wordBankId: { type: mongoose.Schema.Types.ObjectId, ref: 'WordBank' },
     spokenWord: { type: mongoose.Schema.Types.ObjectId, ref: 'VocabLog' },
   },
   { timestamps: true }

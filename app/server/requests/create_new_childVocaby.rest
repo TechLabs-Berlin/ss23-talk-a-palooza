@@ -4,7 +4,7 @@ content-type: application/json
 {
 "spokenWords":[
     {
-    "wordBank":"650d2691df78bbefe5a91340",
+    "wordBankId":"650d2691df78bbefe5a91340",
     "name":"banana",
     "peerComparisonScore":"2"
     }

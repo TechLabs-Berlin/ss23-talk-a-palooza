@@ -91,7 +91,7 @@ const RecordPlayAudio = ({ child, word }) => {
       // if saving to BE
       const dataToSend = {
         base64Recording,
-        wordBank: '650d2691df78bbefe5a91340', // TODO: Replace with actual wordBankId
+        wordBankId: '650d2691df78bbefe5a91340', // TODO: Replace with actual wordBankId
       };
 
       const response = await saveRecording(dataToSend);

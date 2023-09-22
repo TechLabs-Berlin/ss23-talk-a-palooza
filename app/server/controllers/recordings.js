@@ -7,7 +7,7 @@ recordingsRouter.post('/', async (req, res) => {
   try {
     const {
       binaryAudioData,
-      wordBank,
+      wordBankId,
       spokenWord,
       intelligibilityScore,
       is_recognized,
@@ -19,7 +19,7 @@ recordingsRouter.post('/', async (req, res) => {
     // Create a new recording document
     const recording = new Recording({
       binaryAudioData: audioBuffer,
-      wordBank,
+      wordBankId,
       spokenWord,
       intelligibilityScore,
       is_recognized,
@@ -31,7 +31,7 @@ recordingsRouter.post('/', async (req, res) => {
 
     // Find the spokenWord document by id and update it
     await VocabLog.findOneAndUpdate(
-      { 'spokenWords.wordBank': wordBank },
+      { 'spokenWords.wordBankId': wordBankId },
       { $set: { 'spokenWords.$.recordings': recording } },
       //  { _id: VocabLog.spokenWord },
       // { $push: { recordings: recording } },
