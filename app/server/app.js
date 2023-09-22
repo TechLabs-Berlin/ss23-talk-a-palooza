@@ -72,6 +72,7 @@ app.use('/api/children', childrenRouter);
 app.use('/api/vocablogs', vocabLogsRouter);
 app.use('/api/recordings', recordingsRouter);
 app.use('/api/wordbank', wordBanksRouter);
+app.use('/api/wordbank/initial_assessment', wordBanksRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

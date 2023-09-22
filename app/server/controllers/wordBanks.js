@@ -1,9 +1,21 @@
 const wordBanksRouter = require('express').Router();
 const Word = require('../models/wordBank');
 
+//  [x] Get all wordBank words <-> getWordBankData in wordBankService.js
 wordBanksRouter.get('/', async (req, res) => {
   const words = await Word.find({});
   res.json(words);
+});
+
+// [x] Get wordBank words filtered by is_initial_assessment = true <-> getInitialAssessment in wordBankService.js
+wordBanksRouter.get('/initial_assessment', async (req, res) => {
+  try {
+    const words = await Word.find({ is_initial_assessment: true });
+    res.json(words);
+  } catch (error) {
+    console.error('Error fetching initial assessment data:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 wordBanksRouter.get('/:id', async (req, res) => {

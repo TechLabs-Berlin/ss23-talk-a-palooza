@@ -1,13 +1,13 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/vocablogs';
 
-// (OK) Get all vocabs logs from backend
+// [x] Get all vocabs logs from backend
 export const getAll = () => {
   const request = axios.get(baseUrl);
   return request.then((response) => response.data);
 };
 
-// (OK) Create vocabulary for the given child (inital assessment)
+// [x] Create vocabulary for the given child (inital assessment)
 export const createVocab = async (dataToSend) => {
   try {
     const response = await axios.post(baseUrl, {

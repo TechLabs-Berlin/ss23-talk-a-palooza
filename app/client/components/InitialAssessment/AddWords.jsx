@@ -2,57 +2,60 @@ import { useState, useEffect } from 'react';
 import AssessForm from './AssessForm';
 import AssessSuccess from './AssessSuccess';
 import { createVocab } from '../../services/vocabLogsService';
-import axios from 'axios';
+import { getInitialAssessment } from '../../services/wordBankService';
 
 const AddWords = ({ child }) => {
   const [words, setWords] = useState([]);
   const [spokenWords, setSpokenWords] = useState([]);
   const [isAssessed, setIsAssessed] = useState(false);
-  const [wordBank, setWordBank] = useState([]);
+  const [initWords, setInitWords] = useState([]);
 
   useEffect(() => {
     // Fetch the word bank data when the component mounts.
     //TODO: refactor as wordBankService + filter for is_initial_assessment = true
-    async function fetchWordBank() {
-      try {
-        const response = await axios.get('http://localhost:3001/api/wordbank');
-        setWordBank(response.data);
-      } catch (error) {
-        console.error('Error fetching word bank data:', error);
-      }
-    }
-    fetchWordBank();
+    // Fetch wordBank data when the component mounts
+    getInitialAssessment().then((data) => {
+      setInitWords(data);
+      console.log('InitialAssessment words', data);
+    });
   }, []);
 
   const handleWordsSubmit = (values) => {
-    if (Array.isArray(values.words)) {
-      // Format the spokenWords array correctly
-      const spokenWords = values.words.map((name) => ({
-        name: name,
-        wordBank: wordBank.id,
-      }));
+    console.log('selected words:', values.words);
+    // Map the IDs from values.words to the corresponding initWords data
+    const spokenWords = values.words.map((wordId) => {
+      const matchingWord = initWords.find((word) => word.id === wordId);
+      if (matchingWord) {
+        return {
+          name: matchingWord.name,
+          wordBankId: matchingWord.id,
+          category: matchingWord.category,
+        };
+      }
+      // Handle the case where no matching word is found
+      return null;
+    });
 
-      const dataToSend = {
-        spokenWords,
-        child,
-      };
+    const dataToSend = {
+      spokenWords,
+      child,
+    };
 
-      setWords({ ...words, spokenWords: dataToSend.spokenWords });
-      createVocab(dataToSend)
-        .then((result) => {
-          console.log('result', result);
-          console.log('values:', JSON.stringify(dataToSend));
-          console.log('Words added:', dataToSend.spokenWords);
-          setIsAssessed(true);
-          setSpokenWords(dataToSend.spokenWords);
-          console.log('spokenWords', spokenWords);
-        })
-        .catch((error) => {
-          console.error('Error creating vocab:', error);
-        });
-    } else {
-      console.error('not an array:', spokenWords);
-    }
+    console.log('data to send:', dataToSend.spokenWords);
+
+    setWords({ ...words, spokenWords: dataToSend.spokenWords });
+    createVocab(dataToSend)
+      .then((result) => {
+        console.log('result', result);
+        console.log('values:', JSON.stringify(dataToSend));
+        console.log('Words added:', dataToSend.spokenWords);
+        setIsAssessed(true);
+        setSpokenWords(dataToSend.spokenWords);
+        console.log('spokenWords', spokenWords);
+      })
+      .catch((error) => {
+        console.error('Error creating vocab:', error);
+      });
   };
 
   useEffect(() => {
@@ -65,7 +68,7 @@ const AddWords = ({ child }) => {
     <AssessForm
       child={child}
       onSubmit={handleWordsSubmit}
-      wordBank={wordBank}
+      initWords={initWords}
     />
   );
 };

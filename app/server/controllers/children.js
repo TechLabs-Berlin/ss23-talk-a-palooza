@@ -11,8 +11,16 @@ childrenRouter.get('/', async (req, res) => {
 
 // Get a child by id and populate spokenWords
 childrenRouter.get('/:id', async (req, res) => {
-  const child = await Child.findById(req.params.id).populate('vocabLogs', {
-    spokenWords: 1,
+  const child = await Child.findById(req.params.id).populate({
+    path: 'vocabLogs',
+    populate: {
+      path: 'spokenWords',
+      model: 'SpokenWords',
+      populate: {
+        path: 'wordBankId',
+        model: 'WordBank',
+      },
+    },
   });
   if (child) {
     res.json(child);

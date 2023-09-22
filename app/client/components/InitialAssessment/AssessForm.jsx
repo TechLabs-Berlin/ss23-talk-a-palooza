@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
-const AssessForm = ({ child, onSubmit, wordBank }) => {
+const AssessForm = ({ child, onSubmit, initWords }) => {
   const validationSchema = Yup.object({
     words: Yup.array().min(1, 'Select at least one word'),
   });
@@ -10,7 +10,7 @@ const AssessForm = ({ child, onSubmit, wordBank }) => {
   return (
     <View style={styles.app}>
       <Formik
-        initialValues={{ words: [] }}
+        initialValues={{ initWords: {} }}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
@@ -19,11 +19,11 @@ const AssessForm = ({ child, onSubmit, wordBank }) => {
           <View style={[styles.flex, styles.bloc]}>
             {/* Map over wordbank list where is_initial_assessment = true */}
             {/* TODO: filter for is_initial_assessment = true */}
-            {wordBank.map((word) => (
-              <View key={word.id} style={{ padding: 5 }}>
+            {initWords.map((initWord) => (
+              <View key={initWord._id} style={{ padding: 5 }}>
                 <Text>
-                  <Field type='checkbox' name='words' value={word.name} />
-                  {word.name}
+                  <Field type='checkbox' name='words' value={initWord.id} />
+                  {initWord.name}
                 </Text>
               </View>
             ))}

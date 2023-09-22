@@ -5,7 +5,13 @@ const { VocabLog, SpokenWords } = require('../models/vocabLog');
 // Route to handle saving base64 recording data
 recordingsRouter.post('/', async (req, res) => {
   try {
-    const { wordBank, spokenWords, binaryAudioData } = req.body;
+    const {
+      binaryAudioData,
+      wordBank,
+      spokenWord,
+      intelligibilityScore,
+      is_recognized,
+    } = req.body;
 
     const audioBuffer = Buffer.from(binaryAudioData, 'base64'); // Decode the base64 data to binary
     console.log('from controller', req.body);
@@ -14,41 +20,23 @@ recordingsRouter.post('/', async (req, res) => {
     const recording = new Recording({
       binaryAudioData: audioBuffer,
       wordBank,
-      spokenWords,
+      spokenWord,
+      intelligibilityScore,
+      is_recognized,
+      //TODO: misses reference to spokenWord
     });
 
     // Save the recording document
     await recording.save();
 
-    // Now, update the spokenWords field in the newly created recording
-    await Recording.findOneAndUpdate(
-      { _id: recording._id },
-      { spokenWords: spokenWords },
-      { new: true } // This option ensures you get the updated document
+    // Find the spokenWord document by id and update it
+    await VocabLog.findOneAndUpdate(
+      { 'spokenWords.wordBank': wordBank },
+      { $set: { 'spokenWords.$.recordings': recording } },
+      //  { _id: VocabLog.spokenWord },
+      // { $push: { recordings: recording } },
+      { new: true }
     );
-    console.log('controller', recording);
-
-    // Retrieve the associated vocabLog document
-    const vocabLog = await VocabLog.findOne({ 'spokenWords._id': spokenWords });
-
-    if (vocabLog) {
-      // Update the recordings field in the vocabLog document
-      vocabLog.spokenWords.forEach((spokenWord) => {
-        if (spokenWord._id.toString() === spokenWords.toString()) {
-          spokenWord.recordings.push(recording._id);
-        }
-      });
-
-      // Save the updated vocabLog document
-      await vocabLog.save();
-    }
-
-    // // Find the spokenWords document by vocabLog id and update it
-    // await VocabLog.findOneAndUpdate(
-    //   { spokenWords_id: spokenWords }, // Match the parent document by its _id
-    //   { $push: { 'spokenWords.$.recordings': recording } }, // Use the positional operator $ to push the new recording into the subdocument's recordings array
-    //   { new: true }
-    // );
 
     //BUG POtential: Might need to change this too Update entry in the children collection.
     // await SpokenWords.findOneAndUpdate(

@@ -9,6 +9,7 @@ import {
   sendAudioToDL,
 } from '../../services/recordingService';
 import ExerciseBloc from './exerciseBloc';
+import { SpokenWords } from '../../../server/models/vocabLog';
 
 const STATUSES = {
   START: "Let's start",
@@ -90,8 +91,7 @@ const RecordPlayAudio = ({ child, word }) => {
       // if saving to BE
       const dataToSend = {
         base64Recording,
-        child,
-        wordBank: '65098b15cf10e572d3b53eed',
+        wordBank: '650d2691df78bbefe5a91340', // TODO: Replace with actual wordBankId
       };
 
       const response = await saveRecording(dataToSend);

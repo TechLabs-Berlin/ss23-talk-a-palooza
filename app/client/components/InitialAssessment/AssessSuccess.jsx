@@ -13,7 +13,7 @@ const AssessSuccess = ({ child, spokenWords }) => {
         <Button
           title='Start Exercises'
           onClick={handleSubmit}
-          words={spokenWords}
+          spokenWords={spokenWords}
         />
       </Link>
     </View>

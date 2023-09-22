@@ -1,7 +1,6 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/recordings';
-const DLUrl = 'http://localhost:3001/api/recordingstodl';
-// const DLUrl = 'http://localhost:5000/api/process-audio';
+// const DLUrl = 'http://localhost:3001/api/recordingstodl';
 
 //TODO: check with Aljoscha if URI is ok, then we do not need to convert to base64
 export const uriToBase64 = async (uri) => {
@@ -33,9 +32,8 @@ export const saveRecording = async (dataToSend, child) => {
   try {
     const response = await axios.post(baseUrl, {
       binaryAudioData: dataToSend.base64Recording,
-      child: dataToSend.childId,
-      wordBank: dataToSend.wordId,
-      spokenWords: dataToSend.spokenWordsId,
+      wordBank: dataToSend.wordBank,
+      spokenWord: dataToSend.spokenWord,
     });
 
     console.log('response from service', dataToSend);
@@ -53,7 +51,7 @@ export const saveRecording = async (dataToSend, child) => {
   }
 };
 
-// Code if sending to DL server:
+// sending to DL server:
 // export const sendAudioToDL = async (base64Recording) => {
 //   try {
 //     const response = await axios.post(
