@@ -20,11 +20,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundImage: 'linear-gradient(180deg, #7ec8d6 0%, #fff 50%)',
     borderRadius: 10,
     padding: 10,
     marginTop: 20,
     maxHeight: 680,
-    border: '20px solid #000',
+    borderWidth: 20, // Use borderWidth instead of border
+    borderColor: '#000', // Use borderColor to set the border color
   },
 });

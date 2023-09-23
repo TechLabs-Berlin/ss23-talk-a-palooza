@@ -13,11 +13,15 @@ const StartScreen = () => {
   console.log('Is user logged in?', authUser.isAuthenticated);
 
   return (
-    <View style={styles.app}>
-      <Text style={styles.title}>Talk a Palooza</Text>
-      <Text style={styles.subtitle}>StartScreen</Text>
+    <>
+      <View style={styles.app}>
+        <Text style={styles.title}>Talk a Palooza</Text>
+        <Text style={styles.subtitle}>
+          Awesome one sentence pitch that really makes you want to try the app
+        </Text>
+      </View>
       <Login />
-    </View>
+    </>
   );
 };
 
@@ -29,6 +33,7 @@ const styles = StyleSheet.create({
     maxWidth: 1028,
     maxHeight: 768,
     padding: 20,
+    textAlign: 'center',
   },
   title: {
     fontWeight: 'bold',
@@ -37,8 +42,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   subtitle: {
-    fontWeight: 'bold',
-    fontSize: '1.5rem',
+    // fontWeight: 'bold',
+    fontSize: '1rem',
     marginBottom: '1em',
     textAlign: 'center',
   },
