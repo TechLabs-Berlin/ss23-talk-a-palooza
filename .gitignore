@@ -30,8 +30,9 @@ dl/.source
 
 # python venv:
 
-ds/venv
-dl/venv
+# ds/venv
+# dl/venv
+venv
 
 # python:
 
