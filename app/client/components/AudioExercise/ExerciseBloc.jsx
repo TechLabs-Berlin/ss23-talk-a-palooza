@@ -1,9 +1,13 @@
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { Image } from 'expo-image';
 
 const ExerciseBloc = ({ word }) => {
   return (
     <View style={styles.exerciseBloc}>
-      <Text style={styles.title}>BANANA</Text>
+      <Text style={styles.title}>* Try saying</Text>
+      <Text className='mb-6' style={styles.title}>
+        "BANANA"
+      </Text>
       <Image
         source={require('../../assets/images/banana.jpg')}
         style={styles.banana}
@@ -24,8 +28,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: '1.5rem',
-    marginTop: '1em',
-    marginBottom: '2em',
     textAlign: 'center',
   },
 });

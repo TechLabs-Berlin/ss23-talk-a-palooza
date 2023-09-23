@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
-import BackButton from '../navigation/BackButton';
+
 import {
   uriToBase64,
   saveRecording,
@@ -12,7 +12,7 @@ import ExerciseBloc from './exerciseBloc';
 import { SpokenWords } from '../../../server/models/vocabLog';
 
 const STATUSES = {
-  START: "Let's start",
+  START: "Let's start! Tap the mic to talk",
   RECORDING: 'Recording...',
   PLAYING: 'Playing...',
   FINISHED: 'Playback finished',
@@ -112,7 +112,6 @@ const RecordPlayAudio = ({ child, word }) => {
   return (
     <>
       <View style={styles.container}>
-        <BackButton />
         <ExerciseBloc word={word} />
         <View style={styles.controls}>
           <Pressable
@@ -149,8 +148,8 @@ export default RecordPlayAudio;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    padding: 10,
+    // justifyContent: 'center',
+    // padding: 10,
   },
   controls: {
     alignItems: 'center',

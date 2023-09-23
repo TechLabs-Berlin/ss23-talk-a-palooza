@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AuthData } from '../services/AuthWrapper';
 import { getChild } from '../services/childrenService';
 import RecordPlayAudio from '../components/AudioExercise/RecordPlayAudio';
+import BackButton from '../components/navigation/BackButton';
 
 const Exercises = () => {
   const { authUser } = AuthData();
@@ -20,7 +21,12 @@ const Exercises = () => {
   // TODO: spoken words where word = word
   const word = 'banana';
 
-  return <RecordPlayAudio child={child} word={word} />;
+  return (
+    <>
+      <BackButton />
+      <RecordPlayAudio child={child} word={word} />
+    </>
+  );
 };
 
 export default Exercises;

@@ -1,6 +1,6 @@
 import { Text, View, Pressable } from 'react-native';
 import { Image } from 'expo-image';
-import '../styles.css';
+// import '../styles.css';
 
 const Login = () => {
   const googleAuth = () => {
@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <>
       <Pressable onPress={googleAuth}>
-        <View className=' px-4 pt-0 pb-2 flex flex-row gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150'>
+        <View className=' p-3  sm:px-10 flex flex-row gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150'>
           <Image
             className='w-6 h-6 m-0'
             source={{
@@ -19,7 +19,7 @@ const Login = () => {
             loading='lazy'
             alt='google logo'
           />
-          <Text className='font-bold text-center'>Sign In with Google</Text>
+          <Text className='font-bold text-center'>Continue with Google</Text>
         </View>
       </Pressable>
     </>
