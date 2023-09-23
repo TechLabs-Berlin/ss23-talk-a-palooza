@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
-import BackButton from '../navigation/BackButton';
+
 import {
   uriToBase64,
   saveRecording,
@@ -18,7 +18,7 @@ const STATUSES = {
   FINISHED: 'Playback finished',
 };
 
-const RecordPlayAudio = ({ child, word }) => {
+const RecordPlayAudio = ({ child, word, flex }) => {
   const [recording, setRecording] = useState();
   const [status, setStatus] = useState(`Let's start`);
   const [base64Recording, setBase64Recording] = useState('');
@@ -111,33 +111,34 @@ const RecordPlayAudio = ({ child, word }) => {
   // TODO: Refactor view controls in AudioControls component
   return (
     <>
-      <View style={styles.container}>
-        <BackButton />
-        <ExerciseBloc word={word} />
-        <View style={styles.controls}>
-          <Pressable
-            style={styles.button}
-            onPress={recording ? stopRecording : startRecording}
-          >
-            {recording ? (
-              <Image
-                source={require('../../assets/images/voiceLoading.gif')}
-                style={styles.image}
-              />
-            ) : (
-              <Image
-                source={require('../../assets/images/recordingIcon.png')}
-                style={styles.image}
-              />
-            )}
-          </Pressable>
-          {isPlaybackFinished && base64Recording ? (
-            <Pressable style={styles.save} onPress={saveAndContinue}>
-              <Text>Save and Continue</Text>
+      <View style={[styles.container, { flex }]}>
+        <View className='exerciseBloc'>
+          <ExerciseBloc word={word} />
+          <View style={styles.controls}>
+            <Pressable
+              style={styles.button}
+              onPress={recording ? stopRecording : startRecording}
+            >
+              {recording ? (
+                <Image
+                  source={require('../../assets/images/voiceLoading.gif')}
+                  style={styles.image}
+                />
+              ) : (
+                <Image
+                  source={require('../../assets/images/recordingIcon.png')}
+                  style={styles.image}
+                />
+              )}
             </Pressable>
-          ) : (
-            <Text>{`${status}`}</Text>
-          )}
+            {isPlaybackFinished && base64Recording ? (
+              <Pressable style={styles.save} onPress={saveAndContinue}>
+                <Text>Save and Continue</Text>
+              </Pressable>
+            ) : (
+              <Text>{`${status}`}</Text>
+            )}
+          </View>
         </View>
       </View>
     </>
@@ -149,7 +150,8 @@ export default RecordPlayAudio;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: 'gray',
     padding: 10,
   },
   controls: {
