@@ -12,7 +12,7 @@ import ExerciseBloc from './exerciseBloc';
 import { SpokenWords } from '../../../server/models/vocabLog';
 
 const STATUSES = {
-  START: "Let's start",
+  START: "Let's start! Tap the mic to talk",
   RECORDING: 'Recording...',
   PLAYING: 'Playing...',
   FINISHED: 'Playback finished',
