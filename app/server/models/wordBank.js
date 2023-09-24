@@ -10,12 +10,13 @@ const wordBankSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    required: true,
+    // required: true,
   },
-  exerciseType: {
-    type: Number,
-    enum: [1, 2],
-    required: true,
+  is_audio: {
+    type: Boolean,
+  },
+  is_initial_assessment: {
+    type: Boolean,
   },
   wordLevel: {
     type: Number,
@@ -30,7 +31,7 @@ const wordBankSchema = new mongoose.Schema({
 wordBankSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
-    delete returnedObject._id;
+    // delete returnedObject._id;
     delete returnedObject.__v;
   },
 });

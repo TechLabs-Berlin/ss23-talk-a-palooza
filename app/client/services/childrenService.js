@@ -11,7 +11,7 @@ export const getAll = async () => {
 export const getChild = async (id) => {
   try {
     const response = await axios.get(`${baseUrl}/${id}`);
-    console.log('get child by id:', response.data);
+    console.log('Child details:', response.data);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -34,6 +34,17 @@ export const createChild = async (values, authUser) => {
   } catch (error) {
     console.error('Error:', error);
     throw error;
+  }
+};
+
+// Get (All the) the last vocab Spoken Words for a given child
+export const getVocabSpokenWords = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/${id}/vocablogs`);
+    console.log('Vocab Spoken Words:', response.data);
+    return response.data;
+  } catch (error) {
+    console.log(error);
   }
 };
 

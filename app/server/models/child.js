@@ -31,12 +31,6 @@ const childSchema = new mongoose.Schema(
         ref: 'VocabLog',
       },
     ],
-    samples: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Sample',
-      },
-    ],
   },
   { timestamps: true },
   opts
@@ -56,6 +50,7 @@ childSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject.__v;
+    delete returnedObject._id;
     returnedObject.ageInMonths = document.ageInMonths;
   },
 });

@@ -1,22 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 
-const wordBank = [
-  // Dummy until we have the right list of words
-  'apple',
-  'banana',
-  'cat',
-  'dog',
-  'elephant',
-  'fish',
-  'grape',
-  'hamburger',
-  'iguana',
-  'jacket',
-];
-
-const AssessForm = ({ child, onSubmit }) => {
+const AssessForm = ({ child, onSubmit, initWords }) => {
   const validationSchema = Yup.object({
     words: Yup.array().min(1, 'Select at least one word'),
   });
@@ -24,19 +10,20 @@ const AssessForm = ({ child, onSubmit }) => {
   return (
     <View style={styles.app}>
       <Formik
-        initialValues={{ words: [] }}
+        initialValues={{ initWords: {} }}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
         <Form>
           <Text style={styles.title}>{child.firstName} can say...</Text>
-          <View style={(styles.flex, styles.bloc)}>
-            {/* Map over wordBank list */}
-            {wordBank.map((word) => (
-              <View key={word} style={{ padding: 5 }}>
+          <View style={[styles.flex, styles.bloc]}>
+            {/* Map over wordbank list where is_initial_assessment = true */}
+            {/* TODO: filter for is_initial_assessment = true */}
+            {initWords.map((initWord) => (
+              <View key={initWord._id} style={{ padding: 5 }}>
                 <Text>
-                  <Field type='checkbox' name='words' value={word} />
-                  {word}
+                  <Field type='checkbox' name='words' value={initWord.id} />
+                  {initWord.name}
                 </Text>
               </View>
             ))}
