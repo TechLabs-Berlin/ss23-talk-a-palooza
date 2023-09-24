@@ -98,9 +98,9 @@ const RecordPlayAudio = ({ child, word, flex }) => {
       console.log('Data to send:', dataToSend);
 
       //[ ] We send the Data to DL and get a response back
-      //TODO: change from saveRecording to sendAudioToDL
-      //TODO: (DLS) const response = await sendAudioToDL(dataToSend);
-      const response = await saveRecording(dataToSend);
+      const response = await sendAudioToDL(dataToSend);
+      //TODO: (DLS-revert) change from saveRecording to sendAudioToDL
+      //TODO:  const response = await saveRecording(dataToSend);
 
       // We check if the response is successful
       if (response.status === 201) {
