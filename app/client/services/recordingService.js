@@ -1,7 +1,7 @@
 import axios from 'axios';
 //TODO (DLS-revert) const baseUrl = 'http://localhost:3001/api/recordings';
 //TODO (DLS) setup fastApi URL
-const DLUrl = 'http://localhost:7000/speech-analysis';
+const DLUrl = 'http://localhost:8000/speech-analysis';
 
 //[x] We convert the audio to base64:
 //TODO (DLS) check with Aljoscha if URI is ok, then we do not need to convert to base64
@@ -36,9 +36,9 @@ export const sendAudioToDL = async (dataToSend) => {
       DLUrl,
       {
         binaryAudioData: dataToSend.base64Recording,
-        wordBankId: dataToSend.wordBankId,
+        wordBankId: dataToSend.wordBankId, // not needed by DL
         name: dataToSend.name,
-        spokenWord: dataToSend.spokenWord,
+        spokenWord: dataToSend.spokenWord, // not needed by DL
       },
       {
         headers: {
