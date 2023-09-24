@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const recordingSchema = new mongoose.Schema(
   {
+    name: String,
     binaryAudioData: {
       type: Buffer, // Store recording data as a Buffer
       required: true,

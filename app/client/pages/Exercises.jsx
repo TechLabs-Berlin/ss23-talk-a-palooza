@@ -17,7 +17,11 @@ const Exercises = (word) => {
     });
   }, []);
 
-  //TODO: Get recommended words from DS (or worst case fake it by providing a list of words and retrieving the info from WordBank)
+  //NOTE: We send the child's spokenWords to DS
+  //TODO: Create Service and controller to SEND to DS
+
+  //NOTE: We get the recommended words from DS
+  //TODO: Change from dummy data (or worst case fake it by providing a list of words and retrieving the info from WordBank)
   const recommendedWords = [
     {
       wordBankId: '650d2691df78bbefe5a91340',
@@ -74,12 +78,13 @@ const Exercises = (word) => {
       wordLevel: 1,
     },
   ];
-  // Create a copy of recommendedWords to avoid modifying the original array
+
+  //NOTE: We create a copy of recommendedWords to avoid modifying the original array
   const [toTestWords, setToTestWords] = useState([...recommendedWords]);
   const [completedWords, setCompletedWords] = useState([]);
   const [wordCountToShow, setWordCountToShow] = useState(1);
 
-  console.log('completed words', completedWords.wordBankId);
+  // console.log('completed words', completedWords.wordBankId);
 
   const completeWord = (wordBankId) => {
     // Check if the wordBankId is not already in completedWords
@@ -88,17 +93,18 @@ const Exercises = (word) => {
       setCompletedWords([...completedWords, wordBankId]);
     }
 
-    // Remove the completed word from toTestWords
+    //NOTE: we remove the completed word from toTestWords
+    //TODO: this should happen only after receiving a yes response from DL
     const updatedToTestWords = toTestWords.filter(
       (word) => word.wordBankId !== wordBankId
     );
     console.log('updated to test words', updatedToTestWords);
 
-    // Update toTestWords with the filtered array
+    // We update toTestWords with the filtered array
     setToTestWords(updatedToTestWords);
     console.log('to test words', toTestWords);
 
-    // Check if we need to increment wordCountToShow
+    // We check if we need to increment wordCountToShow
     if (completedWords.length >= wordCountToShow) {
       setWordCountToShow(wordCountToShow + 1);
     }
@@ -106,8 +112,6 @@ const Exercises = (word) => {
 
   // TODO: Implement navigation logic to continue to the next exercise + when does DL assess the exercises?
   // TODO: set of exercises? Waiting for specifications
-  // TODO: recommended words
-  // TODO: spoken words where word = word
 
   const calculateFlex = () => {
     switch (wordCountToShow) {

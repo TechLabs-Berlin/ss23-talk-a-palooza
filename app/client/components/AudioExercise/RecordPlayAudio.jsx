@@ -8,6 +8,7 @@ import {
   sendAudioToDL,
 } from '../../services/recordingService';
 import { SpokenWords } from '../../../server/models/vocabLog';
+// import {Animated} from 'react-native';  //TODO ANIMATION - 1
 
 const STATUSES = {
   START: "Let's start! Tap the mic to talk",
@@ -21,6 +22,7 @@ const RecordPlayAudio = ({ child, word, flex }) => {
   const [status, setStatus] = useState(`Let's start`);
   const [base64Recording, setBase64Recording] = useState('');
   const [isPlaybackFinished, setIsPlaybackFinished] = useState(false);
+  //TODO ANIMATION - 2 const [animation] = useState(new Animated.Value(0));
 
   // Checks if the playback has finished, and updates the status accordingly.
   useEffect(() => {
@@ -85,29 +87,43 @@ const RecordPlayAudio = ({ child, word, flex }) => {
   // After playing back, offers to save and continue.
   async function saveAndContinue() {
     try {
-      // if saving to BE
+      //NOTE: We specify the Data to Send:
       const dataToSend = {
         base64Recording,
-        wordBankId: word.wordBankId, // TODO: Replace with actual wordBankId
+        wordBankId: word.wordBankId,
         name: word.name,
       };
       console.log('child:', child);
       console.log('word:', word);
       console.log('Data to send:', dataToSend);
 
+      //[ ] We send the Data to DL and get a response back
+      //TODO: change from saveRecording to sendAudioToDL
+      //TODO: (DLS) const response = await sendAudioToDL(dataToSend);
       const response = await saveRecording(dataToSend);
-      // if sending to DL server
-      // const response = await sendAudioToDL(dataToSend);
 
-      if (response.success) {
-        // TODO: Implement button interaction feedback (e.g. disable button) + animation.
+      // We check if the response is successful
+      if (response.status === 201) {
+        const result = await response;
+        console.log('Analysis Result:', result);
+        // TODO: Implement button interaction feedback (e.g. disable button) + animation to display the results to the user
+        // animateConfetti();
       } else {
-        console.error('Failed to save recording in the database');
+        console.error('Failed to send recording to DL server');
       }
     } catch (error) {
-      console.error('Error saving recording:', error);
+      console.error('Error:', error);
     }
   }
+
+  //TODO ANIMATION - 3
+  const animateConfetti = () => {
+    Animated.timing(animation, {
+      toValue: 1, // Final value (e.g., fully visible)
+      duration: 1000, // Animation duration in milliseconds
+      useNativeDriver: false, // Set to true for better performance
+    }).start(); // Start the animation
+  };
 
   // TODO: Refactor view controls in AudioControls component
   return (
@@ -121,6 +137,22 @@ const RecordPlayAudio = ({ child, word, flex }) => {
             <Text className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10'>
               {word.name}
             </Text>
+            {/* //TODO ANIMATION - 4
+             {response.success && (
+              <Animated.View
+                style={{
+                  opacity: animation, // Set opacity based on the animation value
+                }}
+              >
+                <Image
+                  source={require('./checkmark.png')} // Replace with your checkmark icon
+                  style={{
+                    width: 50,
+                    height: 50,
+                  }}
+                />
+              </Animated.View>
+            )} */}
             <View style={styles.mainImage}>
               <Image
                 source={

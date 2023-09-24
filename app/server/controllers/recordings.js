@@ -2,7 +2,7 @@ const recordingsRouter = require('express').Router();
 const Recording = require('../models/recording');
 const { VocabLog, SpokenWords } = require('../models/vocabLog');
 
-// Get all recordings
+//[x] Get all recordings
 recordingsRouter.get('/', async (req, res) => {
   try {
     const recordings = await Recording.find({});
@@ -13,7 +13,77 @@ recordingsRouter.get('/', async (req, res) => {
   }
 });
 
-// Route to handle saving base64 recording data
+//[ ] Receive results from fastAPI DL, with the fields is_recognized and intelligibilityScore and create a new recording if is_recognized is true
+recordingsRouter.post('/speech-analysis', async (req, res) => {
+  try {
+    const {
+      binaryAudioData,
+      wordBankId,
+      name,
+      spokenWord,
+      intelligibilityScore,
+      is_recognized,
+    } = req.body;
+
+    // Decode the base64 data to binary
+    //TODO: Confirm with Aljoscha if I get a base64 string back
+    const audioBuffer = Buffer.from(binaryAudioData, 'base64'); //
+    console.log('received data from fastAPI', req.body);
+
+    // Check if is_recognized is true
+    if (is_recognized === true) {
+      // Create a new recording document
+      try {
+        const recording = new Recording({
+          binaryAudioData: audioBuffer,
+          wordBankId,
+          name,
+          spokenWord, //TODO: potential bug, check if misses reference to spokenWord?
+          intelligibilityScore,
+          is_recognized,
+        });
+
+        await recording.save();
+        console.log(
+          'new recording created with response from fastAPI',
+          recording
+        );
+
+        // Find the spokenWord document by id and update it
+        const updatedSpokenWord = await VocabLog.findOneAndUpdate(
+          { 'spokenWords.wordBankId': wordBankId },
+          { $set: { 'spokenWords.$.recordings': recording } },
+          //  { _id: VocabLog.spokenWord },
+          // { $push: { recordings: recording } },
+          { new: true }
+        );
+
+        if (!updatedSpokenWord) {
+          console.error('Failed to update spokenWord document');
+          return res
+            .status(500)
+            .json({ message: 'Failed to update spokenWord' });
+        }
+
+        return res
+          .status(201)
+          .json({ message: 'Recording added successfully' });
+      } catch (error) {
+        console.error('Error creating a new recording:', error.message);
+        res.status(500).send('Server Error');
+      }
+    } else {
+      console.log('is_recognized is not true. No new recording created.');
+      return res.status(200).json({ message: 'Recognition not successful' });
+    }
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+//[ ] OR  Code if sending from frontend to backend
+//TODO: Remove this once connection with fastAPI is established
 recordingsRouter.post('/', async (req, res) => {
   try {
     const {
@@ -42,6 +112,7 @@ recordingsRouter.post('/', async (req, res) => {
 
     // Save the recording document
     await recording.save();
+    console.log('new recording created', recording);
 
     // Find the spokenWord document by id and update it
     await VocabLog.findOneAndUpdate(
@@ -52,81 +123,11 @@ recordingsRouter.post('/', async (req, res) => {
       { new: true }
     );
 
-    //BUG POtential: Might need to change this too Update entry in the children collection.
-    // await SpokenWords.findOneAndUpdate(
-    //   { _id: spokenWords },
-    //   { $push: { recording: recording } },
-    //   { new: true }
-    // );
-    // console.log('controller', recording);
-
-    // Send data to the external server using Axios
-    // const SpeechAnalysisUrl = 'http://localhost:3001/api/recordingstodl';
-    // try {
-    //   const DLResponse = await axios.post(SpeechAnalysisUrl, {
-    //     spokenWords,
-    //     binaryAudioData,
-    //   });
-    //   console.log('Speech Analysis Server Response:', DLResponse.data);
-
-    //   // If the Axios request is successful, you can proceed here with updating the recording document with the intelligibility score and isRecognized
-
-    //   try {
-    //     const response = await axios.get(SpeechAnalysisUrl, {
-    //       is_recognized: DLResponse.data.is_recognized,
-    //       intelligibilityScore: DLResponse.data.intelligibilityScore,
-    //     });
-
-    //     if (response.status === 200) {
-    //       console.log('Additional data saved on the Node.js backend.');
-    //     } else {
-    //       console.error('Node.js backend returned an error:', response.status);
-    //     }
-    //   } catch (error) {
-    //     console.error('Error sending processed recording to backend:', error);
-    //     throw error;
-    //   }
-
-    //   // Save the updated Recording document
-    //   await recording.save();
-    // } catch (axiosError) {
-    //   // Handle Axios-specific errors
-    //   console.error('Axios Error:', axiosError.message);
-    //   throw axiosError; // Re-throw the error to the outer catch block if needed
-    // }
-
     return res.status(201).json({ message: 'Recording added successfully' });
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server Error');
   }
 });
-
-// Route to save processed recording data from DL
-// recordingsRouter.post('/recordingstodl', async (req, res) => {
-//   try {
-//     const { is_recognized, intelligibilityScore } = req.body;
-
-//     // Find the recording document by vocabLog id and update it
-//     const recording = await Recording.findOneAndUpdate(
-//       { _id: recording },
-//       { is_recognized, intelligibilityScore },
-//       { new: true }
-//     );
-
-//     if (!recording) {
-//       return res.status(404).json({ message: 'Recording not found' });
-//     }
-
-//     // Save the updated recording document
-//     await recording.save();
-
-//     return res.status(201).json({ message: 'Recording updated successfully' });
-//   }
-//     catch (error) {
-//     console.error('Error saving DL data', error.message);
-//     return res.status(500).send('Server Error');
-//   }
-// });
 
 module.exports = recordingsRouter;
