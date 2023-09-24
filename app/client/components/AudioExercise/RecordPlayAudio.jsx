@@ -16,7 +16,7 @@ const STATUSES = {
   FINISHED: 'Playback finished',
 };
 
-const RecordPlayAudio = ({ child, word, toTestWords, flex }) => {
+const RecordPlayAudio = ({ child, word, flex }) => {
   const [recording, setRecording] = useState();
   const [status, setStatus] = useState(`Let's start`);
   const [base64Recording, setBase64Recording] = useState('');
@@ -88,15 +88,19 @@ const RecordPlayAudio = ({ child, word, toTestWords, flex }) => {
       // if saving to BE
       const dataToSend = {
         base64Recording,
-        wordBankId: '650d2691df78bbefe5a91340', // TODO: Replace with actual wordBankId
+        wordBankId: word.wordBankId, // TODO: Replace with actual wordBankId
+        name: word.name,
       };
+      console.log('child:', child);
+      console.log('word:', word);
+      console.log('Data to send:', dataToSend);
 
       const response = await saveRecording(dataToSend);
       // if sending to DL server
       // const response = await sendAudioToDL(dataToSend);
 
       if (response.success) {
-        // TODO: Implement navigation logic to continue to the next exercise
+        // TODO: Implement button interaction feedback (e.g. disable button) + animation.
       } else {
         console.error('Failed to save recording in the database');
       }

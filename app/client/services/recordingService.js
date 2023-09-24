@@ -33,6 +33,7 @@ export const saveRecording = async (dataToSend, child) => {
     const response = await axios.post(baseUrl, {
       binaryAudioData: dataToSend.base64Recording,
       wordBankId: dataToSend.wordBankId,
+      name: dataToSend.name,
       spokenWord: dataToSend.spokenWord,
     });
 

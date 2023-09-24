@@ -2,12 +2,25 @@ const recordingsRouter = require('express').Router();
 const Recording = require('../models/recording');
 const { VocabLog, SpokenWords } = require('../models/vocabLog');
 
+// Get all recordings
+recordingsRouter.get('/', async (req, res) => {
+  try {
+    const recordings = await Recording.find({});
+    res.json(recordings);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 // Route to handle saving base64 recording data
 recordingsRouter.post('/', async (req, res) => {
   try {
     const {
+      // child: child,
       binaryAudioData,
       wordBankId,
+      name,
       spokenWord,
       intelligibilityScore,
       is_recognized,
@@ -20,6 +33,7 @@ recordingsRouter.post('/', async (req, res) => {
     const recording = new Recording({
       binaryAudioData: audioBuffer,
       wordBankId,
+      name,
       spokenWord,
       intelligibilityScore,
       is_recognized,
