@@ -7,7 +7,6 @@ import {
   saveRecording,
   sendAudioToDL,
 } from '../../services/recordingService';
-import { SpokenWords } from '../../../server/models/vocabLog';
 // import {Animated} from 'react-native';  //TODO ANIMATION - 1
 
 const STATUSES = {
@@ -93,19 +92,16 @@ const RecordPlayAudio = ({ child, word, flex }) => {
         wordBankId: word.wordBankId,
         name: word.name,
       };
-      console.log('child:', child);
-      console.log('word:', word);
+
       console.log('Data to send:', dataToSend);
 
-      //[ ] We send the Data to DL and get a response back
+      //[x] We send the Data to DL and get a response back
       const response = await sendAudioToDL(dataToSend);
       //TODO: (DLS-revert) change from saveRecording to sendAudioToDL
       //TODO:  const response = await saveRecording(dataToSend);
 
-      // We check if the response is successful
-      if (response.status === 201) {
+      if (response.success) {
         const result = await response;
-        console.log('Analysis Result:', result);
         // TODO: Implement button interaction feedback (e.g. disable button) + animation to display the results to the user
         // animateConfetti();
       } else {
