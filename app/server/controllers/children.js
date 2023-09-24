@@ -3,13 +3,13 @@ const { validationResult } = require('express-validator');
 const Child = require('../models/child');
 const User = require('../models/user');
 
-// Get all children
+//[x] GET all children
 childrenRouter.get('/', async (req, res) => {
   const children = await Child.find({});
   res.json(children);
 });
 
-// Get a child by id and populate spokenWords
+//[x] GET a child by id and populate spokenWords
 childrenRouter.get('/:id', async (req, res) => {
   const child = await Child.findById(req.params.id).populate({
     path: 'vocabLogs',
@@ -26,6 +26,52 @@ childrenRouter.get('/:id', async (req, res) => {
     res.json(child);
   } else {
     res.status(404).end();
+  }
+});
+
+//[x] GET all vocablogs for a child
+childrenRouter.get('/:id/vocablogs', async (req, res) => {
+  const child = await Child.findById(req.params.id).populate({
+    path: 'vocabLogs',
+    populate: {
+      path: 'spokenWords',
+      model: 'SpokenWords',
+      // populate: {
+      //   path: 'wordBankId',
+      //   model: 'WordBank',
+      // },
+    },
+  });
+  if (child) {
+    res.json(child.vocabLogs);
+  } else {
+    res.status(404).end();
+  }
+});
+
+//[x] GET the last vocabLog for a child.
+// Usecase: send to DS for their recommender
+childrenRouter.get('/:id/vocab', async (req, res) => {
+  try {
+    const child = await Child.findById(req.params.id).populate({
+      path: 'vocabLogs',
+      options: {
+        sort: { createdAt: -1 }, // Sort by createdAt in descending order to get the most recent
+        limit: 1, // Limit the result to just one document (the latest)
+      },
+      populate: {
+        path: 'spokenWords',
+        model: 'SpokenWords',
+      },
+    });
+
+    if (child && child.vocabLogs.length > 0) {
+      res.json(child.vocabLogs[0]); // Send the most recent vocabLog
+    } else {
+      res.status(404).json({ message: 'No vocabLogs found for this child.' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 

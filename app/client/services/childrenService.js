@@ -37,6 +37,17 @@ export const createChild = async (values, authUser) => {
   }
 };
 
+// Get (All the) the last vocab Spoken Words for a given child
+export const getVocabSpokenWords = async (id) => {
+  try {
+    const response = await axios.get(`${baseUrl}/${id}/vocablogs`);
+    console.log('Vocab Spoken Words:', response.data);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 // Update vocab Spoken Words for a given child
 export const update = (id, newObject) => {
   const request = axios.put(`${baseUrl}/${id}`, newObject);
