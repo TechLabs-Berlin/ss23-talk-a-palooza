@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
-
 import {
   uriToBase64,
   saveRecording,
   sendAudioToDL,
 } from '../../services/recordingService';
-import ExerciseBloc from './exerciseBloc';
 import { SpokenWords } from '../../../server/models/vocabLog';
 
 const STATUSES = {
@@ -18,7 +16,7 @@ const STATUSES = {
   FINISHED: 'Playback finished',
 };
 
-const RecordPlayAudio = ({ child, word, flex }) => {
+const RecordPlayAudio = ({ child, word, toTestWords, flex }) => {
   const [recording, setRecording] = useState();
   const [status, setStatus] = useState(`Let's start`);
   const [base64Recording, setBase64Recording] = useState('');
@@ -84,7 +82,6 @@ const RecordPlayAudio = ({ child, word, flex }) => {
 
     await playbackObject.playAsync();
   }
-
   // After playing back, offers to save and continue.
   async function saveAndContinue() {
     try {
@@ -111,48 +108,66 @@ const RecordPlayAudio = ({ child, word, flex }) => {
   // TODO: Refactor view controls in AudioControls component
   return (
     <>
-      <View style={[styles.container, { flex }]}>
+      <View clasName='mx-10' style={[styles.container, { flex }]}>
         <View className='exerciseBloc'>
-          <ExerciseBloc word={word} />
-          <View style={styles.controls}>
-            <Pressable
-              style={styles.button}
-              onPress={recording ? stopRecording : startRecording}
-            >
-              {recording ? (
-                <Image
-                  source={require('../../assets/images/voiceLoading.gif')}
-                  style={styles.image}
-                />
-              ) : (
-                <Image
-                  source={require('../../assets/images/recordingIcon.png')}
-                  style={styles.image}
-                />
-              )}
-            </Pressable>
-            {isPlaybackFinished && base64Recording ? (
-              <Pressable style={styles.save} onPress={saveAndContinue}>
-                <Text>Save and Continue</Text>
+          <View style={styles.exerciseBloc}>
+            <Text className='mt-0 sm:mt-10 lg:w-10/12 text-gray-500 font-normal text-center text-sm sm:text-lg'>
+              Try saying
+            </Text>
+            <Text className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10'>
+              {word.name}
+            </Text>
+            <View style={styles.mainImage}>
+              <Image
+                source={
+                  word.image
+                    ? { uri: require(`../../assets/images/${word.image}`) }
+                    : require('../../assets/images/placeholder.svg')
+                }
+                style={styles.banana}
+                contentFit='center'
+                transition={1000}
+              />
+            </View>
+            <View style={styles.controls}>
+              <Pressable
+                style={styles.button}
+                onPress={recording ? stopRecording : startRecording}
+                className='mt-5 sm:mt-10 lg:w-10/12 text-gray-500 font-normal text-center text-sm sm:text-lg'
+              >
+                {recording ? (
+                  <Image
+                    source={require('../../assets/images/voiceLoading.gif')}
+                    style={styles.image}
+                  />
+                ) : (
+                  <Image
+                    source={require('../../assets/images/recordingIcon.gif')}
+                    style={styles.image}
+                  />
+                )}
               </Pressable>
-            ) : (
-              <Text>{`${status}`}</Text>
-            )}
+              {isPlaybackFinished && base64Recording ? (
+                <Pressable style={styles.save} onPress={saveAndContinue}>
+                  <Text>Save and Continue</Text>
+                </Pressable>
+              ) : (
+                <Text>{`${status}`}</Text>
+              )}
+            </View>
           </View>
         </View>
       </View>
     </>
   );
 };
-
 export default RecordPlayAudio;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: 'gray',
-    padding: 10,
+    display: 'flex',
+    flexDirection: 'column',
+    // margin: '0px 40px 0px 40px',
   },
   controls: {
     alignItems: 'center',
@@ -170,5 +185,32 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
+    marginTop: -60,
+  },
+  exerciseBloc: {
+    alignItems: 'center',
+    flex: '1' /* Make items grow to fill available space */,
+    padding: '40px',
+    paddingTop: '0px',
+    textAlign: 'center',
+  },
+  mainImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 220,
+    width: 220,
+  },
+  banana: {
+    width: '80%',
+    height: '80%',
+    maxHeight: '100%',
+    maxWidth: '100%',
+    flex: 1,
+    width: 230,
+    //  borderRadius: '50%',
+  },
+  title: {
+    fontSize: '1.5rem',
+    textAlign: 'center',
   },
 });
