@@ -15,12 +15,13 @@ router = APIRouter()
 # }
 
 class SingleQuery(BaseModel): 
-    audio: str
-    target_term: str
+    binaryAudioData: str # replace with binary audio data
+    name: str
 
 class SingleResponse(BaseModel):
-    target_match: bool
-    score: float
+    is_recognized: bool
+    intelligibilityScore: float
+    # binaryAudioData: str # replace with binary audio data
 
 # for bundled query-response approach (called after completing full set of exercises):
 
@@ -34,16 +35,16 @@ class MultiQuery(BaseModel):
 class MultiResponse(BaseModel):
     response_data: Dict[str, Tuple[bool, float]] # format: {"word": (boolean, float), "word2": (boolean, float)}
 
-@router.post("/audio/single")
+@router.post("/speech-analysis")
 async def rate_audio(q: SingleQuery): # declaring it as a required parameter
-    audio_raw = q.audio
-    target_term = q.target_term
+    audio_raw = q.binaryAudioData
+    target_term = q.name
     print("Audio received")
     # send to model
     # placeholder to return values:
     score = random.random()
     match = score > 0.5
-    response = SingleResponse(target_match = match, score = score)
+    response = SingleResponse(is_recognized = match, intelligibilityScore = score)
     return response
 
 @router.post("/audio/multi")
