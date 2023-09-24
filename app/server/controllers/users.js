@@ -9,7 +9,6 @@ usersRouter.get('/', async (req, res) => {
     firstName: 1,
     birthDate: 1,
     gender: 1,
-    samples: 1,
   });
   res.json(users);
 });

@@ -16,8 +16,9 @@ const googleLogin = require('./passport/google');
 const authRouter = require('./routes/auth');
 const usersRouter = require('./controllers/users');
 const childrenRouter = require('./controllers/children');
-const samplesRouter = require('./controllers/samples');
 const vocabLogsRouter = require('./controllers/vocabLogs');
+const recordingsRouter = require('./controllers/recordings');
+const wordBanksRouter = require('./controllers/wordBanks');
 
 mongoose.set('debug', true);
 
@@ -68,8 +69,10 @@ app.use(middleware.requestLogger);
 app.use('/api/auth', authRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/children', childrenRouter);
-app.use('/api/samples', samplesRouter);
-app.use('/api/vocabLogs', vocabLogsRouter);
+app.use('/api/vocablogs', vocabLogsRouter);
+app.use('/api/recordings', recordingsRouter);
+app.use('/api/wordbank', wordBanksRouter);
+app.use('/api/wordbank/initial_assessment', wordBanksRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
