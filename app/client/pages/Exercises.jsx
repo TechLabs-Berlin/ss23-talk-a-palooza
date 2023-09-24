@@ -4,6 +4,7 @@ import { getChild } from '../services/childrenService';
 import RecordPlayAudio from '../components/AudioExercise/RecordPlayAudio';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
 import BackButton from '../components/navigation/BackButton';
+// import getVocabSpokenWords from '../services/vocabLogService';
 
 const Exercises = (word) => {
   const { authUser } = AuthData();
@@ -16,20 +17,62 @@ const Exercises = (word) => {
     });
   }, []);
 
-  //TODO: Get recommended words from DS
+  //TODO: Get recommended words from DS (or worst case fake it by providing a list of words and retrieving the info from WordBank)
   const recommendedWords = [
     {
-      wordBankId: 1,
+      wordBankId: '650d2691df78bbefe5a91340',
       name: 'Banana',
       priority: 1,
       image: 'banana.svg',
-      level: 1,
+      category: 'food',
+      is_audio: true,
+      wordLevel: 1,
     },
-    { wordBankId: 2, name: 'Teddy', priority: 2, image: 'teddy.svg', level: 1 },
-    { wordBankId: 3, name: 'Baby', priority: 3, image: 'baby.svg', level: 2 },
-    { wordBankId: 4, name: 'Dog', priority: 4, image: 'dog.svg', level: 2 },
-    { wordBankId: 5, name: 'Cat', priority: 5, image: 'cat.svg', level: 1 },
-    { wordBankId: 6, name: 'Milk', priority: 6, image: 'milk.svg', level: 1 },
+    {
+      wordBankId: '650ab3b1c748f7502858d848',
+      name: 'Teddy',
+      category: 'toys',
+      priority: 2,
+      image: 'teddy.svg',
+      is_audio: true,
+      wordLevel: 1,
+    },
+    {
+      wordBankId: '650ab3edc748f75028590a6f',
+      name: 'Baby',
+      category: 'people',
+      priority: 3,
+      image: 'baby.svg',
+      is_audio: true,
+      wordLevel: 2,
+    },
+    {
+      wordBankId: '650ab431c748f750285942e2',
+      name: 'Dog',
+      priority: 4,
+      category: 'animals',
+      image: 'dog.svg',
+      is_audio: true,
+      wordLevel: 2,
+    },
+    {
+      wordBankId: '650ab411c748f75028592835',
+      name: 'Cat',
+      priority: 5,
+      category: 'animals',
+      image: 'cat.svg',
+      is_audio: true,
+      wordLevel: 1,
+    },
+    {
+      wordBankId: '650ab45fc748f75028596913',
+      name: 'Milk',
+      priority: 6,
+      category: 'food',
+      image: 'milk.svg',
+      is_audio: true,
+      wordLevel: 1,
+    },
   ];
   // Create a copy of recommendedWords to avoid modifying the original array
   const [toTestWords, setToTestWords] = useState([...recommendedWords]);
