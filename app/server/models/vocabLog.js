@@ -1,22 +1,25 @@
 const mongoose = require('mongoose');
 
-const spokenWordsSchema = new mongoose.Schema({
-  name: String,
-  recordings: [
-    {
+const spokenWordsSchema = new mongoose.Schema(
+  {
+    name: String,
+    recordings: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Recording',
+      },
+    ],
+    peerComparisonScore: {
+      type: Number,
+      enum: [1, 2, 3, 4, 5],
+    }, // 1: “don’t know”, 2: “much lower”, 3: “lower”, 4: “normal”, 5: “higher”, 6: “much higher”
+    wordBankId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Recording',
+      ref: 'WordBank',
     },
-  ],
-  peerComparisonScore: {
-    type: Number,
-    enum: [1, 2, 3, 4, 5],
-  }, // 1: “don’t know”, 2: “much lower”, 3: “lower”, 4: “normal”, 5: “higher”, 6: “much higher”
-  wordBankId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'WordBank',
   },
-});
+  { timestamps: true }
+);
 
 const vocabLogSchema = new mongoose.Schema(
   {
