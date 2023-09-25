@@ -13,14 +13,16 @@ end
     BE -->> FE: Authenticate User
 
     User ->> FE: Take Initial Assessment
-    FE ->> BE: Send vocab (Assessment) Data
+    FE ->> BE: Send Assessment Data for storage
     BE ->> DS: Send vocab (Assessment) Data
-    DS -->> FE: Run Recommendation Model to create Exercise List
+    DS -->> BE: Run Recommendation Model to create Exercise List
+    BE -->> FE: Send Exercise List
 
     User ->> FE: Start Exercise
+    FE ->> DL: Send Audio recording to DL for analysis
+    DL -->> FE: Analyze Audio recording
     FE ->> BE: Send Audio recording to BE for storage
-    BE ->> DL: Send Audio recording
-    DL -->> BE: Analyze Audio recording
+    Note left of BE: if 'is_recognized = true'
     BE -->> FE: Send Exercise Result
 
 
