@@ -57,6 +57,10 @@ const ChildForm = ({ authUser, onSubmit }) => {
                 <Field type='radio' name='gender' value='F' />
                 <br /> Girl
               </Text>
+              <Text>
+                <Field type='radio' name='gender' value='RNS' />
+                <br /> Rather not say
+              </Text>
             </View>
             <View id='genderError'>
               <ErrorMessage name='gender' />
