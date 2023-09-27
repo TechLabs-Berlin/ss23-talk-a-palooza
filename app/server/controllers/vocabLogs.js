@@ -9,17 +9,17 @@ vocabLogsRouter.get('/', async (req, res) => {
   res.json(vocabLogs);
 });
 
-// BUG: GET by Id
-// vocabLogsRouter.get('/:id', async (req, res) => {
-//   const vocabLog = await VocabLog.findById(req.params.id);
-//   if (vocabLog) {
-//     res.json(vocabLog);
-//   } else {
-//     res.status(404).end();
-//   }
-// });
+//[x] GET by Id
+vocabLogsRouter.get('/:id', async (req, res) => {
+  const vocabLog = await VocabLog.findById(req.params.id);
+  if (vocabLog) {
+    res.json(vocabLog);
+  } else {
+    res.status(404).end();
+  }
+});
 
-// [x] 5 - POST by Child Id (Create the initial assessment words results, and add vocabLogs to child)
+//[x] POST by Child Id (Create the initial assessment words results, add vocabLogs to child
 vocabLogsRouter.post('/', async (req, res) => {
   try {
     const errors = validationResult(req);
@@ -28,29 +28,55 @@ vocabLogsRouter.post('/', async (req, res) => {
     }
 
     const { child, spokenWords } = req.body;
-    console.log('from controller', req.body);
 
-    // Create a new entry in the vocabLogs collection
+    //[x] Create a new entry in the vocabLogs collection
     const vocabLog = new VocabLog({
       spokenWords: spokenWords,
       child: child,
     });
 
-    console.log('vocabLog', vocabLog);
+    console.log('vocabLog created', vocabLog);
     await vocabLog.save();
 
-    // Update entry in the children collection
+    //[x] Update entry in the children collection
     await Child.findOneAndUpdate(
       { _id: child },
       { $push: { vocabLogs: vocabLog } },
       { new: true }
     );
-    console.log(vocabLog);
 
-    res.json(vocabLog);
+    res.status(201).json(vocabLog);
   } catch (error) {
-    console.error(error.message);
-    res.status(500).send('Server Error');
+    console.error('Error in storing vocab', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+//[x] Get recommended words from FE
+
+vocabLogsRouter.put('/:id', async (req, res) => {
+  try {
+    const { recommendedWords } = req.body;
+    const { id } = req.params;
+
+    const vocabLog = await VocabLog.findOneAndUpdate(
+      { _id: id },
+      { $push: { recommendedWords: recommendedWords } }
+    );
+    if (!vocabLog) {
+      return res.status(404).json({ message: 'VocabLog not found' });
+    }
+
+    // Save the updated vocabLog
+    await vocabLog.save();
+    console.log('vocabLog updated', vocabLog);
+
+    return res
+      .status(200)
+      .json({ message: 'Recommended words added to VocabLog' });
+  } catch (error) {
+    console.error('Error adding recommended words to VocabLog:', error);
+    res.status(500).json({ error: 'Server Error' });
   }
 });
 

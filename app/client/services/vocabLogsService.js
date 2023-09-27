@@ -1,5 +1,6 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/vocablogs';
+const DSUrl = 'http://localhost:8000/recommendations';
 
 // [x] Get all vocabs logs from backend
 export const getAll = () => {
@@ -15,18 +16,71 @@ export const createVocab = async (dataToSend) => {
       child: dataToSend.child.id,
     });
 
-    console.log('createVocab response:', response);
-
-    console.log('Sending data to server:', dataToSend);
-
-    console.log('createVocab Response from server:', response);
-
-    return response;
+    const vocabLog = response.data;
+    console.log('Child initial vocabulary:', vocabLog);
+    return response.data;
   } catch (error) {
     console.error('Error:', error);
     throw error;
   }
 };
 
+// [x] Get Recommendation
+export const getRecommendation = async (dataToDS) => {
+  try {
+    const response = await axios.post(
+      DSUrl,
+      {
+        spokenWords: dataToDS.spokenWords,
+        child: {
+          id: dataToDS.child.id,
+          gender: dataToDS.child.gender,
+          ageInMonths: dataToDS.child.ageInMonths,
+          wordLevel: dataToDS.child.wordLevel,
+        },
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    console.log('Sending spokenWords to recommender.py:', dataToDS);
+
+    //[x] get the answer back
+    if (response.status == 200) {
+      const recommendedWords = response.data;
+      console.log('Recommended words:', recommendedWords);
+      return recommendedWords;
+    } else {
+      throw new Error(
+        `Failed to get recommendation. Status: ${response.status}`
+      );
+    }
+  } catch (error) {
+    console.error('Error getting recommended words from DS server:', error);
+    throw error;
+  }
+};
+
+//[x] Save the recommended words to the given vocabLog
+export const saveRecommendedWords = async (recommendedWords, id) => {
+  try {
+    const response = await axios.put(`${baseUrl}/${id}`, recommendedWords);
+
+    if (response.status !== 200) {
+      throw new Error(
+        `Failed to save recommendedWord. Status: ${response.status}`
+      );
+    }
+    console.log('Saving recommended words', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error saving recommendedWord:', error);
+    throw error;
+  }
+};
+
 // eslint-disable-next-line
-export default { getAll, createVocab };
+export default { getAll, createVocab, getRecommendation, saveRecommendedWords };
