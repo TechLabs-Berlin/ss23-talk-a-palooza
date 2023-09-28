@@ -25,60 +25,31 @@ export const AuthWrapper = () => {
   const [child, setChild] = useState({});
 
   useEffect(() => {
-    // Simulate an asynchronous operation (e.g., fetching data), to allow time for oAuth to complete
-    setTimeout(async () => {
-      try {
-        const { data } = await axios.get(loginURL, { withCredentials: true });
-        const user = data.user;
-        setAuthUser({ ...user, isAuthenticated: true });
-        console.log('User is authenticated:', user);
-
-        // Assuming your user object has a property like childId that represents the child's ID
-        const childId = user.children[0];
-
-        // Fetch the child data based on the childId
-        const { data: childData } = await axios.get(`${childURL}/${childId}`);
-        setChild({ ...childData });
-        console.log('Child is registered:', childData);
-
-        setLoading(false); // Set loading to false when the operation is complete
-      } catch (err) {
-        console.error('Error:', err);
-      }
+    setTimeout(() => {
+      setLoading(false); // Set loading to false when the operation is complete
     }, 100);
   }, []);
 
-  // useEffect(() => {
-  //   // Simulate an asynchronous operation (e.g., fetching data), to allow time for oAuth to complete
-  //   setTimeout(() => {
-  //     setLoading(false); // Set loading to false when the operation is complete
-  //   }, 100);
-  // }, []);
-  // const getUser = async () => {
-  //   try {
-  //     const { data } = await axios.get(loginURL, { withCredentials: true });
-  //     const user = data.user;
-  //     setAuthUser({ ...user, isAuthenticated: true });
-  //     console.log('User is authenticated:', user);
-  //   } catch (err) {
-  //     console.log('Eror when authenticating user', err);
-  //   }
-  // };
-  // const getChild = async () => {
-  //   try {
-  //     const id = child._id;
-  //     const { data } = await axios.get(`${childURL}${id}`);
-  //     const childData = data;
-  //     setChild({ ...childData });
-  //     console.log('Child is registered:', child);
-  //   } catch (err) {
-  //     console.log('Eror when retrieving child', err);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getUser();
-  //   getChild();
-  // }, []);
+  const fetchData = async () => {
+    const { data } = await axios.get(loginURL, { withCredentials: true });
+    const user = data.user;
+    setAuthUser({ ...user, isAuthenticated: true });
+    console.log('User is authenticated:', user);
+
+    // Assuming your user object has a property like childId that represents the child's ID
+    const childId = user.children[0];
+
+    // Fetch the child data based on the childId
+    const { data: childData } = await axios.get(`${childURL}/${childId}`);
+    setChild({ ...childData });
+    console.log('Child is registered:', childData);
+
+    // setLoading(false); // Set loading to false when the operation is complete
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const logout = useCallback(() => {
     setAuthUser({ ...authUser, isAuthenticated: false });
