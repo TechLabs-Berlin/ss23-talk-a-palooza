@@ -9,10 +9,15 @@ childrenRouter.get('/', async (req, res) => {
   res.json(children);
 });
 
-//[x] GET a child by id and populate spokenWords
+//[x] GET a child by id and populate with the last vocabLog
+// Usecase: send to DS for their recommender
 childrenRouter.get('/:id', async (req, res) => {
   const child = await Child.findById(req.params.id).populate({
     path: 'vocabLogs',
+    options: {
+      sort: { createdAt: -1 }, // Sort by createdAt in descending order to get the most recent
+      limit: 1, // Limit the result to just one document (the latest)
+    },
     populate: {
       path: 'spokenWords',
       model: 'SpokenWords',
@@ -22,10 +27,16 @@ childrenRouter.get('/:id', async (req, res) => {
       },
     },
   });
-  if (child) {
+  if (child && child.vocabLogs.length > 0) {
+    const mostRecentVocabLog = child.vocabLogs[0];
+    // const response = {
+    //   child: child.toObject(), // Convert child to a plain JavaScript object
+    //   vocabLog: mostRecentVocabLog,
+    // };
+    // res.json(response); // Send the combined response
     res.json(child);
   } else {
-    res.status(404).end();
+    res.status(404).json({ message: 'No vocabLogs found for this child.' });
   }
 });
 
@@ -36,46 +47,42 @@ childrenRouter.get('/:id/vocablogs', async (req, res) => {
     populate: {
       path: 'spokenWords',
       model: 'SpokenWords',
-      // populate: {
-      //   path: 'wordBankId',
-      //   model: 'WordBank',
-      // },
     },
   });
-  if (child) {
-    res.json(child.vocabLogs);
+  if (child && child.vocabLogs.length > 0) {
+    res.json(child.vocabLogs[0]); // Send the most recent vocabLog
   } else {
-    res.status(404).end();
+    res.status(404).json({ message: 'No vocabLogs found for this child.' });
   }
 });
 
-//[x] GET the last vocabLog for a child.
-// Usecase: send to DS for their recommender
-childrenRouter.get('/:id/vocab', async (req, res) => {
-  try {
-    const child = await Child.findById(req.params.id).populate({
-      path: 'vocabLogs',
-      options: {
-        sort: { createdAt: -1 }, // Sort by createdAt in descending order to get the most recent
-        limit: 1, // Limit the result to just one document (the latest)
-      },
-      populate: {
-        path: 'spokenWords',
-        model: 'SpokenWords',
-      },
-    });
+// //[x] GET the last vocabLog for a child.
+// childrenRouter.get('/:id/vocab', async (req, res) => {
+//   try {
+//     const child = await Child.findById(req.params.id).populate({
+//       path: 'vocabLogs',
+//       options: {
+//         sort: { createdAt: -1 }, // Sort by createdAt in descending order to get the most recent
+//         limit: 1, // Limit the result to just one document (the latest)
+//       },
+//       populate: {
+//         path: 'spokenWords',
+//         model: 'SpokenWords',
+//       },
+//     });
 
-    if (child && child.vocabLogs.length > 0) {
-      res.json(child.vocabLogs[0]); // Send the most recent vocabLog
-    } else {
-      res.status(404).json({ message: 'No vocabLogs found for this child.' });
-    }
-  } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
+//     if (child && child.vocabLogs.length > 0) {
+//     const mostRecentVocabLog = child.vocabLogs[0];
+//     res.json({ vocabLog: mostRecentVocabLog }); // Send the most recent vocabLog with the name "vocabLog"
+//     } else {
+//       res.status(404).json({ message: 'No vocabLogs found for this child.' });
+//     }
+//   } catch (error) {
+//     res.status(500).json({ message: 'Internal server error' });
+//   }
+// });
 
-// Create a new child, add initial assessment results, and add child to user
+//[x] CREATE a new child, add initial assessment results, and add child to user
 childrenRouter.post('/', async (req, res) => {
   try {
     const errors = validationResult(req);
