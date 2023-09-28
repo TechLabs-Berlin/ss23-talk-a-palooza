@@ -16,7 +16,7 @@ const STATUSES = {
   FINISHED: 'Playback finished',
 };
 
-const RecordPlayAudio = ({ child, word, flex }) => {
+const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
   const [recording, setRecording] = useState();
   const [status, setStatus] = useState(`Let's start`);
   const [base64Recording, setBase64Recording] = useState('');
@@ -66,7 +66,6 @@ const RecordPlayAudio = ({ child, word, flex }) => {
 
     try {
       const base64String = await uriToBase64(uri);
-      console.log('Base64 String:', base64String);
       setBase64Recording(base64String);
     } catch (error) {
       console.error('Error:', error);
@@ -86,26 +85,21 @@ const RecordPlayAudio = ({ child, word, flex }) => {
   // After playing back, offers to save and continue.
   async function saveAndContinue() {
     try {
-      //NOTE: We specify the Data to Send:
       const dataToSend = {
         base64Recording,
         wordBankId: word.wordBankId,
         name: word.name,
       };
 
-      console.log('Data to send:', dataToSend);
-
-      //[x] We send the Data to DL and get a response back
+      //[x] Send the Data to DL and get a response back
       const response = await sendAudioToDL(dataToSend);
-      //TODO: (DLS-revert) change from saveRecording to sendAudioToDL
-      //TODO:  const response = await saveRecording(dataToSend);
 
-      if (response.success) {
-        const result = await response;
+      // callback to update the Exercise component when audio is recognized
+      if (response.data.is_recognized === true) {
+        onAudioRecognized(word);
+
         // TODO: Implement button interaction feedback (e.g. disable button) + animation to display the results to the user
         // animateConfetti();
-      } else {
-        console.error('Failed to send recording to DL server');
       }
     } catch (error) {
       console.error('Error:', error);

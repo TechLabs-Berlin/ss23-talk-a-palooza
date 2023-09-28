@@ -29,7 +29,7 @@ vocabLogsRouter.post('/', async (req, res) => {
 
     const { child, spokenWords } = req.body;
 
-    //[x] Create a new entry in the vocabLogs collection
+    // Create a new entry in the vocabLogs collection
     const vocabLog = new VocabLog({
       spokenWords: spokenWords,
       child: child,
@@ -38,7 +38,7 @@ vocabLogsRouter.post('/', async (req, res) => {
     console.log('vocabLog created', vocabLog);
     await vocabLog.save();
 
-    //[x] Update entry in the children collection
+    // Update entry in the children collection
     await Child.findOneAndUpdate(
       { _id: child },
       { $push: { vocabLogs: vocabLog } },
@@ -52,8 +52,7 @@ vocabLogsRouter.post('/', async (req, res) => {
   }
 });
 
-//[x] Get recommended words from FE
-
+//[x] GET recommended words from FE
 vocabLogsRouter.put('/:id', async (req, res) => {
   try {
     const { recommendedWords } = req.body;
@@ -80,28 +79,50 @@ vocabLogsRouter.put('/:id', async (req, res) => {
   }
 });
 
-// TODO: PUT by Child Id
-// vocabLogsRouter.put('/:id', async (req, res) => {
-//   const body = req.body;
+//[x] POST spoken words to VocabLog
+vocabLogsRouter.post('/updatespokenwords/', async (req, res) => {
+  try {
+    const { dataToSend, child } = req.body;
 
-//   const vocabLog = {
-//     content: body.content,
-//     important: body.important,
-//   };
+    console.log('dataToSend', dataToSend, child);
+    // Find the VocabLog by Id
+    const vocabLog = await VocabLog.findById(dataToSend.vocabLogId);
 
-//   const updatedVocabLog = await VocabLog.findByIdAndUpdate(
-//     req.params.id,
-//     vocabLog,
-//     {
-//       new: true,
-//     }
-//   );
-//   res.json(updatedVocabLog);
-// });
+    if (!vocabLog) {
+      return res.status(404).json({ message: 'VocabLog not found' });
+    }
 
-// vocabLogsRouter.delete('/:id', async (req, res) => {
-//   await vocabLog.findByIdAndRemove(req.params.id);
-//   res.status(204).end();
-// });
+    // Check if a spokenWord with the same name already exists
+    const existingSpokenWord = vocabLog.spokenWords.find(
+      (word) => word.name === dataToSend.name
+    );
+    console.log('existingSpokenWord', existingSpokenWord);
+
+    if (existingSpokenWord) {
+      existingSpokenWord.wordBankId = dataToSend.wordBankId;
+      existingSpokenWord.updatedAt = new Date();
+
+      //TODO: Add recordings to existingSpokenWord
+      // existingSpokenWord.recordings.push(dataToSend.recordingId);
+
+      await vocabLog.save();
+      console.log('vocabLog updated', vocabLog);
+    } else {
+      const newSpokenWord = {
+        name: dataToSend.name,
+        wordBankId: dataToSend.wordBankId,
+        vocabLogId: dataToSend.vocabLogId,
+        // recordings: [dataToSend.recordingId], // to add recordings
+      };
+      vocabLog.spokenWords.push(newSpokenWord);
+      await vocabLog.save();
+      console.log('vocabLog updated', vocabLog);
+    }
+    return res.status(200).json({ message: 'Spoken words added to VocabLog' });
+  } catch (error) {
+    console.error('Error adding spoken words to VocabLog:', error);
+    res.status(500).json({ error: 'Server Error' });
+  }
+});
 
 module.exports = vocabLogsRouter;
