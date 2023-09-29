@@ -6,7 +6,7 @@ import {
   useMemo,
   useCallback,
 } from 'react';
-import RenderRoutes from '../components/auth/RenderRoutes';
+import RenderRoutes from './RenderRoutes';
 import axios from 'axios';
 
 const AuthContext = createContext();
