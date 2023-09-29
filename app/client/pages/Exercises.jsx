@@ -4,7 +4,8 @@ import { getChild } from '../services/childrenService';
 import RecordPlayAudio from '../components/AudioExercise/RecordPlayAudio';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
 import BackButton from '../components/navigation/BackButton';
-// import getVocabSpokenWords from '../services/vocabLogService';
+
+import axios from 'axios';
 
 const Exercises = (word) => {
   const { authUser } = AuthData();
@@ -84,8 +85,6 @@ const Exercises = (word) => {
   const [completedWords, setCompletedWords] = useState([]);
   const [wordCountToShow, setWordCountToShow] = useState(1);
 
-  // console.log('completed words', completedWords.wordBankId);
-
   const completeWord = (wordBankId) => {
     // Check if the wordBankId is not already in completedWords
     if (!completedWords.includes(wordBankId)) {
@@ -93,21 +92,55 @@ const Exercises = (word) => {
       setCompletedWords([...completedWords, wordBankId]);
     }
 
-    //NOTE: we remove the completed word from toTestWords
+    // Remove the completed word from toTestWords
     //TODO: this should happen only after receiving a yes response from DL
     const updatedToTestWords = toTestWords.filter(
       (word) => word.wordBankId !== wordBankId
     );
     console.log('updated to test words', updatedToTestWords);
 
-    // We update toTestWords with the filtered array
+    // Update toTestWords with the filtered array
     setToTestWords(updatedToTestWords);
     console.log('to test words', toTestWords);
 
-    // We check if we need to increment wordCountToShow
+    // Check if we need to increment wordCountToShow
     if (completedWords.length >= wordCountToShow) {
       setWordCountToShow(wordCountToShow + 1);
     }
+  };
+
+  console.log('completed words', completedWords);
+  console.log('to test words', toTestWords);
+
+  const handleAudioRecognized = async (word) => {
+    //TODO: update state completedWod Handle the success, e.g., set a flag or update state
+    try {
+      // Make an API request to update the child's spokenWords
+      //TODO: (refactor in service)
+      const dataToSend = {
+        name: word.name,
+        wordBankId: word.wordBankId,
+        vocabLogId: child.vocabLogs[0]._id,
+      };
+
+      const response = await axios.post(
+        'http://localhost:3001/api/vocablogs/updatespokenwords',
+        {
+          dataToSend,
+        }
+      );
+      if (response.data) {
+        // The child's spokenWords were successfully updated in the database
+        console.log(
+          `${child.firstName} can say ${word.name}!! Word added to their vocabLog `
+        );
+      } else {
+        console.error('Failed to update child spokenWords');
+      }
+    } catch (error) {
+      console.error('Error updating child spokenWords', error);
+    }
+    //TODO: update state completedWord
   };
 
   // TODO: Implement navigation logic to continue to the next exercise + when does DL assess the exercises?
@@ -148,6 +181,7 @@ const Exercises = (word) => {
                   index % 2 === 0 ? styles.topExercise : styles.bottomExercise,
                 ]}
                 flex={calculateFlex()}
+                onAudioRecognized={handleAudioRecognized}
               />
             ))}
         </View>

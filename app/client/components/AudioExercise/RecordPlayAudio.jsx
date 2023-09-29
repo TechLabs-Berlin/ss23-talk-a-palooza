@@ -10,7 +10,7 @@ import {
 // import {Animated} from 'react-native';  //TODO ANIMATION - 1
 
 const STATUSES = {
-  START: "Let's start! Tap the mic to talk",
+  START: 'Tap the mic to talk',
   RECORDING: 'Recording...',
   PLAYING: 'Playing...',
   FINISHED: 'Playback finished',

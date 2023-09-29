@@ -24,6 +24,14 @@ const spokenWordsSchema = new mongoose.Schema(
 const vocabLogSchema = new mongoose.Schema(
   {
     spokenWords: [spokenWordsSchema],
+    recommendedWords: [
+      {
+        name: { type: String },
+        wordBankId: { type: mongoose.Schema.Types.ObjectId, ref: 'WordBank' },
+        priority: { type: Number, enum: [1, 2, 3, 4, 5] },
+        wordLevel: { type: Number, enum: [1, 2, 3, 4, 5] },
+      },
+    ],
     child: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Child',
