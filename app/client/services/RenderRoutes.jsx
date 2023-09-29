@@ -4,7 +4,7 @@ import { AuthData } from './AuthWrapper';
 import StartScreen from '../screens/StartScreen';
 import Main from '../screens/Main';
 import Dashboard from '../screens/Dashboard';
-import Exercises from '../screens/ExerciseScreen';
+import ExerciseScreen from '../screens/ExerciseScreen';
 
 const userPath = [
   {
@@ -23,8 +23,8 @@ const userPath = [
   },
   {
     path: '/practice',
-    component: 'Exercises',
-    element: <Exercises />,
+    component: 'ExerciseScreen',
+    element: <ExerciseScreen />,
     isRestricted: true,
     navigate: <Navigate replace to='/start' />,
   },

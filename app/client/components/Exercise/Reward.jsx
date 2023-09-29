@@ -1,6 +1,6 @@
-import { AuthData } from '../services/AuthWrapper';
+import { AuthData } from '../../services/AuthWrapper';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { HomeButton, NextButton } from '../components/navigation/Buttons';
+import { HomeButton, NextButton } from '../navigation/Buttons';
 
 const Reward = ({}) => {
   const { authUser, child } = AuthData();

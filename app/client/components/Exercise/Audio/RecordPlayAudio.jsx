@@ -6,7 +6,7 @@ import {
   uriToBase64,
   saveRecording,
   sendAudioToDL,
-} from '../../services/recordingService';
+} from '../../../services/recordingService';
 // import {Animated} from 'react-native';  //TODO ANIMATION - 1
 
 const STATUSES = {
@@ -165,8 +165,8 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
               <Image
                 source={
                   word.image
-                    ? { uri: require(`../../assets/images/${word.image}`) }
-                    : require('../../assets/images/placeholder.svg')
+                    ? { uri: require(`../../../assets/images/${word.image}`) }
+                    : require('../../../assets/images/placeholder.svg')
                 }
                 style={styles.banana}
                 contentFit='center'
@@ -187,12 +187,12 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
               >
                 {recording ? (
                   <Image
-                    source={require('../../assets/images/voiceLoading.gif')}
+                    source={require('../../../assets/images/voiceLoading.gif')}
                     style={styles.image}
                   />
                 ) : (
                   <Image
-                    source={require('../../assets/images/recordingIcon.gif')}
+                    source={require('../../../assets/images/recordingIcon.gif')}
                     style={styles.image}
                   />
                 )}
