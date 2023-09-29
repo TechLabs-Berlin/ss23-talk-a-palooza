@@ -3,7 +3,7 @@ import { AuthData } from '../services/AuthWrapper';
 import { getChild } from '../services/childrenService';
 import RecordPlayAudio from '../components/AudioExercise/RecordPlayAudio';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import BackButton from '../components/navigation/BackButton';
+import { HomeButton, NextButton } from '../components/navigation/Buttons';
 
 import axios from 'axios';
 
@@ -84,29 +84,29 @@ const Exercises = (word) => {
   const [toTestWords, setToTestWords] = useState([...recommendedWords]);
   const [completedWords, setCompletedWords] = useState([]);
   const [wordCountToShow, setWordCountToShow] = useState(1);
+  const [isSetDone, setIsSetDone] = useState(false);
 
   const completeWord = (wordBankId) => {
-    // Check if the wordBankId is not already in completedWords
-    if (!completedWords.includes(wordBankId)) {
-      // Add the completed word's wordBankId to completedWords
-      setCompletedWords([...completedWords, wordBankId]);
-    }
+    setCompletedWords((prevCompletedWords) => {
+      if (!prevCompletedWords.includes(wordBankId)) {
+        return [...prevCompletedWords, wordBankId];
+      }
+      return prevCompletedWords;
+    });
 
-    // Remove the completed word from toTestWords
-    //TODO: this should happen only after receiving a yes response from DL
     const updatedToTestWords = toTestWords.filter(
       (word) => word.wordBankId !== wordBankId
     );
-    console.log('updated to test words', updatedToTestWords);
 
-    // Update toTestWords with the filtered array
     setToTestWords(updatedToTestWords);
-    console.log('to test words', toTestWords);
 
-    // Check if we need to increment wordCountToShow
-    if (completedWords.length >= wordCountToShow) {
-      setWordCountToShow(wordCountToShow + 1);
-    }
+    setWordCountToShow((prevCount) => {
+      const newCount = Math.min(prevCount + 1, 3);
+      if (newCount === 3) {
+        setIsSetDone(true);
+      }
+      return newCount;
+    });
   };
 
   console.log('completed words', completedWords);
@@ -122,7 +122,6 @@ const Exercises = (word) => {
         wordBankId: word.wordBankId,
         vocabLogId: child.vocabLogs[0]._id,
       };
-
       const response = await axios.post(
         'http://localhost:3001/api/vocablogs/updatespokenwords',
         {
@@ -130,7 +129,6 @@ const Exercises = (word) => {
         }
       );
       if (response.data) {
-        // The child's spokenWords were successfully updated in the database
         console.log(
           `${child.firstName} can say ${word.name}!! Word added to their vocabLog `
         );
@@ -143,55 +141,63 @@ const Exercises = (word) => {
     //TODO: update state completedWord
   };
 
-  // TODO: Implement navigation logic to continue to the next exercise + when does DL assess the exercises?
-  // TODO: set of exercises? Waiting for specifications
-
   const calculateFlex = () => {
-    switch (wordCountToShow) {
-      case 1:
-        return 1; // Take up full width/height
-      case 2:
-        return 0.5; // Take up half of the available space
-      case 3:
-        return 1 / 3; // Take up one-third of the available space
-      default:
-        return 1; // Default to full width/height
+    if (!isSetDone) {
+      switch (wordCountToShow) {
+        case 1:
+          return 1; // Take up full width/height
+        case 2:
+          return 0.5; // Take up half of the available space
+        case 3:
+          return 1 / 3;
+        default:
+          return 1;
+      }
+    } else {
+      return 1 / 3;
     }
   };
 
+  console.log('word count to show', wordCountToShow);
+
   return (
     <>
-      <BackButton />
+      <HomeButton />
       <View style={styles.container}>
         <View style={styles.row}>
           {toTestWords
             .filter(
-              (recommendedWord) =>
-                !completedWords.includes(recommendedWord.wordBankId)
+              (toTestWord) => !completedWords.includes(toTestWord.wordBankId)
             )
             .slice(0, wordCountToShow)
-            .map((recommendedWord, index) => (
+            .map((toTestWord, index) => (
               <RecordPlayAudio
                 child={child}
-                word={recommendedWord}
+                word={toTestWord}
                 toTestWords={toTestWords}
-                key={recommendedWord.wordBankId}
-                style={[
-                  styles.flexGrow,
-                  index % 2 === 0 ? styles.topExercise : styles.bottomExercise,
-                ]}
+                key={toTestWord.wordBankId}
+                style={[styles.flexGrow]}
                 flex={calculateFlex()}
                 onAudioRecognized={handleAudioRecognized}
               />
             ))}
         </View>
       </View>
-      {/* continue button */}
-      <View className='flex mr-0 ml-auto'>
-        <Pressable onPress={() => completeWord(toTestWords[0].wordBankId)}>
-          <Text>Continue</Text>
-        </Pressable>
-      </View>
+
+      {!isSetDone ? (
+        <NextButton onPress={() => completeWord(toTestWords[0].wordBankId)} />
+      ) : (
+        <View className='flex mr-0 ml-auto'>
+          <Pressable
+            onPress={() => {
+              window.location.href = '/reward';
+              setIsSetDone(true);
+            }}
+          >
+            <Text>Complete session</Text>
+          </Pressable>
+        </View>
+      )}
     </>
   );
 };
@@ -215,7 +221,10 @@ const styles = StyleSheet.create({
   },
   topExercise: {
     order: -1, // Display at the top of its row
-    margin: '0 auto',
+    marginTop: 0,
+    marginBottom: 'auto',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   bottomExercise: {
     order: 1, // Display at the bottom of its row
