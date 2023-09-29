@@ -4,7 +4,7 @@ import { AuthData } from './AuthWrapper';
 import StartScreen from '../screens/StartScreen';
 import Main from '../screens/Main';
 import Dashboard from '../screens/Dashboard';
-import Exercises from '../screens/Exercises';
+import Exercises from '../screens/ExerciseScreen';
 
 const userPath = [
   {
