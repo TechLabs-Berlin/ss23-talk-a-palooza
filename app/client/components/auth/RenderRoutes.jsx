@@ -1,10 +1,10 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { AuthData } from '../../services/AuthWrapper';
 
-import StartScreen from '../../pages/StartScreen';
-import Main from '../../pages/Main';
-import Dashboard from '../../pages/Dashboard';
-import Exercises from '../../pages/Exercises';
+import StartScreen from '../../screens/StartScreen';
+import Main from '../../screens/Main';
+import Dashboard from '../../screens/Dashboard';
+import Exercises from '../../screens/Exercises';
 
 const userPath = [
   {

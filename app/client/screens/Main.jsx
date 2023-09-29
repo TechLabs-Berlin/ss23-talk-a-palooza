@@ -1,4 +1,4 @@
-import InitialAssessment from '../pages/InitialAssessment';
+import InitialAssessment from '../screens/InitialAssessment';
 import MainMenu from '../components/MainMenu';
 import { AuthData } from '../services/AuthWrapper';
 
