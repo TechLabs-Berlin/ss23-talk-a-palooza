@@ -13,6 +13,7 @@ const AuthContext = createContext();
 const ChildContext = createContext();
 
 export const AuthData = () => useContext(AuthContext, {});
+export const ChildData = () => useContext(ChildContext, {});
 const loginURL = 'http://localhost:3001/api/auth/login/success';
 const childURL = `http://localhost:3001/api/children/`;
 

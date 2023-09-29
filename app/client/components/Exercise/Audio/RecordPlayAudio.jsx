@@ -97,15 +97,17 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
 
       //[x] Send the Data to DL and get a response back
       const response = await sendAudioToDL(dataToSend);
-
       // callback to update the Exercise component when audio is recognized
       if (response.data.is_recognized === true) {
         onAudioRecognized(word);
         setIsSaved(true);
         setIsRecognized(true);
-        setStatus(STATUSES.RECOGNIZED);
-
-        // TODO: Implement button interaction feedback (e.g. disable button) + animation to display the results to the user
+        setStatus(
+          'Bravo! ' +
+            Math.round(response.data.intelligibilityScore * 100).toString() +
+            '% intelligible'
+        );
+        // TODO: Implement animation confetti
         // animateConfetti();
       } else {
         setIsSaved(true);

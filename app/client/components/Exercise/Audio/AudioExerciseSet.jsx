@@ -6,8 +6,7 @@ import { useState, useEffect } from 'react';
 
 import axios from 'axios';
 
-const AudioExerciseSet = ({ recommendedWords }) => {
-  console.log('recommendedWords', recommendedWords);
+const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
   const [toTestWords, setToTestWords] = useState(recommendedWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
   const [completedWords, setCompletedWords] = useState([]);
   const [wordCountToShow, setWordCountToShow] = useState(1);
@@ -34,13 +33,20 @@ const AudioExerciseSet = ({ recommendedWords }) => {
 
     // specifics audio. countToShow, isSetDone,
     setWordCountToShow((prevCount) => {
-      const newCount = Math.min(prevCount + 1, 3);
-      if (newCount === 3) {
+      const newCount = Math.min(prevCount + 1, 4);
+      if (newCount === 4) {
         setIsSetDone(true);
+        // onCompleteSession();
       }
       return newCount;
     });
   };
+
+  useEffect(() => {
+    if (isSetDone) {
+      onCompleteSession();
+    }
+  }, [isSetDone, onCompleteSession]);
 
   const handleAudioRecognized = async (word) => {
     //TODO: update state completedWod Handle the success, e.g., set a flag or update state
@@ -79,6 +85,8 @@ const AudioExerciseSet = ({ recommendedWords }) => {
           return 0.5; // Take up half of the available space
         case 3:
           return 1 / 3;
+        case 4:
+          return 1 / 4;
         default:
           return 1;
       }
@@ -90,9 +98,6 @@ const AudioExerciseSet = ({ recommendedWords }) => {
 
   return (
     <>
-      <View>
-        <Text>AudioExerciseSet</Text>
-      </View>
       <View style={styles.container}>
         <View style={styles.row}>
           {toTestWords
@@ -102,7 +107,7 @@ const AudioExerciseSet = ({ recommendedWords }) => {
             .slice(0, wordCountToShow)
             .map((toTestWord, index) => (
               <RecordPlayAudio
-                // child={child}
+                child={child}
                 word={toTestWord}
                 toTestWords={toTestWords}
                 key={toTestWord.wordBankId}
@@ -116,18 +121,7 @@ const AudioExerciseSet = ({ recommendedWords }) => {
 
       {!isSetDone ? (
         <NextButton onPress={() => completeWord(toTestWords[0].wordBankId)} />
-      ) : (
-        <View className='flex mr-0 ml-auto'>
-          <Pressable
-            onPress={() => {
-              window.location.href = '/reward';
-              setIsSetDone(true);
-            }}
-          >
-            <Text>Complete session</Text>
-          </Pressable>
-        </View>
-      )}
+      ) : null}
     </>
   );
 };

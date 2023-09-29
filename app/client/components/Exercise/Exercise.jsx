@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import AudioExerciseSet from './Audio/AudioExerciseSet';
+import Reward from './Reward';
+import { StyleSheet, View, Pressable, Text } from 'react-native';
 import { HomeButton, NextButton } from '../navigation/Buttons';
+import { ChildData } from '../../services/AuthWrapper';
 
-const Exercises = (child) => {
+const Exercises = () => {
+  const { child } = ChildData();
   //NOTE: We send the child's spokenWords to DS (and so get the recommended words from DS automatically)
   //TODO: Change from dummy data (or worst case fake it by providing a list of words and retrieving the info from WordBank)
   const recommendedWords = [
@@ -61,10 +66,34 @@ const Exercises = (child) => {
     },
   ];
 
+  const [isSetDone, setIsSetDone] = useState(false);
+  const [showRewards, setShowRewards] = useState(false);
+
+  const handleCompleteSession = () => {
+    setShowRewards(true);
+  };
+
   return (
     <>
       <HomeButton />
-      <AudioExerciseSet recommendedWords={recommendedWords} />
+
+      {!showRewards && (
+        <AudioExerciseSet
+          child={child}
+          recommendedWords={recommendedWords}
+          onCompleteSession={handleCompleteSession}
+        />
+      )}
+
+      {!showRewards && isSetDone ? (
+        <View className='flex mr-0 ml-auto'>
+          <Pressable onPress={handleCompleteSession}>
+            <Text>Complete session</Text>
+          </Pressable>
+        </View>
+      ) : null}
+
+      {showRewards && <Reward />}
     </>
   );
 };
