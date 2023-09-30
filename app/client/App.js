@@ -11,7 +11,7 @@ NativeWindStyleSheet.setOutput({
 export default function App() {
   return (
     <View
-      className='shadow-2xl flex max-h-100 flex-1 p-10 items-center justify-center rounded-xl border-8 border-solid border-black'
+      className='shadow-2xl flex max-h-100 m-20 flex-1 items-center justify-center rounded-xl border-8 border-solid border-black'
       style={styles.container}
     >
       <BrowserRouter>
@@ -25,6 +25,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundImage: 'linear-gradient(180deg, #7ec8d6 0%, #fff 50%)',
+    backgroundImage: 'linear-gradient(180deg, #e7f1fc 0%, #fff 70%)',
+    // maxHeight: '768px',
+    justifyContent: 'center',
   },
 });
