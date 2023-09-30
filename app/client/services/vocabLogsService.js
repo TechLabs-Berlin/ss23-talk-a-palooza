@@ -70,7 +70,7 @@ export const getRecommendation = async (dataToDS) => {
     //[x] get the answer back
     if (response.status == 200) {
       const recommendedWords = response.data;
-      console.log('Recommended words:', recommendedWords);
+      console.log('Getting updated recommended words:', recommendedWords);
       return recommendedWords;
     } else {
       throw new Error(

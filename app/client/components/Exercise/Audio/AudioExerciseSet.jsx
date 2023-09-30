@@ -3,7 +3,11 @@ import { NextButton } from '../../navigation/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
 import { useState, useEffect } from 'react';
-import { updateVocab } from '../../../services/vocabLogsService';
+import {
+  updateVocab,
+  getRecommendation,
+  saveRecommendedWords,
+} from '../../../services/vocabLogsService';
 
 const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
   const [toTestWords, setToTestWords] = useState(recommendedWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
@@ -53,10 +57,17 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
       wordBankId: word.wordBankId,
       vocabLogId: child.vocabLogs[0]._id,
     };
-    updateVocab(dataToSend);
-
-    //TODO: Get recommendedWords from DS
-    //TODO: update state completedWord
+    const dataToDS = {
+      spokenWords: child.vocabLogs[0].spokenWords,
+      child: {
+        id: child.id,
+        gender: child.gender,
+        ageInMonths: child.ageInMonths,
+      },
+    };
+    await updateVocab(dataToSend);
+    await getRecommendation(dataToDS);
+    await saveRecommendedWords(recommendedWords, child.vocabLogs[0]._id);
   };
   const calculateFlex = () => {
     if (!isSetDone) {
