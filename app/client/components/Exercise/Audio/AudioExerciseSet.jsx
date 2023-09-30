@@ -1,10 +1,9 @@
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { HomeButton, NextButton } from '../../navigation/Buttons';
+import { NextButton } from '../../navigation/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
 import { useState, useEffect } from 'react';
-
-import axios from 'axios';
+import { updateVocab } from '../../../services/vocabLogsService';
 
 const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
   const [toTestWords, setToTestWords] = useState(recommendedWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
@@ -49,31 +48,14 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
   }, [isSetDone, onCompleteSession]);
 
   const handleAudioRecognized = async (word) => {
-    //TODO: update state completedWod Handle the success, e.g., set a flag or update state
-    try {
-      // Make an API request to update the child's spokenWords
-      //TODO: (refactor in service)
-      const dataToSend = {
-        name: word.name,
-        wordBankId: word.wordBankId,
-        vocabLogId: child.vocabLogs[0]._id,
-      };
-      const response = await axios.post(
-        'http://localhost:3001/api/vocablogs/updatespokenwords',
-        {
-          dataToSend,
-        }
-      );
-      if (response.data) {
-        console.log(
-          `${child.firstName} can say ${word.name}!! Word added to their vocabLog `
-        );
-      } else {
-        console.error('Failed to update child spokenWords');
-      }
-    } catch (error) {
-      console.error('Error updating child spokenWords', error);
-    }
+    const dataToSend = {
+      name: word.name,
+      wordBankId: word.wordBankId,
+      vocabLogId: child.vocabLogs[0]._id,
+    };
+    updateVocab(dataToSend);
+
+    //TODO: Get recommendedWords from DS
     //TODO: update state completedWord
   };
   const calculateFlex = () => {

@@ -101,9 +101,7 @@ vocabLogsRouter.post('/updatespokenwords/', async (req, res) => {
     if (existingSpokenWord) {
       existingSpokenWord.wordBankId = dataToSend.wordBankId;
       existingSpokenWord.updatedAt = new Date();
-
-      //TODO: Add recordings to existingSpokenWord
-      // existingSpokenWord.recordings.push(dataToSend.recordingId);
+      existingSpokenWord.recordings.push(dataToSend.recordingId); // Add recordings
 
       await vocabLog.save();
       console.log('vocabLog updated', vocabLog);
@@ -112,7 +110,7 @@ vocabLogsRouter.post('/updatespokenwords/', async (req, res) => {
         name: dataToSend.name,
         wordBankId: dataToSend.wordBankId,
         vocabLogId: dataToSend.vocabLogId,
-        // recordings: [dataToSend.recordingId], // to add recordings
+        recordings: [dataToSend.recordingId], // Add recordings
       };
       vocabLog.spokenWords.push(newSpokenWord);
       await vocabLog.save();

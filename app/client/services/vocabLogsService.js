@@ -25,6 +25,25 @@ export const createVocab = async (dataToSend) => {
   }
 };
 
+//[x] POST spoken words to VocabLog
+export const updateVocab = async (dataToSend) => {
+  try {
+    const response = await axios.post(`${baseUrl}/updatespokenwords`, {
+      dataToSend,
+    });
+    if (response.data) {
+      const vocabLog = response.data;
+      console.log('Child updated vocabulary:', vocabLog);
+    } else {
+      console.error('Failed to update child spokenWords');
+    }
+    // return response.data;
+  } catch (error) {
+    console.error('Error:', error);
+    throw error;
+  }
+};
+
 // [x] Get Recommendation
 export const getRecommendation = async (dataToDS) => {
   try {
@@ -63,7 +82,6 @@ export const getRecommendation = async (dataToDS) => {
     throw error;
   }
 };
-
 //[x] Save the recommended words to the given vocabLog
 export const saveRecommendedWords = async (recommendedWords, id) => {
   try {
@@ -83,4 +101,10 @@ export const saveRecommendedWords = async (recommendedWords, id) => {
 };
 
 // eslint-disable-next-line
-export default { getAll, createVocab, getRecommendation, saveRecommendedWords };
+export default {
+  getAll,
+  createVocab,
+  getRecommendation,
+  updateVocab,
+  saveRecommendedWords,
+};
