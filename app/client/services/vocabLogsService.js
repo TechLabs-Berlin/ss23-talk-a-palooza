@@ -85,7 +85,9 @@ export const getRecommendation = async (dataToDS) => {
 //[x] Save the recommended words to the given vocabLog
 export const saveRecommendedWords = async (recommendedWords, id) => {
   try {
-    const response = await axios.put(`${baseUrl}/${id}`, recommendedWords);
+    const response = await axios.put(`${baseUrl}/${id}`, {
+      recommendedWords: recommendedWords,
+    });
 
     if (response.status !== 200) {
       throw new Error(
