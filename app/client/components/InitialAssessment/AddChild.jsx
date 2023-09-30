@@ -2,9 +2,11 @@ import { StyleSheet, View } from 'react-native';
 import { useState } from 'react';
 import ChildForm from './ChildForm';
 import AddWords from './AddWords';
+import { AuthData } from '../../services/AuthWrapper';
 import ChildrenService from '../../services/childrenService';
 
-const AddChild = ({ authUser }) => {
+const AddChild = () => {
+  const { authUser } = AuthData();
   const [child, setChild] = useState(child);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -15,10 +17,10 @@ const AddChild = ({ authUser }) => {
     console.log('Child added:', child);
   };
 
-  return isSubmitted ? (
-    <AddWords child={child} />
+  return child && isSubmitted ? (
+    <AddWords />
   ) : (
-    <ChildForm onSubmit={handleSubmitChildForm} authUser={authUser} />
+    <ChildForm onSubmit={handleSubmitChildForm} />
   );
 };
 
