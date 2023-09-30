@@ -23,7 +23,7 @@ export const AuthWrapper = () => {
     isAuthenticated: false,
   });
   const [loading, setLoading] = useState(true);
-  const [child, setChild] = useState(null);
+  const [child, setChild] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
@@ -34,7 +34,7 @@ export const AuthWrapper = () => {
   const fetchData = async () => {
     const { data } = await axios.get(loginURL, { withCredentials: true });
     const user = data.user;
-    setAuthUser({ ...user, isAuthenticated: true });
+
     console.log('User is authenticated:', user);
 
     const childId = user.children[0];
@@ -47,8 +47,8 @@ export const AuthWrapper = () => {
       setChild(null);
       console.log('Child is not registered');
     }
-
-    // setLoading(false); // Set loading to false when the operation is complete
+    setAuthUser({ ...user, isAuthenticated: true });
+    setLoading(false); // Set loading to false when the operation is complete
   };
 
   useEffect(() => {
