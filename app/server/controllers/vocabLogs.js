@@ -60,7 +60,7 @@ vocabLogsRouter.put('/:id', async (req, res) => {
 
     const vocabLog = await VocabLog.findOneAndUpdate(
       { _id: id },
-      { $push: { recommendedWords: recommendedWords } }
+      { $set: { recommendedWords: recommendedWords } }
     );
     if (!vocabLog) {
       return res.status(404).json({ message: 'VocabLog not found' });
