@@ -41,6 +41,7 @@ recordingsRouter.post('/', async (req, res) => {
     console.log('new recording created', recording);
 
     // Find the spokenWord document by id and update it
+    //BUG when new saved as null, when update, saved +null
     await VocabLog.findOneAndUpdate(
       { 'spokenWords.wordBankId': wordBankId },
       { $set: { 'spokenWords.$.recordings': recording } },

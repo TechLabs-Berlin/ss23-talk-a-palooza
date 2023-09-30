@@ -9,7 +9,7 @@ const Exercises = () => {
   const { child } = ChildData();
   //NOTE: We send the child's spokenWords to DS (and so get the recommended words from DS automatically)
   //TODO: Change from dummy data (or worst case fake it by providing a list of words and retrieving the info from WordBank)
-  const recommendedWords = [
+  const recommendedWords2 = [
     {
       wordBankId: '650d2691df78bbefe5a91340',
       name: 'Banana',
@@ -65,6 +65,9 @@ const Exercises = () => {
       wordLevel: 1,
     },
   ];
+
+  console.log('reco', child.vocabLogs[0].recommendedWords);
+  const recommendedWords = child.vocabLogs[0].recommendedWords;
 
   const [isSetDone, setIsSetDone] = useState(false);
   const [showRewards, setShowRewards] = useState(false);
