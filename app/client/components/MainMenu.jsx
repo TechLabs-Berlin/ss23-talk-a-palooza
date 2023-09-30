@@ -1,38 +1,48 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { StyleSheet, Text, View } from 'react-native';
-import { getChild } from '../services/childrenService';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { ChildData } from '../services/AuthWrapper';
 import AddWords from './InitialAssessment/AddWords';
 
-const MainMenu = ({ hasChild }) => {
-  const [child, setChild] = useState(hasChild);
+const imageMain = require('../assets/images/main.svg');
+const imageAssess = require('../assets/images/giveheart.svg');
 
-  useEffect(() => {
-    getChild(hasChild).then((child) => {
-      setChild(child);
-    });
-  }, []);
+const MainMenu = () => {
+  const { child } = ChildData();
 
   const isAssessed = child.vocabLogs && child.vocabLogs.length > 0;
   console.log('Child been assessed?', isAssessed);
 
   return isAssessed ? (
-    <View style={styles.container}>
-      <Text style={styles.title}>Main</Text>
-      <Text style={styles.subtitle}>Hello {child.firstName}</Text>
+    <ImageBackground
+      source={imageMain}
+      resizeMode={'cover'}
+      loading='lazy'
+      style={{ flex: 1, width: '100%', justifyContent: 'center' }}
+    >
+      <View style={styles.container}>
+        <Text style={styles.title}>Main</Text>
+        <Text style={styles.subtitle}>Hello {child.firstName}</Text>
 
-      <View>
-        <Link to='/dashboard'>Dashboard</Link>
+        <View>
+          <Link to='/dashboard'>Dashboard</Link>
+        </View>
+        <View>
+          <Link to='/practice'>Exercises</Link>
+        </View>
+        <View>
+          <Link to='/mypath'>My own path</Link>
+        </View>
       </View>
-      <View>
-        <Link to='/practice'>Exercises</Link>
-      </View>
-      <View>
-        <Link to='/mypath'>My own path</Link>
-      </View>
-    </View>
+    </ImageBackground>
   ) : (
-    <AddWords child={child} />
+    <ImageBackground
+      source={imageAssess}
+      resizeMode={'cover'}
+      loading='lazy'
+      style={{ flex: 1, width: '100%', justifyContent: 'center' }}
+    >
+      <AddWords child={child} />
+    </ImageBackground>
   );
 };
 
