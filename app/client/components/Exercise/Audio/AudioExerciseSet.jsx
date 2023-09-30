@@ -17,24 +17,16 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
 
   // LOGIC a revoir? Est-ce necessaire si on met a jour spokenWords apres chaque
   const completeWord = (wordBankId) => {
-    setCompletedWords((prevCompletedWords) => {
-      if (!prevCompletedWords.includes(wordBankId)) {
-        return [...prevCompletedWords, wordBankId];
-      }
-      return prevCompletedWords;
-    });
-    console.log('completed words', completedWords);
-    console.log('to test words', toTestWords);
-    console.log('wordBankId', wordBankId);
-    const updatedToTestWords = toTestWords.filter(
-      (word) => word.wordBankId !== wordBankId
-    );
-    setToTestWords(updatedToTestWords);
+    if (!completedWords.includes(wordBankId)) {
+      setCompletedWords((prevCompletedWords) => [
+        ...prevCompletedWords,
+        wordBankId,
+      ]);
+      setToTestWords((prevToTestWords) =>
+        prevToTestWords.filter((word) => word.wordBankId !== wordBankId)
+      );
+    }
 
-    console.log('completed words', completedWords);
-    console.log('to test words', toTestWords);
-
-    // specifics audio. countToShow, isSetDone,
     setWordCountToShow((prevCount) => {
       const newCount = Math.min(prevCount + 1, 4);
       if (newCount === 4) {
