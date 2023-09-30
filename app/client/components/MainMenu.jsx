@@ -1,13 +1,20 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View } from 'react-native';
+import { getChild } from '../services/childrenService';
 import AddWords from './InitialAssessment/AddWords';
-import { ChildData } from '../services/AuthWrapper';
 
-const MainMenu = () => {
-  const { child } = ChildData();
+const MainMenu = ({ hasChild }) => {
+  const [child, setChild] = useState(hasChild);
+
+  useEffect(() => {
+    getChild(hasChild).then((child) => {
+      setChild(child);
+    });
+  }, []);
 
   const isAssessed = child.vocabLogs && child.vocabLogs.length > 0;
-  console.log(`${child.firstName} has been assessed?`, isAssessed);
+  console.log('Child been assessed?', isAssessed);
 
   return isAssessed ? (
     <View style={styles.container}>

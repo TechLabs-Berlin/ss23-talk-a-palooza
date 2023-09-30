@@ -1,11 +1,18 @@
 import InitialAssessment from '../screens/InitialAssessment';
 import MainMenu from '../components/MainMenu';
-import { ChildData } from '../services/AuthWrapper';
+import { AuthData } from '../services/AuthWrapper';
 
 const Main = () => {
-  const { child } = ChildData();
+  const { authUser } = AuthData();
+  const hasChild = authUser.children[0];
 
-  return child ? <MainMenu /> : <InitialAssessment />;
+  console.log('User registered', authUser.children.length, 'child(ren)');
+
+  return !hasChild ? (
+    <InitialAssessment authUser={authUser} hasChild={hasChild} />
+  ) : (
+    <MainMenu hasChild={hasChild} />
+  );
 };
 
 export default Main;

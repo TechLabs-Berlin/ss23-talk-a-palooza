@@ -1,10 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { AuthData } from '../../services/AuthWrapper';
 
-const ChildForm = ({ onSubmit }) => {
-  const { authUser } = AuthData();
+const ChildForm = ({ authUser, onSubmit }) => {
   const initialValues = {
     firstName: '',
     birthDate: '',

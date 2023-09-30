@@ -7,12 +7,11 @@ import {
   saveRecommendedWords,
 } from '../../services/vocabLogsService';
 import { getInitialAssessment } from '../../services/wordBankService';
-import { ChildData } from '../../services/AuthWrapper';
 
-const AddWords = () => {
-  const { child } = ChildData();
+const AddWords = ({ child }) => {
   const [words, setWords] = useState([]);
   const [spokenWords, setSpokenWords] = useState([]);
+  // const [recommendedWords, setRecommendedWords] = useState([]);
   const [isAssessed, setIsAssessed] = useState(false);
   const [initWords, setInitWords] = useState([]);
 
