@@ -1,5 +1,5 @@
 import { ChildData } from '../services/AuthWrapper';
-
+import LayoutHOC from '../components/layouts/LayoutHOC';
 import Exercise from '../components/Exercise/Exercise';
 
 const ExerciseScreen = () => {
@@ -8,4 +8,4 @@ const ExerciseScreen = () => {
   return <Exercise child={child} />;
 };
 
-export default ExerciseScreen;
+export default LayoutHOC(ExerciseScreen);

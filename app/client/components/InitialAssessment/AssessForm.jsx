@@ -8,7 +8,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
   });
 
   return (
-    <View style={styles.app}>
+    <View>
       <Formik
         initialValues={{ initWords: {} }}
         validationSchema={validationSchema}
@@ -41,12 +41,6 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
 export default AssessForm;
 
 const styles = StyleSheet.create({
-  app: {
-    marginHorizontal: 'auto',
-    maxWidth: 1024,
-    maxHeight: 768,
-    padding: 20,
-  },
   bloc: {
     flexDirection: 'row',
     maxWidth: '250px',

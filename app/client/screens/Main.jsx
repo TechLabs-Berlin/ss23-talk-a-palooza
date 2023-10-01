@@ -1,6 +1,7 @@
 import InitialAssessment from '../screens/InitialAssessment';
 import MainMenu from '../components/MainMenu';
 import { AuthData } from '../services/AuthWrapper';
+import LayoutHOC from '../components/layouts/LayoutHOC';
 
 const Main = () => {
   const { authUser } = AuthData();
@@ -15,4 +16,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default LayoutHOC(Main);

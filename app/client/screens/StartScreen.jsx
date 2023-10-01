@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { AuthData } from '../services/AuthWrapper';
 import Login from '../components/Login';
+import LayoutHOC from '../components/layouts/LayoutHOC';
 
 const image = require('../assets/images/startscreen.svg');
 
@@ -41,13 +42,10 @@ const StartScreen = () => {
   );
 };
 
-export default StartScreen;
+export default LayoutHOC(StartScreen);
 
 const styles = StyleSheet.create({
   app: {
-    marginHorizontal: 'auto',
-    maxWidth: 1028,
-    maxHeight: 768,
     textAlign: 'center',
     justifyContent: 'center',
   },

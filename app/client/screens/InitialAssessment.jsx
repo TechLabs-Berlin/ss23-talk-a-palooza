@@ -3,6 +3,7 @@ import AddWords from '../components/InitialAssessment/AddWords';
 import { AuthData } from '../services/AuthWrapper';
 import { AssessWrapper } from '../services/AssessWrapper';
 import { getChild } from '../services/childrenService';
+import LayoutHOC from '../components/layouts/LayoutHOC';
 
 const InitialAssessment = () => {
   const { authUser } = AuthData();

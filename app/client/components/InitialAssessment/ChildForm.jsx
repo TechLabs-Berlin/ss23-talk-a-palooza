@@ -16,7 +16,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
   });
 
   return (
-    <View style={styles.app}>
+    <View>
       <Text style={styles.title}>Welcome, {authUser.firstName}</Text>
       <Text style={styles.subtitle}>
         Can you give us some information about your child?
@@ -78,12 +78,6 @@ const ChildForm = ({ authUser, onSubmit }) => {
 export default ChildForm;
 
 const styles = StyleSheet.create({
-  app: {
-    marginHorizontal: 'auto',
-    maxWidth: 600,
-    maxHeight: 768,
-    padding: 20,
-  },
   flex: {
     flexDirection: 'row',
     alignItems: 'center',

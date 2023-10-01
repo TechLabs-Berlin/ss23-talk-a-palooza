@@ -10,16 +10,11 @@ NativeWindStyleSheet.setOutput({
 
 export default function App() {
   return (
-    <View
-      className='shadow-2xl flex max-h-100 flex-1 items-center justify-center rounded-xl border-8 border-solid border-black'
-      style={styles.container}
-    >
-      <BrowserRouter>
-        <AuthWrapper />
-        <Text></Text>
-        <StatusBar style='auto' />
-      </BrowserRouter>
-    </View>
+    <BrowserRouter>
+      <AuthWrapper />
+      <Text></Text>
+      <StatusBar style='auto' />
+    </BrowserRouter>
   );
 }
 
