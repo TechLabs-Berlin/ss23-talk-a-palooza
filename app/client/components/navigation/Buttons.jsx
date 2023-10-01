@@ -11,7 +11,7 @@ export const BackButton = () => {
     <View className='flex ml-0 mr-auto'>
       <Pressable onPress={goBack}>
         <MaterialCommunityIcons
-          className='flex-start p-2  sm:px-10 gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 transition duration-150'
+          className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
           name='chevron-left-circle-outline'
           size={52}
           color='black'
@@ -27,25 +27,23 @@ export const HomeButton = () => {
   };
 
   return (
-    <View className='flex ml-0 mr-auto'>
-      <Pressable onPress={goHome}>
-        <MaterialCommunityIcons
-          className='flex-start p-2  sm:px-10 gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 transition duration-150'
-          name='home-circle-outline'
-          size={52}
-          color='black'
-        />
-      </Pressable>
-    </View>
+    <Pressable onPress={goHome}>
+      <MaterialCommunityIcons
+        className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
+        name='home-circle-outline'
+        size={52}
+        color='black'
+      />
+    </Pressable>
   );
 };
 
 export const NextButton = ({ onPress }) => {
   return (
-    <View className='flex mr-0 ml-auto'>
+    <View className='flex ml-auto mr-0'>
       <Pressable onPress={onPress}>
         <MaterialCommunityIcons
-          className='flex-start p-2  sm:px-10 gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 transition duration-150'
+          className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
           name='chevron-right-circle-outline'
           size={52}
           color='black'

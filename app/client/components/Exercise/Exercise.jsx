@@ -78,8 +78,9 @@ const Exercises = () => {
 
   return (
     <>
-      <HomeButton />
-
+      <View className='flex ml-0 mr-auto'>
+        <HomeButton />
+      </View>
       {!showRewards && (
         <AudioExerciseSet
           child={child}
@@ -89,7 +90,7 @@ const Exercises = () => {
       )}
 
       {!showRewards && isSetDone ? (
-        <View className='flex mr-0 ml-auto'>
+        <View className='flex ml-auto mr-0'>
           <Pressable onPress={handleCompleteSession}>
             <Text>Complete session</Text>
           </Pressable>

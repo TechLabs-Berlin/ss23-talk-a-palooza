@@ -33,7 +33,7 @@ const userPath = [
     component: 'Dashboard',
     element: <Dashboard />,
     isRestricted: true,
-    navigate: <Navigate replace to='/start' />,
+    // navigate: <Navigate replace to='/start' />,
   },
 ];
 
