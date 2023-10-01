@@ -7,6 +7,7 @@ import {
   Pressable,
 } from 'react-native';
 import { AuthData, ChildData } from '../../services/AuthWrapper';
+import { ActionButton } from '../navigation/Buttons';
 
 const Navbar = () => {
   const { authUser } = AuthData();
@@ -17,19 +18,25 @@ const Navbar = () => {
 
   return (
     <>
-      <View className='flex flex-row justify-between h-20 px-6 py-0 my-2'>
-        <View className='flex flex-row justify-between h-20 px-6 py-0 my-2'>
-          <Pressable>
-            <Text>Summary</Text>
+      <View className='flex flex-row px-6 py-0 my-2 min-w-[85%] justify-end'>
+        <View className='flex flex-row justify-between px-6 py-0 my-2'>
+          <Pressable className='mx-2'>
+            <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
+              Summary
+            </Text>
           </Pressable>
-          <Pressable>
-            <Text>Statistics</Text>
+          <Pressable className='mx-4'>
+            <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
+              Statistics
+            </Text>
           </Pressable>
-          <Pressable>
-            <Text>Settings</Text>
+          <Pressable className='mx-4'>
+            <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
+              Settings
+            </Text>
           </Pressable>
         </View>
-        <View className='flex flex-row justify-between h-20 px-6 py-0 my-2'>
+        <View className='flex flex-row justify-between h-20 px-0 py-0 my-2'>
           <View>
             <Image
               source={authUser.profilePhoto}
@@ -41,10 +48,12 @@ const Navbar = () => {
             />
           </View>
           <View className='flex flex-column'>
+            <ActionButton
+              text='Logout'
+              background={'bg-primary-green'}
+              onPress={logout}
+            />
             <Text>{authUser.displayName}</Text>
-            <Pressable onPress={logout}>
-              <Text>Logout</Text>
-            </Pressable>
           </View>
         </View>
       </View>
