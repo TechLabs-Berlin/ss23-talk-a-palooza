@@ -7,6 +7,7 @@ import {
   useCallback,
 } from 'react';
 import RenderRoutes from './RenderRoutes';
+import Loader from '../screens/Loader';
 import axios from 'axios';
 
 const AuthContext = createContext();
@@ -68,7 +69,7 @@ export const AuthWrapper = () => {
   const childContextValue = useMemo(() => ({ child }), [child]);
 
   return loading ? (
-    <div>Loading...</div>
+    <Loader />
   ) : (
     <AuthContext.Provider value={authContextValue}>
       <ChildContext.Provider value={childContextValue}>
