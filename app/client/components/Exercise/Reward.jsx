@@ -2,7 +2,7 @@ import { ChildData } from '../../services/AuthWrapper';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
-import { HomeButton, NextButton } from '../navigation/Buttons';
+import { ActionButton, HomeButton, NextButton } from '../navigation/Buttons';
 import { useState, useRef } from 'react';
 
 const Reward = () => {
@@ -22,6 +22,7 @@ const Reward = () => {
             useNativeControls
             resizeMode={ResizeMode.CONTAIN}
             isLooping
+            shouldPlay
             onPlaybackStatusUpdate={(status) => setStatus(() => status)}
           />
           {/* <View style={styles.buttons}>
@@ -37,17 +38,9 @@ const Reward = () => {
           </View> */}
         </View>
       </View>
-      <View className='flex flex-wrap space-x-10 flex-row mr-0 ml-auto'>
-        <Pressable>
-          <View className=' p-3  sm:px-10 flex flex-row gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150'>
-            <Text className='font-bold text-center'>Play again</Text>
-          </View>
-        </Pressable>
-        <Pressable>
-          <View className=' p-3  sm:px-10 flex flex-row gap-2 bg-white/15 rounded-md shadow-lg backdrop-blur-sm border border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150'>
-            <Text className='font-bold text-center'>Results</Text>
-          </View>
-        </Pressable>
+      <View className='flex flex-row flex-wrap ml-auto mr-0 space-x-10'>
+        <ActionButton text={'Play again'} background={'text-primary-green'} />
+        <ActionButton text={'Results'} background={'text-primary-green'} />
       </View>
     </>
   );
@@ -71,6 +64,5 @@ const styles = StyleSheet.create({
     width: 640,
     height: 400,
     position: 'relative',
-    borderRadius: '50%',
   },
 });

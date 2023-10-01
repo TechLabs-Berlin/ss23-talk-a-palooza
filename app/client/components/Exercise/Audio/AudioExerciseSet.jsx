@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { StyleSheet, View, Pressable, Text, ViewComponent } from 'react-native';
 import { NextButton } from '../../navigation/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
@@ -105,7 +105,9 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
       </View>
 
       {!isSetDone ? (
-        <NextButton onPress={() => completeWord(toTestWords[0].wordBankId)} />
+        <View className='flex p-4 ml-auto mr-0 flex-column'>
+          <NextButton onPress={() => completeWord(toTestWords[0].wordBankId)} />
+        </View>
       ) : null}
     </>
   );

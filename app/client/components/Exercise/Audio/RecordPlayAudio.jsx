@@ -141,10 +141,10 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
       <View clasName='mx-10' style={[styles.container, { flex }]}>
         <View className='exerciseBloc'>
           <View style={styles.exerciseBloc}>
-            <Text className='mt-0 sm:mt-10 lg:w-10/12 text-gray-500 font-normal text-center text-sm sm:text-lg'>
+            <Text className='mt-0 text-sm font-normal text-center text-gray-500 sm:mt-10 lg:w-10/12 sm:text-lg'>
               Try saying
             </Text>
-            <Text className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-gray-800 font-black leading-7 md:leading-10'>
+            <Text className='text-2xl font-black leading-7 text-center sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary-dark md:leading-10'>
               {word.name}
             </Text>
             {/* //TODO ANIMATION - 4
@@ -184,7 +184,7 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
                     : null,
                 ]}
                 onPress={recording ? stopRecording : startRecording}
-                className='mt-5 sm:mt-10 lg:w-10/12 text-gray-500 font-normal text-center text-sm sm:text-lg'
+                className='mt-5 text-sm font-normal text-center text-gray-500 sm:mt-10 lg:w-10/12 sm:text-lg'
                 disabled={isRecognized}
               >
                 {recording ? (

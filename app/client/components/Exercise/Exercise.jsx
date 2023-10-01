@@ -78,7 +78,7 @@ const Exercise = () => {
 
   return (
     <>
-      <View className='flex p-2 ml-0 mr-auto flex-column'>
+      <View className='flex p-4 ml-0 mr-auto flex-column'>
         <HomeButton />
       </View>
       {!showRewards && (

@@ -28,12 +28,14 @@ export const HomeButton = () => {
 
   return (
     <Pressable onPress={goHome}>
-      <MaterialCommunityIcons
-        className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
-        name='home-circle-outline'
-        size={52}
-        color='black'
-      />
+      <Text>
+        <MaterialCommunityIcons
+          className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
+          name='home-circle-outline'
+          size={52}
+          color='black'
+        />
+      </Text>
     </Pressable>
   );
 };
@@ -42,12 +44,14 @@ export const NextButton = ({ onPress }) => {
   return (
     <View className='flex ml-auto mr-0'>
       <Pressable onPress={onPress}>
-        <MaterialCommunityIcons
-          className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
-          name='chevron-right-circle-outline'
-          size={52}
-          color='black'
-        />
+        <Text>
+          <MaterialCommunityIcons
+            className='gap-2 p-2 transition duration-150 border rounded-md shadow-lg flex-start sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200'
+            name='chevron-right-circle-outline'
+            size={52}
+            color='black'
+          />
+        </Text>
       </Pressable>
     </View>
   );
@@ -71,7 +75,7 @@ export const ActionButton = ({ onPress, text, background, color }) => {
     <Pressable
       onPress={onPress}
       styles={{ background: { background } }}
-      className='flex flex-row justify-center p-2 transition duration-150 border rounded-lg shadow-lg sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow'
+      className='flex flex-row justify-center gap-2 p-2 mx-2 transition duration-150 border rounded-lg shadow-lg sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow'
     >
       <Text
         className='font-bold text-center text-primary text-l'

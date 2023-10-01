@@ -7,7 +7,7 @@ import {
   useCallback,
 } from 'react';
 import RenderRoutes from './RenderRoutes';
-import Loader from '../screens/Loader';
+import Loader from '../components/layouts/Loader';
 import axios from 'axios';
 
 const AuthContext = createContext();
