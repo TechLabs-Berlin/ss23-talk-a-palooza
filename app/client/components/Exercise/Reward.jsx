@@ -1,46 +1,105 @@
 import { ChildData } from '../../services/AuthWrapper';
-import { StyleSheet, View, Pressable, Text } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Pressable,
+  Text,
+  Animated,
+  Easing,
+} from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
-import { ActionButton, HomeButton, NextButton } from '../navigation/Buttons';
-import { useState, useRef } from 'react';
+import { ActionButton, HomeButton } from '../navigation/Buttons';
+import { useEffect, useState, useRef } from 'react';
+import Lottie from 'react-lottie';
+import animationData from '../../assets/animations/rewardWheel';
 
 const Reward = () => {
   const { child } = ChildData();
   const video = useRef(null);
   const [status, setStatus] = useState({});
+  const [wheelFinished, setWheelFinished] = useState(false);
+
+  // Options for the animation
+  const wheelOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  useEffect(() => {
+    const wheelDuration = 3000;
+
+    // Listen for animation finish event
+    const wheelFinishTimeout = setTimeout(() => {
+      setWheelFinished(true);
+    }, wheelDuration);
+
+    // Clean up the timeout when the component unmounts
+    return () => clearTimeout(wheelFinishTimeout);
+  }, []);
+
+  // Create an Animated.Value for controlling opacity
+  const opacityValue = useRef(new Animated.Value(0)).current;
+
+  // Function to start playing the video when the animation finishes
+  const startVideoPlayback = () => {
+    if (video.current) {
+      video.current.playAsync();
+    }
+  };
+
+  // Use Animated.timing to control opacity transition
+  useEffect(() => {
+    if (wheelFinished) {
+      Animated.timing(opacityValue, {
+        toValue: 1,
+        duration: 1000,
+        easing: Easing.ease,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [wheelFinished, opacityValue]);
 
   //TODO: import results from Audio Exercise
   return (
     <>
       <View style={styles.container}>
-        <View style={styles.row}>
-          <Video
-            ref={video}
-            style={styles.video}
-            source={require('../../assets/videos/piou.mp4')}
-            useNativeControls
-            resizeMode={ResizeMode.CONTAIN}
-            isLooping
-            shouldPlay
-            onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+        {wheelFinished ? (
+          <Animated.View style={[styles.row, { opacity: opacityValue }]}>
+            <Video
+              ref={video}
+              style={styles.video}
+              source={require('../../assets/videos/piou.mp4')}
+              useNativeControls
+              resizeMode={ResizeMode.CONTAIN}
+              isLooping
+              shouldPlay
+              onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+            />
+          </Animated.View>
+        ) : (
+          <Lottie
+            options={wheelOptions}
+            height={200}
+            width={200}
+            style={styles.wheel}
+            isStopped={wheelFinished}
+            // eventListeners={[
+            //   {
+            //     eventName: 'complete',
+            //     callback: () => startVideoPlayback(),
+            //   },
+            // ]}
           />
-          {/* <View style={styles.buttons}>
-            <Pressable
-              onPress={() =>
-                status.isPlaying
-                  ? video.current.pauseAsync()
-                  : video.current.playAsync()
-              }
-            >
-              <Text>{status.isPlaying ? 'Pause' : 'Play'}</Text>
-            </Pressable>
-          </View> */}
+        )}
+        <View className='flex flex-row flex-wrap ml-auto mr-0 space-x-10'>
+          <ActionButton text={'Play again'} background={'text-primary-green'} />
+          <ActionButton text={'Results'} background={'text-primary-green'} />
         </View>
-      </View>
-      <View className='flex flex-row flex-wrap ml-auto mr-0 space-x-10'>
-        <ActionButton text={'Play again'} background={'text-primary-green'} />
-        <ActionButton text={'Results'} background={'text-primary-green'} />
       </View>
     </>
   );
@@ -63,6 +122,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: 640,
     height: 400,
+    position: 'relative',
+  },
+  wheel: {
+    alignSelf: 'center',
+    width: 300,
+    height: 300,
     position: 'relative',
   },
 });

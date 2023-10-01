@@ -7,7 +7,8 @@ import {
   saveRecording,
   sendAudioToDL,
 } from '../../../services/recordingService';
-// import {Animated} from 'react-native';  //TODO ANIMATION - 1
+import Lottie from 'react-lottie';
+import animationData from '../../../assets/animations/check';
 
 const STATUSES = {
   START: 'Tap the mic to talk',
@@ -25,7 +26,6 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
   const [isPlaybackFinished, setIsPlaybackFinished] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [isRecognized, setIsRecognized] = useState(false);
-  //TODO ANIMATION - 2 const [animation] = useState(new Animated.Value(0));
 
   // Checks if the playback has finished, and updates the status accordingly.
   useEffect(() => {
@@ -98,7 +98,8 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
       //[x] Send the Data to DL and get a response back
       const response = await sendAudioToDL(dataToSend);
       // callback to update the Exercise component when audio is recognized
-      if (response.data.is_recognized === true) {
+      const bravo = response.data.is_recognized;
+      if (bravo === true) {
         onAudioRecognized(word);
         setIsSaved(true);
         setIsRecognized(true);
@@ -107,8 +108,6 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
             Math.round(response.data.intelligibilityScore * 100).toString() +
             '% intelligible'
         );
-        // TODO: Implement animation confetti
-        // animateConfetti();
       } else {
         setIsSaved(true);
         setIsRecognized(false);
@@ -126,13 +125,14 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
     setIsSaved(false);
   };
 
-  //TODO ANIMATION - 3
-  const animateConfetti = () => {
-    Animated.timing(animation, {
-      toValue: 1, // Final value (e.g., fully visible)
-      duration: 1000, // Animation duration in milliseconds
-      useNativeDriver: false, // Set to true for better performance
-    }).start(); // Start the animation
+  // Options for the animation
+  const checkOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
   };
 
   // TODO: Refactor view controls in AudioControls component
@@ -141,28 +141,13 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
       <View clasName='mx-10' style={[styles.container, { flex }]}>
         <View className='exerciseBloc'>
           <View style={styles.exerciseBloc}>
-            <Text className='mt-0 text-sm font-normal text-center text-gray-500 sm:mt-10 lg:w-10/12 sm:text-lg'>
+            <Text className='mt-0 text-sm font-normal text-center text-gray-500 lg:w-10/12 sm:text-lg'>
               Try saying
             </Text>
             <Text className='text-2xl font-black leading-7 text-center sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary-dark md:leading-10'>
               {word.name}
             </Text>
-            {/* //TODO ANIMATION - 4
-             {response.success && (
-              <Animated.View
-                style={{
-                  opacity: animation, // Set opacity based on the animation value
-                }}
-              >
-                <Image
-                  source={require('./checkmark.png')} // Replace with your checkmark icon
-                  style={{
-                    width: 50,
-                    height: 50,
-                  }}
-                />
-              </Animated.View>
-            )} */}
+
             <View style={styles.mainImage}>
               <Image
                 source={
@@ -199,6 +184,14 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
                   />
                 )}
               </Pressable>
+              {isSaved && isRecognized && (
+                <Lottie
+                  options={checkOptions}
+                  height={120}
+                  width={205}
+                  style={styles.check}
+                />
+              )}
               {isPlaybackFinished && base64Recording ? (
                 <>
                   {isSaved ? (
@@ -242,7 +235,11 @@ const styles = StyleSheet.create({
   },
   buttonAnimated: {
     // backgroundColor: '#DDD', // Change the background color to indicate it's disabled
-    opacity: 0.3, // Reduce opacity to visually indicate it's disabled
+    //  opacity: 0, // Reduce opacity to visually indicate it's disabled
+    display: 'none',
+  },
+  check: {
+    marginTop: -36,
   },
   save: {
     backgroundColor: '#DDDDDD',
