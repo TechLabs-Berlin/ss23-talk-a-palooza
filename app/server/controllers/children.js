@@ -27,9 +27,7 @@ childrenRouter.get('/:id', async (req, res) => {
       },
     },
   });
-  if (child && child.vocabLogs.length > 0) {
-    res.json(child.vocabLogs[0]); // Send the most recent vocabLog
-  } else if (child && child.vocabLogs.length === 0) {
+  if (child) {
     res.json(child);
   } else {
     res.status(404).json({ message: 'Child not found' });
@@ -45,9 +43,7 @@ childrenRouter.get('/:id/vocablogs', async (req, res) => {
       model: 'SpokenWords',
     },
   });
-  if (child && child.vocabLogs.length > 0) {
-    res.json(child.vocabLogs[0]); // Send the most recent vocabLog
-  } else if (child && child.vocabLogs.length === 0) {
+  if (child) {
     res.json(child);
   } else {
     res.status(404).json({ message: 'Child not found' });
