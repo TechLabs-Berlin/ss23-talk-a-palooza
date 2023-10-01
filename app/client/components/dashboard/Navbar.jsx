@@ -42,7 +42,7 @@ const Navbar = () => {
           </View>
           <View className='flex flex-column'>
             <Text>{authUser.displayName}</Text>
-            <Pressable onClick={logout}>
+            <Pressable onPress={logout}>
               <Text>Logout</Text>
             </Pressable>
           </View>
