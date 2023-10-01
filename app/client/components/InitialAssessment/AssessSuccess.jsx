@@ -1,7 +1,9 @@
 import { View, Text, Button } from 'react-native';
 import { Link, Navigate } from 'react-router-dom';
+import { ChildData } from '../../services/AuthWrapper';
 
-const AssessSuccess = ({ child, spokenWords }) => {
+const AssessSuccess = ({ spokenWords }) => {
+  const { child } = ChildData();
   const handleSubmit = () => {
     Navigate('dashboard');
   };
