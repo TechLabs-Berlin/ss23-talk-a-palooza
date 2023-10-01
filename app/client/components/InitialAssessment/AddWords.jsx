@@ -70,9 +70,13 @@ const AddWords = ({ child }) => {
   }, []);
 
   return isAssessed ? (
-    <AssessSuccess spokenWords={spokenWords} />
+    <AssessSuccess child={child} spokenWords={spokenWords} />
   ) : (
-    <AssessForm onSubmit={handleWordsSubmit} initWords={initWords} />
+    <AssessForm
+      child={child}
+      onSubmit={handleWordsSubmit}
+      initWords={initWords}
+    />
   );
 };
 
