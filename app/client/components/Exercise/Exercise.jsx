@@ -5,7 +5,7 @@ import { StyleSheet, View, Pressable, Text } from 'react-native';
 import { HomeButton, NextButton } from '../navigation/Buttons';
 import { ChildData } from '../../services/AuthWrapper';
 
-const Exercises = () => {
+const Exercise = () => {
   const { child } = ChildData();
   //NOTE: We send the child's spokenWords to DS (and so get the recommended words from DS automatically)
   //TODO: Change from dummy data (or worst case fake it by providing a list of words and retrieving the info from WordBank)
@@ -78,7 +78,7 @@ const Exercises = () => {
 
   return (
     <>
-      <View className='flex ml-0 mr-auto'>
+      <View className='flex p-2 ml-0 mr-auto flex-column'>
         <HomeButton />
       </View>
       {!showRewards && (
@@ -102,4 +102,4 @@ const Exercises = () => {
   );
 };
 
-export default Exercises;
+export default Exercise;
