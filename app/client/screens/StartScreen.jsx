@@ -2,14 +2,20 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { AuthData } from '../services/AuthWrapper';
 import Login from '../components/Login';
 import LayoutHOC from '../components/layouts/LayoutHOC';
+import Lottie from 'react-lottie';
+import animationData from '../assets/animations/cloud';
 
 const image = require('../assets/images/startscreen.svg');
 
-//  Startscreen:
-// Shows only if user not logged:
-// - as start page when entering the App
-// - as redirection page when entering from another page
-//  login Component.
+// Options for the animation
+const cloudOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
 
 const StartScreen = () => {
   const { authUser } = AuthData();
@@ -25,6 +31,20 @@ const StartScreen = () => {
       >
         <View style={styles.app}>
           <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:py-24'>
+            <Lottie
+              options={cloudOptions}
+              speed={30}
+              height={120}
+              width={220}
+              style={styles.cloud1}
+            />
+            <Lottie
+              options={cloudOptions}
+              speed={10}
+              height={100}
+              width={200}
+              style={styles.cloud2}
+            />
             <View className='flex-col items-center justify-center w-11/12 mb-5 sm:w-2/3 lg:flex sm:mb-10'>
               <Text className="text-primary-dark text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-black leading-7 md:leading-10 font-['Oleo Script']">
                 Talk-a-Palooza
@@ -56,6 +76,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     height: '100%',
+  },
+  cloud1: {
+    position: 'absolute',
+    right: '0px',
+    top: '-10px',
+    width: '25%',
+    height: '25%',
+  },
+  cloud2: {
+    position: 'absolute',
+    left: '10px',
+    top: '-42px',
+    width: '15%',
+    height: '15%',
   },
   title: {
     fontWeight: 'bold',
