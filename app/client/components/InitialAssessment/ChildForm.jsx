@@ -17,56 +17,67 @@ const ChildForm = ({ authUser, onSubmit }) => {
 
   return (
     <View style={styles.app}>
-      <Text style={styles.title}>Welcome, {authUser.firstName}</Text>
-      <Text style={styles.subtitle}>
-        Can you give us some information about your child?
-      </Text>
+      <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:py-24'>
+        <Text
+          className="text-primary-dark text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-black leading-7 md:leading-10 font-['Oleo Script']"
+          style={styles.title}
+        >
+          Welcome, {authUser.firstName}
+        </Text>
+        <Text style={styles.subtitle}>
+          Can you give us some information about your child?
+        </Text>
 
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
-      >
-        <Form>
-          <View style={styles.flex}>
-            <Text style={styles.text} htmlFor='firstName'>
-              Firstname
-            </Text>
-            <Field type='text' id='firstName' name='firstName' />
-            <ErrorMessage name='firstName' component='div' />
-          </View>
-
-          <View style={styles.flex}>
-            <Text style={styles.text} htmlFor='birthDate'>
-              Date of birth
-            </Text>
-            <Field type='text' id='birthDate' name='birthDate' />
-            <ErrorMessage name='birthDate' component='div' />
-          </View>
-
-          <View style={styles.flex}>
-            <Text style={styles.text} htmlFor='gender'>
-              Sex at birth
-            </Text>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={onSubmit}
+        >
+          <Form>
             <View style={styles.flex}>
-              <Text>
-                <Field type='radio' name='gender' value='M' />
-                <br /> Boy
+              <Text style={styles.text} htmlFor='firstName'>
+                Firstname
               </Text>
-              <Text>
-                <Field type='radio' name='gender' value='F' />
-                <br /> Girl
+              <Field type='text' id='firstName' name='firstName' />
+              <ErrorMessage name='firstName' component='div' />
+            </View>
+
+            <View style={styles.flex}>
+              <Text style={styles.text} htmlFor='birthDate'>
+                Date of birth
               </Text>
+              <Field type='text' id='birthDate' name='birthDate' />
+              <ErrorMessage name='birthDate' component='div' />
             </View>
-            <View id='genderError'>
-              <ErrorMessage name='gender' />
+
+            <View style={styles.flex}>
+              <Text style={styles.text} htmlFor='gender'>
+                Sex at birth
+              </Text>
+              <View style={styles.flex}>
+                <Text>
+                  <Field type='radio' name='gender' value='M' />
+                  <br /> Boy
+                </Text>
+                <Text>
+                  <Field type='radio' name='gender' value='F' />
+                  <br /> Girl
+                </Text>
+                <Text>
+                  <Field type='radio' name='gender' value='RNS' />
+                  <br /> Rather not say
+                </Text>
+              </View>
+              <View id='genderError'>
+                <ErrorMessage name='gender' />
+              </View>
             </View>
-          </View>
-          <View style={(styles.flex, styles.end)}>
-            <button type='submit'> Next</button>
-          </View>
-        </Form>
-      </Formik>
+            <View style={(styles.flex, styles.end)}>
+              <button type='submit'> Next</button>
+            </View>
+          </Form>
+        </Formik>
+      </View>
     </View>
   );
 };
@@ -74,12 +85,6 @@ const ChildForm = ({ authUser, onSubmit }) => {
 export default ChildForm;
 
 const styles = StyleSheet.create({
-  app: {
-    marginHorizontal: 'auto',
-    maxWidth: 600,
-    maxHeight: 768,
-    padding: 20,
-  },
   flex: {
     flexDirection: 'row',
     alignItems: 'center',

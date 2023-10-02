@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import InitialAssessment from '../pages/InitialAssessment';
+import InitialAssessment from '../screens/InitialAssessment';
 
 const AssessContext = createContext();
 

@@ -2,7 +2,7 @@ const recordingsRouter = require('express').Router();
 const Recording = require('../models/recording');
 const { VocabLog } = require('../models/vocabLog');
 
-//[x] Get all recordings
+//[x] GET all recordings
 recordingsRouter.get('/', async (req, res) => {
   try {
     const recordings = await Recording.find({});
@@ -13,7 +13,7 @@ recordingsRouter.get('/', async (req, res) => {
   }
 });
 
-//[x] Getting processed recordings from frontendd
+//[x] GET processed recordings from frontendd
 recordingsRouter.post('/', async (req, res) => {
   try {
     const {
@@ -41,6 +41,7 @@ recordingsRouter.post('/', async (req, res) => {
     console.log('new recording created', recording);
 
     // Find the spokenWord document by id and update it
+    //BUG when new saved as null, when update, saved +null
     await VocabLog.findOneAndUpdate(
       { 'spokenWords.wordBankId': wordBankId },
       { $set: { 'spokenWords.$.recordings': recording } },
