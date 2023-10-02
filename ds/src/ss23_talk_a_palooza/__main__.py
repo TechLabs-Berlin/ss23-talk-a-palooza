@@ -2,13 +2,14 @@ from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from importlib.resources import as_file, files
 from pathlib import Path
-from typing import Annotated, Union
+from typing import Annotated
 
 import numpy as np
 import pandas as pd
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import Body, FastAPI, HTTPException
 from libreco.algorithms import LightGCN
 from libreco.data import DataInfo, DatasetPure
+from pydantic import BaseModel, conset
 
 
 @dataclass(frozen=True)
@@ -57,11 +58,14 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
-@app.get("/predict")
-def predict(q: Annotated[Union[set[str], None], Query(min_length=1)] = None) -> list[str]:
-    words = q
+class PureModelInput(BaseModel):
+    words: list[str]
+
+
+@app.post("/predict/")
+def predict(words: Annotated[conset(str, min_length=1), Body()]) -> list[str]:
     if not words:
-        raise HTTPException(401, "No words were specified. Use the `q` parameter in the URL query.")
+        raise HTTPException(401, "No words were specified.")
     child_id = -1
     # Train the model with the words spoken by the new child
     if not words.issubset(model_data.word_to_ids.keys()):
@@ -114,7 +118,7 @@ def main():
     import uvicorn
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--port", default="8000")
+    parser.add_argument("--port", default="8001")
     parser.add_argument("--host", default="0.0.0.0")
     args = parser.parse_args()
     uvicorn.run(app, host=args.host, port=int(args.port))

@@ -29,10 +29,12 @@ See each section below for a more detailed explanation of each API.
 
 Receives a list of words (strings) and returns a list of words (strings).
 
-The input words are received through the `q` query parameter, which can be used multiple times. Example:
+The input words are received in the body of the request. Example:
 
 ```
-GET http://127.0.0.1:8000/predict?q=ball&q=I
+POST http://127.0.0.1:8000/predict
+
+["ball", "I"]
 ```
 
 ## The `/allowed_words` API
