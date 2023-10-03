@@ -3,7 +3,8 @@ import { AuthData } from '../services/AuthWrapper';
 import Login from '../components/Login';
 import LayoutHOC from '../components/layouts/LayoutHOC';
 import Lottie from 'react-lottie';
-import animationData from '../assets/animations/cloud';
+import cloudAnimation from '../assets/animations/cloud';
+import sunAnimation from '../assets/animations/sun';
 
 const image = require('../assets/images/startscreen.svg');
 
@@ -11,7 +12,16 @@ const image = require('../assets/images/startscreen.svg');
 const cloudOptions = {
   loop: true,
   autoplay: true,
-  animationData: animationData,
+  animationData: cloudAnimation,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+};
+
+const sunOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: sunAnimation,
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice',
   },
@@ -30,7 +40,14 @@ const StartScreen = () => {
         style={{ flex: 1, width: '100%', justifyContent: 'center' }}
       >
         <View style={styles.app}>
-          <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:py-24'>
+          <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:pt-36'>
+            <Lottie
+              options={sunOptions}
+              speed={30}
+              height={220}
+              width={220}
+              style={styles.sun}
+            />
             <Lottie
               options={cloudOptions}
               speed={30}
@@ -86,10 +103,18 @@ const styles = StyleSheet.create({
   },
   cloud2: {
     position: 'absolute',
-    left: '10px',
-    top: '-42px',
+    left: '20px',
+    top: '-45px',
     width: '15%',
     height: '15%',
+  },
+  sun: {
+    position: 'absolute',
+    left: '0px',
+    top: '-50px',
+    width: '35%',
+    height: '35%',
+    zIndex: '100',
   },
   title: {
     fontWeight: 'bold',
