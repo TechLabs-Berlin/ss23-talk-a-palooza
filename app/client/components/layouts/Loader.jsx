@@ -1,6 +1,6 @@
 import LayoutHOC from './LayoutHOC';
 import { StyleSheet, Text, View } from 'react-native';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import loadingAnimation from '../../assets/animations/loading';
 import bearAnimation from '../../assets/animations/dancingbear';
 

@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { AuthData } from '../services/AuthWrapper';
 import Login from '../components/Login';
 import LayoutHOC from '../components/layouts/LayoutHOC';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import cloudAnimation from '../assets/animations/cloud';
 import sunAnimation from '../assets/animations/sun';
 

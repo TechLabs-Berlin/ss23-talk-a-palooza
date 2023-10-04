@@ -11,7 +11,7 @@ import { Video, ResizeMode } from 'expo-av';
 
 import { ActionButton, HomeButton } from '../navigation/Buttons';
 import { useEffect, useState, useRef } from 'react';
-import Lottie from 'react-lottie';
+import Lottie from 'lottie-react';
 import animationData from '../../assets/animations/rewardWheel';
 
 const Reward = () => {
