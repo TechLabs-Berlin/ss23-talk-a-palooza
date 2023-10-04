@@ -3,8 +3,8 @@ import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import AddWords from './InitialAssessment/AddWords';
 
-const imageMain = require('../assets/images/main.svg');
-const imageAssess = require('../assets/images/giveheart.svg');
+const imageMain = require('../assets/backgrounds/main.svg');
+const imageAssess = require('../assets/backgrounds/giveheart.svg');
 
 const MainMenu = () => {
   const { child } = ChildData();
@@ -13,36 +13,40 @@ const MainMenu = () => {
   console.log('Child been assessed?', isAssessed);
 
   return isAssessed ? (
-    <ImageBackground
-      source={imageMain}
-      resizeMode={'cover'}
-      loading='lazy'
-      style={{ flex: 1, width: '100%', justifyContent: 'center' }}
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Main</Text>
-        <Text style={styles.subtitle}>Hello {child.firstName}</Text>
+    <View className='flex justify-between w-full h-full bg-white'>
+      <ImageBackground
+        source={imageMain}
+        resizeMode={'cover'}
+        loading='lazy'
+        style={{ flex: 1, width: '100%', justifyContent: 'center' }}
+      >
+        <View style={styles.container}>
+          <Text style={styles.title}>Main</Text>
+          <Text style={styles.subtitle}>Hello {child.firstName}</Text>
 
-        <View>
-          <Link to='/dashboard'>Dashboard</Link>
+          <View>
+            <Link to='/dashboard'>Dashboard</Link>
+          </View>
+          <View>
+            <Link to='/practice'>Exercises</Link>
+          </View>
+          <View>
+            <Link to='/mypath'>My own path</Link>
+          </View>
         </View>
-        <View>
-          <Link to='/practice'>Exercises</Link>
-        </View>
-        <View>
-          <Link to='/mypath'>My own path</Link>
-        </View>
-      </View>
-    </ImageBackground>
+      </ImageBackground>
+    </View>
   ) : (
-    <ImageBackground
-      source={imageAssess}
-      resizeMode={'cover'}
-      loading='lazy'
-      style={{ flex: 1, width: '100%', justifyContent: 'center' }}
-    >
-      <AddWords child={child} />
-    </ImageBackground>
+    <View className='flex justify-between w-full h-full bg-white'>
+      <ImageBackground
+        source={imageAssess}
+        resizeMode={'cover'}
+        loading='lazy'
+        style={{ flex: 1, width: '100%', justifyContent: 'center' }}
+      >
+        <AddWords child={child} />
+      </ImageBackground>
+    </View>
   );
 };
 

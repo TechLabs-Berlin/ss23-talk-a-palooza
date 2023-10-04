@@ -17,14 +17,14 @@ const ChildForm = ({ authUser, onSubmit }) => {
 
   return (
     <View style={styles.app}>
-      <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:py-24'>
+      <View className='container flex flex-col items-center justify-center mt-20 mx-auto sm:py-24 w-5/12 shadow-lg border px-5 py-10 rounded-[5px] border-solid border-gray-200 bg-white bg-opacity-80'>
         <Text
           className="text-primary-dark text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-black leading-7 md:leading-10 font-['Oleo Script']"
           style={styles.title}
         >
-          Welcome, {authUser.firstName}
+          Welcome {authUser.firstName}
         </Text>
-        <Text style={styles.subtitle}>
+        <Text className='text-xs font-normal text-primary-light sm:mt-4 lg:w-10/12 sm:text-base '>
           Can you give us some information about your child?
         </Text>
 
@@ -35,6 +35,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
         >
           <Form>
             <View style={styles.flex}>
+              {/* //TODO: Add inputs https://tailwind-elements.com/docs/standard/forms/inputs/ */}
               <Text style={styles.text} htmlFor='firstName'>
                 Firstname
               </Text>
@@ -43,6 +44,8 @@ const ChildForm = ({ authUser, onSubmit }) => {
             </View>
 
             <View style={styles.flex}>
+              {/* //TODO: Add date picker:
+              https://tailwind-elements.com/docs/standard/forms/datepicker/ */}
               <Text style={styles.text} htmlFor='birthDate'>
                 Date of birth
               </Text>

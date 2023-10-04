@@ -6,7 +6,7 @@ import Lottie from 'react-lottie';
 import cloudAnimation from '../assets/animations/cloud';
 import sunAnimation from '../assets/animations/sun';
 
-const image = require('../assets/images/startscreen.svg');
+const image = require('../assets/backgrounds/startscreen.svg');
 
 // Options for the animation
 const cloudOptions = {
@@ -40,6 +40,7 @@ const StartScreen = () => {
         style={{ flex: 1, width: '100%', justifyContent: 'center' }}
       >
         <View style={styles.app}>
+          {/* //TODO: style text bloc width, fonts + add animals animations */}
           <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:pt-36'>
             <Lottie
               options={sunOptions}
@@ -66,7 +67,7 @@ const StartScreen = () => {
               <Text className="text-primary-dark text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-black leading-7 md:leading-10 font-['Oleo Script']">
                 Talk-a-Palooza
               </Text>
-              <Text className='text-xs font-normal text-center text-gray-400 sm:mt-4 lg:w-10/12 sm:text-lg '>
+              <Text className='text-xs font-normal text-center text-primary-light sm:mt-4 lg:w-10/12 sm:text-lg '>
                 Here comes a awesome one sentence pitch that really makes you
                 want to try the app
               </Text>

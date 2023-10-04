@@ -9,6 +9,7 @@ import {
 } from '../../../services/recordingService';
 import Lottie from 'react-lottie';
 import animationData from '../../../assets/animations/check';
+import { GreenButton } from '../../navigation/Buttons';
 
 const STATUSES = {
   START: 'Tap the mic to talk',
@@ -195,20 +196,24 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
               {isPlaybackFinished && base64Recording ? (
                 <>
                   {isSaved ? (
-                    <Text>{`${status}`}</Text>
+                    <Text className='font-bold text-center text-primary-dark text-l'>{`${status}`}</Text>
                   ) : (
-                    <Pressable style={styles.save} onPress={saveAndContinue}>
-                      <Text>Submit</Text>
-                    </Pressable>
+                    // TODO: change wording "Save and Continue" to "Try, or measure or ..."
+                    <GreenButton
+                      text='Save and Continue'
+                      onPress={saveAndContinue}
+                    />
                   )}
                   {isSaved && !isRecognized && (
-                    <Pressable style={styles.tryAgain} onPress={resetRecording}>
-                      <Text>Try Again?</Text>
-                    </Pressable>
+                    <GreenButton
+                      style={{ margin: '20px!important' }}
+                      text='Try Again?'
+                      onPress={resetRecording}
+                    />
                   )}
                 </>
               ) : (
-                <Text>{`${status}`}</Text>
+                <Text className='font-bold text-center text-primary-dark text-l'>{`${status}`}</Text>
               )}
             </View>
           </View>
