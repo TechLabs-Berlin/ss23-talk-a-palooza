@@ -60,7 +60,7 @@ export const WhiteButton = ({ onPress, text }) => {
   return (
     <Pressable
       onPress={onPress}
-      className='flex flex-row justify-center gap-2 py-2 mb-4 transition duration-150 bg-white border rounded-lg shadow-lg sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow'
+      className='flex flex-row justify-center gap-2 pt-1 pb-2 mb-4 transition duration-150 bg-white border rounded-lg shadow-lg sm:px-10 bg-white/15 backdrop-blur-sm border-slate-200 hover:border-slate-400 hover:text-slate-900 hover:shadow'
     >
       <Text className='mt-4 font-bold text-center text-zinc-500 text-m'>
         {text}
