@@ -7,7 +7,8 @@ import {
   saveRecording,
   sendAudioToDL,
 } from '../../../services/recordingService';
-import Lottie from 'react-lottie';
+import { DotLottiePlayer, Controls } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 import animationData from '../../../assets/animations/check';
 import { GreenButton } from '../../navigation/Buttons';
 
@@ -186,17 +187,22 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
                 )}
               </Pressable>
               {isSaved && isRecognized && (
-                <Lottie
-                  options={checkOptions}
-                  height={120}
-                  width={205}
+                <DotLottiePlayer
+                  src='https://lottie.host/830dd5b9-c968-4085-ba1b-c1a5eea39310/QzGRkjql82.lottie'
+                  // background='transparent'
+                  // speed='1'
                   style={styles.check}
-                />
+                  autoplay
+                  renderer='svg'
+                  speed={1.5}
+                >
+                  {/* <Controls /> */}
+                </DotLottiePlayer>
               )}
               {isPlaybackFinished && base64Recording ? (
                 <>
                   {isSaved ? (
-                    <Text className='font-bold text-center text-primary-dark text-l'>{`${status}`}</Text>
+                    <Text className='-mt-10 font-bold text-center text-primary-dark text-l'>{`${status}`}</Text>
                   ) : (
                     // TODO: change wording "Save and Continue" to "Try, or measure or ..."
                     <GreenButton
@@ -244,7 +250,9 @@ const styles = StyleSheet.create({
     display: 'none',
   },
   check: {
-    marginTop: -36,
+    marginTop: -83,
+    width: 220,
+    height: 220,
   },
   save: {
     backgroundColor: '#DDDDDD',
