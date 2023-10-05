@@ -1,0 +1,26 @@
+POST http://localhost:8000/recommendations
+content-type: application/json
+
+{
+    "spokenWords": [
+        {
+            "name": "Teddy",
+            "wordBankId": "650ab3b1c748f7502858d848"
+        },
+        {
+            "name": "Apple",
+            "wordBankId": "650ab3d8c748f7502858f82e"
+        },
+        {
+            "name": "Fish",
+            "wordBankId": "650ab3fdc748f750285916ec"
+        }
+    ],
+    "child": {
+        "id": "651d5bcff3a87cd01d5f3ecf",
+        "gender": "M",
+        "ageInMonths": 43
+    }
+}
+
+###
