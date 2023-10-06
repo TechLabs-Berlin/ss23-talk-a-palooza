@@ -40,6 +40,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
                 <Text style={styles.text} htmlFor='firstName'>
                   Firstname
                 </Text>
+                <Field type='text' id='firstName' name='firstName' />
                 <ErrorMessage name='firstName' component='div' />
               </View>
 
