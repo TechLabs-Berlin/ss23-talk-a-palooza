@@ -25,19 +25,19 @@ const Navbar = () => {
 
   return (
     <>
-      <View className='flex flex-row px-6 py-0 my-2 min-w-[85%] justify-end'>
+      <View className='flex flex-row px-6 py-0  w-11/12 my-2 min-w-[85%] justify-end bg-[#b6e08ca3] shadow-md border border-primary-green rounded-lg'>
         <View className='flex flex-row items-center justify-between px-6 py-0 my-2'>
-          <Pressable className='mx-2'>
+          <Pressable className='mx-4'>
             <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
               Summary
             </Text>
           </Pressable>
-          <Pressable className='mx-4'>
+          <Pressable className='mx-6'>
             <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
               Statistics
             </Text>
           </Pressable>
-          <Pressable className='mx-4'>
+          <Pressable className='mx-6'>
             <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
               Settings
             </Text>
@@ -58,7 +58,7 @@ const Navbar = () => {
                 sx={{ width: 32, height: 32, br: '50%' }}
               />
               {isDropdownOpen && (
-                <View className='absolute bg-white border border-gray-300 rounded shadow-md top-12 right-4'>
+                <View className='absolute bg-white border border-gray-300 rounded shadow-md top-11 -right-5'>
                   <Pressable
                     onPress={logout}
                     className='px-4 py-2 hover:bg-blue-100'
