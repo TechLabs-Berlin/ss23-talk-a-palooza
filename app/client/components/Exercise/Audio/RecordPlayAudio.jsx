@@ -17,7 +17,7 @@ const STATUSES = {
   RECORDING: 'Recording...',
   PLAYING: 'Playing...',
   FINISHED: 'Playback finished',
-  NOTRECOGNIZED: 'Sorry we could not recognize it',
+  NOTRECOGNIZED: '',
   RECOGNIZED: 'Bravo!',
 };
 
@@ -127,16 +127,6 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
     setIsSaved(false);
   };
 
-  // Options for the animation
-  const checkOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   // TODO: Refactor view controls in AudioControls component
   return (
     <>
@@ -211,11 +201,10 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
                     />
                   )}
                   {isSaved && !isRecognized && (
-                    <GreenButton
-                      style={{ margin: '20px!important' }}
-                      text='Try Again?'
-                      onPress={resetRecording}
-                    />
+                    <View className='mt-10'>
+                      <GreenButton text='Try Again?' onPress={resetRecording} />
+                      <Text className='font-bold text-center text-primary-dark text-l'>{`Sorry we could not recognize it`}</Text>
+                    </View>
                   )}
                 </>
               ) : (
@@ -269,13 +258,14 @@ const styles = StyleSheet.create({
     flex: '1' /* Make items grow to fill available space */,
     padding: '40px',
     paddingTop: '0px',
+    paddingBottom: '0px',
     textAlign: 'center',
   },
   mainImage: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 220,
-    width: 220,
+    height: 200,
+    width: 200,
   },
   banana: {
     width: '80%',
