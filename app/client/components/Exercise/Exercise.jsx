@@ -2,7 +2,7 @@ import { useState } from 'react';
 import AudioExerciseSet from './Audio/AudioExerciseSet';
 import Reward from './Reward';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { HomeButton, NextButton } from '../navigation/Buttons';
+import { PrevButton, NextButton } from '../navigation/Buttons';
 import { ChildData } from '../../services/AuthWrapper';
 
 const Exercise = () => {
@@ -78,9 +78,6 @@ const Exercise = () => {
 
   return (
     <>
-      <View className='flex p-4 ml-0 mr-auto flex-column'>
-        <HomeButton />
-      </View>
       {!showRewards && (
         <AudioExerciseSet
           child={child}

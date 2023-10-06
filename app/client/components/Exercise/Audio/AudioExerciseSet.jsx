@@ -1,5 +1,5 @@
 import { StyleSheet, View, Pressable, Text, ViewComponent } from 'react-native';
-import { NextButton } from '../../navigation/Buttons';
+import { NextButton, PrevButton } from '../../navigation/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
 import { useState, useEffect } from 'react';
@@ -83,6 +83,9 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
 
   return (
     <>
+      <View className='flex p-4 ml-0 mr-auto flex-column'>
+        <PrevButton />
+      </View>
       <View style={styles.container}>
         <View style={styles.row}>
           {toTestWords
