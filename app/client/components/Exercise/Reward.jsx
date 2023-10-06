@@ -9,9 +9,10 @@ import {
 } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
-import { ActionButton, HomeButton } from '../navigation/Buttons';
+import { GreenButton, HomeButton } from '../navigation/Buttons';
 import { useEffect, useState, useRef } from 'react';
-import Lottie from 'react-lottie';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 import animationData from '../../assets/animations/rewardWheel';
 
 const Reward = () => {
@@ -31,7 +32,7 @@ const Reward = () => {
   };
 
   useEffect(() => {
-    const wheelDuration = 3000;
+    const wheelDuration = 2800;
 
     // Listen for animation finish event
     const wheelFinishTimeout = setTimeout(() => {
@@ -68,6 +69,7 @@ const Reward = () => {
   return (
     <>
       <View style={styles.container}>
+        {/* // Reward wheel and video */}
         {wheelFinished ? (
           <Animated.View style={[styles.row, { opacity: opacityValue }]}>
             <Video
@@ -82,23 +84,29 @@ const Reward = () => {
             />
           </Animated.View>
         ) : (
-          <Lottie
-            options={wheelOptions}
-            height={200}
-            width={200}
+          <DotLottiePlayer
+            src='https://lottie.host/955de89e-3c2f-4bd0-acf0-b345a47bae00/PhNANxMP4c.json'
+            autoplay
+            renderer='svg'
+            // loop
+            // speed={0.5}
             style={styles.wheel}
-            isStopped={wheelFinished}
-            // eventListeners={[
-            //   {
-            //     eventName: 'complete',
-            //     callback: () => startVideoPlayback(),
-            //   },
-            // ]}
-          />
+            // isStopped={wheelFinished}
+            onEvent={(loopComplete) => {
+              callback: () => startVideoPlayback();
+            }}
+          ></DotLottiePlayer>
         )}
+
         <View className='flex flex-row flex-wrap ml-auto mr-0 space-x-10'>
-          <ActionButton text={'Play again'} background={'text-primary-green'} />
-          <ActionButton text={'Results'} background={'text-primary-green'} />
+          <GreenButton
+            text={'Play again'}
+            onPress={() => {
+              window.location.href = '/practice';
+            }}
+            background={'text-primary-green'}
+          />
+          <GreenButton text={'Results'} background={'text-primary-green'} />
         </View>
       </View>
     </>
@@ -120,14 +128,14 @@ const styles = StyleSheet.create({
   },
   video: {
     alignSelf: 'center',
-    width: 640,
+    width: 600,
     height: 400,
     position: 'relative',
   },
   wheel: {
     alignSelf: 'center',
-    width: 300,
-    height: 300,
+    width: 400,
+    height: 400,
     position: 'relative',
   },
 });
