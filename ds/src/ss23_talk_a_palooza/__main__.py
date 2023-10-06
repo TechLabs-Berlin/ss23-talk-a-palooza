@@ -1,22 +1,23 @@
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from importlib.resources import as_file, files
+from operator import itemgetter
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Any, TypedDict
 
 import numpy as np
 import pandas as pd
 from fastapi import Body, FastAPI, HTTPException
 from libreco.algorithms import LightGCN
 from libreco.data import DataInfo, DatasetPure
-from pydantic import BaseModel, conset
+from pydantic import BaseModel, NonNegativeInt
 
 
 @dataclass(frozen=True)
 class ModelData:
     old_data_info: DataInfo
-    word_to_ids: dict[str, int]
-    ids_to_words: dict[int, str]
+    wordBankId_to_ids: dict[str, int]
+    ids_to_words: dict[int, dict[str, str]]
     weights_directory: Path
 
 
@@ -34,9 +35,11 @@ async def lifespan(app: FastAPI):
     with as_file(data_files.joinpath("words.parquet")) as f:
         df_words = pd.read_parquet(f)
 
-    series = df_words["item_definition"]
-    ids_to_words = series.to_dict()
-    words_to_ids = pd.Series(series.index.values, index=series).to_dict()
+
+    ids_to_words = df_words.to_dict("index")
+    # Swap the column `wordBankId` with the index
+    wordBankId_to_ids = {wordBankId: index
+                         for index, wordBankId in df_words["wordBankId"].items()}
 
     with as_file(data_files.joinpath("data-info")) as data_info_directory:
         old_data_info = DataInfo.load(data_info_directory, model_name="lightgcn")
@@ -48,7 +51,7 @@ async def lifespan(app: FastAPI):
 
     model_data = ModelData(
         old_data_info=old_data_info,
-        word_to_ids=words_to_ids,
+        wordBankId_to_ids=wordBankId_to_ids,
         ids_to_words=ids_to_words,
         weights_directory=weights_directory,
     )
@@ -58,22 +61,39 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
-class PureModelInput(BaseModel):
-    words: list[str]
+class Word(BaseModel):
+    name: str
+    wordBankId: str
+
+
+class Input(BaseModel):
+    spokenWords: list[Word]
+    child: dict[str, Any]
+
+
+class OutputWord(BaseModel):
+    wordBankId: str
+    name: str
+    priority: NonNegativeInt
 
 
 @app.post("/predict/")
-def predict(words: Annotated[conset(str, min_length=1), Body()]) -> list[str]:
-    if not words:
-        raise HTTPException(401, "No words were specified.")
+def predict(predict_input: Annotated[Input, Body()]) -> list[OutputWord]:
+    # if not words:
+    #     raise HTTPException(401, "No words were specified.")
     child_id = -1
+    requested_wordBankIds = {w.wordBankId for w in predict_input.spokenWords}
     # Train the model with the words spoken by the new child
-    if not words.issubset(model_data.word_to_ids.keys()):
-        invalid_words = words.difference(model_data.word_to_ids.keys())
+    if not requested_wordBankIds.issubset(model_data.wordBankId_to_ids.keys()):
+        invalid_words = [
+            w.name
+            for w in predict_input.spokenWords
+            if w.wordBankId not in model_data.wordBankId_to_ids.keys()
+        ]
         invalid_words_error = ", ".join(invalid_words)
         raise HTTPException(401, f"These words are not allowed: {invalid_words_error}")
 
-    words_ids = [model_data.word_to_ids[word] for word in words]
+    words_ids = [model_data.wordBankId_to_ids[wordBankId] for wordBankId in requested_wordBankIds]
     df_train = pd.DataFrame({"user": child_id, "item": words_ids, "label": 1.0})
 
     old_data_info = model_data.old_data_info
@@ -102,14 +122,21 @@ def predict(words: Annotated[conset(str, min_length=1), Body()]) -> list[str]:
     predicted_word_ids = recommendation[child_id]
 
     predicted_words = [model_data.ids_to_words[word_id] for word_id in predicted_word_ids]
-    predicted_words = [w for w in predicted_words if w not in words]
-    predicted_words = predicted_words[:6]
-    return predicted_words
+    # Drop words already learned by the child
+    predicted_words = filter(lambda w: w["wordBankId"] not in requested_wordBankIds, predicted_words)
+    # Only a maximum of 6 words is needed
+    predicted_words = list(predicted_words)[:6]
+    return [OutputWord(name=w["word"], priority=priority, wordBankId=w["wordBankId"])
+            for priority, w in enumerate(predicted_words)]
 
 
 @app.get("/allowed_words")
-def allowed_words() -> list[str]:
-    return sorted(model_data.word_to_ids.keys())
+def allowed_words() -> list[dict[str, str]]:
+    ret = [model_data.ids_to_words[item_id]
+           for item_id in model_data.wordBankId_to_ids.values()]
+    ret = [{"name": obj["word"], "wordBankId": obj["wordBankId"]}
+           for obj in ret]
+    return sorted(ret, key=itemgetter("name"))
 
 
 def main():
