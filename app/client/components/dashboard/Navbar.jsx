@@ -25,10 +25,10 @@ const Navbar = () => {
 
   return (
     <>
-      <View className='flex flex-row px-6 py-0  w-11/12 my-2 min-w-[85%] justify-end bg-[#b6e08ca3] shadow-md border border-primary-green rounded-lg'>
-        <View className='flex flex-row items-center justify-between px-6 py-0 my-2'>
-          <Pressable className='mx-4'>
-            <Text className='font-bold text-center text-l text-primary-dark hover:text-primary-green'>
+      <View className='flex flex-row px-6 py-0  w-11/12 min-w-[85%] justify-end'>
+        <View className='flex flex-row items-center justify-between px-6 py-0 '>
+          <Pressable className='mx-4 p-2 bg-[#b6e08ca3] shadow-sm border border-primary-green rounded-xl'>
+            <Text className='font-bold text-center text-l text-primary-dark '>
               Summary
             </Text>
           </Pressable>
@@ -52,10 +52,8 @@ const Navbar = () => {
               <Image
                 source={authUser.profilePhoto}
                 alt='user avatar'
-                className='w-10 h-10 rounded-full '
-                // width='32px'
-                // height='32px'
-                sx={{ width: 32, height: 32, br: '50%' }}
+                className='w-14 h-14 rounded-full shadow-md'
+                sx={{ br: '50%' }}
               />
               {isDropdownOpen && (
                 <View className='absolute bg-white border border-gray-300 rounded shadow-md top-11 -right-5'>
