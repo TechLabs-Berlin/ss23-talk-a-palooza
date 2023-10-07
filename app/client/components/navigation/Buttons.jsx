@@ -9,7 +9,7 @@ export const HomeButton = () => {
   return (
     <View className='flex ml-0 mr-auto'>
       <Pressable onPress={goHome}>
-        <Text className='p-2 duration-150 bg-white border rounded-full shadow-md backdrop-blur-sm border-slate-200'>
+        <Text className='p-2 duration-150 bg-white border rounded-full shadow-sm border-slate-200'>
           <MaterialCommunityIcons name='home' size={42} color='#BBD468' />
         </Text>
       </Pressable>
@@ -21,7 +21,7 @@ export const NextButton = ({ onPress }) => {
   return (
     <View className='flex ml-auto mr-0'>
       <Pressable onPress={onPress}>
-        <Text className='duration-150 bg-white border rounded-full shadow-md backdrop-blur-sm border-slate-200'>
+        <Text className='duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-200'>
           <MaterialCommunityIcons
             name='chevron-right'
             size={56}
@@ -40,7 +40,7 @@ export const PrevButton = () => {
   return (
     <View className='flex ml-0 mr-auto'>
       <Pressable onPress={goBack}>
-        <Text className='duration-150 bg-white border rounded-full shadow-md backdrop-blur-sm border-slate-200'>
+        <Text className='duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-200'>
           <MaterialCommunityIcons
             name='chevron-left'
             size={56}

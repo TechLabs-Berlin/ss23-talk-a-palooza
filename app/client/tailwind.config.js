@@ -12,6 +12,7 @@ module.exports = {
           dark: '#13334c', // Example custom primary color
           light: '#7D93CD',
           green: '#b6e08c',
+          red: '#E9281F',
           lightblue: '#D3E5F9',
         },
         secondary: {
