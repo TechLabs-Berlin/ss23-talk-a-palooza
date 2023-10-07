@@ -13,6 +13,13 @@ python3 -m pip install .
 python3 -m ss23_talk_a_palooza
 ```
 
+## With Docker
+
+```bash
+docker build . -t ds
+docker run -p 8001:8001 ds
+```
+
 # The build
 
 We use [Hatch](https://hatch.pypa.io/) to build and setup this package.
