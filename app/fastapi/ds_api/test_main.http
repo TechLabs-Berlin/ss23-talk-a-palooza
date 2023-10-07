@@ -1,0 +1,25 @@
+POST http://127.0.0.1:8000/predict
+Accept: application/json
+content-type: application/json
+
+{
+    "spokenWords": [
+        {
+         "name": "zipper",
+         "wordBankId": "651de3dbf3a9be0887dd1e3c"
+        },
+        {
+          "name": "zoo",
+          "wordBankId": "651de3dbf3a9be0887dd1edf"
+        }
+    ],
+    "child": {
+        "id": "651d5bcff3a87cd01d5f3ecf",
+        "gender": "M",
+        "ageInMonths": 43
+    }
+}
+###
+
+GET http://127.0.0.1:8000/allowed_words
+Accept: application/json

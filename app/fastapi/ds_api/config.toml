@@ -1,0 +1,6 @@
+[template]
+name = "ss23-talk-a-palooza"
+
+[template.plugins.default]
+tests = true
+src-layout = true
