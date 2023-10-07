@@ -27,7 +27,7 @@ const InitialAssessment = () => {
 
   return (
     <>
-      <View className='flex justify-between w-full h-full bg-slate-50'>
+      <View className='flex justify-between w-full h-full bg-lightgrey'>
         <Image
           source={image}
           resizeMode={'cover'}

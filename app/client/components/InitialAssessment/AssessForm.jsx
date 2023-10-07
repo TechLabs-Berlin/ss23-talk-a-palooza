@@ -39,7 +39,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
         >
           <Form>
             <View style={styles.app}>
-              <View className='container flex flex-col items-center justify-center mt-16 mx-auto sm:py-24 w-6/12 shadow-lg border px-5 py-10 rounded-[5px] border-solid border-gray-200 bg-white bg-opacity-80'>
+              <View className='container flex flex-col items-center justify-center mt-16 mx-auto sm:py-24 w-6/12 shadow-lg border px-5 py-10 rounded-[5px] border-solid border-gray-200 bg-lightgrey bg-opacity-80'>
                 <Text className="text-primary-dark text-2xl sm:text-1xl  text-center font-black leading-7 md:leading-10 font-['Oleo Script']">
                   {child.firstName} can say...
                 </Text>

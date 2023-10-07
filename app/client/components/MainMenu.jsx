@@ -67,7 +67,7 @@ const MainMenu = () => {
       </ImageBackground>
     </View>
   ) : (
-    <View className='flex justify-between w-full h-full bg-white'>
+    <View className='flex justify-between w-full h-full bg-lightgrey'>
       <ImageBackground
         source={imageAssess}
         resizeMode={'cover'}
