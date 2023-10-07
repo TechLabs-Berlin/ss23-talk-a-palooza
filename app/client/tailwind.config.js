@@ -22,6 +22,7 @@ module.exports = {
         },
         grey: '#F5F5F5',
         lightgrey: '#f1f1f1',
+        beige: '#fdfdf3',
         // Add more custom colors as needed
       },
     },
