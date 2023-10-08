@@ -123,9 +123,9 @@ export const GreenButton = ({ onPress, text }) => {
   return (
     <Pressable
       onPress={onPress}
-      className='flex flex-row justify-center gap-2 pt-1 pb-2 mb-4 transition duration-150 rounded-lg shadow-lg sm:px-6 backdrop-blur-sm bg-primary-green hover:border-slate-400 hover:text-slate-900 hover:shadow'
+      className='flex flex-row justify-center gap-2 pt-1 pb-2 px-3 mt-0 ml-4 transition duration-150 rounded-lg shadow-lg sm:px-6 backdrop-blur-sm bg-primary-green hover:border-slate-400 hover:text-slate-900 hover:shadow'
     >
-      <Text className='font-bold text-center text-primary-dark text-l'>
+      <Text className='font-bold mb-1 mr-1 text-center text-primary-dark text-l'>
         {text}
       </Text>
     </Pressable>

@@ -25,7 +25,7 @@ const Locked = ({ onUnlocked }) => {
       <View className='flex p-4 ml-0 mr-auto '>
         <PrevButton />
       </View>
-      <View className='container flex items-center justify-center m-auto mt-20 sm:py-24 w-5/12 shadow-lg px-5 py-10 rounded-lg border border-beige bg-[#fdfdf3dd]'>
+      <View className='container flex items-center justify-center m-auto mt-20 sm:py-24 w-5/12 shadow-lg px-5 py-10 rounded-lg border border-beige bg-beigeTrans'>
         {showQuestion && (
           <>
             <Text
