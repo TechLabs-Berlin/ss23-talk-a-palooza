@@ -65,12 +65,13 @@ const Exercise = () => {
       wordLevel: 1,
     },
   ];
-  console.log('reco', child.vocabLogs[0].recommendedWords);
+
   // TODO: DS/Predict the recommended words for the audio exercise set must be restricted to is_audio = true
   // Ticiane needs to change her code so that it does not restrict to 6 words.
   // I need to change my code to restrict to is_audio, and handle the behavior depending on the number of words returned then (=limit to 6 max)
 
   // const recommendedWords = child.vocabLogs[0].recommendedWords;
+  console.log('reco', child.vocabLogs[0].recommendedWords);
 
   const [isSetDone, setIsSetDone] = useState(false);
   const [showRewards, setShowRewards] = useState(false);
