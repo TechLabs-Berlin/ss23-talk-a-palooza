@@ -130,7 +130,7 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
   // TODO: Refactor view controls in AudioControls component
   return (
     <>
-      <View clasName='mx-10' style={[styles.container, { flex }]}>
+      <View className='mx-10 -mt-3' style={[styles.container, { flex }]}>
         <View className='exerciseBloc'>
           <View style={styles.exerciseBloc}>
             <Text className='mt-0 text-sm font-normal text-center text-gray-500 lg:w-10/12 sm:text-lg'>
@@ -266,6 +266,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 200,
     width: 200,
+    margin: '20px',
   },
   banana: {
     width: '80%',
