@@ -33,6 +33,22 @@ export const NextButton = ({ onPress }) => {
   );
 };
 
+export const NextFormButton = ({ onPress }) => {
+  return (
+    <View className='flex ml-auto mr-0'>
+      <Pressable onPress={onPress}>
+        <Text className='duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-200'>
+          <MaterialCommunityIcons
+            name='chevron-right'
+            size={56}
+            color='#13334c'
+          />
+        </Text>
+      </Pressable>
+    </View>
+  );
+};
+
 export const PrevButton = () => {
   const goBack = () => {
     window.history.back();

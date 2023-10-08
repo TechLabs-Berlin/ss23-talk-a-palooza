@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { useState, useEffect } from 'react';
+import { NextFormButton } from '../navigation/Buttons';
 
 const AssessForm = ({ child, onSubmit, initWords }) => {
   const validationSchema = Yup.object({
@@ -30,130 +31,113 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
   }, [initWords]);
 
   return (
-    <>
-      <View>
+    <View className=' flex flex-nowrap flex-col  justify-center items-stretch mt-5 mx-auto  w-9/12 shadow-lg rounded-lg border border-white bg-beigeTrans'>
+      <View className='flex flex-[1_0_auto] m-0 border-b border-slate-200'>
+        <View className='flex px-10 pt-10 pb-5'>
+          <Text className='flex rgb(95 114 166) text-3xl font-black  text-primary-dark w-8/12 font-["Oleo Script"]'>
+            {child.firstName} can say...
+          </Text>
+        </View>
+      </View>
+
+      <View className='flex px-10 pb-10 pt-4'>
         <Formik
           initialValues={{ initWords: {} }}
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >
-          <Form>
-            <View style={styles.app}>
-              <View className='container flex flex-col items-center justify-center mt-16 mx-auto sm:py-24 w-6/12 shadow-lg border px-5 py-10 rounded-[5px] border-solid border-gray-200 bg-lightgrey bg-opacity-80'>
-                <Text className="text-primary-dark text-2xl sm:text-1xl  text-center font-black leading-7 md:leading-10 font-['Oleo Script']">
-                  {child.firstName} can say...
-                </Text>
-                <View style={styles.container}>
-                  <View style={styles.tabContainer}>
-                    {/* Map over categories for tabs */}
-                    {Object.keys(groupedWords).map((category) => (
-                      <Pressable
-                        key={category}
-                        onPress={() => setSelectedCategory(category)}
-                        style={({ pressed }) => [
-                          styles.tabItem,
-                          selectedCategory === category &&
-                            styles.selectedTabItem,
-                          pressed && { backgroundColor: '#ddd' },
-                        ]}
-                      >
-                        {({ pressed }) => (
-                          <Text style={styles.tabText}>{category}</Text>
-                        )}
-                      </Pressable>
-                    ))}
-                  </View>
-                  <View style={styles.contentContainer}>
-                    {/* Display words for the selected category */}
-                    <View style={styles.wordContainer}>
-                      {selectedCategory && (
-                        <View style={styles.wordColumns}>
-                          {groupedWords[selectedCategory].map((initWord) => (
-                            <View key={initWord._id} style={styles.wordColumn}>
-                              <Text>
-                                <Field
-                                  type='checkbox'
-                                  name='words'
-                                  value={initWord.id}
-                                />
-                                {initWord.name}
-                              </Text>
-                            </View>
-                          ))}
-                        </View>
+          {({ handleSubmit }) => (
+            <Form>
+              <View className='flex flex-row pb-4'>
+                <View className='flex-1 min-w-min mt-4'>
+                  {/* Map over categories for tabs */}
+                  {Object.keys(groupedWords).map((category) => (
+                    <Pressable
+                      key={category}
+                      onPress={() => setSelectedCategory(category)}
+                      style={({ pressed }) => [
+                        styles.tabItem,
+                        selectedCategory === category && styles.selectedTabItem,
+                        pressed && { backgroundColor: 'transparent' },
+                      ]}
+                    >
+                      {({ pressed }) => (
+                        <Text style={styles.tabText}>{category}</Text>
                       )}
-                    </View>
-                  </View>
+                    </Pressable>
+                  ))}
                 </View>
 
-                <View style={(styles.flex, styles.end)}>
-                  <button type='submit'> Next</button>
+                <View style={styles.contentContainer} className='ml-10 mt-2'>
+                  {/* Display words for the selected category */}
+                  <View style={styles.wordContainer}>
+                    {selectedCategory && (
+                      <View style={styles.wordColumns}>
+                        {groupedWords[selectedCategory].map((initWord) => (
+                          <View key={initWord._id} style={styles.wordColumn}>
+                            <Text>
+                              <Field
+                                type='checkbox'
+                                name='words'
+                                value={initWord.id}
+                              />
+                              {initWord.name}
+                            </Text>
+                          </View>
+                        ))}
+                      </View>
+                    )}
+                  </View>
                 </View>
               </View>
-            </View>
-          </Form>
+
+              <View className='flex justify-end flex-row'>
+                <NextFormButton onPress={handleSubmit} />
+                <button type='submit'> Next</button>
+              </View>
+            </Form>
+          )}
         </Formik>
       </View>
-    </>
+    </View>
   );
 };
 
 export default AssessForm;
 
 const styles = StyleSheet.create({
-  bloc: {
-    flexDirection: 'row',
-    // maxWidth: '250px',
-    flexWrap: 'wrap',
-    margin: '20px',
-  },
-  end: {
-    justifyContent: 'flex-end',
-    flexDirection: 'row',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: '1.5rem',
-    marginTop: '1em',
-    textAlign: 'center',
-  },
   text: {
     lineHeight: '1.5em',
     fontSize: '1.125rem',
     marginVertical: '1em',
     textAlign: 'center',
   },
-  link: {
-    color: '#1977f2',
-  },
-  listitem: {
-    marginVertical: '0.5rem',
-  },
-  pageLink: {
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
+
   container: {
     flexDirection: 'row',
     flex: 1,
     width: '100%',
   },
-  tabContainer: {
-    flex: 1,
-    backgroundColor: '#f0f0f0',
-  },
+
   contentContainer: {
     flex: 3,
-    backgroundColor: '#fff',
+    backgroundColor: 'transparent',
   },
   tabItem: {
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+    // borderBottomWidth: 1,
+    // borderBottomColor: '#ccc',
+    backgroundColor: 'transparent',
+    borderRight: 'none',
+    paddingLeft: '20px',
+    marginBottom: '16px',
+    minWidth: '175px',
   },
+
   selectedTabItem: {
-    backgroundColor: '#e0e0e0',
+    backgroundColor: '#b6e08c8c',
+    borderRadius: '18px',
+    border: '1px solid #b6e08c',
   },
   tabText: {
     fontWeight: 'bold',
