@@ -1,4 +1,4 @@
-POST http://127.0.0.1:8000/predict
+POST http://127.0.0.1:8001/predict
 Accept: application/json
 content-type: application/json
 
@@ -21,5 +21,5 @@ content-type: application/json
 }
 ###
 
-GET http://127.0.0.1:8000/allowed_words
+GET http://127.0.0.1:8001/allowed_words
 Accept: application/json
