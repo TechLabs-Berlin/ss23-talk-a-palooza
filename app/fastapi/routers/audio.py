@@ -42,7 +42,14 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
     print("Audio received")
     # send to model
     # placeholder to return values:
-    score = random.random()
+    if target_term in ["bear", "bus"]:
+        score = random.randint(83, 95) / 100
+    elif target_term in ["ball", "apple"]:
+        score = random.randint(10, 20) / 100
+    elif target_term == "car":
+        score = random.randint(1, 8) / 100
+    else:
+        score = random.randint(1, 90) / 100
     match = score > 0.5
     response = SingleResponse(is_recognized = match, intelligibilityScore = score)
     return response
@@ -50,7 +57,7 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
 @router.post("/audio/multi")
 async def rate_audio(q: MultiQuery): # declaring it as a required parameter
     data = q.data
-    target_term, audio_data = data["target_term"], data["audio"]
+    target_term, audio_data = data["name"], data["binaryAudioData"]
     print("Audio received")
     # send to model
     # placeholder to return values:
