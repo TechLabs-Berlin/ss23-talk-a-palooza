@@ -1,0 +1,7480 @@
+[{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d86"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "baa baa",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d87"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "choo choo",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d88"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "cockadoodledoo",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d89"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "grrr",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d8a"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "meow",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d8b"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "moo",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d8c"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "ouch",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d8d"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "quack quack",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d8e"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "uh oh",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d8f"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "vroom",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d90"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "woof woof",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d91"
+  },
+  "category": "sounds",
+  "image": "",
+  "name": "yum yum",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d92"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "alligator",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d93"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "animal",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d94"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "ant",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d95"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "bear",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d96"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "bee",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d97"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "bird",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d98"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "bug",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d99"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "bunny",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d9a"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "butterfly",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d9b"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "cat",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d9c"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "chicken",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d9d"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "cow",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d9e"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "deer",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1d9f"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "dog",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da0"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "donkey",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da1"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "duck",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da2"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "elephant",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da3"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "fish (animal)",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da4"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "frog",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da5"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "giraffe",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da6"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "goose",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da7"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "hen",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da8"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "horse",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1da9"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "kitty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1daa"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "lamb",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dab"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "lion",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dac"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "monkey",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dad"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "moose",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dae"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "mouse",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1daf"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "owl",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db0"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "penguin",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db1"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "pig",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db2"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "pony",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db3"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "puppy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db4"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "rooster",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db5"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "sheep",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db6"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "squirrel",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db7"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "teddybear",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db8"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "tiger",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1db9"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "turkey",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dba"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "turtle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dbb"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "wolf",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dbc"
+  },
+  "category": "animals",
+  "image": "",
+  "name": "zebra",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dbd"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "airplane",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dbe"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "bicycle",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dbf"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "boat",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc0"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "bus",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc1"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "car",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc2"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "firetruck",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc3"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "helicopter",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc4"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "motorcycle",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc5"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "sled",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc6"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "stroller",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc7"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "tractor",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc8"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "train",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dc9"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "tricycle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dca"
+  },
+  "category": "vehicles",
+  "image": "",
+  "name": "truck",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dcb"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "ball",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dcc"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "balloon",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dcd"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "bat",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dce"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "block",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dcf"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "book",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd0"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "bubbles",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd1"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "chalk",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd2"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "crayon",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd3"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "doll",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd4"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "game",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd5"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "glue",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd6"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "pen",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd7"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "pencil",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd8"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "play dough",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dd9"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "present",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dda"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "puzzle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ddb"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "story",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ddc"
+  },
+  "category": "toys",
+  "image": "",
+  "name": "toy (object)",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ddd"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "apple",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dde"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "applesauce",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ddf"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "banana",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de0"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "beans",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de1"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "bread",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de2"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "butter",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de3"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "cake",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de4"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "candy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de5"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "carrots",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de6"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "cereal",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de7"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "cheerios",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de8"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "cheese",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1de9"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "chicken",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dea"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "chocolate",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1deb"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "coffee",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dec"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "coke",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ded"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "cookie",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dee"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "corn",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1def"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "cracker",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df0"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "donut",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df1"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "drink",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df2"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "egg",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df3"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "fish",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df4"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "food",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df5"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "french fries",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df6"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "grapes",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df7"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "green beans",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df8"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "gum",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1df9"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "hamburger",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dfa"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "ice",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dfb"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "ice cream",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dfc"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "jello",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dfd"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "jelly",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dfe"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "juice",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1dff"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "lollipop",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e00"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "meat",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e01"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "melon",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e02"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "milk",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e03"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "muffin",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e04"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "noodles",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e05"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "nuts",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e06"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "orange",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e07"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "pancake",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e08"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "peas",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e09"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "peanut butter",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e0a"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "pickle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e0b"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "pizza",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e0c"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "popcorn",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e0d"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "popsicle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e0e"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "potato chip",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e0f"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "potato",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e10"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "pretzel",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e11"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "pudding",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e12"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "pumpkin",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e13"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "raisin",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e14"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "salt",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e15"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "sandwich",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e16"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "sauce",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e17"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "soda/pop",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e18"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "soup",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e19"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "spaghetti",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e1a"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "strawberry",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e1b"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "toast",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e1c"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "tuna",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e1d"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "vanilla",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e1e"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "vitamins",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e1f"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "water",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e20"
+  },
+  "category": "food_drink",
+  "image": "",
+  "name": "yogurt",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e21"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "beads",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e22"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "belt",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e23"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "bib",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e24"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "boots",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e25"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "button",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e26"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "coat",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e27"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "diaper",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e28"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "dress",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e29"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "gloves",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e2a"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "hat",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e2b"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "jacket",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e2c"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "jeans",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e2d"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "mittens",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e2e"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "necklace",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e2f"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "pajamas",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e30"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "pants",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e31"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "scarf",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e32"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "shirt",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e33"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "shoe",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e34"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "shorts",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e35"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "slipper",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e36"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "sneaker",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e37"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "snowsuit",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e38"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "sock",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e39"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "sweater",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e3a"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "tights",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e3b"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "underpants",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e3c"
+  },
+  "category": "clothing",
+  "image": "",
+  "name": "zipper",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e3d"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "ankle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e3e"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "arm",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e3f"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "belly button",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e40"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "buttocks/bottom*",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e41"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "cheek",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e42"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "chin",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e43"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "ear",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e44"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "eye",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e45"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "face",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e46"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "finger",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e47"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "foot",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e48"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "hair",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e49"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "hand",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e4a"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "head",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e4b"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "knee",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e4c"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "leg",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e4d"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "lips",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e4e"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "mouth",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e4f"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "nose",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e50"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "owie/boo boo",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e51"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "penis",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e52"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "shoulder",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e53"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "toe",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e54"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "tongue",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e55"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "tooth",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e56"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "tummy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e57"
+  },
+  "category": "body_parts",
+  "image": "",
+  "name": "vagina",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e58"
+  },
+  "category": "household",
+  "image": "",
+  "name": "basket",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e59"
+  },
+  "category": "household",
+  "image": "",
+  "name": "blanket",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e5a"
+  },
+  "category": "household",
+  "image": "",
+  "name": "bottle",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e5b"
+  },
+  "category": "household",
+  "image": "",
+  "name": "bowl",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e5c"
+  },
+  "category": "household",
+  "image": "",
+  "name": "box",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e5d"
+  },
+  "category": "household",
+  "image": "",
+  "name": "broom",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e5e"
+  },
+  "category": "household",
+  "image": "",
+  "name": "brush",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e5f"
+  },
+  "category": "household",
+  "image": "",
+  "name": "bucket",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e60"
+  },
+  "category": "household",
+  "image": "",
+  "name": "camera",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e61"
+  },
+  "category": "household",
+  "image": "",
+  "name": "can",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e62"
+  },
+  "category": "household",
+  "image": "",
+  "name": "clock",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e63"
+  },
+  "category": "household",
+  "image": "",
+  "name": "comb",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e64"
+  },
+  "category": "household",
+  "image": "",
+  "name": "cup",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e65"
+  },
+  "category": "household",
+  "image": "",
+  "name": "dish",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e66"
+  },
+  "category": "household",
+  "image": "",
+  "name": "fork",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e67"
+  },
+  "category": "household",
+  "image": "",
+  "name": "garbage",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e68"
+  },
+  "category": "household",
+  "image": "",
+  "name": "glass",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e69"
+  },
+  "category": "household",
+  "image": "",
+  "name": "glasses",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e6a"
+  },
+  "category": "household",
+  "image": "",
+  "name": "hammer",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e6b"
+  },
+  "category": "household",
+  "image": "",
+  "name": "jar",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e6c"
+  },
+  "category": "household",
+  "image": "",
+  "name": "keys",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e6d"
+  },
+  "category": "household",
+  "image": "",
+  "name": "knife",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e6e"
+  },
+  "category": "household",
+  "image": "",
+  "name": "lamp",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e6f"
+  },
+  "category": "household",
+  "image": "",
+  "name": "light",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e70"
+  },
+  "category": "household",
+  "image": "",
+  "name": "medicine",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e71"
+  },
+  "category": "household",
+  "image": "",
+  "name": "money",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e72"
+  },
+  "category": "household",
+  "image": "",
+  "name": "mop",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e73"
+  },
+  "category": "household",
+  "image": "",
+  "name": "nail",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e74"
+  },
+  "category": "household",
+  "image": "",
+  "name": "napkin",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e75"
+  },
+  "category": "household",
+  "image": "",
+  "name": "paper",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e76"
+  },
+  "category": "household",
+  "image": "",
+  "name": "penny",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e77"
+  },
+  "category": "household",
+  "image": "",
+  "name": "picture",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e78"
+  },
+  "category": "household",
+  "image": "",
+  "name": "pillow",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e79"
+  },
+  "category": "household",
+  "image": "",
+  "name": "plant",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e7a"
+  },
+  "category": "household",
+  "image": "",
+  "name": "plate",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e7b"
+  },
+  "category": "household",
+  "image": "",
+  "name": "purse",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e7c"
+  },
+  "category": "household",
+  "image": "",
+  "name": "radio",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e7d"
+  },
+  "category": "household",
+  "image": "",
+  "name": "scissors",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e7e"
+  },
+  "category": "household",
+  "image": "",
+  "name": "soap",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e7f"
+  },
+  "category": "household",
+  "image": "",
+  "name": "spoon",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e80"
+  },
+  "category": "household",
+  "image": "",
+  "name": "tape",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e81"
+  },
+  "category": "household",
+  "image": "",
+  "name": "telephone",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e82"
+  },
+  "category": "household",
+  "image": "",
+  "name": "tissue/kleenex",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e83"
+  },
+  "category": "household",
+  "image": "",
+  "name": "toothbrush",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e84"
+  },
+  "category": "household",
+  "image": "",
+  "name": "towel",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e85"
+  },
+  "category": "household",
+  "image": "",
+  "name": "trash",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e86"
+  },
+  "category": "household",
+  "image": "",
+  "name": "tray",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e87"
+  },
+  "category": "household",
+  "image": "",
+  "name": "vacuum",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e88"
+  },
+  "category": "household",
+  "image": "",
+  "name": "walker",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e89"
+  },
+  "category": "household",
+  "image": "",
+  "name": "watch",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e8a"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "basement",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e8b"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "bathroom",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e8c"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "bathtub",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e8d"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "bed",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e8e"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "bedroom",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e8f"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "bench",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e90"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "chair",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e91"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "closet",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e92"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "couch",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e93"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "crib",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e94"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "door",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e95"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "drawer",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e96"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "dryer",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e97"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "garage",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e98"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "high chair",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e99"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "kitchen",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e9a"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "living room",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e9b"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "oven",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e9c"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "play pen",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e9d"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "porch",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e9e"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "potty",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1e9f"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "rocking chair",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea0"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "refrigerator",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea1"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "room",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea2"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "shower",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea3"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "sink",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea4"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "sofa",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea5"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "stairs",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea6"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "stove",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea7"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "table",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea8"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "TV",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ea9"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "window",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eaa"
+  },
+  "category": "furniture_rooms",
+  "image": "",
+  "name": "washing machine",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eab"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "backyard",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eac"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "cloud",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ead"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "flag",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eae"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "flower",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eaf"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "garden",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb0"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "grass",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb1"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "hose",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb2"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "ladder",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb3"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "lawn mower",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb4"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "moon",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb5"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "pool",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb6"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "rain",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb7"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "rock",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb8"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "roof",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eb9"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "sandbox",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eba"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "shovel",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ebb"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "sidewalk",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ebc"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "sky",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ebd"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "slide (object)",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ebe"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "snow",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ebf"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "snowman",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec0"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "sprinkler",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec1"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "star",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec2"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "stick",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec3"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "stone",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec4"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "street",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec5"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "sun",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec6"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "swing (object)",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec7"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "tree",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec8"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "water (not beverage)",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ec9"
+  },
+  "category": "outside",
+  "image": "",
+  "name": "wind",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eca"
+  },
+  "category": "places",
+  "image": "",
+  "name": "beach",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ecb"
+  },
+  "category": "places",
+  "image": "",
+  "name": "camping",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ecc"
+  },
+  "category": "places",
+  "image": "",
+  "name": "church*",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ecd"
+  },
+  "category": "places",
+  "image": "",
+  "name": "circus",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ece"
+  },
+  "category": "places",
+  "image": "",
+  "name": "country",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ecf"
+  },
+  "category": "places",
+  "image": "",
+  "name": "downtown",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed0"
+  },
+  "category": "places",
+  "image": "",
+  "name": "farm",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed1"
+  },
+  "category": "places",
+  "image": "",
+  "name": "gas station",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed2"
+  },
+  "category": "places",
+  "image": "",
+  "name": "home",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed3"
+  },
+  "category": "places",
+  "image": "",
+  "name": "house",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed4"
+  },
+  "category": "places",
+  "image": "",
+  "name": "movie",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed5"
+  },
+  "category": "places",
+  "image": "",
+  "name": "outside",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed6"
+  },
+  "category": "places",
+  "image": "",
+  "name": "park",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed7"
+  },
+  "category": "places",
+  "image": "",
+  "name": "party",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed8"
+  },
+  "category": "places",
+  "image": "",
+  "name": "picnic",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ed9"
+  },
+  "category": "places",
+  "image": "",
+  "name": "playground",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eda"
+  },
+  "category": "places",
+  "image": "",
+  "name": "school",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1edb"
+  },
+  "category": "places",
+  "image": "",
+  "name": "store",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1edc"
+  },
+  "category": "places",
+  "image": "",
+  "name": "woods",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1edd"
+  },
+  "category": "places",
+  "image": "",
+  "name": "work",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ede"
+  },
+  "category": "places",
+  "image": "",
+  "name": "yard",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1edf"
+  },
+  "category": "places",
+  "image": "",
+  "name": "zoo",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee0"
+  },
+  "category": "people",
+  "image": "",
+  "name": "aunt",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee1"
+  },
+  "category": "people",
+  "image": "",
+  "name": "baby",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee2"
+  },
+  "category": "people",
+  "image": "",
+  "name": "babysitter",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee3"
+  },
+  "category": "people",
+  "image": "",
+  "name": "babysitter's name",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee4"
+  },
+  "category": "people",
+  "image": "",
+  "name": "boy",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee5"
+  },
+  "category": "people",
+  "image": "",
+  "name": "brother",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee6"
+  },
+  "category": "people",
+  "image": "",
+  "name": "child",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee7"
+  },
+  "category": "people",
+  "image": "",
+  "name": "clown",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee8"
+  },
+  "category": "people",
+  "image": "",
+  "name": "cowboy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ee9"
+  },
+  "category": "people",
+  "image": "",
+  "name": "daddy",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eea"
+  },
+  "category": "people",
+  "image": "",
+  "name": "doctor",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eeb"
+  },
+  "category": "people",
+  "image": "",
+  "name": "fireman",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eec"
+  },
+  "category": "people",
+  "image": "",
+  "name": "friend",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eed"
+  },
+  "category": "people",
+  "image": "",
+  "name": "girl",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eee"
+  },
+  "category": "people",
+  "image": "",
+  "name": "grandma",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eef"
+  },
+  "category": "people",
+  "image": "",
+  "name": "grandpa",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef0"
+  },
+  "category": "people",
+  "image": "",
+  "name": "lady",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef1"
+  },
+  "category": "people",
+  "image": "",
+  "name": "mailman",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef2"
+  },
+  "category": "people",
+  "image": "",
+  "name": "man",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef3"
+  },
+  "category": "people",
+  "image": "",
+  "name": "mommy*",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef4"
+  },
+  "category": "people",
+  "image": "",
+  "name": "nurse",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef5"
+  },
+  "category": "people",
+  "image": "",
+  "name": "child's own name",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef6"
+  },
+  "category": "people",
+  "image": "",
+  "name": "people",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef7"
+  },
+  "category": "people",
+  "image": "",
+  "name": "person",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef8"
+  },
+  "category": "people",
+  "image": "",
+  "name": "pet's name",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ef9"
+  },
+  "category": "people",
+  "image": "",
+  "name": "police",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1efa"
+  },
+  "category": "people",
+  "image": "",
+  "name": "sister",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1efb"
+  },
+  "category": "people",
+  "image": "",
+  "name": "teacher",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1efc"
+  },
+  "category": "people",
+  "image": "",
+  "name": "uncle",
+  "is_audio": true,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1efd"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "bath",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1efe"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "breakfast",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1eff"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "bye",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f00"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "call",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f01"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "dinner",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f02"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "give me five!",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f03"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "gonna get you!",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f04"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "go potty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f05"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "hello",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f06"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "hi",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f07"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "lunch",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f08"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "nap",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f09"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "night night",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f0a"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "no",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f0b"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "pattycake",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f0c"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "peekaboo",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f0d"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "please",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f0e"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "shh/shush/hush",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f0f"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "shopping",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f10"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "snack",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f11"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "so big!",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f12"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "thank you",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f13"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "this little piggy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f14"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "turn around",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f15"
+  },
+  "category": "games_routines",
+  "image": "",
+  "name": "yes",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f16"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "bite",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f17"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "blow",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f18"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "break",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f19"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "bring",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f1a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "build",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f1b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "bump",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f1c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "buy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f1d"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "carry",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f1e"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "catch",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f1f"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "chase",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f20"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "clap",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f21"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "clean",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f22"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "climb",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f23"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "close",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f24"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "cook",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f25"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "cover",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f26"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "cry",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f27"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "cut",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f28"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "dance",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f29"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "draw",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f2a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "drink",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f2b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "drive",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f2c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "drop",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f2d"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "dry",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f2e"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "dump",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f2f"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "eat",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f30"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "fall",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f31"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "feed",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f32"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "find",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f33"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "finish",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f34"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "fit",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f35"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "fix",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f36"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "get",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f37"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "give",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f38"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "go",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f39"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hate",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f3a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "have",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f3b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hear",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f3c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "help",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f3d"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hide",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f3e"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hit",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f3f"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hold",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f40"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hug",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f41"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "hurry",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f42"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "jump",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f43"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "kick",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f44"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "kiss",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f45"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "knock",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f46"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "lick",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f47"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "like",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f48"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "listen",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f49"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "look",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f4a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "love",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f4b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "make",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f4c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "open",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f4d"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "paint",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f4e"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "pick",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f4f"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "play",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f50"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "pour",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f51"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "pretend",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f52"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "pull",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f53"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "push",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f54"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "put",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f55"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "read",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f56"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "ride",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f57"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "rip",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f58"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "run",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f59"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "say",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f5a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "see",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f5b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "shake",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f5c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "share",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f5d"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "show",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f5e"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "sing",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f5f"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "sit",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f60"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "skate",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f61"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "sleep",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f62"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "slide (action)",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f63"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "smile",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f64"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "spill",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f65"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "splash",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f66"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "stand",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f67"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "stay",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f68"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "stop",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f69"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "sweep",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f6a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "swim",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f6b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "swing",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f6c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "take",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f6d"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "talk",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f6e"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "taste",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f6f"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "tear",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f70"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "think",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f71"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "throw",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f72"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "tickle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f73"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "touch",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f74"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "wait",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f75"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "wake",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f76"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "walk",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f77"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "wash",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f78"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "watch",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f79"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "wipe",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f7a"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "wish",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f7b"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "work",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f7c"
+  },
+  "category": "action_words",
+  "image": "",
+  "name": "write",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f7d"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "all gone",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f7e"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "asleep",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f7f"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "awake",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f80"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "bad",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f81"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "better",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f82"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "big",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f83"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "black",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f84"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "blue",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f85"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "broken",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f86"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "brown",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f87"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "careful",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f88"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "clean",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f89"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "cold",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f8a"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "cute",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f8b"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "dark",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f8c"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "dirty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f8d"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "dry",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f8e"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "empty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f8f"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "fast",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f90"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "fine",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f91"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "first",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f92"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "full",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f93"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "gentle",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f94"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "good",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f95"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "green",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f96"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "happy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f97"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "hard",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f98"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "heavy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f99"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "high",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f9a"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "hot",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f9b"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "hungry",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f9c"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "hurt",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f9d"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "last",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f9e"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "little",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1f9f"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "long",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa0"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "loud",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa1"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "mad",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa2"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "naughty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa3"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "new",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa4"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "nice",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa5"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "noisy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa6"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "old",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa7"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "orange",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa8"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "poor",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fa9"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "pretty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1faa"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "quiet",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fab"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "red",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fac"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "sad",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fad"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "scared",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fae"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "sick",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1faf"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "sleepy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb0"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "slow",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb1"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "soft",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb2"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "sticky",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb3"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "stuck",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb4"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "thirsty",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb5"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "tiny",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb6"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "tired",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb7"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "wet",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": true
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb8"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "white",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fb9"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "windy",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fba"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "yellow",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fbb"
+  },
+  "category": "descriptive_words",
+  "image": "",
+  "name": "yucky",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fbc"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "after",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fbd"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "before",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fbe"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "day",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fbf"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "later",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc0"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "morning",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc1"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "night",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc2"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "now",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc3"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "time",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc4"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "today",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc5"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "tomorrow",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc6"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "tonight",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc7"
+  },
+  "category": "time_words",
+  "image": "",
+  "name": "yesterday",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc8"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "he",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fc9"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "her",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fca"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "hers",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fcb"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "him",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fcc"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "his",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fcd"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "I",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fce"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "it",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fcf"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "me",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd0"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "mine",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd1"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "my",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd2"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "myself",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd3"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "our",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd4"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "she",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd5"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "that",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd6"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "their",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd7"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "them",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd8"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "these",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fd9"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "they",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fda"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "this",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fdb"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "those",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fdc"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "us",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fdd"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "we",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fde"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "you",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fdf"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "your",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe0"
+  },
+  "category": "pronouns",
+  "image": "",
+  "name": "yourself",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe1"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "how",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe2"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "what",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe3"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "when",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe4"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "where",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe5"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "which",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe6"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "who",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe7"
+  },
+  "category": "question_words",
+  "image": "",
+  "name": "why",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe8"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "about",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fe9"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "above",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fea"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "around",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1feb"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "at",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fec"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "away",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fed"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "back",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fee"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "behind",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fef"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "beside",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff0"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "by",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff1"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "down",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff2"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "for",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff3"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "here",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff4"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "inside/in",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff5"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "into",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff6"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "next to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff7"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "of",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff8"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "off",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ff9"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "on",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ffa"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "on top of",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ffb"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "out",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ffc"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "over",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ffd"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "there",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1ffe"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd1fff"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "under",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2000"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "up",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2001"
+  },
+  "category": "locations",
+  "image": "",
+  "name": "with",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2002"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "a",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2003"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "all",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2004"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "a lot",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2005"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "an",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2006"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "another",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2007"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "any",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2008"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "each",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2009"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "every",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd200a"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "more",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd200b"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "much",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd200c"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "none",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd200d"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "not",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd200e"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "other",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd200f"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "same",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2010"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "some",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2011"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "the",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2012"
+  },
+  "category": "quantifiers",
+  "image": "",
+  "name": "too",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2013"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "am",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2014"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "are",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2015"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "be",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2016"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "can",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2017"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "could",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2018"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "did/did ya",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2019"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "do",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd201a"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "does",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd201b"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "don't",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd201c"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "gonna/going to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd201d"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "gotta/got to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd201e"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "hafta/have to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd201f"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "is",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2020"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "lemme/let me",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2021"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "need/need to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2022"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "try/try to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2023"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "wanna/want to",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2024"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "was",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2025"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "were",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2026"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "will",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2027"
+  },
+  "category": "helping_verbs",
+  "image": "",
+  "name": "would",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2028"
+  },
+  "category": "connecting_words",
+  "image": "",
+  "name": "and",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd2029"
+  },
+  "category": "connecting_words",
+  "image": "",
+  "name": "because",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd202a"
+  },
+  "category": "connecting_words",
+  "image": "",
+  "name": "but",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd202b"
+  },
+  "category": "connecting_words",
+  "image": "",
+  "name": "if",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd202c"
+  },
+  "category": "connecting_words",
+  "image": "",
+  "name": "so",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+},
+{
+  "_id": {
+    "$oid": "651de3dbf3a9be0887dd202d"
+  },
+  "category": "connecting_words",
+  "image": "",
+  "name": "then",
+  "is_audio": false,
+  "wordLevel": null,
+  "is_initial_assessment": false
+}]
