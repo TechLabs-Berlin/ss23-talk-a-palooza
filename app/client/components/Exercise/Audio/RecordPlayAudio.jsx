@@ -7,15 +7,17 @@ import {
   saveRecording,
   sendAudioToDL,
 } from '../../../services/recordingService';
-import Lottie from 'react-lottie';
+import { DotLottiePlayer, Controls } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 import animationData from '../../../assets/animations/check';
+import { GreenButton } from '../../navigation/Buttons';
 
 const STATUSES = {
   START: 'Tap the mic to talk',
   RECORDING: 'Recording...',
   PLAYING: 'Playing...',
   FINISHED: 'Playback finished',
-  NOTRECOGNIZED: 'Sorry we could not recognize it',
+  NOTRECOGNIZED: '',
   RECOGNIZED: 'Bravo!',
 };
 
@@ -125,20 +127,10 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
     setIsSaved(false);
   };
 
-  // Options for the animation
-  const checkOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
-
   // TODO: Refactor view controls in AudioControls component
   return (
     <>
-      <View clasName='mx-10' style={[styles.container, { flex }]}>
+      <View className='mx-10 -mt-3' style={[styles.container, { flex }]}>
         <View className='exerciseBloc'>
           <View style={styles.exerciseBloc}>
             <Text className='mt-0 text-sm font-normal text-center text-gray-500 lg:w-10/12 sm:text-lg'>
@@ -185,30 +177,38 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
                 )}
               </Pressable>
               {isSaved && isRecognized && (
-                <Lottie
-                  options={checkOptions}
-                  height={120}
-                  width={205}
+                <DotLottiePlayer
+                  src='https://lottie.host/830dd5b9-c968-4085-ba1b-c1a5eea39310/QzGRkjql82.lottie'
+                  // background='transparent'
+                  // speed='1'
                   style={styles.check}
-                />
+                  autoplay
+                  renderer='svg'
+                  speed={1.5}
+                >
+                  {/* <Controls /> */}
+                </DotLottiePlayer>
               )}
               {isPlaybackFinished && base64Recording ? (
                 <>
                   {isSaved ? (
-                    <Text>{`${status}`}</Text>
+                    <Text className='-mt-10 font-bold text-center text-primary-dark text-l'>{`${status}`}</Text>
                   ) : (
-                    <Pressable style={styles.save} onPress={saveAndContinue}>
-                      <Text>Submit</Text>
-                    </Pressable>
+                    // TODO: change wording "Save and Continue" to "Try, or measure or ..."
+                    <GreenButton
+                      text='Save and Continue'
+                      onPress={saveAndContinue}
+                    />
                   )}
                   {isSaved && !isRecognized && (
-                    <Pressable style={styles.tryAgain} onPress={resetRecording}>
-                      <Text>Try Again?</Text>
-                    </Pressable>
+                    <View className='mt-10'>
+                      <GreenButton text='Try Again?' onPress={resetRecording} />
+                      <Text className='font-bold text-center text-primary-dark text-l'>{`Sorry we could not recognize it`}</Text>
+                    </View>
                   )}
                 </>
               ) : (
-                <Text>{`${status}`}</Text>
+                <Text className='font-bold text-center text-primary-dark text-l'>{`${status}`}</Text>
               )}
             </View>
           </View>
@@ -239,7 +239,9 @@ const styles = StyleSheet.create({
     display: 'none',
   },
   check: {
-    marginTop: -36,
+    marginTop: -83,
+    width: 220,
+    height: 220,
   },
   save: {
     backgroundColor: '#DDDDDD',
@@ -256,13 +258,15 @@ const styles = StyleSheet.create({
     flex: '1' /* Make items grow to fill available space */,
     padding: '40px',
     paddingTop: '0px',
+    paddingBottom: '0px',
     textAlign: 'center',
   },
   mainImage: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 220,
-    width: 220,
+    height: 200,
+    width: 200,
+    margin: '20px',
   },
   banana: {
     width: '80%',

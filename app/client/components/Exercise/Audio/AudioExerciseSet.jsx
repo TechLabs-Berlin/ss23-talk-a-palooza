@@ -1,5 +1,5 @@
 import { StyleSheet, View, Pressable, Text, ViewComponent } from 'react-native';
-import { NextButton } from '../../navigation/Buttons';
+import { NextButton, PrevButton } from '../../navigation/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
 import { useState, useEffect } from 'react';
@@ -10,7 +10,12 @@ import {
 } from '../../../services/vocabLogsService';
 
 const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
-  const [toTestWords, setToTestWords] = useState(recommendedWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
+  // Filter recommendedWords to include only is_audio = true words and limit to 6 words
+  const filteredWords = recommendedWords
+    .filter((word) => word.is_audio)
+    .slice(0, 6);
+
+  const [toTestWords, setToTestWords] = useState(filteredWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
   const [completedWords, setCompletedWords] = useState([]);
   const [wordCountToShow, setWordCountToShow] = useState(1);
   const [isSetDone, setIsSetDone] = useState(false);
@@ -83,6 +88,9 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
 
   return (
     <>
+      <View className='flex p-4 ml-0 mr-auto flex-column'>
+        <PrevButton />
+      </View>
       <View style={styles.container}>
         <View style={styles.row}>
           {toTestWords

@@ -1,6 +1,6 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:3001/api/vocablogs';
-const DSUrl = 'http://localhost:8000/recommendations';
+const DSUrl = 'http://localhost:8001/predict';
 
 // [x] Get all vocabs logs from backend
 export const getAll = () => {

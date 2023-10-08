@@ -2,72 +2,75 @@ import { useState } from 'react';
 import AudioExerciseSet from './Audio/AudioExerciseSet';
 import Reward from './Reward';
 import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { HomeButton, NextButton } from '../navigation/Buttons';
+import { PrevButton, NextButton } from '../navigation/Buttons';
 import { ChildData } from '../../services/AuthWrapper';
 
 const Exercise = () => {
   const { child } = ChildData();
-  //NOTE: We send the child's spokenWords to DS (and so get the recommended words from DS automatically)
-  //TODO: Change from dummy data (or worst case fake it by providing a list of words and retrieving the info from WordBank)
-  const recommendedWords2 = [
+  //NOTE: Dummy data
+  //TODO: Add images to wordBank collection
+  const recommendedWords = [
     {
-      wordBankId: '650d2691df78bbefe5a91340',
-      name: 'Banana',
+      wordBankId: '651de3dbf3a9be0887dd1ddd',
+      name: 'apple',
       priority: 1,
-      image: 'banana.svg',
-      category: 'food',
+      // image: 'apple.jpeg',
+      category: 'food_drink',
       is_audio: true,
-      wordLevel: 1,
+      wordLevel: null,
     },
     {
-      wordBankId: '650ab3b1c748f7502858d848',
-      name: 'Teddy',
-      category: 'toys',
+      wordBankId: '651de3dbf3a9be0887dd1d95',
+      name: 'bear',
+      category: 'animals',
       priority: 2,
-      image: 'teddy.svg',
+      image: 'bear.svg',
       is_audio: true,
-      wordLevel: 1,
+      wordLevel: null,
     },
     {
-      wordBankId: '650ab3edc748f75028590a6f',
-      name: 'Baby',
-      category: 'people',
+      wordBankId: '651de3dbf3a9be0887dd1dc1',
+      name: 'car',
+      category: 'vehicles',
       priority: 3,
-      image: 'baby.svg',
+      image: 'car.svg',
       is_audio: true,
-      wordLevel: 2,
+      wordLevel: null,
     },
     {
-      wordBankId: '650ab431c748f750285942e2',
-      name: 'Dog',
+      wordBankId: '651de3dbf3a9be0887dd1dcb',
+      name: 'ball',
       priority: 4,
-      category: 'animals',
-      image: 'dog.svg',
+      category: 'toys',
+      image: 'balls.svg',
       is_audio: true,
-      wordLevel: 2,
+      wordLevel: null,
     },
     {
-      wordBankId: '650ab411c748f75028592835',
-      name: 'Cat',
+      wordBankId: '651de3dbf3a9be0887dd1dc0',
+      name: 'bus',
       priority: 5,
-      category: 'animals',
-      image: 'cat.svg',
+      category: 'vehicles',
+      image: 'bus.svg',
       is_audio: true,
-      wordLevel: 1,
+      wordLevel: null,
     },
     {
       wordBankId: '650ab45fc748f75028596913',
-      name: 'Milk',
+      name: 'shoe',
       priority: 6,
-      category: 'food',
-      image: 'milk.svg',
+      category: 'clothing',
+      // image: 'shoe.jpeg',
       is_audio: true,
       wordLevel: 1,
     },
   ];
-
   console.log('reco', child.vocabLogs[0].recommendedWords);
-  const recommendedWords = child.vocabLogs[0].recommendedWords;
+  // TODO: DS/Predict the recommended words for the audio exercise set must be restricted to is_audio = true
+  // Ticiane needs to change her code so that it does not restrict to 6 words.
+  // I need to change my code to restrict to is_audio, and handle the behavior depending on the number of words returned then (=limit to 6 max)
+
+  // const recommendedWords = child.vocabLogs[0].recommendedWords;
 
   const [isSetDone, setIsSetDone] = useState(false);
   const [showRewards, setShowRewards] = useState(false);
@@ -78,9 +81,6 @@ const Exercise = () => {
 
   return (
     <>
-      <View className='flex p-4 ml-0 mr-auto flex-column'>
-        <HomeButton />
-      </View>
       {!showRewards && (
         <AudioExerciseSet
           child={child}

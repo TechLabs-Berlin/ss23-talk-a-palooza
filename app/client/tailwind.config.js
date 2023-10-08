@@ -12,6 +12,8 @@ module.exports = {
           dark: '#13334c', // Example custom primary color
           light: '#7D93CD',
           green: '#b6e08c',
+          red: '#E9281F',
+          lightblue: '#D3E5F9',
         },
         secondary: {
           light: '#FFD699', // Example custom secondary light color
@@ -19,6 +21,9 @@ module.exports = {
           grey: '#F5F5F5',
         },
         grey: '#F5F5F5',
+        lightgrey: '#fEfEfE',
+        beige: '#fdfdf3',
+        beigeTrans: '#fbfbf8f0',
         // Add more custom colors as needed
       },
     },

@@ -29,7 +29,7 @@ export const AuthWrapper = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false); // Set loading to false when the operation is complete
-    }, 100);
+    }, 2000);
   }, []);
 
   const fetchData = async () => {

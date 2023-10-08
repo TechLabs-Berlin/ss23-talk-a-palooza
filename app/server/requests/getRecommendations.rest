@@ -1,0 +1,30 @@
+POST http://localhost:8001/predict
+content-type: application/json
+
+{
+    "spokenWords": [
+        {
+            "name": "cow",
+            "wordBankId": "651de3dbf3a9be0887dd1d9d",
+            "category": "animals"},
+        {
+            "name": "tiger",
+            "wordBankId": "651de3dbf3a9be0887dd1db8",
+            "category": "animals"},
+        {
+            "name": "noodles",
+            "wordBankId": "651de3dbf3a9be0887dd1e04",
+            "category": "food_drink"},
+        {
+            "name": "fast",
+            "wordBankId": "651de3dbf3a9be0887dd1f8f",
+            "category": "descriptive_words"}
+    ],
+    "child": {
+        "id":"6522669bc5507de71466afe7",
+        "gender": "M",
+        "ageInMonths": 43
+    }
+}
+
+###
