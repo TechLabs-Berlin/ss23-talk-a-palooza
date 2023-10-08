@@ -4,20 +4,24 @@ content-type: application/json
 {
     "spokenWords": [
         {
-            "name": "Teddy",
-            "wordBankId": "650ab3b1c748f7502858d848"
-        },
+            "name": "cow",
+            "wordBankId": "651de3dbf3a9be0887dd1d9d",
+            "category": "animals"},
         {
-            "name": "Apple",
-            "wordBankId": "650ab3d8c748f7502858f82e"
-        },
+            "name": "tiger",
+            "wordBankId": "651de3dbf3a9be0887dd1db8",
+            "category": "animals"},
         {
-            "name": "Fish",
-            "wordBankId": "650ab3fdc748f750285916ec"
-        }
+            "name": "noodles",
+            "wordBankId": "651de3dbf3a9be0887dd1e04",
+            "category": "food_drink"},
+        {
+            "name": "fast",
+            "wordBankId": "651de3dbf3a9be0887dd1f8f",
+            "category": "descriptive_words"}
     ],
     "child": {
-        "id": "651d5bcff3a87cd01d5f3ecf",
+        "id":"6522669bc5507de71466afe7",
         "gender": "M",
         "ageInMonths": 43
     }
