@@ -10,7 +10,12 @@ import {
 } from '../../../services/vocabLogsService';
 
 const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
-  const [toTestWords, setToTestWords] = useState(recommendedWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
+  // Filter recommendedWords to include only is_audio = true words and limit to 6 words
+  const filteredWords = recommendedWords
+    .filter((word) => word.is_audio)
+    .slice(0, 6);
+
+  const [toTestWords, setToTestWords] = useState(filteredWords); //NOTE: We create a copy of recommendedWords to avoid modifying the original array
   const [completedWords, setCompletedWords] = useState([]);
   const [wordCountToShow, setWordCountToShow] = useState(1);
   const [isSetDone, setIsSetDone] = useState(false);
