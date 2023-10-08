@@ -8,6 +8,8 @@ import {
 } from 'react-native';
 import { AuthData, ChildData } from '../../services/AuthWrapper';
 import { ActionButton } from '../navigation/Buttons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -46,22 +48,29 @@ const Navbar = () => {
           {/* Dropdown Menu */}
           <View className='relative inline-block text-left'>
             <Pressable
-              className='text-white rounded-full hover:bg-blue-400'
+              className='text-white rounded-full'
               onPress={toggleDropdown}
             >
-              <Image
-                source={authUser.profilePhoto}
-                alt='user avatar'
-                className='w-14 h-14 rounded-full shadow-md'
-                sx={{ br: '50%' }}
-              />
+              <View className={'flex flex-row items-center'}>
+                <Image
+                  source={authUser.profilePhoto}
+                  alt='user avatar'
+                  className='w-14 h-14 rounded-full shadow-md'
+                  sx={{ br: '50%' }}
+                />
+                <MaterialCommunityIcons
+                  name='chevron-down'
+                  size={24}
+                  color='black'
+                />
+              </View>
               {isDropdownOpen && (
-                <View className='absolute bg-white border border-gray-300 rounded shadow-md top-11 -right-5'>
+                <View className='absolute bg-lightgrey border border-gray-300 rounded shadow-md top-16 r-0'>
                   <Pressable
                     onPress={logout}
-                    className='px-4 py-2 hover:bg-blue-100'
+                    className='px-4 py-2 hover:bg-slate-50'
                   >
-                    <Text className='text-gray-800'>Logout</Text>
+                    <Text className='text-primary-dark'>Logout</Text>
                   </Pressable>
                 </View>
               )}

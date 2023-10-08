@@ -1,13 +1,18 @@
-import { Text, View, Image } from 'react-native';
+import { useState } from 'react';
+import { View, Image } from 'react-native';
 import LayoutHOC from '../components/layouts/LayoutHOC';
 import Locked from '../components/dashboard/Locked';
 import Dashboard from '../components/dashboard/Dashboard';
 
-import { useState } from 'react';
-
 const image = require('../assets/backgrounds/giveheart.svg');
 
 const DashboardScreen = () => {
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  const handleUnlock = () => {
+    setIsUnlocked(true);
+  };
+
   return (
     <View className='flex justify-between w-full h-full bg-lightgrey'>
       <Image
@@ -23,7 +28,7 @@ const DashboardScreen = () => {
           position: 'absolute',
         }}
       />
-      {Locked ? <Locked /> : <Dashboard />}
+      {isUnlocked ? <Dashboard /> : <Locked onUnlocked={handleUnlock} />}
     </View>
   );
 };

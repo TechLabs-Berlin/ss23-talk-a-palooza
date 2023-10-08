@@ -339,9 +339,9 @@ const Dashboard = () => {
   ];
 
   return (
-    <View className='flex justify-between w-full h-full bg-[#f8fafc2b]'>
+    <View className='flex justify-between w-full h-full bg-lightgrey'>
       <View className='flex w-full h-full flex-column'>
-        <View className='flex flex-row p-5 pb-3 justify-between border-b border-lightgrey'>
+        <View className='flex flex-row p-5 pb-3 justify-between border-b border-slate-200'>
           <HomeButton />
           <Navbar className='w-11/12 ' />
         </View>

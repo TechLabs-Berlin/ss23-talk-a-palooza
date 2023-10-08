@@ -10,14 +10,12 @@ const Locked = ({ onUnlocked }) => {
     if (answer === 11) {
       onUnlocked();
     } else {
-      // Display "Incorrect, try again" message and reset selected answer
       setShowQuestion(false);
       setShowResult(true);
     }
   };
 
   const handleTryAgain = () => {
-    // Reset the state to show the question and hide the result
     setShowQuestion(true);
     setShowResult(false);
   };
@@ -44,13 +42,11 @@ const Locked = ({ onUnlocked }) => {
           </>
         )}
         {showResult && (
-          <Text>
-            {' '}
-            Incorrect,{' '}
-            <button onClick={handleTryAgain}>
-              <Text>Try Again</Text>
-            </button>
-          </Text>
+          //TODO: Style this
+          <View className={'flex flex-column'}>
+            <Text>Incorrect,</Text>
+            <GreenButton onPress={handleTryAgain} text={'Try Again'} />
+          </View>
         )}
       </View>
     </View>
