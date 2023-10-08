@@ -4,18 +4,8 @@ Similar to how un-deployed Node JS apps require some setup with <code>npm i</cod
 
 ## Setup:
 
-<!-- ### Setting Up The Correct .env File:
-To ensure that our credentials are not exposed on Github, we set up a <code>.env</code> file containing necessary data to connect to our MongoDB Atlas database.
-
-The <code>.env</code> file contains data in the following format:
-```
-#MONGO CONFIG
-MONGO_URI=mongodb+srv://<user>:<password>@<cluster>
-```
-Therefore, to connect to the database from the DS backend, contact members of the team to receive the necessary file. -->
-
 ### Python Install:
-First, Python 3 needs to be installed. We used Python3.8+ with FastAPI, so we recommended choosing the same version.
+First, Python 3 needs to be installed. We used Python3.9+ with FastAPI, so we recommended choosing the same version.
 
 * [Download Python for Windows](https://www.python.org/downloads/windows/) and [Installation Docs for Windows](https://docs.python.org/3.8/using/windows.html)
 * [Python for Mac](https://www.python.org/downloads/macos/) and [Installation Docs for Mac](https://docs.python.org/3.8/using/mac.html)

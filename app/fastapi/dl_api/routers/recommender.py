@@ -3,6 +3,7 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
+# Delete this file
 # Define a Pydantic model for the incoming data
 class RecommendData(BaseModel):
     spokenWords: list
