@@ -2,16 +2,11 @@ import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import AddWords from './InitialAssessment/AddWords';
-import {
-  DashboardButton,
-  GoogleButton,
-  HomeButton,
-  NextButton,
-  PrevButton,
-  WhiteButton,
-} from '../components/navigation/Buttons';
+import { DashboardButton } from '../components/navigation/Buttons';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import '@dotlottie/react-player/dist/index.css';
 
-const imageMain = require('../assets/backgrounds/main.svg');
+const imageMain = require('../assets/backgrounds/forest.svg');
 const imageAssess = require('../assets/backgrounds/giveheart.svg');
 
 //TODO: Animated animals (birds?)
@@ -64,6 +59,14 @@ const MainMenu = () => {
             </View>
           </View>
         </View>
+        <DotLottiePlayer
+          src={require('../assets/animations/bee.lottie')}
+          style={styles.bee}
+          autoplay
+          loop
+          renderer='svg'
+          speed={1}
+        ></DotLottiePlayer>
       </ImageBackground>
     </View>
   ) : (
@@ -89,11 +92,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: '40px',
     paddingRight: '40px',
-    paddingBottom: '130px',
+    paddingBottom: '165px',
   },
   avatar: {
     width: 80,
     height: 80,
+  },
+  bee: {
+    position: 'absolute',
+    top: '260px',
+    left: '136px',
+    width: '50px',
+    height: '50px',
   },
 
   subtitle: {

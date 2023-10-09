@@ -69,15 +69,18 @@ const Reward = () => {
   return (
     <>
       {wheelFinished ? (
-        <>
-          <View className=' flex flex-nowrap flex-col  justify-center items-stretch -mt-14 mx-auto shadow-lg rounded-lg border border-white bg-beigeTrans'>
+        <View className='flex flex-column h-full'>
+          <View className='flex p-4 ml-0 mr-auto '>
+            <HomeButton />
+          </View>
+          <View className=' flex flex-nowrap flex-col  justify-center items-stretch -mt-14 mx-auto '>
             <View className='flex flex-[1_0_auto] m-0'>
               <View className='flex px-5 pt-5 pb-5'>
                 <Animated.View style={[styles.row, { opacity: opacityValue }]}>
                   <Video
                     ref={video}
                     style={styles.video}
-                    source={require('../../assets/videos/piou.mp4')}
+                    source={require('../../assets/videos/pioupiou.mp4')}
                     useNativeControls
                     resizeMode={ResizeMode.CONTAIN}
                     isLooping
@@ -112,7 +115,7 @@ const Reward = () => {
             speed={1}
             style={styles.bear}
           ></DotLottiePlayer>
-        </>
+        </View>
       ) : (
         <DotLottiePlayer
           src='https://lottie.host/955de89e-3c2f-4bd0-acf0-b345a47bae00/PhNANxMP4c.json'
@@ -144,15 +147,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center', // Space exercises evenly
     flexWrap: 'wrap', // Allow wrapping into multiple rows if needed
     margin: 'auto',
+    alignSelf: 'center',
+    width: 600, // Set the maximum width to 600 pixels
+    // width: '100%', // Ensure it takes the full width of its parent
+    alignItems: 'center', // Center the video horizontally
+
     // marginTop: 0,
   },
+
   video: {
-    alignSelf: 'center',
+    // alignSelf: 'center',
     width: 600,
-    height: 360,
-    position: 'relative',
-    borderRadius: 8,
-    border: '2px inset #fff',
+    height: 337,
+    // position: 'relative',
+    borderRadius: 20,
+    border: '12px solid rgb(255, 255, 255)',
+    boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px',
+    backgroundColor: 'white',
   },
   wheel: {
     alignSelf: 'center',

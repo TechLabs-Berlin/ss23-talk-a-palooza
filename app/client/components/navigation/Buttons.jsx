@@ -85,10 +85,15 @@ export const DashboardButton = ({ onPress }) => {
   return (
     <Pressable
       onPress={onPress}
-      className='flex flex-row items-center justify-center gap-2 pt-1 pb-2 mb-4 transition duration-150 bg-white border rounded-lg shadow-lg align-center sm:px-6 border-slate-200'
+      className='flex flex-row items-center justify-center pt-1 pb-2 mb-4 transition duration-150 bg-[#7d93cdd6] border border-[#7d93cd] rounded-lg shadow-sm align-center sm:px-2'
     >
-      <MaterialCommunityIcons name='view-dashboard' size={42} color='#BBD468' />
-      <Text className='mx-4 font-bold text-center text-zinc-500'>
+      <Image
+        className='w-9 h-11 m-0 mt-0'
+        source={require('../../assets/images/hearthumb.svg')}
+        loading='lazy'
+        alt='dashboard'
+      />
+      <Text className='mx-4 font-bold text-center text-base text-white'>
         Dashboard
       </Text>
     </Pressable>

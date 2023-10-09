@@ -14,7 +14,7 @@ const Exercise = () => {
       wordBankId: '651de3dbf3a9be0887dd1ddd',
       name: 'apple',
       priority: 1,
-      // image: 'apple.jpeg',
+      image: 'apple.png',
       category: 'food_drink',
       is_audio: true,
       wordLevel: null,

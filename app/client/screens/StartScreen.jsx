@@ -27,6 +27,7 @@ const StartScreen = () => {
               style={styles.sun}
               autoplay
               loop
+              loading='lazy'
               renderer='svg'
               speed={1}
             ></DotLottiePlayer>
@@ -47,22 +48,36 @@ const StartScreen = () => {
               style={styles.cloud2}
             ></DotLottiePlayer>
             <View className='flex-col items-center justify-center w-11/12 mb-5 sm:w-2/3 lg:flex sm:mb-12'>
-              <Text className="text-primary-dark text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center font-black leading-7 md:leading-10 font-['Oleo Script']">
+              <Text className='text-primary-dark font-black text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-center leading-7 md:leading-10'>
                 Talk-a-Palooza
               </Text>
-              <Text className='text-xs font-normal text-center text-primary-light sm:mt-4 lg:w-10/12 sm:text-lg '>
-                Here comes a awesome one sentence pitch that really makes you
-                want to try the app
+              <Text className='text-xs font-normal font-karla text-center text-primary-light sm:mt-4 lg:w-10/12 sm:text-lg '>
+                The fun way to improve your child’s language acquisition.{' '}
+                <br></br>Let the party begin!
               </Text>
             </View>
             <Login />
             <DotLottiePlayer
               src='https://lottie.host/3a058d63-23e9-45dd-975a-736404c139cd/BfFC12QwVg.lottie'
               autoplay
-              // renderer='svg'
               loop
               speed={1}
               style={styles.sloth}
+            ></DotLottiePlayer>
+            <DotLottiePlayer
+              src={require('../assets/animations/chicky.lottie')}
+              autoplay
+              loop
+              loading='lazy'
+              speed={1}
+              style={styles.chicky}
+            ></DotLottiePlayer>
+            <DotLottiePlayer
+              src={require('../assets/animations/raccoon.lottie')}
+              autoplay
+              loop
+              speed={1}
+              style={styles.raccoon}
             ></DotLottiePlayer>
 
             <Image
@@ -95,8 +110,22 @@ const styles = StyleSheet.create({
     bottom: '80px',
     position: 'absolute',
     height: '130px',
-    width: '123px',
+    width: '130px',
     right: '45px',
+  },
+  chicky: {
+    bottom: '-64px',
+    position: 'absolute',
+    height: '80px',
+    width: '80px',
+    right: '285px',
+  },
+  raccoon: {
+    bottom: '-48px',
+    position: 'absolute',
+    height: '130px',
+    width: '130px',
+    left: '190px',
   },
   image: {
     flex: 1,
