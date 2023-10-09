@@ -3,7 +3,7 @@ import { StyleSheet, View, Image } from 'react-native';
 
 const Loader = () => {
   return (
-    <View className='container flex flex-col items-center justify-center bg-grey w-full h-full  '>
+    <View className='container flex flex-col items-center justify-center bg-[#F1F1F0] w-full h-full  '>
       <View className='content-center'>
         <Image
           source={require('../../assets/images/loadingElephant.gif')}

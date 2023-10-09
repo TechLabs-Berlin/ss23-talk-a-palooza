@@ -25,8 +25,8 @@ module.exports = {
           dark: '#7D93CD', // Example custom secondary dark color
           grey: '#F5F5F5',
         },
-        grey: '#F5F5F5',
-        lightgrey: '#F1F1F0',
+        grey: '#F1F1F1',
+        lightgrey: '#F5F5F5',
         beige: '#fdfdf3',
         beigeTrans: '#fbfbf8f0',
         // Add more custom colors as needed
