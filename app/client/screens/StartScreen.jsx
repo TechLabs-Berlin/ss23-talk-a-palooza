@@ -122,10 +122,10 @@ const styles = StyleSheet.create({
   },
   sun: {
     position: 'absolute',
-    left: '0px',
-    top: '-50px',
-    width: '35%',
-    height: '35%',
+    left: '-50px',
+    top: '-160px',
+    width: 400,
+    height: 400,
     zIndex: '100',
   },
   title: {
