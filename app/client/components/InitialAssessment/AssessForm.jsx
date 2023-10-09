@@ -30,8 +30,25 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
     }
   }, [initWords]);
 
+  // Function to format category names
+  const formatCategoryName = (rawCategoryName) => {
+    // Split the raw category name by underscores
+    const words = rawCategoryName.split('_');
+
+    // Capitalize each word and join them with spaces
+    const formattedCategoryName =
+      words[0].charAt(0).toUpperCase() +
+      words[0].slice(1).toLowerCase() +
+      words
+        .slice(1)
+        .map((word) => ' ' + word.toLowerCase())
+        .join(' '); // Capitalize only the first letter
+
+    return formattedCategoryName;
+  };
+
   return (
-    <View className=' flex flex-nowrap flex-col  justify-center items-stretch mt-5 mx-auto  w-9/12 shadow-lg rounded-lg border border-white bg-beigeTrans'>
+    <View className=' flex flex-nowrap flex-col  justify-center items-stretch my-auto mx-auto  w-10/12 shadow-lg rounded-lg border border-white bg-beigeTrans'>
       <View className='flex flex-[1_0_auto] m-0 border-b border-slate-200'>
         <View className='flex px-10 pt-10 pb-5'>
           <Text className='flex rgb(95 114 166) text-3xl font-black  text-primary-dark w-8/12 font-["Oleo Script"]'>
@@ -40,7 +57,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
         </View>
       </View>
 
-      <View className='flex px-10 pb-10 pt-4'>
+      <View className='flex px-10 pb-10 pt-2'>
         <Formik
           initialValues={{ initWords: {} }}
           validationSchema={validationSchema}
@@ -48,8 +65,8 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
         >
           {({ handleSubmit }) => (
             <Form>
-              <View className='flex flex-row pb-4'>
-                <View className='flex-1 min-w-min mt-4'>
+              <View className='flex flex-row'>
+                <View className='min-w-min mt-4'>
                   {/* Map over categories for tabs */}
                   {Object.keys(groupedWords).map((category) => (
                     <Pressable
@@ -62,25 +79,31 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
                       ]}
                     >
                       {({ pressed }) => (
-                        <Text style={styles.tabText}>{category}</Text>
+                        <Text style={styles.tabText}>
+                          {formatCategoryName(category)}
+                        </Text>
                       )}
                     </Pressable>
                   ))}
                 </View>
 
-                <View style={styles.contentContainer} className='ml-10 mt-2'>
+                <View style={styles.contentContainer} className='ml-5 mt-2'>
                   {/* Display words for the selected category */}
                   <View style={styles.wordContainer}>
                     {selectedCategory && (
                       <View style={styles.wordColumns}>
                         {groupedWords[selectedCategory].map((initWord) => (
-                          <View key={initWord._id} style={styles.wordColumn}>
-                            <Text>
-                              <Field
-                                type='checkbox'
-                                name='words'
-                                value={initWord.id}
-                              />
+                          <View
+                            key={initWord._id}
+                            className='flex flex-row items-center cursor-pointer pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-300'
+                            style={styles.wordColumn}
+                          >
+                            <Field
+                              type='checkbox'
+                              name='words'
+                              value={initWord.id}
+                            />
+                            <Text className=' text-primary-dark ml-1'>
                               {initWord.name}
                             </Text>
                           </View>
@@ -93,7 +116,6 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
 
               <View className='flex justify-end flex-row'>
                 <NextFormButton onPress={handleSubmit} />
-                <button type='submit'> Next</button>
               </View>
             </Form>
           )}
@@ -128,9 +150,9 @@ const styles = StyleSheet.create({
     // borderBottomWidth: 1,
     // borderBottomColor: '#ccc',
     backgroundColor: 'transparent',
-    borderRight: 'none',
+    borderRightColor: 'transparent',
     paddingLeft: '20px',
-    marginBottom: '16px',
+    marginBottom: '8px',
     minWidth: '175px',
   },
 
@@ -151,7 +173,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between', // You can adjust this to control the spacing between columns
   },
   wordColumn: {
-    flexBasis: '32%', // Adjust the percentage to control the number of columns (e.g., '48%' for two columns)
+    flexBasis: '30%', // Adjust the percentage to control the number of columns (e.g., '48%' for two columns)
     padding: 5,
+    marginBottom: 10,
   },
 });

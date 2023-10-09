@@ -59,7 +59,7 @@ const StartScreen = () => {
             <DotLottiePlayer
               src='https://lottie.host/3a058d63-23e9-45dd-975a-736404c139cd/BfFC12QwVg.lottie'
               autoplay
-              renderer='svg'
+              // renderer='svg'
               loop
               speed={1}
               style={styles.sloth}
