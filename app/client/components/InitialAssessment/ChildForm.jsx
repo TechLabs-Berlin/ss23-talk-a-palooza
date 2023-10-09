@@ -3,6 +3,22 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { NextFormButton } from '../navigation/Buttons';
 import * as Yup from 'yup';
 
+const MyWebDatePicker = ({ field, form, ...rest }) => {
+  const handleChange = (event) => {
+    const newDate = new Date(event.target.value);
+    form.setFieldValue(field.name, newDate);
+  };
+
+  return (
+    <input
+      type='date'
+      value={field.value ? field.value.toISOString().split('T')[0] : ''}
+      onChange={handleChange}
+      {...rest}
+    />
+  );
+};
+
 const ChildForm = ({ authUser, onSubmit }) => {
   const initialValues = {
     firstName: '',
@@ -23,7 +39,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
           <Text className="flex rgb(95 114 166) text-3xl font-black  text-primary-dark w-8/12 font-['Oleo Script']">
             Welcome {authUser.firstName}
           </Text>
-          <Text className='flex font-bold w-full text-primary-light text-base '>
+          <Text className='flex font-bold w-full text-primary-light text-base'>
             Can you give us some information about your child?
           </Text>
         </View>
@@ -40,7 +56,6 @@ const ChildForm = ({ authUser, onSubmit }) => {
               <View className='flex'>
                 <View className='flex-row items-center'>
                   <View className='flex-row items-center'>
-                    {/* //TODO: Add inputs https://tailwind-elements.com/docs/standard/forms/inputs/ */}
                     <View className='relative mb-3 mr-6'>
                       <Text
                         htmlFor='firstName'
@@ -59,9 +74,6 @@ const ChildForm = ({ authUser, onSubmit }) => {
                   </View>
                   <View className='flex-row items-center'>
                     <View className='relative mb-3'>
-                      {/* //TODO: Add date picker:
-              https://tailwind-elements.com/docs/standard/forms/datepicker/ */}
-
                       <Text
                         htmlFor='birthDate'
                         className='text-primary-dark font-bold ml-3 my-2'
@@ -69,10 +81,11 @@ const ChildForm = ({ authUser, onSubmit }) => {
                         Date of birth
                       </Text>
                       <Field
-                        type='text'
+                        type='date'
                         id='birthDate'
                         name='birthDate'
                         style={styles.input}
+                        component={MyWebDatePicker}
                       />
                       <ErrorMessage name='birthDate' component='div' />
                     </View>
@@ -151,6 +164,7 @@ const styles = StyleSheet.create({
     // border: '1px solid #c5c9d0',
     border: '1px inset #e2e8f0',
     paddingLeft: 20,
+    paddingRight: 20,
     marginTop: 0,
     marginBottom: 10,
 

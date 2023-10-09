@@ -163,6 +163,8 @@ const styles = StyleSheet.create({
   },
   tabText: {
     fontWeight: 'bold',
+    color: '#13334c',
+    fontSize: '14px',
   },
   wordContainer: {
     padding: 10,
