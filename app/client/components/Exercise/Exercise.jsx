@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import AudioExerciseSet from './Audio/AudioExerciseSet';
 import Reward from './Reward';
-import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { PrevButton, NextButton } from '../navigation/Buttons';
+import { View, Pressable, Text } from 'react-native';
 import { ChildData } from '../../services/AuthWrapper';
 
 const Exercise = () => {

@@ -1,13 +1,5 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  ImageBackground,
-  Image,
-  Pressable,
-} from 'react-native';
+import { Text, View, Image, Pressable } from 'react-native';
 import { AuthData, ChildData } from '../../services/AuthWrapper';
-import { ActionButton } from '../navigation/Buttons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { useState } from 'react';

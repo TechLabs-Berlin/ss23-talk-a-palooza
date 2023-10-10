@@ -20,7 +20,6 @@ const StartScreen = () => {
         style={{ flex: 1, width: '100%', justifyContent: 'center' }}
       >
         <View style={styles.app}>
-          {/* //TODO: style text bloc width, fonts + add animals animations */}
           <View className='container flex flex-col items-center justify-center py-12 mx-auto sm:pt-36'>
             <DotLottiePlayer
               src='https://lottie.host/9a46b7f3-08d2-4191-acb3-c1667c1a402b/SPhd1EWDvF.lottie'

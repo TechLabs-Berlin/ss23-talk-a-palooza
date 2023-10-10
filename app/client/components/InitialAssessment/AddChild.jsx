@@ -1,4 +1,3 @@
-import { StyleSheet, View } from 'react-native';
 import { useState } from 'react';
 import ChildForm from './ChildForm';
 import AddWords from './AddWords';

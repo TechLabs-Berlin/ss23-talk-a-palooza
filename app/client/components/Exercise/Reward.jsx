@@ -1,35 +1,17 @@
 import { ChildData } from '../../services/AuthWrapper';
-import {
-  StyleSheet,
-  View,
-  Pressable,
-  Text,
-  Animated,
-  Easing,
-} from 'react-native';
+import { StyleSheet, View, Animated, Easing } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
 import { GreenButton, HomeButton } from '../navigation/Buttons';
 import { useEffect, useState, useRef } from 'react';
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
-import animationData from '../../assets/animations/rewardWheel';
 
 const Reward = () => {
   const { child } = ChildData();
   const video = useRef(null);
   const [status, setStatus] = useState({});
   const [wheelFinished, setWheelFinished] = useState(false);
-
-  // Options for the animation
-  const wheelOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
 
   useEffect(() => {
     const wheelDuration = 2800;

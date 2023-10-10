@@ -1,4 +1,4 @@
-import { StyleSheet, View, Pressable, Text, ViewComponent } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { NextButton, PrevButton } from '../../navigation/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 

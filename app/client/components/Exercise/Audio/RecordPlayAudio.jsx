@@ -7,9 +7,8 @@ import {
   saveRecording,
   sendAudioToDL,
 } from '../../../services/recordingService';
-import { DotLottiePlayer, Controls } from '@dotlottie/react-player';
+import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
-import animationData from '../../../assets/animations/check';
 import { GreenButton } from '../../navigation/Buttons';
 
 const STATUSES = {
@@ -269,13 +268,10 @@ const styles = StyleSheet.create({
     margin: '20px',
   },
   banana: {
-    width: '80%',
-    height: '80%',
     maxHeight: '100%',
     maxWidth: '100%',
     flex: 1,
     width: 230,
-    //  borderRadius: '50%',
   },
   title: {
     fontSize: '1.5rem',

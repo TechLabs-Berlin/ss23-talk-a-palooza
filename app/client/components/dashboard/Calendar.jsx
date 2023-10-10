@@ -1,5 +1,4 @@
 import { Text, View } from 'react-native';
-import { ResponsiveCalendar } from '@nivo/calendar';
 import { ResponsiveTimeRange } from '@nivo/calendar';
 
 const MyResponsiveCalendar = ({ data }) => (

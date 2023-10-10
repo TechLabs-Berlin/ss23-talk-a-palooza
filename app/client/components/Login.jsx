@@ -1,5 +1,3 @@
-import { Text, View, Pressable } from 'react-native';
-import { Image } from 'expo-image';
 import { AppleButton, GoogleButton } from './navigation/Buttons';
 
 const Login = () => {

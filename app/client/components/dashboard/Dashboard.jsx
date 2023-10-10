@@ -1,4 +1,4 @@
-import { Text, View, Image } from 'react-native';
+import { View } from 'react-native';
 import Navbar from './Navbar';
 import { HomeButton } from '../navigation/Buttons';
 import NewWords from './NewWords';
