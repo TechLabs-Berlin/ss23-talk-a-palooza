@@ -13,7 +13,7 @@ const LayoutHOC = (WrappedComponent) => {
           <View className='w-[68px] h-[4px] bg-gray-100 absolute left-[130px] -top-[7px] rounded-l-lg'></View>
           <View className='w-[68px] h-[4px] bg-gray-100 absolute left-[208px] -top-[7px] rounded-l-lg'></View>
           <View className='w-[64px] h-[4px] bg-gray-100 absolute right-[50px] top-[687px] rounded-r-lg'></View>
-          <View className='py-14 px-8 bg-gray-900 rounded-[2rem] overflow-hidden w-[1016px] h-[684px]'>
+          <View className='py-14 px-8 bg-[#181e2a] rounded-[2rem] overflow-hidden w-[1016px] h-[684px]'>
             <View className='flex justify-between w-full h-full'>
               <WrappedComponent {...props} />
             </View>
