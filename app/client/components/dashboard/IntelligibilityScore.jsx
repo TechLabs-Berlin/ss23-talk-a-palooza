@@ -31,8 +31,8 @@ function IntelligibilityScore({ data }) {
             legends={[]}
           />
         </View>
-        <Text className='mr-2 text-3xl font-bold text-primary-dark  left-7 top-9 absolute '>
-          56%
+        <Text className='absolute mr-2 text-3xl font-bold text-primary-dark left-7 top-9 '>
+          46%
         </Text>
       </View>
     </>
