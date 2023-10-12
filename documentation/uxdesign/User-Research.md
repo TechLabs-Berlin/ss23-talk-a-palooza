@@ -4,7 +4,7 @@
 
 # Martin and Jim
   
-Personas (3).png
+![](Personas (3).png)
 
 Scenario: 
 Martin arrives home after a long day at the office, where he had to work an extra two hours to finish an important project. Waiting for him at home is his three-year-old son, Jim, who is staying with him for the week.
