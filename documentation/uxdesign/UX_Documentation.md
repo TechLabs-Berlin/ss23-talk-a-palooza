@@ -24,3 +24,8 @@ Unfortunately, a thirty-minute session with the therapist is not enough. Her mot
 Laura starts practicing some difficult sounds with Maria, repeating them until Maria notices that she is pronouncing the correct sound. Maria is happier and more motivated now. 
 In addition, after finishing some exercises, she can watch funny videos and dance, which she loves. She spends some time with the app until it's time to put away technology for the day. 
 She goes to sleep looking forward to meeting her new friends the next day.
+
+
+## User Flow through App
+
+[embed]http://example.com/file.pdf[/embed]
