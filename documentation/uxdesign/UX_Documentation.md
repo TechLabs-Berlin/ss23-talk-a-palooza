@@ -42,4 +42,3 @@ https://42qei34afqy.typeform.com/to/s3el48Bo?typeform-source=github.com
 ![Image text](TestResponse.PNG)
 
 
-Thank you for the opportunity Techlabs :+1:
