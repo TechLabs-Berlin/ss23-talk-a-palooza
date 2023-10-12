@@ -4,9 +4,10 @@
 
 # Martin and Jim
   
-![](Personas (3).png)
+![Image text](Personas_Martin.png)
 
 Scenario: 
+
 Martin arrives home after a long day at the office, where he had to work an extra two hours to finish an important project. Waiting for him at home is his three-year-old son, Jim, who is staying with him for the week.
 The nanny leaves, leaving Martin and Jim alone together. Jim wants something to eat from the kitchen, but he is only able to point and gesture to communicate his desire. 
 This is a recurring issue. Now Martin has to show Jim many different food items before he can confirm what it is that he wants. 
@@ -14,9 +15,10 @@ Remembering that his child needs help developing language, Martin picks up his t
 
 # Laura and Maria 
 
-Personas.png
+![Image text](Personas.png)
 
 Scenario:
+
 Maria is a three-year-old child who is starting kindergarten this year. After her first session with the speech therapist, recommended by her future teachers, she feels frustrated because she cannot pronounce certain sounds correctly. 
 Unfortunately, a thirty-minute session with the therapist is not enough. Her mother, Laura, decided to download an app to complement the therapy and speed up Maria's development.
 Laura starts practicing some difficult sounds with Maria, repeating them until Maria notices that she is pronouncing the correct sound. Maria is happier and more motivated now. 
