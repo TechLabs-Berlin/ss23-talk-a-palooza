@@ -1,15 +1,12 @@
-Access to the database and other sensitive data is protected with a .env file.<br> Contact Rose to get a copy of it, and paste it in the server root folder
+Access to the database and other sensitive data is protected with a .env file.<br> Contact [Rose Jeantet](https://github.com/rjeantet) to get a copy of it, and paste it in the server root folder
 <br>
 <br>
-The App is developed with React Native Expo for the frontend, running on server 19006:
+
+## Installation:
+
+Please refer to repository main README.md: visit ![installation](https://https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/blob/documentation/README.md#installation) for installation instructions
 <br>
-=> npm i 
-<br>
-=> npm run web
-<br>
-<br>
-For the Node backend, Express is connected to MongoDB Atlas, running on server 3001
-<br>
-=> npm i 
-<br>
-=> npm run dev
+
+# How to run the app:
+
+Please refer to repository main README.md: visit ![Running the app](https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/blob/documentation/README.md#running-the-app) for instructions on how to run the app.
