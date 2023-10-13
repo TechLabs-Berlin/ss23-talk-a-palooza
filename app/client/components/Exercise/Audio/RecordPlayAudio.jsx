@@ -9,7 +9,7 @@ import {
 } from '../../../services/recordingService';
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
-import { GreenButton } from '../../navigation/Buttons';
+import { GreenButton } from '../../layouts/Buttons';
 
 const STATUSES = {
   START: 'Tap the mic to talk',

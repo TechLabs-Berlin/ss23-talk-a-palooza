@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import Navbar from './Navbar';
-import { HomeButton } from '../navigation/Buttons';
+import { HomeButton } from '../layouts/Buttons';
 import Statistics from './Statistics';
 import Summary from './Summary';
 import Settings from './Settings';

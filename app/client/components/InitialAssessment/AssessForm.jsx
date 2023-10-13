@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { useState, useEffect } from 'react';
-import { NextFormButton } from '../navigation/Buttons';
+import { NextFormButton } from '../layouts/Buttons';
 
 const AssessForm = ({ child, onSubmit, initWords }) => {
   const validationSchema = Yup.object({

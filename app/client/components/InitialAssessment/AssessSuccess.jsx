@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native';
-import { GreenButton } from '../navigation/Buttons';
+import { GreenButton } from '../layouts/Buttons';
 import { useNavigate } from 'react-router-dom';
 
 const AssessSuccess = ({ child, spokenWords }) => {

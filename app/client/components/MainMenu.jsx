@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import AddWords from './InitialAssessment/AddWords';
-import { DashboardButton } from '../components/navigation/Buttons';
+import { DashboardButton } from './layouts/Buttons';
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';
 

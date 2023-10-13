@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
-import { PrevButton, GreenButton } from '../navigation/Buttons';
+import { PrevButton, GreenButton } from '../layouts/Buttons';
 
 const Locked = ({ onUnlocked }) => {
   const [showQuestion, setShowQuestion] = useState(true);

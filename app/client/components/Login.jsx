@@ -1,4 +1,4 @@
-import { AppleButton, GoogleButton } from './navigation/Buttons';
+import { AppleButton, GoogleButton } from './layouts/Buttons';
 
 const Login = () => {
   const googleAuth = () => {

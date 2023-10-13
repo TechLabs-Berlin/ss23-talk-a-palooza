@@ -2,7 +2,7 @@ import { ChildData } from '../../services/AuthWrapper';
 import { StyleSheet, View, Animated, Easing } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
-import { GreenButton, HomeButton } from '../navigation/Buttons';
+import { GreenButton, HomeButton } from '../layouts/Buttons';
 import { useEffect, useState, useRef } from 'react';
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import '@dotlottie/react-player/dist/index.css';

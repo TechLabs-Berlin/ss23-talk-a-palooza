@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { NextButton, PrevButton } from '../../navigation/Buttons';
+import { NextButton, PrevButton } from '../../layouts/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
 import { useState, useEffect } from 'react';

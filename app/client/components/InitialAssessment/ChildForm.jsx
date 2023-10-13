@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { NextFormButton } from '../navigation/Buttons';
+import { NextFormButton } from '../layouts/Buttons';
 import * as Yup from 'yup';
 
 const MyWebDatePicker = ({ field, form, ...rest }) => {
