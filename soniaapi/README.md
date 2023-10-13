@@ -1,18 +1,18 @@
-install these manually 1 by 1 via terminal, no fancy installation package :(
+in terminal:
 
-* pip install pandas
-* pip install numpy
-* pip install fastapi
-* pip install pydantic
-* pip install json
-* pip install uvicorn
-* pip install fastparquet
-* pip install joblib
+* pip install -r requirements.txt
+
+then:
 
 * download mod.pkl from https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/releases/tag/tag
+* put mod.pkl into soniaapi folder
 
-then run 
+then run:
+
 * uvicorn mainy:app --host 0.0.0.0 --port 8001
-* then test with testy.http
+
+to test, run this request:
+  
+* testy.http
 
 
