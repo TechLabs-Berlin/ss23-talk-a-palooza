@@ -174,7 +174,7 @@ DOCKER
 &nbsp;
 
 # Authors
-User Experience:&nbsp;&nbsp; [Camila Canteros Lopez](https://github.com/) &nbsp;
+User Experience:&nbsp;&nbsp; [Camila Canteros Lopez](https://github.com/Camilagraciac) &nbsp;
 
 WD (fullstack):&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Rose Jeantet](https://github.com/rjeantet) &nbsp;
 
