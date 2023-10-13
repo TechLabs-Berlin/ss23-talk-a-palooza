@@ -1,23 +1,18 @@
-import { ImageBackground } from 'react-native';
+import { View } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import LayoutHOC from '../components/layouts/LayoutHOC';
 import Exercise from '../components/Exercise/Exercise';
-
-const image = require('../assets/backgrounds/sky3.svg');
+import { SkyBackground } from '../components/layouts/Backgrounds';
 
 const ExerciseScreen = () => {
   const { child } = ChildData();
 
   return (
     <>
-      <ImageBackground
-        source={image}
-        resizeMode={'cover'}
-        loading='lazy'
-        style={{ flex: 1, width: '100%', justifyContent: 'center' }}
-      >
+      <View className='flex justify-between w-full h-full bg-lightgrey'>
+        <SkyBackground />
         <Exercise child={child} />
-      </ImageBackground>
+      </View>
     </>
   );
 };
