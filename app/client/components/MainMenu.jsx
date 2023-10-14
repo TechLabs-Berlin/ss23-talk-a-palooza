@@ -3,8 +3,7 @@ import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import AddWords from './InitialAssessment/AddWords';
 import { DashboardButton } from './layouts/Buttons';
-import { DotLottiePlayer } from '@dotlottie/react-player';
-import '@dotlottie/react-player/dist/index.css';
+import { BeeAnimation } from './layouts/Animations';
 
 const imageMain = require('../assets/backgrounds/forest.svg');
 const imageAssess = require('../assets/backgrounds/giveheart.svg');
@@ -59,14 +58,7 @@ const MainMenu = () => {
             </View>
           </View>
         </View>
-        <DotLottiePlayer
-          src={require('../assets/animations/bee.lottie')}
-          style={styles.bee}
-          autoplay
-          loop
-          renderer='svg'
-          speed={1}
-        ></DotLottiePlayer>
+        <BeeAnimation top='260px' left='136px' />
       </ImageBackground>
     </View>
   ) : (
@@ -98,14 +90,6 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
   },
-  bee: {
-    position: 'absolute',
-    top: '260px',
-    left: '136px',
-    width: '50px',
-    height: '50px',
-  },
-
   subtitle: {
     fontWeight: 'bold',
     fontSize: '1.5rem',

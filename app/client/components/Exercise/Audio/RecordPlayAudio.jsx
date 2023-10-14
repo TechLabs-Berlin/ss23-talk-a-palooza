@@ -2,14 +2,9 @@ import { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, Pressable } from 'react-native';
 import { Audio } from 'expo-av';
 import { Image } from 'expo-image';
-import {
-  uriToBase64,
-  saveRecording,
-  sendAudioToDL,
-} from '../../../services/recordingService';
-import { DotLottiePlayer } from '@dotlottie/react-player';
-import '@dotlottie/react-player/dist/index.css';
+import { uriToBase64, sendAudioToDL } from '../../../services/recordingService';
 import { GreenButton } from '../../layouts/Buttons';
+import { CheckAnimation } from '../../layouts/Animations';
 
 const STATUSES = {
   START: 'Tap the mic to talk',
@@ -175,19 +170,7 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
                   />
                 )}
               </Pressable>
-              {isSaved && isRecognized && (
-                <DotLottiePlayer
-                  src='https://lottie.host/830dd5b9-c968-4085-ba1b-c1a5eea39310/QzGRkjql82.lottie'
-                  // background='transparent'
-                  // speed='1'
-                  style={styles.check}
-                  autoplay
-                  renderer='svg'
-                  speed={1.5}
-                >
-                  {/* <Controls /> */}
-                </DotLottiePlayer>
-              )}
+              {isSaved && isRecognized && <CheckAnimation />}
               {isPlaybackFinished && base64Recording ? (
                 <>
                   {isSaved ? (
@@ -236,11 +219,6 @@ const styles = StyleSheet.create({
     // backgroundColor: '#DDD', // Change the background color to indicate it's disabled
     //  opacity: 0, // Reduce opacity to visually indicate it's disabled
     display: 'none',
-  },
-  check: {
-    marginTop: -83,
-    width: 220,
-    height: 220,
   },
   save: {
     backgroundColor: '#DDDDDD',
