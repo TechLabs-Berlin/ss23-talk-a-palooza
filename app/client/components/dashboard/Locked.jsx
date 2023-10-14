@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { PrevButton, GreenButton } from '../layouts/Buttons';
 
 const Locked = ({ onUnlocked }) => {
@@ -25,7 +25,7 @@ const Locked = ({ onUnlocked }) => {
       <View className='flex p-4 ml-0 mr-auto '>
         <PrevButton />
       </View>
-      <View className='container flex items-center justify-center w-5/12 px-5 py-16 m-auto mt-20 border rounded-lg shadow-lg border-beige bg-beigeTrans'>
+      <View className='container flex items-center justify-center w-5/12 px-5 py-16 m-auto mt-20 card-bg'>
         {showQuestion && (
           <>
             <Text

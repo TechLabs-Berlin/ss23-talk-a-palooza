@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
-import AddWords from './InitialAssessment/AddWords';
+import AddWords from './initial-assessment/AddWords';
 import { DashboardButton } from './layouts/Buttons';
 import { BeeAnimation } from './layouts/Animations';
 

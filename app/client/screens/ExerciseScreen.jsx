@@ -1,7 +1,7 @@
 import { View } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import LayoutHOC from '../components/layouts/LayoutHOC';
-import Exercise from '../components/Exercise/Exercise';
+import Exercise from '../components/exercise/Exercise';
 import { SkyBackground } from '../components/layouts/Backgrounds';
 
 const ExerciseScreen = () => {

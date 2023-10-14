@@ -2,8 +2,8 @@ import { View } from 'react-native';
 
 import { AuthData } from '../services/AuthWrapper';
 import { AssessWrapper } from '../services/AssessWrapper';
-import AddChild from '../components/InitialAssessment/AddChild';
-import AddWords from '../components/InitialAssessment/AddWords';
+import AddChild from '../components/initial-assessment/AddChild';
+import AddWords from '../components/initial-assessment/AddWords';
 import { GiveHeartBackground } from '../components/layouts/Backgrounds';
 
 const InitialAssessment = () => {
