@@ -35,6 +35,7 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
     with open("audio", 'w') as file:
         file.write(audio)
     
+    
     learn_inf.predict()
     response = SingleResponse(is_recognized = match, intelligibilityScore = score)
     return response
