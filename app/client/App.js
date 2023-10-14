@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { AuthWrapper } from './services/AuthWrapper';
 import { BrowserRouter } from 'react-router-dom';
 import { NativeWindStyleSheet } from 'nativewind';

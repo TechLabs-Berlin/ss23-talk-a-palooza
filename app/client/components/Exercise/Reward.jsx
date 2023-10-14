@@ -1,35 +1,14 @@
-import { ChildData } from '../../services/AuthWrapper';
-import {
-  StyleSheet,
-  View,
-  Pressable,
-  Text,
-  Animated,
-  Easing,
-} from 'react-native';
+import { StyleSheet, View, Animated, Easing } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
-import { GreenButton, HomeButton } from '../navigation/Buttons';
+import { GreenButton, HomeButton } from '../layouts/Buttons';
 import { useEffect, useState, useRef } from 'react';
-import { DotLottiePlayer } from '@dotlottie/react-player';
-import '@dotlottie/react-player/dist/index.css';
-import animationData from '../../assets/animations/rewardWheel';
+import { DancingBearAnimation, WheelAnimation } from '../layouts/Animations';
 
 const Reward = () => {
-  const { child } = ChildData();
   const video = useRef(null);
   const [status, setStatus] = useState({});
   const [wheelFinished, setWheelFinished] = useState(false);
-
-  // Options for the animation
-  const wheelOptions = {
-    loop: false,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
-  };
 
   useEffect(() => {
     const wheelDuration = 2800;
@@ -68,47 +47,50 @@ const Reward = () => {
   //TODO: import results from Audio Exercise
   return (
     <>
-      <View style={styles.container}>
-        {/* // Reward wheel and video */}
-        {wheelFinished ? (
-          <Animated.View style={[styles.row, { opacity: opacityValue }]}>
-            <Video
-              ref={video}
-              style={styles.video}
-              source={require('../../assets/videos/piou.mp4')}
-              useNativeControls
-              resizeMode={ResizeMode.CONTAIN}
-              isLooping
-              shouldPlay
-              onPlaybackStatusUpdate={(status) => setStatus(() => status)}
-            />
-          </Animated.View>
-        ) : (
-          <DotLottiePlayer
-            src='https://lottie.host/955de89e-3c2f-4bd0-acf0-b345a47bae00/PhNANxMP4c.json'
-            autoplay
-            renderer='svg'
-            // loop
-            // speed={0.5}
-            style={styles.wheel}
-            // isStopped={wheelFinished}
-            onEvent={(loopComplete) => {
-              callback: () => startVideoPlayback();
-            }}
-          ></DotLottiePlayer>
-        )}
-
-        <View className='flex flex-row flex-wrap ml-auto mr-0 space-x-10'>
-          <GreenButton
-            text={'Play again'}
-            onPress={() => {
-              window.location.href = '/practice';
-            }}
-            background={'text-primary-green'}
-          />
-          <GreenButton text={'Results'} background={'text-primary-green'} />
+      {wheelFinished ? (
+        <View className='flex h-full flex-column'>
+          <View className='flex p-4 ml-0 mr-auto '>
+            <HomeButton />
+          </View>
+          <View className='flex flex-col items-stretch justify-center mx-auto flex-nowrap -mt-14'>
+            <View className='flex flex-[1_0_auto] m-0'>
+              <View className='flex px-5 pt-5 pb-5'>
+                <Animated.View style={[styles.row, { opacity: opacityValue }]}>
+                  <Video
+                    ref={video}
+                    style={styles.video}
+                    source={require('../../assets/videos/pioupiou.mp4')}
+                    useNativeControls
+                    resizeMode={ResizeMode.CONTAIN}
+                    isLooping
+                    shouldPlay
+                    onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+                  />
+                </Animated.View>
+                <View className='flex flex-row flex-wrap mx-auto mt-6 mb-4 space-x-10'>
+                  <GreenButton
+                    text={'Play again'}
+                    onPress={() => {
+                      window.location.href = '/practice';
+                    }}
+                    background={'text-primary-green'}
+                  />
+                  <GreenButton
+                    text={'Dashboard'}
+                    background={'text-primary-green'}
+                    onPress={() => {
+                      window.location.href = '/dashboard';
+                    }}
+                  />
+                </View>
+              </View>
+            </View>
+          </View>
+          <DancingBearAnimation />
         </View>
-      </View>
+      ) : (
+        <WheelAnimation />
+      )}
     </>
   );
 };
@@ -123,19 +105,20 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
-    justifyContent: 'space-between', // Space exercises evenly
-    flexWrap: 'wrap', // Allow wrapping into multiple rows if needed
-  },
-  video: {
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+    margin: 'auto',
     alignSelf: 'center',
     width: 600,
-    height: 400,
-    position: 'relative',
+    alignItems: 'center',
   },
-  wheel: {
-    alignSelf: 'center',
-    width: 400,
-    height: 400,
-    position: 'relative',
+
+  video: {
+    width: 600,
+    height: 337,
+    borderRadius: 20,
+    border: '12px solid rgb(255, 255, 255)',
+    boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px',
+    backgroundColor: 'white',
   },
 });

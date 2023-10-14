@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        oleo: ['Oleo Script', 'cursive'],
+        karla: ['Karla', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
         primary: {
           dark: '#13334c', // Example custom primary color
@@ -20,8 +25,8 @@ module.exports = {
           dark: '#7D93CD', // Example custom secondary dark color
           grey: '#F5F5F5',
         },
-        grey: '#F5F5F5',
-        lightgrey: '#fEfEfE',
+        grey: '#F1F1F1',
+        lightgrey: '#F5F5F5',
         beige: '#fdfdf3',
         beigeTrans: '#fbfbf8f0',
         // Add more custom colors as needed

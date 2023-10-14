@@ -1,17 +1,11 @@
 import { Link } from 'react-router-dom';
 import { StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
-import AddWords from './InitialAssessment/AddWords';
-import {
-  DashboardButton,
-  GoogleButton,
-  HomeButton,
-  NextButton,
-  PrevButton,
-  WhiteButton,
-} from '../components/navigation/Buttons';
+import AddWords from './initial-assessment/AddWords';
+import { DashboardButton } from './layouts/Buttons';
+import { BeeAnimation } from './layouts/Animations';
 
-const imageMain = require('../assets/backgrounds/main.svg');
+const imageMain = require('../assets/backgrounds/forest.svg');
 const imageAssess = require('../assets/backgrounds/giveheart.svg');
 
 //TODO: Animated animals (birds?)
@@ -64,6 +58,7 @@ const MainMenu = () => {
             </View>
           </View>
         </View>
+        <BeeAnimation top='260px' left='136px' />
       </ImageBackground>
     </View>
   ) : (
@@ -89,13 +84,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: '40px',
     paddingRight: '40px',
-    paddingBottom: '130px',
+    paddingBottom: '165px',
   },
   avatar: {
     width: 80,
     height: 80,
   },
-
   subtitle: {
     fontWeight: 'bold',
     fontSize: '1.5rem',

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import AudioExerciseSet from './Audio/AudioExerciseSet';
 import Reward from './Reward';
-import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { PrevButton, NextButton } from '../navigation/Buttons';
+import { View, Pressable, Text } from 'react-native';
 import { ChildData } from '../../services/AuthWrapper';
 
 const Exercise = () => {
@@ -14,7 +13,7 @@ const Exercise = () => {
       wordBankId: '651de3dbf3a9be0887dd1ddd',
       name: 'apple',
       priority: 1,
-      // image: 'apple.jpeg',
+      image: 'apple.png',
       category: 'food_drink',
       is_audio: true,
       wordLevel: null,
@@ -65,12 +64,9 @@ const Exercise = () => {
       wordLevel: 1,
     },
   ];
-  console.log('reco', child.vocabLogs[0].recommendedWords);
   // TODO: DS/Predict the recommended words for the audio exercise set must be restricted to is_audio = true
   // Ticiane needs to change her code so that it does not restrict to 6 words.
   // I need to change my code to restrict to is_audio, and handle the behavior depending on the number of words returned then (=limit to 6 max)
-
-  // const recommendedWords = child.vocabLogs[0].recommendedWords;
 
   const [isSetDone, setIsSetDone] = useState(false);
   const [showRewards, setShowRewards] = useState(false);

@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
 import { useState } from 'react';
-import { PrevButton, GreenButton } from '../navigation/Buttons';
+import { StyleSheet, Text, View } from 'react-native';
+import { PrevButton, GreenButton } from '../layouts/Buttons';
 
 const Locked = ({ onUnlocked }) => {
   const [showQuestion, setShowQuestion] = useState(true);
@@ -25,7 +25,7 @@ const Locked = ({ onUnlocked }) => {
       <View className='flex p-4 ml-0 mr-auto '>
         <PrevButton />
       </View>
-      <View className='container flex items-center justify-center m-auto mt-20 sm:py-24 w-5/12 shadow-lg px-5 py-10 rounded-lg border border-beige bg-beigeTrans'>
+      <View className='container flex items-center justify-center w-5/12 px-5 py-16 m-auto mt-20 border rounded-lg shadow-lg border-beige bg-beigeTrans'>
         {showQuestion && (
           <>
             <Text
@@ -42,11 +42,14 @@ const Locked = ({ onUnlocked }) => {
           </>
         )}
         {showResult && (
-          //TODO: Style this
-          <View className={'flex flex-column'}>
-            <Text>Incorrect,</Text>
-            <GreenButton onPress={handleTryAgain} text={'Try Again'} />
-          </View>
+          <>
+            <Text className='flex my-5 text-xl font-black text-primary-dark'>
+              Incorrect!
+            </Text>
+            <View className='flex items-center justify-center -ml-2 '>
+              <GreenButton onPress={handleTryAgain} text={'Try Again'} />
+            </View>
+          </>
         )}
       </View>
     </View>

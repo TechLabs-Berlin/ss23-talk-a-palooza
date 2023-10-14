@@ -1,5 +1,5 @@
-import { StyleSheet, View, Pressable, Text, ViewComponent } from 'react-native';
-import { NextButton, PrevButton } from '../../navigation/Buttons';
+import { StyleSheet, View } from 'react-native';
+import { NextButton, PrevButton } from '../../layouts/Buttons';
 import RecordPlayAudio from './RecordPlayAudio';
 
 import { useState, useEffect } from 'react';
@@ -36,7 +36,6 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
       const newCount = Math.min(prevCount + 1, 4);
       if (newCount === 4) {
         setIsSetDone(true);
-        // onCompleteSession();
       }
       return newCount;
     });
