@@ -1,6 +1,4 @@
 import { View } from 'react-native';
-import Navbar from './Navbar';
-import { HomeButton } from '../layouts/Buttons';
 import NewWords from './NewWords';
 import IntelligibilityScore from './IntelligibilityScore';
 import MyResponsiveCalendar from './Calendar';

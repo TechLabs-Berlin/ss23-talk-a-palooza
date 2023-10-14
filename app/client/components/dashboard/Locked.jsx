@@ -25,7 +25,7 @@ const Locked = ({ onUnlocked }) => {
       <View className='flex p-4 ml-0 mr-auto '>
         <PrevButton />
       </View>
-      <View className='container flex items-center justify-center w-5/12 px-5 py-16 m-auto mt-20 card-bg'>
+      <View className='container flex items-center justify-center w-5/12 px-5 py-16 m-auto mt-20 border rounded-lg shadow-lg border-beige bg-beigeTrans'>
         {showQuestion && (
           <>
             <Text
@@ -42,7 +42,6 @@ const Locked = ({ onUnlocked }) => {
           </>
         )}
         {showResult && (
-          //TODO: Style this
           <>
             <Text className='flex my-5 text-xl font-black text-primary-dark'>
               Incorrect!
