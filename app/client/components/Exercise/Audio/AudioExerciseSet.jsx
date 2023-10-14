@@ -36,7 +36,6 @@ const AudioExerciseSet = ({ child, recommendedWords, onCompleteSession }) => {
       const newCount = Math.min(prevCount + 1, 4);
       if (newCount === 4) {
         setIsSetDone(true);
-        // onCompleteSession();
       }
       return newCount;
     });

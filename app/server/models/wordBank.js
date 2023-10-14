@@ -10,7 +10,6 @@ const wordBankSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    // required: true,
   },
   is_audio: {
     type: Boolean,

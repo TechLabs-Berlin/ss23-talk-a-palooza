@@ -37,7 +37,6 @@ export const updateVocab = async (dataToSend) => {
     } else {
       console.error('Failed to update child spokenWords');
     }
-    // return response.data;
   } catch (error) {
     console.error('Error:', error);
     throw error;

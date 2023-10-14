@@ -1,4 +1,3 @@
-import { ChildData } from '../../services/AuthWrapper';
 import { StyleSheet, View, Animated, Easing } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 
@@ -7,7 +6,6 @@ import { useEffect, useState, useRef } from 'react';
 import { DancingBearAnimation, WheelAnimation } from '../layouts/Animations';
 
 const Reward = () => {
-  const { child } = ChildData();
   const video = useRef(null);
   const [status, setStatus] = useState({});
   const [wheelFinished, setWheelFinished] = useState(false);

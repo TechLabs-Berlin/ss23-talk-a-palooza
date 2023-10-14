@@ -11,7 +11,6 @@ import { getInitialAssessment } from '../../services/wordBankService';
 const AddWords = ({ child }) => {
   const [words, setWords] = useState([]);
   const [spokenWords, setSpokenWords] = useState([]);
-  // const [recommendedWords, setRecommendedWords] = useState([]);
   const [isAssessed, setIsAssessed] = useState(false);
   const [initWords, setInitWords] = useState([]);
 
