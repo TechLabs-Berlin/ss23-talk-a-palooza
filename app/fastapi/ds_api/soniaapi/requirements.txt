@@ -1,0 +1,9 @@
+fastapi
+fastparquet
+joblib
+json
+numpy
+pandas
+pydantic
+uvicorn
+
