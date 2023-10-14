@@ -1,18 +1,14 @@
 from pydantic import BaseModel
 from fastapi import APIRouter
 from typing import Dict, Tuple
-
-import random # for placeholder only
+from fastai.vision.all import *
+from fastcore.utils import gt
+import base64
 
 router = APIRouter()
 
-# models. these should be in their own /models directory:
-# for single query-response approach (called after each single exercise):
-
-# {
-#   "audio": "Test",
-#   "target_term": "Test"
-# }dsad
+path = Path("./models")
+learn_inf = load_learner(path/'export.pkl')
 
 class SingleQuery(BaseModel): 
     binaryAudioData: str # replace with binary audio data
@@ -22,12 +18,6 @@ class SingleResponse(BaseModel):
     is_recognized: bool
     intelligibilityScore: float
     # binaryAudioData: str # replace with binary audio data
-
-# for bundled query-response approach (called after completing full set of exercises):
-
-# {
-#   "data": {"target_term": "Banana", "audio": "Test data"}
-# }
 
 class MultiQuery(BaseModel): 
     data: Dict[str, str] # format: {"word": "data", "word2": "data2"}
@@ -40,17 +30,12 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
     audio_raw = q.binaryAudioData
     target_term = q.name
     print("Audio received")
-    # send to model
-    # placeholder to return values:
-    if target_term in ["bear", "bus"]:
-        score = random.randint(83, 95) / 100
-    elif target_term in ["ball", "apple"]:
-        score = random.randint(10, 20) / 100
-    elif target_term == "car":
-        score = random.randint(1, 8) / 100
-    else:
-        score = random.randint(1, 90) / 100
-    match = score > 0.5
+
+    audio = base64.decode(audio_raw)
+    with open("audio", 'w') as file:
+        file.write(audio)
+    
+    learn_inf.predict()
     response = SingleResponse(is_recognized = match, intelligibilityScore = score)
     return response
 
@@ -59,10 +44,6 @@ async def rate_audio(q: MultiQuery): # declaring it as a required parameter
     data = q.data
     target_term, audio_data = data["name"], data["binaryAudioData"]
     print("Audio received")
-    # send to model
-    # placeholder to return values:
-    score = random.random()
-    match = score > 0.5
     response = MultiResponse(response_data = {target_term: [match, score]})
     return response
 
