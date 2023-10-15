@@ -238,15 +238,6 @@ As well, I decided against trying to deploy the app, both by lack of time, and b
 
 **webdev by [Rose](https://github.com/rjeantet)**
 
-# WD: Frontend
-
-&nbsp;
-&nbsp;
-
-# WD: Backend
-
-&nbsp;
-&nbsp;
 
 # Data Science
 
