@@ -44,9 +44,13 @@ def create_intelligibility_score_lax(prediction, target_word):
       diff = (prediction[2][prediction[1]] - prediction[2][new_ind][np.argmax(prediction[2][new_ind])])
       if diff < 0.2 and prediction[2][prediction[1]] > 0.4:
         is_recognised = True
-        score = prediction[2][prediction[1]]
+        score = prediction[2][new_ind][np.argmax(prediction[2][new_ind])]
       else:
-        score = 0.5 - diff
+        print(prediction[0])
+        print(prediction[1])
+        print(prediction[2][prediction[1]])
+        print(prediction[2][new_ind][np.argmax(prediction[2][new_ind])])
+        score = prediction[2][new_ind][np.argmax(prediction[2][new_ind])]
       if score < 0:
         score = 0
   return is_recognised, score
@@ -72,28 +76,35 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
     target_term = q.name
     print("Audio received")
 
-    # audio = base64.b64decode(audio_raw).decode('ascii')
-    decode = base64.b64decode(audio_raw)
-    with io.BytesIO() as buffer:
-        buffer.write(decode)
-        buffer.seek(0)
-        with open("./output/audio.ogg", 'wb') as file:
-            file.write(buffer.getvalue())
+    try:
+      decode = base64.b64decode(audio_raw)
+      with io.BytesIO() as buffer:
+          buffer.write(decode)
+          buffer.seek(0)
+          with open("./output/audio.ogg", 'wb') as file:
+              file.write(buffer.getvalue())
+    except OSError:
+      print("Error while writing audio file")
 
-    # convertbytes = audio_raw.encode('uint8')
-    # convertedbytes = base64.b64decode(convertbytes)
-    # decodedsample = convertedbytes.decode('uint8')
+    try:
+      convert_to_spectrogram('./output/audio.ogg')
+      pathlib.Path.unlink(pathlib.Path('./output/audio.ogg')) 
+    except RuntimeError:
+      print("Error while transforming audio file")
 
-    # audio = audio_raw.decode()
- 
+    try:
+      target_predicts = learn_inf.predict('./output/temp_spectro.png')
+      pathlib.Path.unlink(pathlib.Path('./output/temp_spectro.png')) 
+    except RuntimeError:
+      print("Error while predicting output vector")
 
-    convert_to_spectrogram('./output/audio.ogg')
-    pathlib.Path.unlink(pathlib.Path('./output/audio.ogg')) 
-
-    target_predicts = learn_inf.predict('./output/temp_spectro.png')
-    pathlib.Path.unlink(pathlib.Path('./output/temp_spectro.png')) 
-
-    (match, score) = create_intelligibility_score_lax(target_predicts, target_term)
+    if target_predicts:
+      (match, score) = create_intelligibility_score_lax(target_predicts, target_term)
+    else:
+       match = False
+       score = -1
+       
+    print(target_term, match, score)
 
     response = SingleResponse(is_recognized = match, intelligibilityScore = score)
     return response
