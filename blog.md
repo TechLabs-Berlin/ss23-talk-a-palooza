@@ -1,9 +1,7 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/talkAPalooza.png" width="250px"></p>
+<img src="./assets/talkAPalooza.png" width="250px"></p>
 
 <div align="center">
-
-**Talk-a-Palooza is ...**
 
 </div>
 
@@ -43,7 +41,7 @@ Thank you for the opportunity Techlabs :+1:
 # Web Development
 
 <p  align="center">
-<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/techstack.png"  width="500px"  alt='Talk-a-Palooza Techstack'></p>
+<img  src="./assets/techstack.png"  width="500px"  alt='Talk-a-Palooza Techstack'></p>
 
 ## Frontend
 
@@ -91,7 +89,7 @@ As I envisioned from the beginning to keep developing the app further, I did not
 
 | Example of conditional rendering on AddChild component | Example of conditional rendering on AddWords component |
 | -- | -- |
-| <img src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/addchild.png" width="450px" > | <img src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/addWords.png" width="450px"> |
+| <img src="./assets/addchild.png" width="450px" > | <img src="./assets/addWords.png" width="450px"> |
 
 All those scenarios, although invisible to the eye, allowed me to build a frontend with a solid business logic for the next developments.
 
@@ -110,7 +108,7 @@ I must have tried at least 4 different packages before opting for @dotlottie/rea
 
 I also built my **very first handmade (pun intended) animation**, by making the adult hand with the heart reaching to the child's hands:
 
-<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/app/client/assets/backgrounds/giveheart.svg"  width="300px">
+<img  src="./app/client/assets/backgrounds/giveheart.svg"  width="300px">
 
 A very enriching and fun experience !
 
@@ -123,7 +121,7 @@ Examples of API endpoints: for children and vocabulary management:
 
 | children Service | vocablogs Service |
 | -- | -- |
-| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/childrenService.png"  width="450px"> | <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/vocablogService.png"  width="450px"> |
+| <img  src="./assets/childrenService.png"  width="450px"> | <img  src="./assets/vocablogService.png"  width="450px"> |
 
 Working on both end of the stick was particularly challenging, as I struggled at first to identify whether the bugs were coming from the frontend or the backend. After writing down a personal methodology, and going back to the "baby steps" philosophy, things got much easier afterwards.
 
@@ -134,7 +132,7 @@ Working with audio was also a first-time for me, but it ended up going much more
 
 | RecordPlayAudio | recording Service |
 | -- | -- |
-| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/recordingService.png"  width="450px"> | <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/recordPlayAudio.png"  width="450px"> |
+| <img  src="./assets/recordingService.png"  width="450px"> | <img  src="./assets/recordPlayAudio.png"  width="450px"> |
 
 #### Fidelity to design
 
@@ -144,9 +142,9 @@ Ultimately, the frontend design is cohesive and follows web principles, but unfo
 
 | **Startscreen** | **initial assessment** |
 |--|--|
-| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/startscreen.png"  width="400px"> |  <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/assessment.png"  width="400px">|
+| <img  src="./assets/startscreen.png"  width="400px"> |  <img  src="./assets/assessment.png"  width="400px">|
 | **Audio exercise** | **Dashboard** |
-|<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/audioexercise.png"  width="400px"> |<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/dashboard.png"  width="400px"> |
+|<img  src="./assets/audioexercise.png"  width="400px"> |<img  src="./assets/dashboard.png"  width="400px"> |
 
 #### Current limitations and what's next
 
@@ -218,18 +216,18 @@ Also, I decided to store only recordings that were recognized by the deep learni
 
 | vocablogs | recordings |
 | -- | -- |
-| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/vocablogController.png"  width="450px"> | <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/recordingsController.png"  width="450px"> |
+| <img  src="./assets/vocablogController.png"  width="450px"> | <img  src="./assets/recordingsController.png"  width="450px"> |
 
 #### Examples of DB entry:
 
 
 | child | vocablog |
 | -- | -- |
-| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/childDB.png"  width="450px"> | <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/vocablogDB.png"  width="450px"> |
+| <img  src="./assets/childDB.png"  width="450px"> | <img  src="./assets/vocablogDB.png"  width="450px"> |
 
 #### Example of a recording DB entry:
 
-<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/recordingDB.png"  width="600px">
+<img  src="./assets/recordingDB.png"  width="600px">
 
 &nbsp;
 
