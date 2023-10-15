@@ -3,6 +3,7 @@ import numpy as np
 import scipy
 from sklearn.neighbors import NearestNeighbors
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, NonNegativeInt
 import json
 import uvicorn
@@ -14,6 +15,16 @@ import joblib
 #no error handling, some files/packages a bit redundant? 
 
 app = FastAPI()
+
+origins = ["*"] # development only
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 wordsz = pd.read_parquet("words.parquet")
 word_mapping = dict(zip(wordsz["wordBankId"], wordsz.index))
