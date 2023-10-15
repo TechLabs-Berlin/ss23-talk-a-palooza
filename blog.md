@@ -123,7 +123,7 @@ Examples of API endpoints: for children and vocabulary management:
 
 | children Service | vocablogs Service |
 | -- | -- |
-| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/childrenService.png"  width="250px"> | <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/vocablogService.png"  width="250px"> |
+| <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/childrenService.png"  width="450px"> | <img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/vocablogService.png"  width="450px"> |
 
 Working on both end of the stick was particularly challenging, as I struggled at first to identify whether the bugs were coming from the frontend or the backend. After writing down a personal methodology, and going back to the "baby steps" philosophy, things got much easier afterwards.
 
