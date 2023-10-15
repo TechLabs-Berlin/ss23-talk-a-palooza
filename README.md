@@ -2,15 +2,6 @@
 <img src="./assets/talkAPalooza.png" width="250px"></p>
 </p>
 
-<div align="center">
-Talk-a-Palooza addresses the need for effective language development tools for children.
-  <br><br>
-It features a machine learning-powered recommendation system that
-offers users personalized content<br> for vocabulary expansion and assesses pronunciation accuracy during engaging and fun audio exercises.
-
-
-
-</div>
 <br>
 <div align="center">
 
@@ -28,7 +19,7 @@ offers users personalized content<br> for vocabulary expansion and assesses pron
   <a href="#authors">Authors</a>
 </h5>
 
-# About
+# Abstract
 
 Talk-a-Palooza is an innovative app designed to address the need for effective language development tools for children.<br>
 It features a machine learning-powered recommendation system that offers users personalized content for vocabulary expansion and assesses pronunciation accuracy during engaging and fun audio exercises.<br>With a user-friendly interface for both parents and children, Talkapalooza empowers young learners on their language development journey.<br><br>
