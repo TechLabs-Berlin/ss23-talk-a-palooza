@@ -2,6 +2,8 @@
 
 Similar to how un-deployed Node JS apps require some setup with <code>npm i</code> and startup with <code>npm start</code>, the Python backend provided by the Data Science and Deep Learning track also requires users and testers to start up a Python server locally with bash commands. 
 
+The version of the model uploaded here only supports 53 out of the possible words used by the app.
+
 ## Setup:
 
 ### Python Install:

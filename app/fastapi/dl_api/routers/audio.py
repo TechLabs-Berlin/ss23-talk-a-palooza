@@ -3,16 +3,18 @@ from fastapi import APIRouter
 from typing import Dict, Tuple
 from fastai.vision.all import *
 from fastcore.utils import gt
+import librosa
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import base64
+import pathlib
 
 router = APIRouter()
 
 path = Path("./models")
 learn_inf = load_learner(path/'export.pkl')
 
-def convert_to_spectrogram(af, dst):   
+def convert_to_spectrogram(af):   
     x, sr = librosa.load(af, sr=44100)
     X = librosa.stft(x)
     Xdb = librosa.amplitude_to_db(abs(X))
@@ -21,9 +23,7 @@ def convert_to_spectrogram(af, dst):
     plt.axis('off')
     librosa.display.specshow(Xdb, sr=sr, x_axis='time', y_axis='log', cmap='magma')
 
-    fname = af.split('/')[-1][:-4]
-    dst = dst + "/" + fname + "_doubled"
-    # print(dst)
+    dst = './output/temp_spectro.png'
 
     plt.savefig(dst, dpi='figure', bbox_inches='tight',transparent=True, pad_inches=0)
     plt.close()
@@ -72,12 +72,29 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
     target_term = q.name
     print("Audio received")
 
-    audio = base64.decode(audio_raw)
-    with open("audio", 'w') as file:
-        file.write(audio)
-    
+    # audio = base64.b64decode(audio_raw).decode('ascii')
+    decode = base64.b64decode(audio_raw)
+    with io.BytesIO() as buffer:
+        buffer.write(decode)
+        buffer.seek(0)
+        with open("./output/audio.ogg", 'wb') as file:
+            file.write(buffer.getvalue())
 
-    learn_inf.predict()
+    # convertbytes = audio_raw.encode('uint8')
+    # convertedbytes = base64.b64decode(convertbytes)
+    # decodedsample = convertedbytes.decode('uint8')
+
+    # audio = audio_raw.decode()
+ 
+
+    convert_to_spectrogram('./output/audio.ogg')
+    pathlib.Path.unlink(pathlib.Path('./output/audio.ogg')) 
+
+    target_predicts = learn_inf.predict('./output/temp_spectro.png')
+    pathlib.Path.unlink(pathlib.Path('./output/temp_spectro.png')) 
+
+    (match, score) = create_intelligibility_score_lax(target_predicts, target_term)
+
     response = SingleResponse(is_recognized = match, intelligibilityScore = score)
     return response
 
