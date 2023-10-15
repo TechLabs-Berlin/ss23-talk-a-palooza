@@ -255,7 +255,44 @@ Subsequently, we delved into research on recommendation models, particularly foc
 
 # Deep Learning
 
-&nbsp;
-&nbsp;
+### Audio deep dive
+
+Originally numbered at three, the deep learning team set out to create an audio recognition feature that would not only identify spoken words but also assign them an intelligibility score. This score would be sent a Python API.
+
+### Dataset
+
+I sourced audio data from [LinguaLibre](https://lingualibre.org/wiki/LinguaLibre:Main_Page), a website allowing users to upload short recordings of single words across a range of languages. Unfortunately, despite the impressive number of recordings for the English language (totalling over 34 000), many of these recordings were unique, which posed a challenge for model training. Upon cross-referencing with the Data Science team's Wordbank dataset, only a fraction of the original recordings - 477 words - remained.
+
+### First modelling results and API development
+
+I initially decided to use Fastaudio, a deep learning library designed for audio tasks, built on the foundation of Fastai. However, I quickly encountered challenges such as limited support and/or outdated documentation. Even their own example notebooks broke when trying to execute their commands in Google Colab. Fastaudio is supposed to help with reading audio files and permorming data augmentation and similar tasks, while the actual training happens with regular Fastai vision classes. To obtain first results despite these setbacks, I therefore decided to use custom scripts to generate a number of fixed spectrograms that could then be passed on to Fastai’s classes.
+
+In particular, I leveraged the power of Fastai's pretrained models, helping identify issues with both the dataset and my general approach. I had to filter out words with a minimal number of recordings, eventually focusing on recognizing 53 specific words instead of the initial 477. I hoped to be able to make use of these other recordings by creating a 54th "others" category, however these endeavours proved contraproductive to the model's actual accuracy in predicting the correct words. Overall, the accuracy of the model was low.
+
+These preliminary results played a pivotal role in creating the API. The Learner class' predict method produces a range of tensors which can be used to assess prediction accuracy and certainty. This allowed for the validation of audio inputs and the scoring of their intelligibility, forming the basis for a functional prototype showcasing the concept of Talk-a-Palooza.
+
+### Customising a convolutional neural network
+
+I took these learnings into account to explore alternative approaches in hopes of improving prediction results. Following an in-depth tutorial on [Audio Deep Learning by Ketan Doshi](https://towardsdatascience.com/audio-deep-learning-made-simple-part-1-state-of-the-art-techniques-da1d3dff2504), I was able to develop a custom PyTorch architecture that directly processed and augmented audio before feeding it into a four-layer convolutional neural network, outputting one of 53 classes. The new model showed marked improvement in accuracy, with potential for further enhancements.
+
+### Avenues for improvement
+
+I identified four remaining key avenues for future improvements:
+
+1. Utility functions: Fine-tune utility functions responsible for audio data augmentation, including custom transformations and diverse augmentation ranges.
+2. Neural network architecture: Further exploration and modification of the network's architecture.
+3. Neural network parameters: Experimentation with learning rate optimizers, batch sizes, train/test splits and other parameters.
+4. The underlying dataset: A thorough examination of the dataset to assess potential improvements, including the impact of restricting training to words with a minimum of eight recordings (instead of the current five). Collecting more training data is also critical.
+
+### Looking ahead: refining the model and API
+
+As the second model is being refined, the API needs to be revisited, as well. The intelligibility score in particular needs to be reassessed. Considering the possible differences in dialect, accent, and speaker's native tongue relative to the training data negatively impact the intelligibility score as it is currently implemented. The score should serve as a general indicator of intelligibility rather than a definitive marker of success or failure. This also affects how the score is presented on the frontend, of course.
+
+### Challenges and Triumphs
+
+The project was not without its challenges, including a reduced team, issues with the Fastaudio library, and difficulties in finding datasets containing individual word recordings. I'm happy to have pulled through alongside the team members from other tracks to create a prototype that, while reduced in scope, holds promise for children facing speech development challenges.
+
+**deep learning by [Aljoscha](https://github.com/alj-b)**
 
 # Summary
+In the end, we are content with the results, particularly considering the obstacles we encountered. We successfully navigated these challenges, demonstrating resilience and unity as a team.
