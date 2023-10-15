@@ -2,7 +2,7 @@
 <img src="./assets/talkAPalooza.png" width="250px"></p>
 
 <div align="center">
-
+An ML-powered educational app dedicated to boosting children's language acquisition. <br>It features personalized exercises for vocabulary expansion and pronunciation assessment, alongside a progress-tracking dashboard.
 </div>
 
 
