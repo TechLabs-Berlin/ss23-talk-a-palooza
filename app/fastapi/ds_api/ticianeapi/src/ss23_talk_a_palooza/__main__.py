@@ -8,6 +8,8 @@ from typing import Annotated, Any, TypedDict
 import numpy as np
 import pandas as pd
 from fastapi import Body, FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 from libreco.algorithms import LightGCN
 from libreco.data import DataInfo, DatasetPure
 from pydantic import BaseModel, NonNegativeInt
@@ -59,6 +61,16 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
+
+origins = ["*"] # development only
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class Word(BaseModel):
