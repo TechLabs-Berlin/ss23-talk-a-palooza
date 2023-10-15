@@ -41,4 +41,5 @@ __pycache__
 # dl api output files:
 
 app/fastapi/dl_api/output/*.ogg
+app/fastapi/dl_api/output/*.wav
 app/fastapi/dl_api/output/*.png

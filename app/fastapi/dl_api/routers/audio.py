@@ -92,7 +92,7 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
       with io.BytesIO() as buffer:
           buffer.write(decode)
           buffer.seek(0)
-          af_dest = "./output/audio" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + '.ogg'
+          af_dest = "./output/audio" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + '.wav'
           with open(af_dest, 'wb') as file:
               file.write(buffer.getvalue())
     except OSError:
