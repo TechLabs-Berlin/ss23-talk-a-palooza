@@ -142,11 +142,17 @@ When integrating a design in frontend comes always a moment where we have to cho
 Unfortunately on this project I ended up having to sacrifice a lot of the fidelity, to maintain a pleasant and cohesive design. Although I did not setup storybook, I built the UI on the principles of isolated UI elements, and so when a similar element appeared (for example typography, headings, background styles...), I chose to favor consistency by reusing the previously coded elements.
 Ultimately, the frontend design is cohesive and follows web principles, but unfortunately largely far from the original planned design.
 
-** frontend designs **
-startscreen:
-initial assessment:
-exercise:
-dashboard:
+**startscreen:**
+<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/startscreen.png"  width="600px">
+
+**initial assessment:**
+<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/assessment.png"  width="600px">
+
+**audio exercise:**
+<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/audioExercise.png"  width="600px">
+
+**dashboard:**
+<img  src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/dashboard.png"  width="600px">
 
 #### Current limitations and what's next
 
