@@ -223,11 +223,11 @@ Also, I decided to store only recordings that were recognized by the deep learni
 
 | child | vocablog |
 | -- | -- |
-| <img  src="./assets/childDB.png"  width="450px"> | <img  src="./assets/vocablogDB.png"  width="450px"> |
+| <img  src="./assets/childDB.png"  width="320px"> | <img  src="./assets/vocablogDB.png"  width="320px"> |
 
 #### Example of a recording DB entry:
 
-<img  src="./assets/recordingDB.png"  width="600px">
+<img  src="./assets/recordingDB.png"  width="900px">
 
 &nbsp;
 
