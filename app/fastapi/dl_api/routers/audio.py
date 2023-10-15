@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import base64
 import pathlib
+import datetime
 
 router = APIRouter()
 
@@ -23,10 +24,11 @@ def convert_to_spectrogram(af):
     plt.axis('off')
     librosa.display.specshow(Xdb, sr=sr, x_axis='time', y_axis='log', cmap='magma')
 
-    dst = './output/temp_spectro.png'
+    dst = './output/spectro' + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + '.png'
 
     plt.savefig(dst, dpi='figure', bbox_inches='tight',transparent=True, pad_inches=0)
     plt.close()
+    return dst
     
 def create_intelligibility_score_lax(prediction, target_word):
   is_recognised = False
@@ -87,25 +89,26 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
       return response
     
     try:
-      print("Error while writing audio file")
       with io.BytesIO() as buffer:
           buffer.write(decode)
           buffer.seek(0)
-          with open("./output/audio.ogg", 'wb') as file:
+          af_dest = "./output/audio" + datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S") + '.ogg'
+          with open(af_dest, 'wb') as file:
               file.write(buffer.getvalue())
     except OSError:
+      print("Error while writing audio file")
       response = SingleResponse(is_recognized = False, intelligibilityScore = -1)
       return response
 
     try:
-      convert_to_spectrogram('./output/audio.ogg')
-      pathlib.Path.unlink(pathlib.Path('./output/audio.ogg')) 
+      temp_s = convert_to_spectrogram(af_dest)
+      pathlib.Path.unlink(pathlib.Path(af_dest)) 
     except RuntimeError:
       print("Error while transforming audio file")
 
     try:
-      target_predicts = learn_inf.predict('./output/temp_spectro.png')
-      pathlib.Path.unlink(pathlib.Path('./output/temp_spectro.png')) 
+      target_predicts = learn_inf.predict(temp_s)
+      pathlib.Path.unlink(pathlib.Path(temp_s)) 
     except RuntimeError:
       print("Error while predicting output vector")
 
