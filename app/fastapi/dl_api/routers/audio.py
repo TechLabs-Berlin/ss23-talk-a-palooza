@@ -76,15 +76,26 @@ async def rate_audio(q: SingleQuery): # declaring it as a required parameter
     target_term = q.name
     print("Audio received")
 
+    if not audio_raw:
+      response = SingleResponse(is_recognized = False, intelligibilityScore = -1)
+      return response
+
     try:
       decode = base64.b64decode(audio_raw)
+    except OSError:
+      response = SingleResponse(is_recognized = False, intelligibilityScore = -1)
+      return response
+    
+    try:
+      print("Error while writing audio file")
       with io.BytesIO() as buffer:
           buffer.write(decode)
           buffer.seek(0)
           with open("./output/audio.ogg", 'wb') as file:
               file.write(buffer.getvalue())
     except OSError:
-      print("Error while writing audio file")
+      response = SingleResponse(is_recognized = False, intelligibilityScore = -1)
+      return response
 
     try:
       convert_to_spectrogram('./output/audio.ogg')
