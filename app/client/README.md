@@ -1,2 +1,2 @@
-npm run web
-19006
+- Sensitive data are protected with a .env. Contact Rose to get it.
+- To install and run the app, please refer to instructions in main [README.me](https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/blob/documentation/README.md#installation)
