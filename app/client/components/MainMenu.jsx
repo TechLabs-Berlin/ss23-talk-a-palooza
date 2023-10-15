@@ -4,6 +4,7 @@ import { ChildData } from '../services/AuthWrapper';
 import AddWords from './initial-assessment/AddWords';
 import { DashboardButton } from './layouts/Buttons';
 import { BeeAnimation } from './layouts/Animations';
+import { Heading } from './layouts/typo';
 
 const imageMain = require('../assets/backgrounds/forest.svg');
 const imageAssess = require('../assets/backgrounds/giveheart.svg');
@@ -37,23 +38,23 @@ const MainMenu = () => {
               source={require('../assets/images/avatarChild.svg')}
               style={styles.avatar}
             />
-            <Text className='text-2xl font-bold text-primary-dark'>
-              Hi, {child.firstName}
-            </Text>
+            <Heading text={`Hi, ${child.firstName}`} />
           </View>
           <View className='flex flex-row justify-between w-8/12'>
             <View className='flex flex-row mr-8 justify-center items-center h-28 text-center shadow-lg bg-[#c0cee9d3] border border-[#c0cee9] w-64 rounded-lg'>
               <Link to='/practice' style={{ textDecoration: 'none' }}>
-                <Text className='text-primary-dark text-2xl font-bold no-underline font-["Oleo Script"]'>
-                  Can you say...
-                </Text>
+                <Heading
+                  text={'Can you say...'}
+                  style={{ fontSize: 24, fontWeight: 700 }}
+                />
               </Link>
             </View>
             <View className='flex flex-row justify-center items-center h-28 text-center shadow-lg bg-[#fed16fd4] border border-[#fed16f] w-64 rounded-lg'>
               <Link to='/catalog' style={{ textDecoration: 'none' }}>
-                <Text className='text-primary-dark text-2xl font-bold font-["Oleo Script"]'>
-                  Catalog
-                </Text>
+                <Heading
+                  text={'Catalog'}
+                  style={{ fontSize: 24, fontWeight: 700 }}
+                />
               </Link>
             </View>
           </View>
