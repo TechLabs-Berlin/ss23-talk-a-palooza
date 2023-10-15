@@ -1,0 +1,1 @@
+To be able to push a folder to git, it needs to have something inside it. This is something.
