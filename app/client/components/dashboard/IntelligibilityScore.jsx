@@ -1,12 +1,11 @@
 import { Text, View } from 'react-native';
 import { ResponsiveRadialBar } from '@nivo/radial-bar';
+import { Heading, DashboardHeading } from '../layouts/typo';
 
 function IntelligibilityScore({ data }) {
   return (
     <>
-      <Text className='mb-2 text-lg font-semibold text-primary-dark'>
-        Intelligibility Score
-      </Text>
+      <DashboardHeading text='Intelligibility Score' />
 
       <View className='flex flex-row items-start'>
         <View className='flex w-28 h-28'>
@@ -31,9 +30,18 @@ function IntelligibilityScore({ data }) {
             legends={[]}
           />
         </View>
-        <Text className='absolute mr-2 text-3xl font-bold text-primary-dark left-7 top-9 '>
-          46%
-        </Text>
+        <Heading
+          text={'46%'}
+          style={{
+            position: 'absolute',
+            left: '1.75rem',
+            top: '2.25rem',
+            fontSize: '1.875rem',
+            lineHeight: '2.25rem',
+            marginRight: '0.5rem',
+            fontWeight: 700,
+          }}
+        />
       </View>
     </>
   );

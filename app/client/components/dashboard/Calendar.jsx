@@ -1,12 +1,11 @@
 import { Text, View } from 'react-native';
 import { ResponsiveTimeRange } from '@nivo/calendar';
+import { DashboardHeading } from '../layouts/typo';
 
 const MyResponsiveCalendar = ({ data }) => (
-  <View className='flex  flex-col col-span-fullm-4'>
+  <View className='flex flex-col col-span-fullm-4'>
     <View className='px-5 pt-5'>
-      <Text className='text-lg font-semibold text-primary-dark'>
-        Last year at a glance
-      </Text>
+      <DashboardHeading text='Last year at a glance' />
     </View>
     <View className='h-48'>
       <ResponsiveTimeRange
