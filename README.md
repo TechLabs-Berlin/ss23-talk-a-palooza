@@ -3,18 +3,22 @@
 </p>
 
 <div align="center">
-An AI-powered app to boost children’s language acquisition (todo: brainstorm/improve)
-<br><br>
+Talk-a-Palooza addresses the need for effective language development tools for children.
+  <br><br>
+It features a machine learning-powered recommendation system that
+offers users personalized content<br> for vocabulary expansion and assesses pronunciation accuracy during engaging and fun audio exercises.
+
+
 
 </div>
-
+<br>
 <div align="center">
 
 ![GitHub milestones](https://img.shields.io/github/milestones/all/TechLabs-Berlin/ss23-talk-a-palooza?color=7D93CD&style=for-the-badge) ![GitHub language count](https://img.shields.io/github/languages/count/TechLabs-Berlin/ss23-talk-a-palooza?color=B6E08C&style=for-the-badge) ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/TechLabs-Berlin/ss23-talk-a-palooza?color=FFBBB4&style=for-the-badge)
 
 </div>
 
-&nbsp;
+
 
 <h5 align="center">
   <a href="#about">About</a>  |
@@ -109,7 +113,6 @@ Move to the newly cloned project directory, navigate to the client folder, and i
 
 ```
 cd ss23-talk-a-palooza
-
 cd app/client
 
 npm i
@@ -121,7 +124,6 @@ Navigate to the **server folder**, then install the dependencies:
 
 ```
 cd ..
-
 cd server
 
 npm i
@@ -133,23 +135,37 @@ Navigate to the **dl_api folder**, and install Python dependencies
 
 ```
 cd ..
-
 cd fastapi/dl_api
 
-XXXX
+python3.9 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 #### Install the data science server (Python)
 
-Navigate to the **ds_api folder**, and install Python dependencies
+There is two DS api available, you need to navigate to the **ds_api folder**, and install Python dependencies in both folders "soniaapi" and "ticianeapi"
 
-```
+``` for sonia's api:
 cd ..
+cd ds_api/soniaapi
 
-cd ds_api
-
-XXXX
+python3.9 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
+
+``` for ticiane's api:
+cd ..
+cd ticianeapi
+
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install .
+
+// Option to install via Docker (cf. README in Ticiane's folder)
+```
+
 
 &nbsp;
 &nbsp;
@@ -160,7 +176,6 @@ XXXX
 
 ```
 cd ..
-
 cd client
 
 npm run web
@@ -170,7 +185,6 @@ npm run web
 
 ```
 cd ..
-
 cd server
 
 npm run dev
@@ -180,7 +194,6 @@ npm run dev
 
 ```
 cd ..
-
 cd fastapi/dl_api
 
 uvicorn main:app --reload
@@ -188,13 +201,22 @@ uvicorn main:app --reload
 
 #### To enable the machine learning recommendation tool, navigate to the **ds_api folder** to start the local server - FastAPI (serving port 8001)
 
-```
+``` for sonia's api:
 cd ..
+cd fastapi/ds_api/soniapi
 
-cd fastapi/ds_api
-
-DOCKER
+uvicorn mainy:app --host 0.0.0.0 --port 8001
 ```
+
+``` for ticiane's api:
+cd ..
+cd ticianeapi
+
+python3 -m ss23_talk_a_palooza
+
+// Option to run via Docker (cf. README in Ticiane's folder)
+```
+
 
 &nbsp;
 &nbsp;
