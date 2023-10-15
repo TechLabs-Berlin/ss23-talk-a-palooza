@@ -1,7 +1,7 @@
 import { ImageBackground } from 'react-native';
 import { ChildData } from '../services/AuthWrapper';
 import LayoutHOC from '../components/layouts/LayoutHOC';
-import Exercise from '../components/Exercise/Exercise';
+import Exercise from '../components/exercise/Exercise';
 
 const image = require('../assets/backgrounds/sky3.svg');
 
