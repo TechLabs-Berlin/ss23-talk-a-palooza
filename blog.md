@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/assets/talkAPalooza.png" width="250px"></p>
+<img src="https://raw.githubusercontent.com/TechLabs-Berlin/ss23-talk-a-palooza/documentation/assets/talkAPalooza.png" width="250px"></p>
 </p>
 
 <div align="center">
