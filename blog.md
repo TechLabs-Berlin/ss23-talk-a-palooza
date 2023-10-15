@@ -13,7 +13,7 @@
   <a href="#UX-Process">UX-Process</a>  |
   <a href="#Frontend">WD Frontend</a>  |
   <a href="#Backend">WD Backend</a>  |
-  <a href="#Data Science">Data Science</a>  |
+  <a href="#data-science">Data Science</a>  |
   <a href="#deep-learning">Deep Learning</a>  |
   <a href="#Summary">Summary</a>
   
