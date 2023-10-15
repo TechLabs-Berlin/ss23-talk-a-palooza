@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { AuthData } from '../services/AuthWrapper';
 import Login from '../components/Login';
 import LayoutHOC from '../components/layouts/LayoutHOC';
+import { Heading } from '../components/layouts/typo';
 import { LandBackground } from '../components/layouts/Backgrounds';
 import {
   ChickAnimation,
@@ -24,9 +25,7 @@ const StartScreen = () => {
         <CloudAnimation left='-40px' top='-3px' width='25%' height='25%' />
 
         <View className='flex-col items-center justify-center w-11/12 mb-5 sm:w-2/3 lg:flex sm:mb-12'>
-          <Text className='text-3xl font-black leading-7 text-center text-primary-dark sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl md:leading-10'>
-            Talk-a-Palooza
-          </Text>
+          <Heading text='Talk a Palooza' className='text-center' />
           <Text className='text-xs font-normal text-center font-karla text-primary-light sm:mt-4 lg:w-10/12 sm:text-lg '>
             The fun way to improve your child’s language acquisition. <br></br>
             Let the party begin!

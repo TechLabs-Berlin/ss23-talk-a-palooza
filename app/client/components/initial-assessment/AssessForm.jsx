@@ -3,6 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import * as Yup from 'yup';
 import { useState, useEffect } from 'react';
 import { NextFormButton } from '../layouts/Buttons';
+import { Heading } from '../layouts/typo';
 
 const AssessForm = ({ child, onSubmit, initWords }) => {
   const validationSchema = Yup.object({
@@ -48,16 +49,17 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
   };
 
   return (
-    <View className=' flex flex-nowrap flex-col  justify-center items-stretch my-auto mx-auto  w-10/12 shadow-lg rounded-lg border border-white bg-beigeTrans'>
+    <View className='flex flex-col items-stretch justify-center w-10/12 mx-auto my-auto border border-white rounded-lg shadow-lg flex-nowrap bg-beigeTrans'>
       <View className='flex flex-[1_0_auto] m-0 border-b border-slate-200'>
         <View className='flex px-10 pt-10 pb-5'>
-          <Text className='flex rgb(95 114 166) text-3xl font-black  text-primary-dark w-8/12 font-["Oleo Script"]'>
-            {child.firstName} can say...
-          </Text>
+          <Heading
+            text={`${child.firstName} can say...`}
+            style={{ fontSize: '1.875rem' }}
+          />
         </View>
       </View>
 
-      <View className='flex px-10 pb-10 pt-2'>
+      <View className='flex px-10 pt-2 pb-10'>
         <Formik
           initialValues={{ initWords: {} }}
           validationSchema={validationSchema}
@@ -66,7 +68,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
           {({ handleSubmit }) => (
             <Form>
               <View className='flex flex-row'>
-                <View className='min-w-min mt-4'>
+                <View className='mt-4 min-w-min'>
                   {/* Map over categories for tabs */}
                   {Object.keys(groupedWords).map((category) => (
                     <Pressable
@@ -87,7 +89,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
                   ))}
                 </View>
 
-                <View style={styles.contentContainer} className='ml-5 mt-2'>
+                <View style={styles.contentContainer} className='mt-2 ml-5'>
                   {/* Display words for the selected category */}
                   <View style={styles.wordContainer}>
                     {selectedCategory && (
@@ -95,7 +97,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
                         {groupedWords[selectedCategory].map((initWord) => (
                           <View
                             key={initWord._id}
-                            className='flex flex-row items-center cursor-pointer pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-300'
+                            className='flex flex-row items-center pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm cursor-pointer backdrop-blur-sm border-slate-300'
                             style={styles.wordColumn}
                           >
                             <Field
@@ -103,7 +105,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
                               name='words'
                               value={initWord.id}
                             />
-                            <Text className=' text-primary-dark ml-1'>
+                            <Text className='ml-1 text-primary-dark'>
                               {initWord.name}
                             </Text>
                           </View>
@@ -114,7 +116,7 @@ const AssessForm = ({ child, onSubmit, initWords }) => {
                 </View>
               </View>
 
-              <View className='flex justify-end flex-row'>
+              <View className='flex flex-row justify-end'>
                 <NextFormButton onPress={handleSubmit} />
               </View>
             </Form>

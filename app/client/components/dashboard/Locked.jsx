@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import { PrevButton, GreenButton } from '../layouts/Buttons';
+import { Heading } from '../layouts/typo';
 
 const Locked = ({ onUnlocked }) => {
   const [showQuestion, setShowQuestion] = useState(true);
@@ -28,25 +29,28 @@ const Locked = ({ onUnlocked }) => {
       <View className='container flex items-center justify-center w-5/12 px-5 py-16 m-auto mt-20 border rounded-lg shadow-lg border-beige bg-beigeTrans'>
         {showQuestion && (
           <>
-            <Text
-              className="flex text-primary-dark text-3xl my-5 font-black font-['Oleo Script']"
-              style={styles.title}
-            >
-              How much is 5 + 6 ?
-            </Text>
-            <View className='flex flex-row'>
-              <GreenButton onPress={() => handleAnswerClick(11)} text={'11'} />
-              <GreenButton onPress={() => handleAnswerClick(18)} text={'18'} />
-              <GreenButton onPress={() => handleAnswerClick(14)} text={'14'} />
+            <Heading
+              text={'How much is 5 + 6 ?'}
+              style={{ fontSize: 30, fontWeight: 700 }}
+            />
+            <View className='flex flex-row mt-5'>
+              {[11, 18, 14].map((value) => (
+                <GreenButton
+                  key={value}
+                  onPress={() => handleAnswerClick(value)}
+                  text={value.toString()}
+                />
+              ))}
             </View>
           </>
         )}
         {showResult && (
           <>
-            <Text className='flex my-5 text-xl font-black text-primary-dark'>
-              Incorrect!
-            </Text>
-            <View className='flex items-center justify-center -ml-2 '>
+            <Heading
+              text={'Incorrect!'}
+              style={{ fontSize: 30, fontWeight: 700 }}
+            />
+            <View className='flex items-center justify-center mt-5 -ml-2'>
               <GreenButton onPress={handleTryAgain} text={'Try Again'} />
             </View>
           </>
@@ -57,41 +61,3 @@ const Locked = ({ onUnlocked }) => {
 };
 
 export default Locked;
-
-const styles = StyleSheet.create({
-  flex: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  end: {
-    justifyContent: 'flex-end',
-    flexDirection: 'row',
-  },
-  title: {
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    lineHeight: '1.5em',
-    fontSize: '1.125rem',
-    marginVertical: '1em',
-    textAlign: 'center',
-  },
-  text: {
-    lineHeight: '1.5em',
-    fontSize: '1.125rem',
-    marginVertical: '1em',
-    width: '120px',
-    marginRight: '1em',
-  },
-  link: {
-    color: '#1977f2',
-  },
-  listitem: {
-    marginVertical: '0.5rem',
-  },
-  pageLink: {
-    fontSize: '1.25rem',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});

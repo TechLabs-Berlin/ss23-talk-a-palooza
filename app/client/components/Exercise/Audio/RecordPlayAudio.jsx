@@ -5,6 +5,7 @@ import { Image } from 'expo-image';
 import { uriToBase64, sendAudioToDL } from '../../../services/recordingService';
 import { GreenButton } from '../../layouts/Buttons';
 import { CheckAnimation } from '../../layouts/Animations';
+import { Heading } from '../../layouts/typo';
 
 const STATUSES = {
   START: 'Tap the mic to talk',
@@ -130,9 +131,7 @@ const RecordPlayAudio = ({ child, word, flex, onAudioRecognized }) => {
             <Text className='mt-0 text-sm font-normal text-center text-gray-500 lg:w-10/12 sm:text-lg'>
               Try saying
             </Text>
-            <Text className='text-2xl font-black leading-7 text-center sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary-dark md:leading-10'>
-              {word.name}
-            </Text>
+            <Heading text={word.name} style={{ fontSize: '3rem' }} />
 
             <View style={styles.mainImage}>
               <Image

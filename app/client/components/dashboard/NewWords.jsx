@@ -1,4 +1,5 @@
 import { Text, View } from 'react-native';
+import { Heading } from '../layouts/typo';
 
 function NewWords() {
   return (
@@ -11,6 +12,14 @@ function NewWords() {
       </Text>
       <View className='flex flex-row items-start'>
         <Text className='mr-2 text-3xl font-bold text-primary-dark '>6</Text>
+        <Heading
+          text={'6'}
+          style={{
+            fontSize: '1.875rem',
+            marginRight: '0.5rem',
+            fontWeight: 700,
+          }}
+        />
         <Text className='text-sm font-semibold text-white px-1.5 bg-[#398052] rounded-full'>
           +100%
         </Text>

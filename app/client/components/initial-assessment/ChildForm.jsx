@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { NextFormButton } from '../layouts/Buttons';
 import * as Yup from 'yup';
+import { Heading } from '../layouts/typo';
 
 const MyWebDatePicker = ({ field, form, ...rest }) => {
   const handleChange = (event) => {
@@ -33,19 +34,20 @@ const ChildForm = ({ authUser, onSubmit }) => {
   });
 
   return (
-    <View className=' flex flex-nowrap flex-col  justify-center items-stretch my-auto mx-auto  w-7/12 shadow-lg rounded-lg border border-white bg-beigeTrans'>
+    <View className='flex flex-col items-stretch justify-center w-7/12 mx-auto my-auto border border-white rounded-lg shadow-lg flex-nowrap bg-beigeTrans'>
       <View className='flex flex-[1_0_auto] m-0 border-b border-slate-200'>
         <View className='flex px-10 pt-10 pb-5'>
-          <Text className="flex rgb(95 114 166) text-3xl font-black  text-primary-dark w-8/12 font-['Oleo Script']">
-            Welcome {authUser.firstName}
-          </Text>
-          <Text className='flex font-bold w-full text-primary-light text-base'>
+          <Heading
+            text={`Welcome ${authUser.firstName}`}
+            style={{ fontSize: '1.875rem' }}
+          />
+          <Text className='flex w-full text-base font-bold text-primary-light'>
             Can you give us some information about your child?
           </Text>
         </View>
       </View>
 
-      <View className='flex px-10 pb-10 pt-4'>
+      <View className='flex px-10 pt-4 pb-10'>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -59,7 +61,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
                     <View className='relative mb-3 mr-6'>
                       <Text
                         htmlFor='firstName'
-                        className='text-primary-dark font-bold ml-3 my-2'
+                        className='my-2 ml-3 font-bold text-primary-dark'
                       >
                         Firstname
                       </Text>
@@ -76,7 +78,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
                     <View className='relative mb-3'>
                       <Text
                         htmlFor='birthDate'
-                        className='text-primary-dark font-bold ml-3 my-2'
+                        className='my-2 ml-3 font-bold text-primary-dark'
                       >
                         Date of birth
                       </Text>
@@ -95,40 +97,40 @@ const ChildForm = ({ authUser, onSubmit }) => {
                 <View className='flex-row items-center'>
                   <View className='relative mb-3'>
                     <Text
-                      className='text-primary-dark font-bold ml-3 my-2'
+                      className='my-2 ml-3 font-bold text-primary-dark'
                       htmlFor='gender'
                     >
                       Sex at birth
                     </Text>
 
                     <View className='flex flex-row '>
-                      <View className='flex flex-row items-center cursor-pointer pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-300'>
+                      <View className='flex flex-row items-center pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm cursor-pointer backdrop-blur-sm border-slate-300'>
                         <Field
                           style={styles.radio}
                           type='radio'
                           name='gender'
                           value='M'
                         />
-                        <Text className=' text-primary-dark ml-1'>Boy</Text>
+                        <Text className='ml-1 text-primary-dark'>Boy</Text>
                       </View>
 
-                      <View className='flex flex-row items-center cursor-pointer pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-300'>
+                      <View className='flex flex-row items-center pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm cursor-pointer backdrop-blur-sm border-slate-300'>
                         <Field
                           style={styles.radio}
                           type='radio'
                           name='gender'
                           value='F'
                         />
-                        <Text className=' text-primary-dark ml-1'>Girl</Text>
+                        <Text className='ml-1 text-primary-dark'>Girl</Text>
                       </View>
-                      <View className='py-3 flex flex-row items-center cursor-pointer pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm backdrop-blur-sm border-slate-300'>
+                      <View className='flex flex-row items-center py-3 pl-2 pr-6 mr-3 duration-150 bg-white border rounded-full shadow-sm cursor-pointer backdrop-blur-sm border-slate-300'>
                         <Field
                           style={styles.radio}
                           type='radio'
                           name='gender'
                           value='RNS'
                         />
-                        <Text className=' text-primary-dark ml-1'>
+                        <Text className='ml-1 text-primary-dark'>
                           Rather not say
                         </Text>
                       </View>
@@ -140,7 +142,7 @@ const ChildForm = ({ authUser, onSubmit }) => {
                 </View>
               </View>
 
-              <View className='flex justify-end flex-row'>
+              <View className='flex flex-row justify-end'>
                 <NextFormButton onPress={handleSubmit} />
               </View>
             </Form>
