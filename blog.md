@@ -241,7 +241,18 @@ As well, I decided against trying to deploy the app, both by lack of time, and b
 
 # Data Science
 
-&nbsp;
+### Intro
+
+The promise of personalised experiences extends well beyond the consumption-based ventures it is typically associated with. Our team aimed to integrate this concept into our app, ecognising the significant potential that personalisation holds for enhancing educational tools. Developing a strategy to provide personalised word recommendations for the app's ronunciation exercises was our track's primary focus.
+
+### The data
+
+The Wordbank dataset, offering a wealth of linguistic data related to children's language development, provided the foundation for our track's contribution to the project. In a crucial irst step, we conducted preliminary explorations of the dataset. These explorations not only clarified to us which of the project's original goals were actually achievable and which were ot, but also offered insights into the linguistic trajectories of our app's target audience: young children.
+
+### Two models, one goal
+
+Subsequently, we delved into research on recommendation models, particularly focusing on collaborative filtering techniques. Drawing from our research findings, we went on to create two ifferent models: a graph-based LightGCN model and a memory-based KNN model, each offering distinct advantages and disadvantages. Both models were successfully deployed and offer API ntegration.
+
 &nbsp;
 
 # Deep Learning
