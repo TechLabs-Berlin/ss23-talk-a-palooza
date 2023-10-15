@@ -46,7 +46,15 @@ It features a machine learning-powered recommendation system that offers users p
 
 <summary>:eyes: Watch Demo</summary>
 
-![Demo](./[LINK])
+
+https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/assets/2728000/74d923f3-ee05-40f9-baae-66ee61908e81
+
+
+https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/assets/2728000/aef3f859-5029-4140-be7c-9a9ac12372d2
+
+
+https://github.com/TechLabs-Berlin/ss23-talk-a-palooza/assets/2728000/b03971dd-baba-4bcd-b547-01ff25cd2ffe
+
 
 </details>
 
